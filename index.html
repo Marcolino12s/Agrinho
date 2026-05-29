@@ -1,98 +1,161 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agro Forte e Sustentável</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agro Forte & Sustentável</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonte moderna e elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Agro Forte e Sustentável</h1>
-    <p>Produzir hoje pensando no amanhã.</p>
+  <header class="hero">
+    <nav>
+      <h1>Agro<span>+</span></h1>
+
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <p class="tag">TECNOLOGIA • NATUREZA • FUTURO</p>
+
+      <h2>
+        Um agro forte,<br>
+        inteligente e sustentável.
+      </h2>
+
+      <p class="description">
+        Incentivando práticas agrícolas modernas,
+        econômicas e conscientes para proteger o solo,
+        a água e o futuro das próximas gerações.
+      </p>
+
+      <button id="explorarBtn">Explorar projetos</button>
+    </div>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#beneficios">Benefícios</a>
-    <a href="#projetos">Projetos Sustentáveis</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <section class="sobre" id="sobre">
+    <div class="texto">
+      <h3>Produzir sem destruir</h3>
 
-  <main>
-
-    <section id="sobre" class="card">
-      <h2>O Agro Sustentável</h2>
       <p>
-        O agro sustentável busca unir produtividade, preservação ambiental
-        e responsabilidade social. Com técnicas modernas e conscientes,
-        é possível produzir alimentos sem comprometer os recursos naturais.
+        O agro sustentável combina produtividade,
+        inovação e preservação ambiental. Com técnicas
+        modernas, é possível reduzir desperdícios,
+        economizar recursos naturais e melhorar a
+        qualidade da produção.
       </p>
-    </section>
+    </div>
 
-    <section id="beneficios" class="card">
-      <h2>Benefícios</h2>
+    <div class="card-info">
+      <div class="mini-card">
+        <h4>🌱 Solo protegido</h4>
+        <p>Rotação de culturas e menos desgaste do solo.</p>
+      </div>
 
-      <div class="grid">
-        <div class="item">
-          <h3>🌱 Preservação</h3>
-          <p>Proteção do solo, da água e das florestas.</p>
+      <div class="mini-card">
+        <h4>💧 Economia de água</h4>
+        <p>Sistemas inteligentes de irrigação.</p>
+      </div>
+
+      <div class="mini-card">
+        <h4>☀ Energia limpa</h4>
+        <p>Uso crescente de energia solar no campo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projetos" id="projetos">
+
+    <div class="section-title">
+      <p>PROJETOS SUSTENTÁVEIS</p>
+      <h3>Exemplos e resultados</h3>
+    </div>
+
+    <div class="galeria">
+
+      <div class="projeto-card">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop" alt="Plantação sustentável">
+
+        <div class="conteudo">
+          <h4>Plantio Inteligente</h4>
+          <p>
+            Uso de sensores e monitoramento climático
+            para reduzir desperdícios.
+          </p>
+
+          <span>✔ 35% menos consumo de água</span>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop" alt="Energia solar no campo">
+
+        <div class="conteudo">
+          <h4>Energia Solar Rural</h4>
+          <p>
+            Fazendas utilizando energia renovável
+            para alimentar equipamentos agrícolas.
+          </p>
+
+          <span>✔ Redução nos custos energéticos</span>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop" alt="Agricultura verde">
+
+        <div class="conteudo">
+          <h4>Recuperação do Solo</h4>
+          <p>
+            Técnicas naturais para restaurar áreas
+            degradadas e aumentar a fertilidade.
+          </p>
+
+          <span>✔ Produção mais saudável</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="resultados" id="resultados">
+    <div class="resultado-box">
+      <h3>Impactos positivos</h3>
+
+      <div class="numeros">
+        <div>
+          <h2>+42%</h2>
+          <p>Eficiência agrícola</p>
         </div>
 
-        <div class="item">
-          <h3>🚜 Tecnologia</h3>
-          <p>Uso inteligente de recursos e redução de desperdícios.</p>
+        <div>
+          <h2>-35%</h2>
+          <p>Desperdício de água</p>
         </div>
 
-        <div class="item">
-          <h3>🌎 Futuro</h3>
-          <p>Garantia de produção sustentável para próximas gerações.</p>
+        <div>
+          <h2>+60%</h2>
+          <p>Uso de energia limpa</p>
         </div>
       </div>
-    </section>
-
-    <section id="projetos" class="card">
-      <h2>Projetos Sustentáveis Implementados</h2>
-
-      <div class="projeto">
-        <h3>🌿 Reflorestamento Rural</h3>
-        <p>
-          Fazendas passaram a recuperar áreas degradadas com árvores nativas,
-          reduzindo erosões e melhorando a qualidade da água.
-        </p>
-        <span>Resultado: aumento da biodiversidade e recuperação do solo.</span>
-      </div>
-
-      <div class="projeto">
-        <h3>💧 Irrigação Inteligente</h3>
-        <p>
-          Sistemas automatizados reduziram o desperdício de água nas plantações.
-        </p>
-        <span>Resultado: economia hídrica e maior eficiência agrícola.</span>
-      </div>
-
-      <div class="projeto">
-        <h3>☀️ Energia Solar no Campo</h3>
-        <p>
-          Propriedades rurais adotaram painéis solares para abastecimento energético.
-        </p>
-        <span>Resultado: redução de custos e menor impacto ambiental.</span>
-      </div>
-    </section>
-
-    <section id="contato" class="card">
-      <h2>Contato</h2>
-      <p>Email: agro@sustentavel.com</p>
-      <p>Telefone: (00) 0000-0000</p>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2026 Agro Forte e Sustentável</p>
+    <p>Agro+ © 2026 • Sustentabilidade e inovação no campo</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
