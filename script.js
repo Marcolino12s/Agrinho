@@ -78,13 +78,13 @@ const translations = {
     sobreTexto:
       "O agro sustentável combina produtividade, inovação e preservação ambiental. Com técnicas modernas, é possível reduzir desperdícios, economizar recursos naturais e ainda melhorar a qualidade da produção.",
 
-    card1Titulo: "☀ Menos desperdício",
+    card1Titulo: "Menos desperdício",
     card1Texto: "Aproveitamento inteligente de recursos e produção mais consciente.",
 
-    card2Titulo: "☀ Mais eficiência",
+    card2Titulo: "Mais eficiência",
     card2Texto: "Tecnologia e inovação para produzir mais com menos.",
 
-    card3Titulo: "☀ Futuro sustentável",
+    card3Titulo: "Futuro sustentável",
     card3Texto: "Equilíbrio entre produtividade, natureza e desenvolvimento.",
 
     secao: "SUSTENTABILIDADE",
@@ -108,7 +108,7 @@ const translations = {
     resultado2: "Desperdício hídrico.",
     resultado3: "Uso de energia limpa.",
 
-    footer: "© 2026 AgroNova | Projeto Agrinho"
+    footer: "© 2026 AgroNova | Projeto Agrinho."
   },
 
   en: {
@@ -131,13 +131,13 @@ const translations = {
     sobreTexto:
       "Sustainable agriculture combines productivity, innovation and environmental preservation. With modern techniques it is possible to reduce waste, save natural resources and improve production quality.",
 
-    card1Titulo: "☀ Less waste",
+    card1Titulo: "Less waste",
     card1Texto: "Smart use of resources and more conscious production.",
 
-    card2Titulo: "☀ More efficiency",
+    card2Titulo: "More efficiency",
     card2Texto: "Technology and innovation to produce more with less.",
 
-    card3Titulo: "☀ Sustainable future",
+    card3Titulo: "Sustainable future",
     card3Texto: "Balance between productivity, nature and development.",
 
     secao: "SUSTAINABILITY",
@@ -161,7 +161,7 @@ const translations = {
     resultado2: "Water waste.",
     resultado3: "Clean energy usage.",
 
-    footer: "© 2026 AgroNova | Agrinho Project"
+    footer: "© 2026 AgroNova | Agrinho Project."
   },
 
   es: {
@@ -184,13 +184,13 @@ const translations = {
     sobreTexto:
       "La agricultura sostenible combina productividad, innovación y preservación ambiental. Con técnicas modernas es posible reducir desperdicios, ahorrar recursos naturales y mejorar la calidad de la producción.",
 
-    card1Titulo: "☀ Menos desperdicio",
+    card1Titulo: "Menos desperdicio",
     card1Texto: "Uso inteligente de recursos y producción más consciente.",
 
-    card2Titulo: "☀ Más eficiencia",
+    card2Titulo: "Más eficiencia",
     card2Texto: "Tecnología e innovación para producir más con menos.",
 
-    card3Titulo: "☀ Futuro sostenible",
+    card3Titulo: "Futuro sostenible",
     card3Texto: "Equilibrio entre productividad, naturaleza y desarrollo.",
 
     secao: "SOSTENIBILIDAD",
@@ -214,7 +214,7 @@ const translations = {
     resultado2: "Desperdicio hídrico.",
     resultado3: "Uso de energía limpia.",
 
-    footer: "© 2026 AgroNova | Proyecto Agrinho"
+    footer: "© 2026 AgroNova | Proyecto Agrinho."
   }
 
 };
