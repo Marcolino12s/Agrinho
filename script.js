@@ -1,12 +1,20 @@
+/* ========================= */
+/* BOTÃO EXPLORAR */
+/* ========================= */
+
 const botao = document.getElementById("explorarBtn");
 
-botao.addEventListener("click", () => {
-  document.getElementById("projetos").scrollIntoView({
-    behavior: "smooth"
+if (botao) {
+  botao.addEventListener("click", () => {
+    document.getElementById("projetos").scrollIntoView({
+      behavior: "smooth"
+    });
   });
-});
+}
 
-/* Efeito simples nos cards */
+/* ========================= */
+/* EFEITO NOS CARDS */
+/* ========================= */
 
 const cards = document.querySelectorAll(".projeto-card");
 
@@ -28,13 +36,13 @@ cards.forEach((card) => {
 
 const themeToggle = document.getElementById("themeToggle");
 
-if(themeToggle){
+if (themeToggle) {
 
   themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("dark-theme");
 
-    if(document.body.classList.contains("dark-theme")){
+    if (document.body.classList.contains("dark-theme")) {
       themeToggle.textContent = "☀️";
     } else {
       themeToggle.textContent = "🌙";
@@ -51,6 +59,7 @@ if(themeToggle){
 const translations = {
 
   pt: {
+
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
@@ -69,17 +78,41 @@ const translations = {
     sobreTexto:
       "O agro sustentável combina produtividade, inovação e preservação ambiental. Com técnicas modernas, é possível reduzir desperdícios, economizar recursos naturais e ainda melhorar a qualidade da produção.",
 
-    card1: "☀ Menos desperdício",
-    card2: "☀ Mais eficiência",
-    card3: "☀ Futuro sustentável",
+    card1Titulo: "☀ Menos desperdício",
+    card1Texto: "Aproveitamento inteligente de recursos e produção mais consciente.",
+
+    card2Titulo: "☀ Mais eficiência",
+    card2Texto: "Tecnologia e inovação para produzir mais com menos.",
+
+    card3Titulo: "☀ Futuro sustentável",
+    card3Texto: "Equilíbrio entre produtividade, natureza e desenvolvimento.",
 
     secao: "SUSTENTABILIDADE",
     exemplos: "Exemplos e resultados",
 
-    resultados: "Impactos positivos"
+    projeto1Titulo: "Cultivo sustentável",
+    projeto1Texto: "Tecnologia e cuidado ambiental trabalhando juntos no campo.",
+    projeto1Info: "✔ Preservação e produtividade",
+
+    projeto2Titulo: "Produção eficiente",
+    projeto2Texto: "Métodos modernos para reduzir desperdícios e aumentar resultados.",
+    projeto2Info: "✔ Mais rendimento agrícola",
+
+    projeto3Titulo: "Solo preservado",
+    projeto3Texto: "Técnicas naturais que fortalecem a terra e melhoram a colheita.",
+    projeto3Info: "✔ Maior fertilidade natural",
+
+    resultados: "Impactos positivos",
+
+    resultado1: "Eficiência agrícola.",
+    resultado2: "Desperdício hídrico.",
+    resultado3: "Uso de energia limpa.",
+
+    footer: "© 2026 AgroNova | Projeto Agrinho"
   },
 
   en: {
+
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
@@ -98,17 +131,41 @@ const translations = {
     sobreTexto:
       "Sustainable agriculture combines productivity, innovation and environmental preservation. With modern techniques it is possible to reduce waste, save natural resources and improve production quality.",
 
-    card1: "☀ Less waste",
-    card2: "☀ More efficiency",
-    card3: "☀ Sustainable future",
+    card1Titulo: "☀ Less waste",
+    card1Texto: "Smart use of resources and more conscious production.",
+
+    card2Titulo: "☀ More efficiency",
+    card2Texto: "Technology and innovation to produce more with less.",
+
+    card3Titulo: "☀ Sustainable future",
+    card3Texto: "Balance between productivity, nature and development.",
 
     secao: "SUSTAINABILITY",
     exemplos: "Examples and results",
 
-    resultados: "Positive impacts"
+    projeto1Titulo: "Sustainable cultivation",
+    projeto1Texto: "Technology and environmental care working together in the field.",
+    projeto1Info: "✔ Preservation and productivity",
+
+    projeto2Titulo: "Efficient production",
+    projeto2Texto: "Modern methods to reduce waste and increase results.",
+    projeto2Info: "✔ Higher agricultural yield",
+
+    projeto3Titulo: "Preserved soil",
+    projeto3Texto: "Natural techniques that strengthen the soil and improve harvests.",
+    projeto3Info: "✔ Greater natural fertility",
+
+    resultados: "Positive impacts",
+
+    resultado1: "Agricultural efficiency.",
+    resultado2: "Water waste.",
+    resultado3: "Clean energy usage.",
+
+    footer: "© 2026 AgroNova | Agrinho Project"
   },
 
   es: {
+
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
@@ -127,64 +184,97 @@ const translations = {
     sobreTexto:
       "La agricultura sostenible combina productividad, innovación y preservación ambiental. Con técnicas modernas es posible reducir desperdicios, ahorrar recursos naturales y mejorar la calidad de la producción.",
 
-    card1: "☀ Menos desperdicio",
-    card2: "☀ Más eficiencia",
-    card3: "☀ Futuro sostenible",
+    card1Titulo: "☀ Menos desperdicio",
+    card1Texto: "Uso inteligente de recursos y producción más consciente.",
+
+    card2Titulo: "☀ Más eficiencia",
+    card2Texto: "Tecnología e innovación para producir más con menos.",
+
+    card3Titulo: "☀ Futuro sostenible",
+    card3Texto: "Equilibrio entre productividad, naturaleza y desarrollo.",
 
     secao: "SOSTENIBILIDAD",
     exemplos: "Ejemplos y resultados",
 
-    resultados: "Impactos positivos"
+    projeto1Titulo: "Cultivo sostenible",
+    projeto1Texto: "Tecnología y cuidado ambiental trabajando juntos en el campo.",
+    projeto1Info: "✔ Preservación y productividad",
+
+    projeto2Titulo: "Producción eficiente",
+    projeto2Texto: "Métodos modernos para reducir desperdicios y aumentar resultados.",
+    projeto2Info: "✔ Mayor rendimiento agrícola",
+
+    projeto3Titulo: "Suelo preservado",
+    projeto3Texto: "Técnicas naturales que fortalecen la tierra y mejoran la cosecha.",
+    projeto3Info: "✔ Mayor fertilidad natural",
+
+    resultados: "Impactos positivos",
+
+    resultado1: "Eficiencia agrícola.",
+    resultado2: "Desperdicio hídrico.",
+    resultado3: "Uso de energía limpia.",
+
+    footer: "© 2026 AgroNova | Proyecto Agrinho"
   }
 
 };
 
+/* ========================= */
+/* SELETOR DE IDIOMA */
+/* ========================= */
+
 const languageSelect = document.getElementById("languageSelect");
 
-if(languageSelect){
+if (languageSelect) {
 
   languageSelect.addEventListener("change", () => {
 
     const t = translations[languageSelect.value];
 
-    document.querySelectorAll("nav ul li a")[0].textContent = t.nav1;
-    document.querySelectorAll("nav ul li a")[1].textContent = t.nav2;
-    document.querySelectorAll("nav ul li a")[2].textContent = t.nav3;
+    document.getElementById("navSobre").textContent = t.nav1;
+    document.getElementById("navProjetos").textContent = t.nav2;
+    document.getElementById("navResultados").textContent = t.nav3;
 
-    document.querySelector(".tag").innerHTML = t.tag;
+    document.getElementById("heroTag").textContent = t.tag;
+    document.getElementById("heroTitle").innerHTML = t.heroTitle;
+    document.getElementById("heroDescription").textContent = t.heroDesc;
 
-    document.querySelector(".hero-content h2").innerHTML =
-      t.heroTitle;
+    document.getElementById("explorarBtn").textContent = t.btn;
 
-    document.querySelector(".description").innerHTML =
-      t.heroDesc;
+    document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
+    document.getElementById("sobreTexto").textContent = t.sobreTexto;
 
-    document.getElementById("explorarBtn").textContent =
-      t.btn;
+    document.getElementById("card1Titulo").textContent = t.card1Titulo;
+    document.getElementById("card1Texto").textContent = t.card1Texto;
 
-    document.querySelector(".texto h3").textContent =
-      t.sobreTitulo;
+    document.getElementById("card2Titulo").textContent = t.card2Titulo;
+    document.getElementById("card2Texto").textContent = t.card2Texto;
 
-    document.querySelector(".texto p").textContent =
-      t.sobreTexto;
+    document.getElementById("card3Titulo").textContent = t.card3Titulo;
+    document.getElementById("card3Texto").textContent = t.card3Texto;
 
-    document.querySelectorAll(".mini-card h4")[0].textContent =
-      t.card1;
+    document.getElementById("projetosTag").textContent = t.secao;
+    document.getElementById("projetosTitulo").textContent = t.exemplos;
 
-    document.querySelectorAll(".mini-card h4")[1].textContent =
-      t.card2;
+    document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
+    document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
+    document.getElementById("projeto1Info").textContent = t.projeto1Info;
 
-    document.querySelectorAll(".mini-card h4")[2].textContent =
-      t.card3;
+    document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
+    document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
+    document.getElementById("projeto2Info").textContent = t.projeto2Info;
 
-    document.querySelector(".section-title p").textContent =
-      t.secao;
+    document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
+    document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
+    document.getElementById("projeto3Info").textContent = t.projeto3Info;
 
-    document.querySelector(".section-title h3").textContent =
-      t.exemplos;
+    document.getElementById("resultadoTitulo").textContent = t.resultados;
 
-    document.querySelector(".resultado-box h3").textContent =
-      t.resultados;
+    document.getElementById("resultado1").textContent = t.resultado1;
+    document.getElementById("resultado2").textContent = t.resultado2;
+    document.getElementById("resultado3").textContent = t.resultado3;
+
+    document.getElementById("footerText").textContent = t.footer;
 
   });
 
