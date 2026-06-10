@@ -1,3 +1,7 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
 *{
   margin:0;
   padding:0;
@@ -10,11 +14,14 @@ html{
 
 body{
   font-family:'Outfit',sans-serif;
-  background:#f5f7f3;
+  background:#f6f8f5;
   color:#1f2a1f;
+  line-height:1.6;
 }
 
-/* HERO */
+/* ========================= */
+/* HERO (ESTILO RELATÓRIO MODERNO) */
+/* ========================= */
 
 .hero{
   min-height:100vh;
@@ -24,19 +31,23 @@ body{
   background-size:cover;
   background-position:center;
   color:white;
+  display:flex;
+  flex-direction:column;
 }
 
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.6);
 }
 
-/* NAV */
+/* ========================= */
+/* NAV LIMPO E INSTITUCIONAL */
+/* ========================= */
 
 nav{
   position:relative;
-  z-index:1;
+  z-index:2;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -44,13 +55,20 @@ nav{
 
 nav ul{
   display:flex;
-  gap:2rem;
+  gap:1.5rem;
   list-style:none;
 }
 
 nav a{
   color:white;
   text-decoration:none;
+  font-size:0.95rem;
+  opacity:0.85;
+  transition:0.3s;
+}
+
+nav a:hover{
+  opacity:1;
 }
 
 /* CONTROLES */
@@ -63,22 +81,31 @@ nav a{
 #languageSelect,
 #themeToggle{
   padding:6px 10px;
-  border:none;
   border-radius:8px;
+  border:none;
+  cursor:pointer;
 }
 
-/* HERO TEXT */
+/* ========================= */
+/* HERO CONTENT (FOCO TOTAL NA MENSAGEM) */
+/* ========================= */
 
 .hero-content{
   position:relative;
-  z-index:1;
+  z-index:2;
   margin-top:12rem;
-  max-width:700px;
+  max-width:720px;
 }
 
 .hero-content h2{
-  font-size:3.2rem;
+  font-size:3.4rem;
+  line-height:1.1;
   margin-bottom:1rem;
+}
+
+.hero-content p{
+  font-size:1.1rem;
+  opacity:0.9;
 }
 
 .hero-content button{
@@ -86,31 +113,51 @@ nav a{
   padding:1rem 2rem;
   border:none;
   border-radius:10px;
-  background:#b7c9a8;
+  background:#b8cdb0;
   cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
 }
 
-/* SEÇÕES */
+.hero-content button:hover{
+  transform:translateY(-3px);
+}
+
+/* ========================= */
+/* SEÇÕES BASE (FORMATO RELATÓRIO) */
+/* ========================= */
 
 .section{
-  padding:6rem 8%;
+  padding:6rem 10%;
+  max-width:1100px;
+  margin:auto;
 }
+
+.section h2{
+  font-size:2.2rem;
+  margin-bottom:1rem;
+}
+
+/* ========================= */
+/* SOLUÇÃO (LAYOUT SIMÉTRICO NOVO) */
+/* ========================= */
 
 .split{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:2rem;
-  padding:6rem 8%;
+  padding:6rem 10%;
 }
 
-.box{
+.block{
   background:white;
   padding:2rem;
-  border-radius:12px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
   transition:0.3s;
 }
 
-.box:hover{
+.block:hover{
   transform:translateY(-6px);
 }
 
@@ -123,34 +170,56 @@ nav a{
   text-align:center;
 }
 
-/* CARDS */
+/* ========================= */
+/* IMPACTO (NOVO FORMATO MAIS FORTE) */
+/* ========================= */
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2rem;
-  padding:6rem 8%;
+.impact{
+  padding:6rem 10%;
+  background:#eef2ec;
+  text-align:center;
 }
 
-.card{
+.impact h2{
+  font-size:2.3rem;
+  margin-bottom:3rem;
+}
+
+.impact-grid{
+  display:flex;
+  gap:2rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.impact-card{
   background:white;
   padding:2rem;
-  border-radius:12px;
+  border-radius:14px;
+  min-width:220px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
   transition:0.3s;
 }
 
-.card:hover{
+.impact-card:hover{
   transform:translateY(-6px);
 }
 
+/* ========================= */
 /* CONCLUSÃO */
+/* ========================= */
 
-.dark{
+.final{
   background:#2f3d2f;
   color:white;
+  text-align:center;
+  padding:6rem 10%;
+  max-width:none;
 }
 
+/* ========================= */
 /* FOOTER */
+/* ========================= */
 
 footer{
   text-align:center;
@@ -159,14 +228,17 @@ footer{
   color:#ccc;
 }
 
+/* ========================= */
 /* DARK MODE */
+/* ========================= */
 
 .dark-theme{
   background:#121212;
   color:#eee;
 }
 
-.dark-theme .card,
-.dark-theme .box{
+.dark-theme .block,
+.dark-theme .impact-card{
   background:#1e1e1e;
+  color:#eee;
 }
