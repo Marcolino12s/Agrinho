@@ -161,7 +161,7 @@ const translations = {
     resultado2: "Water waste.",
     resultado3: "Clean energy usage.",
 
-    footer: "© 2026 AgroNova | Agrinho Project."
+    footer: "© 2026 AgroNova | Projeto Agrinho."
   },
 
   es: {
@@ -214,7 +214,7 @@ const translations = {
     resultado2: "Desperdicio hídrico.",
     resultado3: "Uso de energía limpia.",
 
-    footer: "© 2026 AgroNova | Proyecto Agrinho."
+    footer: "© 2026 AgroNova | Projeto Agrinho."
   }
 
 };
