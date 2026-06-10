@@ -1,109 +1,199 @@
-/* SCROLL */
+/* RESET */
 
-document.getElementById("explorarBtn").addEventListener("click", () => {
-  document.getElementById("solucoes").scrollIntoView({ behavior:"smooth" });
-});
-
-/* TEMA COM MEMÓRIA */
-
-const themeToggle = document.getElementById("themeToggle");
-
-if(localStorage.getItem("theme") === "dark"){
-  document.body.classList.add("dark-theme");
-  themeToggle.textContent = "☀️";
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-theme");
+html{
+  scroll-behavior:smooth;
+}
 
-  if(document.body.classList.contains("dark-theme")){
-    themeToggle.textContent = "☀️";
-    localStorage.setItem("theme","dark");
-  } else {
-    themeToggle.textContent = "🌙";
-    localStorage.setItem("theme","light");
-  }
-});
+body{
+  font-family:'Outfit',sans-serif;
+  background:#f4f7f2;
+  color:#1f2a1f;
+}
 
-/* SCROLL REVEAL */
+/* HERO */
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{ threshold:0.15 });
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  padding:2rem 8%;
+  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:white;
+}
 
-document.querySelectorAll(".section, .split, .cards").forEach(el => {
-  el.classList.add("hidden");
-  observer.observe(el);
-});
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,rgba(20,30,20,0.75),rgba(10,20,10,0.85));
+}
 
-/* TRADUÇÃO */
+/* NAV */
 
-const translations = {
+nav{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-  pt:{
-    navSobre:"Sobre",
-    navDesafio:"Desafio",
-    navSolucoes:"Soluções",
-    navConclusao:"Conclusão",
+nav h1 span{
+  color:#b7d3a8;
+}
 
-    heroTitle:"Agro forte, futuro sustentável",
-    heroDesc:"Equilíbrio entre produção e preservação ambiental.",
-    btn:"Explorar",
+nav ul{
+  display:flex;
+  gap:2rem;
+  list-style:none;
+}
 
-    sobreTitulo:"Sobre o projeto",
-    sobreTexto:"texto aqui",
+nav a{
+  color:white;
+  text-decoration:none;
+}
 
-    desafio1Titulo:"Produção",
-    desafio1Texto:"texto aqui",
-    desafioCentro:"Equilíbrio",
-    desafio2Titulo:"Meio ambiente",
-    desafio2Texto:"texto aqui",
+/* CONTROLES */
 
-    card1Titulo:"Agricultura de precisão",
-    card1Texto:"texto aqui",
-    card2Titulo:"Uso da água",
-    card2Texto:"texto aqui",
-    card3Titulo:"Solo saudável",
-    card3Texto:"texto aqui",
+.controls{
+  display:flex;
+  gap:10px;
+}
 
-    conclusaoTitulo:"Conclusão",
-    conclusaoTexto:"texto aqui",
+#languageSelect,
+#themeToggle{
+  padding:6px 10px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+}
 
-    footer:"Projeto Agrinho"
-  },
+/* HERO CONTENT */
 
-  en:{
-    navSobre:"About",
-    navDesafio:"Challenge",
-    navSolucoes:"Solutions",
-    navConclusao:"Conclusion",
+.hero-content{
+  position:relative;
+  z-index:1;
+  margin-top:12rem;
+  max-width:750px;
+}
 
-    heroTitle:"Strong agriculture, sustainable future",
-    heroDesc:"Balance between production and environmental preservation.",
-    btn:"Explore"
-  },
+.hero-content h2{
+  font-size:3.5rem;
+  margin-bottom:1rem;
+  animation:fadeDown 1s ease;
+}
 
-  es:{
-    navSobre:"Sobre",
-    navDesafio:"Desafío",
-    navSolucoes:"Soluciones",
-    navConclusao:"Conclusión",
+.hero-content p{
+  opacity:0.9;
+  animation:fadeUp 1.2s ease;
+}
 
-    heroTitle:"Agricultura fuerte, futuro sostenible",
-    heroDesc:"Equilibrio entre producción y preservación ambiental.",
-    btn:"Explorar"
-  }
-};
+.hero-content button{
+  margin-top:2rem;
+  padding:1rem 2rem;
+  border:none;
+  border-radius:10px;
+  background:#b7d3a8;
+  color:#1f2a1f;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  animation:fadeUp 1.4s ease;
+}
 
-document.getElementById("languageSelect").addEventListener("change",(e)=>{
-  const t = translations[e.target.value];
+.hero-content button:hover{
+  transform:scale(1.05);
+}
 
-  for(let id in t){
-    const el = document.getElementById(id);
-    if(el) el.textContent = t[id];
-  }
-});
+/* SEÇÕES */
+
+.section{
+  padding:6rem 8%;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2rem;
+  padding:6rem 8%;
+}
+
+/* CARDS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;
+  padding:6rem 8%;
+}
+
+.card,.box{
+  background:white;
+  padding:2rem;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover,.box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 35px rgba(0,0,0,0.12);
+}
+
+.highlight{
+  background:#2f3d2f;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* CONCLUSÃO */
+
+.dark{
+  background:#2f3d2f;
+  color:white;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:2rem;
+  background:#1f2a1f;
+  color:#ccc;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* DARK MODE */
+
+.dark-theme{
+  background:#121212;
+  color:#eee;
+}
+
+.dark-theme .card,
+.dark-theme .box{
+  background:#1e1e1e;
+}
