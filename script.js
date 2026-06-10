@@ -1,45 +1,39 @@
 /* ========================= */
-/* BOTÃO EXPLORAR */
+/* SCROLL BOTÃO HERO */
 /* ========================= */
 
-const botao = document.getElementById("explorarBtn");
+const explorarBtn = document.getElementById("explorarBtn");
 
-if (botao) {
-  botao.addEventListener("click", () => {
-    document.getElementById("projetos").scrollIntoView({
+if (explorarBtn) {
+  explorarBtn.addEventListener("click", () => {
+    document.getElementById("desafio").scrollIntoView({
       behavior: "smooth"
     });
   });
 }
 
 /* ========================= */
-/* EFEITO NOS CARDS */
+/* VOLTAR AO TOPO */
 /* ========================= */
 
-const cards = document.querySelectorAll(".projeto-card");
+const topButton = document.getElementById("topButton");
 
-cards.forEach((card) => {
-
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-10px)";
+if (topButton) {
+  topButton.addEventListener("click", () => {
+    document.getElementById("topo").scrollIntoView({
+      behavior: "smooth"
+    });
   });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "translateY(0)";
-  });
-
-});
+}
 
 /* ========================= */
-/* TEMA CLARO / ESCURO */
+/* TEMA ESCURO / CLARO */
 /* ========================= */
 
 const themeToggle = document.getElementById("themeToggle");
 
 if (themeToggle) {
-
   themeToggle.addEventListener("click", () => {
-
     document.body.classList.toggle("dark-theme");
 
     if (document.body.classList.contains("dark-theme")) {
@@ -47,9 +41,7 @@ if (themeToggle) {
     } else {
       themeToggle.textContent = "🌙";
     }
-
   });
-
 }
 
 /* ========================= */
@@ -59,223 +51,219 @@ if (themeToggle) {
 const translations = {
 
   pt: {
+    navDesafio: "Desafio",
+    navSolucoes: "Soluções",
+    navBeneficios: "Benefícios",
+    navConclusao: "Conclusão",
 
-    nav1: "Sobre",
-    nav2: "Projetos",
-    nav3: "Resultados",
+    heroTag: "TEXTO AQUI",
+    heroTitle: "TÍTULO AQUI",
+    heroDescription: "TEXTO AQUI",
+    explorarBtn: "SAIBA MAIS",
 
-    tag: "INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO",
+    desafioTag: "TEXTO AQUI",
+    desafioTitulo: "TÍTULO AQUI",
+    desafioTexto: "TEXTO AQUI",
 
-    heroTitle: "Um agro forte,<br>inteligente e sustentável.",
+    desafioCard1Titulo: "TÍTULO AQUI",
+    desafioCard1Texto: "TEXTO AQUI",
 
-    heroDesc:
-      "Incentivando práticas agrícolas modernas, sustentáveis, econômicas e conscientes, para proteger não somente o meio ambiente, mas também o futuro.",
+    desafioCard2Titulo: "TÍTULO AQUI",
+    desafioCard2Texto: "TEXTO AQUI",
 
-    btn: "Ver mais",
+    solucoesTag: "TEXTO AQUI",
+    solucoesTitulo: "TÍTULO AQUI",
 
-    sobreTitulo: "Produzir sem destruir",
+    solucao1Titulo: "TÍTULO AQUI",
+    solucao1Texto: "TEXTO AQUI",
 
-    sobreTexto:
-      "O agro sustentável combina produtividade, inovação e preservação ambiental. Com técnicas modernas, é possível reduzir desperdícios, economizar recursos naturais e ainda melhorar a qualidade da produção.",
+    solucao2Titulo: "TÍTULO AQUI",
+    solucao2Texto: "TEXTO AQUI",
 
-    card1Titulo: "Menos desperdício",
-    card1Texto: "Aproveitamento inteligente de recursos e produção mais consciente.",
+    solucao3Titulo: "TÍTULO AQUI",
+    solucao3Texto: "TEXTO AQUI",
 
-    card2Titulo: "Mais eficiência",
-    card2Texto: "Tecnologia e inovação para produzir mais com menos.",
+    beneficiosTag: "TEXTO AQUI",
+    beneficiosTitulo: "TÍTULO AQUI",
 
-    card3Titulo: "Futuro sustentável",
-    card3Texto: "Equilíbrio entre produtividade, natureza e desenvolvimento.",
+    beneficio1: "BENEFÍCIO AQUI",
+    beneficio2: "BENEFÍCIO AQUI",
+    beneficio3: "BENEFÍCIO AQUI",
+    beneficio4: "BENEFÍCIO AQUI",
 
-    secao: "SUSTENTABILIDADE",
-    exemplos: "Exemplos e resultados",
+    resultadoTitulo: "TÍTULO AQUI",
+    resultado1: "TEXTO AQUI",
+    resultado2: "TEXTO AQUI",
+    resultado3: "TEXTO AQUI",
 
-    projeto1Titulo: "Cultivo sustentável",
-    projeto1Texto: "Tecnologia e cuidado ambiental trabalhando juntos no campo.",
-    projeto1Info: "✔ Preservação e produtividade",
-
-    projeto2Titulo: "Produção eficiente",
-    projeto2Texto: "Métodos modernos para reduzir desperdícios e aumentar resultados.",
-    projeto2Info: "✔ Mais rendimento agrícola",
-
-    projeto3Titulo: "Solo preservado",
-    projeto3Texto: "Técnicas naturais que fortalecem a terra e melhoram a colheita.",
-    projeto3Info: "✔ Maior fertilidade natural",
-
-    resultados: "Impactos positivos",
-
-    resultado1: "Eficiência agrícola.",
-    resultado2: "Desperdício hídrico.",
-    resultado3: "Uso de energia limpa.",
-
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+    conclusaoTitulo: "TÍTULO AQUI",
+    conclusaoTexto: "TEXTO AQUI",
+    topButton: "VOLTAR AO TOPO"
   },
 
   en: {
+    navDesafio: "Challenge",
+    navSolucoes: "Solutions",
+    navBeneficios: "Benefits",
+    navConclusao: "Conclusion",
 
-    nav1: "About",
-    nav2: "Projects",
-    nav3: "Results",
+    heroTag: "TEXT HERE",
+    heroTitle: "TITLE HERE",
+    heroDescription: "TEXT HERE",
+    explorarBtn: "LEARN MORE",
 
-    tag: "INNOVATION • PRESERVATION • TRANSFORMATION",
+    desafioTag: "TEXT HERE",
+    desafioTitulo: "TITLE HERE",
+    desafioTexto: "TEXT HERE",
 
-    heroTitle: "A strong,<br>smart and sustainable agriculture.",
+    desafioCard1Titulo: "TITLE HERE",
+    desafioCard1Texto: "TEXT HERE",
 
-    heroDesc:
-      "Encouraging modern, sustainable, economical and conscious agricultural practices to protect not only the environment, but also the future.",
+    desafioCard2Titulo: "TITLE HERE",
+    desafioCard2Texto: "TEXT HERE",
 
-    btn: "See more",
+    solucoesTag: "TEXT HERE",
+    solucoesTitulo: "TITLE HERE",
 
-    sobreTitulo: "Producing without destroying",
+    solucao1Titulo: "TITLE HERE",
+    solucao1Texto: "TEXT HERE",
 
-    sobreTexto:
-      "Sustainable agriculture combines productivity, innovation and environmental preservation. With modern techniques it is possible to reduce waste, save natural resources and improve production quality.",
+    solucao2Titulo: "TITLE HERE",
+    solucao2Texto: "TEXT HERE",
 
-    card1Titulo: "Less waste",
-    card1Texto: "Smart use of resources and more conscious production.",
+    solucao3Titulo: "TITLE HERE",
+    solucao3Texto: "TEXT HERE",
 
-    card2Titulo: "More efficiency",
-    card2Texto: "Technology and innovation to produce more with less.",
+    beneficiosTag: "TEXT HERE",
+    beneficiosTitulo: "TITLE HERE",
 
-    card3Titulo: "Sustainable future",
-    card3Texto: "Balance between productivity, nature and development.",
+    beneficio1: "BENEFIT HERE",
+    beneficio2: "BENEFIT HERE",
+    beneficio3: "BENEFIT HERE",
+    beneficio4: "BENEFIT HERE",
 
-    secao: "SUSTAINABILITY",
-    exemplos: "Examples and results",
+    resultadoTitulo: "TITLE HERE",
+    resultado1: "TEXT HERE",
+    resultado2: "TEXT HERE",
+    resultado3: "TEXT HERE",
 
-    projeto1Titulo: "Sustainable cultivation",
-    projeto1Texto: "Technology and environmental care working together in the field.",
-    projeto1Info: "✔ Preservation and productivity",
-
-    projeto2Titulo: "Efficient production",
-    projeto2Texto: "Modern methods to reduce waste and increase results.",
-    projeto2Info: "✔ Higher agricultural yield",
-
-    projeto3Titulo: "Preserved soil",
-    projeto3Texto: "Natural techniques that strengthen the soil and improve harvests.",
-    projeto3Info: "✔ Greater natural fertility",
-
-    resultados: "Positive impacts",
-
-    resultado1: "Agricultural efficiency.",
-    resultado2: "Water waste.",
-    resultado3: "Clean energy usage.",
-
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+    conclusaoTitulo: "TITLE HERE",
+    conclusaoTexto: "TEXT HERE",
+    topButton: "BACK TO TOP"
   },
 
   es: {
+    navDesafio: "Desafío",
+    navSolucoes: "Soluciones",
+    navBeneficios: "Beneficios",
+    navConclusao: "Conclusión",
 
-    nav1: "Acerca",
-    nav2: "Proyectos",
-    nav3: "Resultados",
+    heroTag: "TEXTO AQUÍ",
+    heroTitle: "TÍTULO AQUÍ",
+    heroDescription: "TEXTO AQUÍ",
+    explorarBtn: "VER MÁS",
 
-    tag: "INNOVACIÓN • PRESERVACIÓN • TRANSFORMACIÓN",
+    desafioTag: "TEXTO AQUÍ",
+    desafioTitulo: "TÍTULO AQUÍ",
+    desafioTexto: "TEXTO AQUÍ",
 
-    heroTitle: "Una agricultura fuerte,<br>inteligente y sostenible.",
+    desafioCard1Titulo: "TÍTULO AQUÍ",
+    desafioCard1Texto: "TEXTO AQUÍ",
 
-    heroDesc:
-      "Promoviendo prácticas agrícolas modernas, sostenibles, económicas y responsables para proteger no solo el medio ambiente, sino también el futuro.",
+    desafioCard2Titulo: "TÍTULO AQUÍ",
+    desafioCard2Texto: "TEXTO AQUÍ",
 
-    btn: "Ver más",
+    solucoesTag: "TEXTO AQUÍ",
+    solucoesTitulo: "TÍTULO AQUÍ",
 
-    sobreTitulo: "Producir sin destruir",
+    solucao1Titulo: "TÍTULO AQUÍ",
+    solucao1Texto: "TEXTO AQUÍ",
 
-    sobreTexto:
-      "La agricultura sostenible combina productividad, innovación y preservación ambiental. Con técnicas modernas es posible reducir desperdicios, ahorrar recursos naturales y mejorar la calidad de la producción.",
+    solucao2Titulo: "TÍTULO AQUÍ",
+    solucao2Texto: "TEXTO AQUÍ",
 
-    card1Titulo: "Menos desperdicio",
-    card1Texto: "Uso inteligente de recursos y producción más consciente.",
+    solucao3Titulo: "TÍTULO AQUÍ",
+    solucao3Texto: "TEXTO AQUÍ",
 
-    card2Titulo: "Más eficiencia",
-    card2Texto: "Tecnología e innovación para producir más con menos.",
+    beneficiosTag: "TEXTO AQUÍ",
+    beneficiosTitulo: "TÍTULO AQUÍ",
 
-    card3Titulo: "Futuro sostenible",
-    card3Texto: "Equilibrio entre productividad, naturaleza y desarrollo.",
+    beneficio1: "BENEFICIO AQUÍ",
+    beneficio2: "BENEFICIO AQUÍ",
+    beneficio3: "BENEFICIO AQUÍ",
+    beneficio4: "BENEFICIO AQUÍ",
 
-    secao: "SOSTENIBILIDAD",
-    exemplos: "Ejemplos y resultados",
+    resultadoTitulo: "TÍTULO AQUÍ",
+    resultado1: "TEXTO AQUÍ",
+    resultado2: "TEXTO AQUÍ",
+    resultado3: "TEXTO AQUÍ",
 
-    projeto1Titulo: "Cultivo sostenible",
-    projeto1Texto: "Tecnología y cuidado ambiental trabajando juntos en el campo.",
-    projeto1Info: "✔ Preservación y productividad",
-
-    projeto2Titulo: "Producción eficiente",
-    projeto2Texto: "Métodos modernos para reducir desperdicios y aumentar resultados.",
-    projeto2Info: "✔ Mayor rendimiento agrícola",
-
-    projeto3Titulo: "Suelo preservado",
-    projeto3Texto: "Técnicas naturales que fortalecen la tierra y mejoran la cosecha.",
-    projeto3Info: "✔ Mayor fertilidad natural",
-
-    resultados: "Impactos positivos",
-
-    resultado1: "Eficiencia agrícola.",
-    resultado2: "Desperdicio hídrico.",
-    resultado3: "Uso de energía limpia.",
-
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+    conclusaoTitulo: "TÍTULO AQUÍ",
+    conclusaoTexto: "TEXTO AQUÍ",
+    topButton: "VOLVER ARRIBA"
   }
 
 };
 
 /* ========================= */
-/* SELETOR DE IDIOMA */
+/* TROCA DE IDIOMA */
 /* ========================= */
 
 const languageSelect = document.getElementById("languageSelect");
 
 if (languageSelect) {
-
   languageSelect.addEventListener("change", () => {
 
     const t = translations[languageSelect.value];
 
-    document.getElementById("navSobre").textContent = t.nav1;
-    document.getElementById("navProjetos").textContent = t.nav2;
-    document.getElementById("navResultados").textContent = t.nav3;
+    document.getElementById("navDesafio").textContent = t.navDesafio;
+    document.getElementById("navSolucoes").textContent = t.navSolucoes;
+    document.getElementById("navBeneficios").textContent = t.navBeneficios;
+    document.getElementById("navConclusao").textContent = t.navConclusao;
 
-    document.getElementById("heroTag").textContent = t.tag;
-    document.getElementById("heroTitle").innerHTML = t.heroTitle;
-    document.getElementById("heroDescription").textContent = t.heroDesc;
+    document.getElementById("heroTag").textContent = t.heroTag;
+    document.getElementById("heroTitle").textContent = t.heroTitle;
+    document.getElementById("heroDescription").textContent = t.heroDescription;
+    document.getElementById("explorarBtn").textContent = t.explorarBtn;
 
-    document.getElementById("explorarBtn").textContent = t.btn;
+    document.getElementById("desafioTag").textContent = t.desafioTag;
+    document.getElementById("desafioTitulo").textContent = t.desafioTitulo;
+    document.getElementById("desafioTexto").textContent = t.desafioTexto;
 
-    document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
-    document.getElementById("sobreTexto").textContent = t.sobreTexto;
+    document.getElementById("desafioCard1Titulo").textContent = t.desafioCard1Titulo;
+    document.getElementById("desafioCard1Texto").textContent = t.desafioCard1Texto;
 
-    document.getElementById("card1Titulo").textContent = t.card1Titulo;
-    document.getElementById("card1Texto").textContent = t.card1Texto;
+    document.getElementById("desafioCard2Titulo").textContent = t.desafioCard2Titulo;
+    document.getElementById("desafioCard2Texto").textContent = t.desafioCard2Texto;
 
-    document.getElementById("card2Titulo").textContent = t.card2Titulo;
-    document.getElementById("card2Texto").textContent = t.card2Texto;
+    document.getElementById("solucoesTag").textContent = t.solucoesTag;
+    document.getElementById("solucoesTitulo").textContent = t.solucoesTitulo;
 
-    document.getElementById("card3Titulo").textContent = t.card3Titulo;
-    document.getElementById("card3Texto").textContent = t.card3Texto;
+    document.getElementById("solucao1Titulo").textContent = t.solucao1Titulo;
+    document.getElementById("solucao1Texto").textContent = t.solucao1Texto;
 
-    document.getElementById("projetosTag").textContent = t.secao;
-    document.getElementById("projetosTitulo").textContent = t.exemplos;
+    document.getElementById("solucao2Titulo").textContent = t.solucao2Titulo;
+    document.getElementById("solucao2Texto").textContent = t.solucao2Texto;
 
-    document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
-    document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
-    document.getElementById("projeto1Info").textContent = t.projeto1Info;
+    document.getElementById("solucao3Titulo").textContent = t.solucao3Titulo;
+    document.getElementById("solucao3Texto").textContent = t.solucao3Texto;
 
-    document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
-    document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
-    document.getElementById("projeto2Info").textContent = t.projeto2Info;
+    document.getElementById("beneficiosTag").textContent = t.beneficiosTag;
+    document.getElementById("beneficiosTitulo").textContent = t.beneficiosTitulo;
 
-    document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
-    document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
-    document.getElementById("projeto3Info").textContent = t.projeto3Info;
+    document.getElementById("beneficio1").textContent = t.beneficio1;
+    document.getElementById("beneficio2").textContent = t.beneficio2;
+    document.getElementById("beneficio3").textContent = t.beneficio3;
+    document.getElementById("beneficio4").textContent = t.beneficio4;
 
-    document.getElementById("resultadoTitulo").textContent = t.resultados;
-
+    document.getElementById("resultadoTitulo").textContent = t.resultadoTitulo;
     document.getElementById("resultado1").textContent = t.resultado1;
     document.getElementById("resultado2").textContent = t.resultado2;
     document.getElementById("resultado3").textContent = t.resultado3;
 
-    document.getElementById("footerText").textContent = t.footer;
+    document.getElementById("conclusaoTitulo").textContent = t.conclusaoTitulo;
+    document.getElementById("conclusaoTexto").textContent = t.conclusaoTexto;
+    document.getElementById("topButton").textContent = t.topButton;
 
   });
-
 }
