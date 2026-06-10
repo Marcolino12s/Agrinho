@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,191 +9,230 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
+<header class="hero" id="topo">
 
   <nav>
-    <h1>Agro<span>Nova</span></h1>
 
-    <ul>
-      <li><a href="#sobre" id="navSobre">Sobre</a></li>
-      <li><a href="#projetos" id="navProjetos">Projetos</a></li>
-      <li><a href="#resultados" id="navResultados">Resultados</a></li>
-    </ul>
+```
+<h1>Agro<span>Nova</span></h1>
 
-    <div class="controls">
-      <select id="languageSelect">
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-      </select>
+<ul>
+  <li><a href="#desafio" id="navDesafio">Desafio</a></li>
+  <li><a href="#solucoes" id="navSolucoes">Soluções</a></li>
+  <li><a href="#beneficios" id="navBeneficios">Benefícios</a></li>
+  <li><a href="#conclusao" id="navConclusao">Conclusão</a></li>
+</ul>
 
-      <button id="themeToggle">🌙</button>
-    </div>
+<div class="controls">
+
+  <select id="languageSelect">
+    <option value="pt">PT</option>
+    <option value="en">EN</option>
+    <option value="es">ES</option>
+  </select>
+
+  <button id="themeToggle">🌙</button>
+
+</div>
+```
+
   </nav>
 
   <div class="hero-content">
 
-    <p class="tag" id="heroTag">
-      INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO
-    </p>
+```
+<p class="tag" id="heroTag">
+  TEXTO AQUI
+</p>
 
-    <h2 id="heroTitle">
-      Um agro forte,<br>
-      inteligente e sustentável.
-    </h2>
+<h2 id="heroTitle">
+  TÍTULO AQUI
+</h2>
 
-    <p class="description" id="heroDescription">
-      Incentivando práticas agrícolas modernas, sustentáveis,
-      econômicas e conscientes, para proteger não somente o meio ambiente,
-      mas também o futuro.
-    </p>
+<p class="description" id="heroDescription">
+  TEXTO AQUI
+</p>
 
-    <button id="explorarBtn">Ver mais</button>
+<button id="explorarBtn">
+  SAIBA MAIS
+</button>
+```
 
   </div>
 
 </header>
 
-<section class="sobre" id="sobre">
+<section class="desafio" id="desafio">
 
-  <div class="texto">
+  <div class="section-title">
 
-    <h3 id="sobreTitulo">
-      Produzir sem destruir
-    </h3>
+```
+<p id="desafioTag">
+  TEXTO AQUI
+</p>
 
-    <p id="sobreTexto">
-      O agro sustentável combina produtividade,
-      inovação e preservação ambiental.
-      Com técnicas modernas, é possível reduzir desperdícios,
-      economizar recursos naturais e ainda melhorar a
-      qualidade da produção.
-    </p>
+<h3 id="desafioTitulo">
+  TÍTULO AQUI
+</h3>
+
+<p class="section-description" id="desafioTexto">
+  TEXTO AQUI
+</p>
+```
 
   </div>
 
-  <div class="card-info">
+  <div class="desafio-cards">
 
-    <div class="mini-card">
-      <h4 id="card1Titulo">Menos desperdício</h4>
+```
+<div class="info-card">
 
-      <p id="card1Texto">
-        Aproveitamento inteligente de recursos e produção mais consciente.
-      </p>
-    </div>
+  <h4 id="desafioCard1Titulo">
+    TÍTULO AQUI
+  </h4>
 
-    <div class="mini-card">
-      <h4 id="card2Titulo">Mais eficiência</h4>
+  <p id="desafioCard1Texto">
+    TEXTO AQUI
+  </p>
 
-      <p id="card2Texto">
-        Tecnologia e inovação para produzir mais com menos.
-      </p>
-    </div>
+</div>
 
-    <div class="mini-card">
-      <h4 id="card3Titulo">Futuro sustentável</h4>
+<div class="info-card">
 
-      <p id="card3Texto">
-        Equilíbrio entre produtividade, natureza e desenvolvimento.
-      </p>
-    </div>
+  <h4 id="desafioCard2Titulo">
+    TÍTULO AQUI
+  </h4>
+
+  <p id="desafioCard2Texto">
+    TEXTO AQUI
+  </p>
+
+</div>
+```
 
   </div>
 
 </section>
 
-<section class="projetos" id="projetos">
+<section class="solucoes" id="solucoes">
 
   <div class="section-title">
-    <p id="projetosTag">SUSTENTABILIDADE</p>
 
-    <h3 id="projetosTitulo">
-      Exemplos e resultados
-    </h3>
+```
+<p id="solucoesTag">
+  TEXTO AQUI
+</p>
+
+<h3 id="solucoesTitulo">
+  TÍTULO AQUI
+</h3>
+```
+
   </div>
 
   <div class="galeria">
 
-    <div class="projeto-card">
+```
+<div class="projeto-card">
 
-      <img
-        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-        alt="Plantação sustentável"
-      >
+  <img src="./assets/solucao1.jpg" alt="Solução 1">
 
-      <div class="conteudo">
+  <div class="conteudo">
 
-        <h4 id="projeto1Titulo">
-          Cultivo sustentável
-        </h4>
+    <h4 id="solucao1Titulo">
+      TÍTULO AQUI
+    </h4>
 
-        <p id="projeto1Texto">
-          Tecnologia e cuidado ambiental trabalhando juntos no campo.
-        </p>
+    <p id="solucao1Texto">
+      TEXTO AQUI
+    </p>
 
-        <span id="projeto1Info">
-          ✔ Preservação e produtividade
-        </span>
+  </div>
 
-      </div>
+</div>
 
-    </div>
+<div class="projeto-card">
 
-    <div class="projeto-card">
+  <img src="./assets/solucao2.jpg" alt="Solução 2">
 
-      <img
-        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
-        alt="Energia solar no campo"
-      >
+  <div class="conteudo">
 
-      <div class="conteudo">
+    <h4 id="solucao2Titulo">
+      TÍTULO AQUI
+    </h4>
 
-        <h4 id="projeto2Titulo">
-          Produção eficiente
-        </h4>
+    <p id="solucao2Texto">
+      TEXTO AQUI
+    </p>
 
-        <p id="projeto2Texto">
-          Métodos modernos para reduzir desperdícios e aumentar resultados.
-        </p>
+  </div>
 
-        <span id="projeto2Info">
-          ✔ Mais rendimento agrícola
-        </span>
+</div>
 
-      </div>
+<div class="projeto-card">
 
-    </div>
+  <img src="./assets/solucao3.jpg" alt="Solução 3">
 
-    <div class="projeto-card">
+  <div class="conteudo">
 
-      <img
-        src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
-        alt="Agricultura verde"
-      >
+    <h4 id="solucao3Titulo">
+      TÍTULO AQUI
+    </h4>
 
-      <div class="conteudo">
+    <p id="solucao3Texto">
+      TEXTO AQUI
+    </p>
 
-        <h4 id="projeto3Titulo">
-          Solo preservado
-        </h4>
+  </div>
 
-        <p id="projeto3Texto">
-          Técnicas naturais que fortalecem a terra e melhoram a colheita.
-        </p>
+</div>
+```
 
-        <span id="projeto3Info">
-          ✔ Maior fertilidade natural
-        </span>
+  </div>
 
-      </div>
+</section>
 
-    </div>
+<section class="beneficios" id="beneficios">
+
+  <div class="section-title">
+
+```
+<p id="beneficiosTag">
+  TEXTO AQUI
+</p>
+
+<h3 id="beneficiosTitulo">
+  TÍTULO AQUI
+</h3>
+```
+
+  </div>
+
+  <div class="beneficios-grid">
+
+```
+<div class="beneficio-card">
+  <h4 id="beneficio1">BENEFÍCIO AQUI</h4>
+</div>
+
+<div class="beneficio-card">
+  <h4 id="beneficio2">BENEFÍCIO AQUI</h4>
+</div>
+
+<div class="beneficio-card">
+  <h4 id="beneficio3">BENEFÍCIO AQUI</h4>
+</div>
+
+<div class="beneficio-card">
+  <h4 id="beneficio4">BENEFÍCIO AQUI</h4>
+</div>
+```
 
   </div>
 
@@ -202,37 +242,63 @@
 
   <div class="resultado-box">
 
-    <h3 id="resultadoTitulo">
-      Impactos positivos
-    </h3>
+```
+<h3 id="resultadoTitulo">
+  TÍTULO AQUI
+</h3>
 
-    <div class="numeros">
+<div class="numeros">
 
-      <div>
-        <h2>+47,3%</h2>
-        <p id="resultado1">Eficiência agrícola.</p>
-      </div>
+  <div>
+    <h2>01</h2>
+    <p id="resultado1">TEXTO AQUI</p>
+  </div>
 
-      <div>
-        <h2>-34,8%</h2>
-        <p id="resultado2">Desperdício hídrico.</p>
-      </div>
+  <div>
+    <h2>02</h2>
+    <p id="resultado2">TEXTO AQUI</p>
+  </div>
 
-      <div>
-        <h2>+63,5%</h2>
-        <p id="resultado3">Uso de energia limpa.</p>
-      </div>
+  <div>
+    <h2>03</h2>
+    <p id="resultado3">TEXTO AQUI</p>
+  </div>
 
-    </div>
+</div>
+```
+
+  </div>
+
+</section>
+
+<section class="conclusao" id="conclusao">
+
+  <div class="conclusao-box">
+
+```
+<h3 id="conclusaoTitulo">
+  TÍTULO AQUI
+</h3>
+
+<p id="conclusaoTexto">
+  TEXTO AQUI
+</p>
+
+<button id="topButton">
+  VOLTAR AO TOPO
+</button>
+```
 
   </div>
 
 </section>
 
 <footer>
+
   <p id="footerText">
-    © 2026 AgroNova | Projeto Agrinho.
+    © 2026 AgroNova | Projeto Agrinho
   </p>
+
 </footer>
 
 <script src="script.js"></script>
