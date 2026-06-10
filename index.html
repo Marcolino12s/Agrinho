@@ -1,304 +1,129 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroNova</title>
+  <title>AgroNova | Agro Forte, Futuro Sustentável</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="hero" id="topo">
+<header class="hero">
+
+  <div class="overlay"></div>
 
   <nav>
+    <h1>Agro<span>Nova</span></h1>
 
-```
-<h1>Agro<span>Nova</span></h1>
+    <ul>
+      <li><a href="#sobre" id="navSobre">texto aqui</a></li>
+      <li><a href="#desafio" id="navDesafio">texto aqui</a></li>
+      <li><a href="#solucoes" id="navSolucoes">texto aqui</a></li>
+      <li><a href="#dados" id="navDados">texto aqui</a></li>
+      <li><a href="#conclusao" id="navConclusao">texto aqui</a></li>
+    </ul>
 
-<ul>
-  <li><a href="#desafio" id="navDesafio">Desafio</a></li>
-  <li><a href="#solucoes" id="navSolucoes">Soluções</a></li>
-  <li><a href="#beneficios" id="navBeneficios">Benefícios</a></li>
-  <li><a href="#conclusao" id="navConclusao">Conclusão</a></li>
-</ul>
+    <div class="controls">
+      <select id="languageSelect">
+        <option value="pt">PT</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
 
-<div class="controls">
-
-  <select id="languageSelect">
-    <option value="pt">PT</option>
-    <option value="en">EN</option>
-    <option value="es">ES</option>
-  </select>
-
-  <button id="themeToggle">🌙</button>
-
-</div>
-```
-
+      <button id="themeToggle">🌙</button>
+    </div>
   </nav>
 
   <div class="hero-content">
-
-```
-<p class="tag" id="heroTag">
-  TEXTO AQUI
-</p>
-
-<h2 id="heroTitle">
-  TÍTULO AQUI
-</h2>
-
-<p class="description" id="heroDescription">
-  TEXTO AQUI
-</p>
-
-<button id="explorarBtn">
-  SAIBA MAIS
-</button>
-```
-
+    <h2 id="heroTitle">texto aqui</h2>
+    <p id="heroDesc">texto aqui</p>
+    <button id="explorarBtn">texto aqui</button>
   </div>
 
 </header>
 
-<section class="desafio" id="desafio">
+<section class="section" id="sobre">
+  <h2>texto aqui</h2>
+  <p>texto aqui</p>
+</section>
 
-  <div class="section-title">
+<section class="split" id="desafio">
 
-```
-<p id="desafioTag">
-  TEXTO AQUI
-</p>
-
-<h3 id="desafioTitulo">
-  TÍTULO AQUI
-</h3>
-
-<p class="section-description" id="desafioTexto">
-  TEXTO AQUI
-</p>
-```
-
+  <div class="box">
+    <h3>texto aqui</h3>
+    <p>texto aqui</p>
   </div>
 
-  <div class="desafio-cards">
+  <div class="box highlight">
+    <h3>texto aqui</h3>
+  </div>
 
-```
-<div class="info-card">
+  <div class="box">
+    <h3>texto aqui</h3>
+    <p>texto aqui</p>
+  </div>
 
-  <h4 id="desafioCard1Titulo">
-    TÍTULO AQUI
-  </h4>
+</section>
 
-  <p id="desafioCard1Texto">
-    TEXTO AQUI
-  </p>
+<section class="cards" id="solucoes">
 
-</div>
+  <div class="card">
+    <h3>texto aqui</h3>
+    <p>texto aqui</p>
+  </div>
 
-<div class="info-card">
+  <div class="card">
+    <h3>texto aqui</h3>
+    <p>texto aqui</p>
+  </div>
 
-  <h4 id="desafioCard2Titulo">
-    TÍTULO AQUI
-  </h4>
+  <div class="card">
+    <h3>texto aqui</h3>
+    <p>texto aqui</p>
+  </div>
 
-  <p id="desafioCard2Texto">
-    TEXTO AQUI
-  </p>
+</section>
 
-</div>
-```
+<section class="stats" id="dados">
+
+  <h2>texto aqui</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat">
+      <h3 class="counter" data-target="47">0</h3>
+      <p>texto aqui</p>
+    </div>
+
+    <div class="stat">
+      <h3 class="counter" data-target="34">0</h3>
+      <p>texto aqui</p>
+    </div>
+
+    <div class="stat">
+      <h3 class="counter" data-target="63">0</h3>
+      <p>texto aqui</p>
+    </div>
 
   </div>
 
 </section>
 
-<section class="solucoes" id="solucoes">
-
-  <div class="section-title">
-
-```
-<p id="solucoesTag">
-  TEXTO AQUI
-</p>
-
-<h3 id="solucoesTitulo">
-  TÍTULO AQUI
-</h3>
-```
-
-  </div>
-
-  <div class="galeria">
-
-```
-<div class="projeto-card">
-
-  <img src="./assets/solucao1.jpg" alt="Solução 1">
-
-  <div class="conteudo">
-
-    <h4 id="solucao1Titulo">
-      TÍTULO AQUI
-    </h4>
-
-    <p id="solucao1Texto">
-      TEXTO AQUI
-    </p>
-
-  </div>
-
-</div>
-
-<div class="projeto-card">
-
-  <img src="./assets/solucao2.jpg" alt="Solução 2">
-
-  <div class="conteudo">
-
-    <h4 id="solucao2Titulo">
-      TÍTULO AQUI
-    </h4>
-
-    <p id="solucao2Texto">
-      TEXTO AQUI
-    </p>
-
-  </div>
-
-</div>
-
-<div class="projeto-card">
-
-  <img src="./assets/solucao3.jpg" alt="Solução 3">
-
-  <div class="conteudo">
-
-    <h4 id="solucao3Titulo">
-      TÍTULO AQUI
-    </h4>
-
-    <p id="solucao3Texto">
-      TEXTO AQUI
-    </p>
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<section class="beneficios" id="beneficios">
-
-  <div class="section-title">
-
-```
-<p id="beneficiosTag">
-  TEXTO AQUI
-</p>
-
-<h3 id="beneficiosTitulo">
-  TÍTULO AQUI
-</h3>
-```
-
-  </div>
-
-  <div class="beneficios-grid">
-
-```
-<div class="beneficio-card">
-  <h4 id="beneficio1">BENEFÍCIO AQUI</h4>
-</div>
-
-<div class="beneficio-card">
-  <h4 id="beneficio2">BENEFÍCIO AQUI</h4>
-</div>
-
-<div class="beneficio-card">
-  <h4 id="beneficio3">BENEFÍCIO AQUI</h4>
-</div>
-
-<div class="beneficio-card">
-  <h4 id="beneficio4">BENEFÍCIO AQUI</h4>
-</div>
-```
-
-  </div>
-
-</section>
-
-<section class="resultados" id="resultados">
-
-  <div class="resultado-box">
-
-```
-<h3 id="resultadoTitulo">
-  TÍTULO AQUI
-</h3>
-
-<div class="numeros">
-
-  <div>
-    <h2>01</h2>
-    <p id="resultado1">TEXTO AQUI</p>
-  </div>
-
-  <div>
-    <h2>02</h2>
-    <p id="resultado2">TEXTO AQUI</p>
-  </div>
-
-  <div>
-    <h2>03</h2>
-    <p id="resultado3">TEXTO AQUI</p>
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<section class="conclusao" id="conclusao">
-
-  <div class="conclusao-box">
-
-```
-<h3 id="conclusaoTitulo">
-  TÍTULO AQUI
-</h3>
-
-<p id="conclusaoTexto">
-  TEXTO AQUI
-</p>
-
-<button id="topButton">
-  VOLTAR AO TOPO
-</button>
-```
-
-  </div>
-
+<section class="section dark" id="conclusao">
+  <h2>texto aqui</h2>
+  <p>texto aqui</p>
 </section>
 
 <footer>
-
-  <p id="footerText">
-    © 2026 AgroNova | Projeto Agrinho
-  </p>
-
+  <p id="footerText">texto aqui</p>
 </footer>
 
 <script src="script.js"></script>
