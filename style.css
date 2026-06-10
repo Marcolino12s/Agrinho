@@ -1,6 +1,4 @@
-/* ========================= */
 /* RESET */
-/* ========================= */
 
 *{
   margin:0;
@@ -14,61 +12,54 @@ html{
 
 body{
   font-family:'Outfit',sans-serif;
-  background:#f6f8f5;
+  background:#f4f7f2;
   color:#1f2a1f;
-  line-height:1.6;
 }
 
-/* ========================= */
-/* HERO (ESTILO RELATÓRIO MODERNO) */
-/* ========================= */
+/* HERO */
 
 .hero{
   min-height:100vh;
   position:relative;
+  display:flex;
+  flex-direction:column;
   padding:2rem 8%;
   background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop");
   background-size:cover;
   background-position:center;
+  background-attachment:fixed;
   color:white;
-  display:flex;
-  flex-direction:column;
 }
 
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.6);
+  background:linear-gradient(120deg,rgba(20,30,20,0.75),rgba(10,20,10,0.85));
 }
 
-/* ========================= */
-/* NAV LIMPO E INSTITUCIONAL */
-/* ========================= */
+/* NAV */
 
 nav{
   position:relative;
-  z-index:2;
+  z-index:1;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
+nav h1 span{
+  color:#b7d3a8;
+}
+
 nav ul{
   display:flex;
-  gap:1.5rem;
+  gap:2rem;
   list-style:none;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  font-size:0.95rem;
-  opacity:0.85;
-  transition:0.3s;
-}
-
-nav a:hover{
-  opacity:1;
 }
 
 /* CONTROLES */
@@ -86,26 +77,24 @@ nav a:hover{
   cursor:pointer;
 }
 
-/* ========================= */
-/* HERO CONTENT (FOCO TOTAL NA MENSAGEM) */
-/* ========================= */
+/* HERO CONTENT */
 
 .hero-content{
   position:relative;
-  z-index:2;
+  z-index:1;
   margin-top:12rem;
-  max-width:720px;
+  max-width:750px;
 }
 
 .hero-content h2{
-  font-size:3.4rem;
-  line-height:1.1;
+  font-size:3.5rem;
   margin-bottom:1rem;
+  animation:fadeDown 1s ease;
 }
 
 .hero-content p{
-  font-size:1.1rem;
   opacity:0.9;
+  animation:fadeUp 1.2s ease;
 }
 
 .hero-content button{
@@ -113,52 +102,51 @@ nav a:hover{
   padding:1rem 2rem;
   border:none;
   border-radius:10px;
-  background:#b8cdb0;
+  background:#b7d3a8;
+  color:#1f2a1f;
+  font-weight:bold;
   cursor:pointer;
-  font-weight:600;
   transition:0.3s;
+  animation:fadeUp 1.4s ease;
 }
 
 .hero-content button:hover{
-  transform:translateY(-3px);
+  transform:scale(1.05);
 }
 
-/* ========================= */
-/* SEÇÕES BASE (FORMATO RELATÓRIO) */
-/* ========================= */
+/* SEÇÕES */
 
 .section{
-  padding:6rem 10%;
-  max-width:1100px;
-  margin:auto;
+  padding:6rem 8%;
 }
-
-.section h2{
-  font-size:2.2rem;
-  margin-bottom:1rem;
-}
-
-/* ========================= */
-/* SOLUÇÃO (LAYOUT SIMÉTRICO NOVO) */
-/* ========================= */
 
 .split{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:2rem;
-  padding:6rem 10%;
+  padding:6rem 8%;
 }
 
-.block{
+/* CARDS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;
+  padding:6rem 8%;
+}
+
+.card,.box{
   background:white;
   padding:2rem;
   border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
   transition:0.3s;
 }
 
-.block:hover{
-  transform:translateY(-6px);
+.card:hover,.box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 35px rgba(0,0,0,0.12);
 }
 
 .highlight{
@@ -170,56 +158,14 @@ nav a:hover{
   text-align:center;
 }
 
-/* ========================= */
-/* IMPACTO (NOVO FORMATO MAIS FORTE) */
-/* ========================= */
-
-.impact{
-  padding:6rem 10%;
-  background:#eef2ec;
-  text-align:center;
-}
-
-.impact h2{
-  font-size:2.3rem;
-  margin-bottom:3rem;
-}
-
-.impact-grid{
-  display:flex;
-  gap:2rem;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.impact-card{
-  background:white;
-  padding:2rem;
-  border-radius:14px;
-  min-width:220px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  transition:0.3s;
-}
-
-.impact-card:hover{
-  transform:translateY(-6px);
-}
-
-/* ========================= */
 /* CONCLUSÃO */
-/* ========================= */
 
-.final{
+.dark{
   background:#2f3d2f;
   color:white;
-  text-align:center;
-  padding:6rem 10%;
-  max-width:none;
 }
 
-/* ========================= */
 /* FOOTER */
-/* ========================= */
 
 footer{
   text-align:center;
@@ -228,17 +174,26 @@ footer{
   color:#ccc;
 }
 
-/* ========================= */
+/* ANIMAÇÕES */
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
 /* DARK MODE */
-/* ========================= */
 
 .dark-theme{
   background:#121212;
   color:#eee;
 }
 
-.dark-theme .block,
-.dark-theme .impact-card{
+.dark-theme .card,
+.dark-theme .box{
   background:#1e1e1e;
-  color:#eee;
 }
