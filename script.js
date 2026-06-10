@@ -1,18 +1,15 @@
-/* ========================= */
 /* BOTÃO SCROLL */
-/* ========================= */
 
 document.getElementById("explorarBtn").addEventListener("click", () => {
-  document.getElementById("solucoes").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("solucoes").scrollIntoView({ behavior:"smooth" });
 });
 
 /* ========================= */
-/* TEMA (com memória local) */
+/* TEMA COM MEMÓRIA */
 /* ========================= */
 
 const themeToggle = document.getElementById("themeToggle");
 
-// carregar tema salvo
 if(localStorage.getItem("theme") === "dark"){
   document.body.classList.add("dark-theme");
   themeToggle.textContent = "☀️";
@@ -31,61 +28,24 @@ themeToggle.addEventListener("click", () => {
 });
 
 /* ========================= */
-/* SCROLL REVEAL (FEIRA ESTADUAL STYLE) */
+/* SCROLL ANIMATION */
 /* ========================= */
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
   });
-},{ threshold:0.15 });
+},{threshold:0.15});
 
-document.querySelectorAll(".section, .split, .cards, .stats").forEach(el => {
+document.querySelectorAll(".section,.split,.cards,.box").forEach(el=>{
   el.classList.add("hidden");
   observer.observe(el);
 });
 
 /* ========================= */
-/* CONTADOR ANIMADO (ESTATÍSTICAS) */
-/* ========================= */
-
-const counters = document.querySelectorAll(".counter");
-
-const runCounter = (counter) => {
-  const target = +counter.getAttribute("data-target");
-  let count = 0;
-
-  const speed = target / 60;
-
-  const update = () => {
-    if(count < target){
-      count += speed;
-      counter.innerText = Math.ceil(count);
-      requestAnimationFrame(update);
-    } else {
-      counter.innerText = target;
-    }
-  };
-
-  update();
-};
-
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.querySelectorAll(".counter").forEach(runCounter);
-    }
-  });
-},{ threshold:0.5 });
-
-document.querySelectorAll(".stats").forEach(section => {
-  statsObserver.observe(section);
-});
-
-/* ========================= */
-/* TRADUÇÃO COMPLETA */
+/* TRADUÇÃO */
 /* ========================= */
 
 const translations = {
@@ -94,23 +54,22 @@ const translations = {
     navSobre:"Sobre",
     navDesafio:"Desafio",
     navSolucoes:"Soluções",
-    navDados:"Dados",
     navConclusao:"Conclusão",
 
     heroTitle:"Agro forte, futuro sustentável",
-    heroDesc:"Equilíbrio entre produção agrícola e preservação ambiental através da inovação.",
+    heroDesc:"Equilíbrio entre produção agrícola e preservação ambiental.",
     btn:"Explorar",
 
     sobreTitulo:"Sobre o projeto",
     sobreTexto:"Texto aqui",
 
-    desafio1Titulo:"Produção agrícola",
+    desafio1Titulo:"Produção",
     desafio1Texto:"Texto aqui",
-    desafioCentro:"O equilíbrio é essencial",
-    desafio2Titulo:"Preservação ambiental",
+    desafioCentro:"Equilíbrio",
+    desafio2Titulo:"Meio ambiente",
     desafio2Texto:"Texto aqui",
 
-    card1Titulo:"Agricultura de precisão",
+    card1Titulo:"Tecnologia no campo",
     card1Texto:"Texto aqui",
     card2Titulo:"Uso consciente da água",
     card2Texto:"Texto aqui",
@@ -120,30 +79,29 @@ const translations = {
     conclusaoTitulo:"Conclusão",
     conclusaoTexto:"Texto aqui",
 
-    footer:"Feira Agrinho | Projeto desenvolvido por aluno"
+    footerText:"Projeto Agrinho"
   },
 
   en:{
     navSobre:"About",
     navDesafio:"Challenge",
     navSolucoes:"Solutions",
-    navDados:"Data",
     navConclusao:"Conclusion",
 
     heroTitle:"Strong agriculture, sustainable future",
-    heroDesc:"Balance between production and environmental preservation through innovation.",
+    heroDesc:"Balance between production and environmental preservation.",
     btn:"Explore",
 
-    sobreTitulo:"About the project",
+    sobreTitulo:"About",
     sobreTexto:"Text here",
 
-    desafio1Titulo:"Agricultural production",
+    desafio1Titulo:"Production",
     desafio1Texto:"Text here",
-    desafioCentro:"Balance is essential",
-    desafio2Titulo:"Environmental preservation",
+    desafioCentro:"Balance",
+    desafio2Titulo:"Environment",
     desafio2Texto:"Text here",
 
-    card1Titulo:"Precision farming",
+    card1Titulo:"Farm technology",
     card1Texto:"Text here",
     card2Titulo:"Water efficiency",
     card2Texto:"Text here",
@@ -153,32 +111,31 @@ const translations = {
     conclusaoTitulo:"Conclusion",
     conclusaoTexto:"Text here",
 
-    footer:"Agrinho Fair | Student project"
+    footerText:"Agrinho Project"
   },
 
   es:{
     navSobre:"Sobre",
     navDesafio:"Desafío",
     navSolucoes:"Soluciones",
-    navDados:"Datos",
     navConclusao:"Conclusión",
 
     heroTitle:"Agricultura fuerte, futuro sostenible",
-    heroDesc:"Equilibrio entre producción y preservación ambiental mediante innovación.",
+    heroDesc:"Equilibrio entre producción y medio ambiente.",
     btn:"Explorar",
 
-    sobreTitulo:"Sobre el proyecto",
+    sobreTitulo:"Sobre",
     sobreTexto:"Texto aquí",
 
-    desafio1Titulo:"Producción agrícola",
+    desafio1Titulo:"Producción",
     desafio1Texto:"Texto aquí",
-    desafioCentro:"El equilibrio es esencial",
-    desafio2Titulo:"Preservación ambiental",
+    desafioCentro:"Equilibrio",
+    desafio2Titulo:"Medio ambiente",
     desafio2Texto:"Texto aquí",
 
-    card1Titulo:"Agricultura de precisión",
+    card1Titulo:"Tecnología agrícola",
     card1Texto:"Texto aquí",
-    card2Titulo:"Uso eficiente del agua",
+    card2Titulo:"Uso del agua",
     card2Texto:"Texto aquí",
     card3Titulo:"Conservación del suelo",
     card3Texto:"Texto aquí",
@@ -186,17 +143,12 @@ const translations = {
     conclusaoTitulo:"Conclusión",
     conclusaoTexto:"Texto aquí",
 
-    footer:"Feria Agrinho | Proyecto estudiantil"
+    footerText:"Proyecto Agrinho"
   }
 };
 
-/* ========================= */
-/* TROCA DE IDIOMA */
-/* ========================= */
-
 document.getElementById("languageSelect").addEventListener("change",(e)=>{
-  const lang = e.target.value;
-  const t = translations[lang];
+  const t = translations[e.target.value];
 
   for(const id in t){
     const el = document.getElementById(id);
