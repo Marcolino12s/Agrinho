@@ -1,15 +1,18 @@
-/* BOTÃO SCROLL */
+/* ========================= */
+/* BOTÃO SCROLL (HERO → SOLUÇÃO) */
+/* ========================= */
 
 document.getElementById("explorarBtn").addEventListener("click", () => {
-  document.getElementById("solucoes").scrollIntoView({ behavior:"smooth" });
+  document.getElementById("solucao").scrollIntoView({ behavior: "smooth" });
 });
 
 /* ========================= */
-/* TEMA COM MEMÓRIA */
+/* TEMA ESCURO COM MEMÓRIA */
 /* ========================= */
 
 const themeToggle = document.getElementById("themeToggle");
 
+// carregar tema salvo
 if(localStorage.getItem("theme") === "dark"){
   document.body.classList.add("dark-theme");
   themeToggle.textContent = "☀️";
@@ -28,130 +31,135 @@ themeToggle.addEventListener("click", () => {
 });
 
 /* ========================= */
-/* SCROLL ANIMATION */
+/* SCROLL REVEAL (ENTRADA SUAVE DAS SEÇÕES) */
 /* ========================= */
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
   });
-},{threshold:0.15});
+},{ threshold:0.15});
 
-document.querySelectorAll(".section,.split,.cards,.box").forEach(el=>{
+document.querySelectorAll(".section, .split, .impact, .block, .impact-card")
+.forEach(el => {
   el.classList.add("hidden");
   observer.observe(el);
 });
 
 /* ========================= */
-/* TRADUÇÃO */
+/* TRADUÇÃO COMPLETA */
 /* ========================= */
 
 const translations = {
 
   pt:{
-    navSobre:"Sobre",
-    navDesafio:"Desafio",
-    navSolucoes:"Soluções",
-    navConclusao:"Conclusão",
+    nav1:"Início",
+    nav2:"Problema",
+    nav3:"Solução",
+    nav4:"Impacto",
+    nav5:"Conclusão",
 
     heroTitle:"Agro forte, futuro sustentável",
-    heroDesc:"Equilíbrio entre produção agrícola e preservação ambiental.",
+    heroDesc:"Equilíbrio entre produção agrícola e preservação ambiental através da inovação.",
     btn:"Explorar",
 
-    sobreTitulo:"Sobre o projeto",
-    sobreTexto:"Texto aqui",
+    problemaTitulo:"O desafio do agro moderno",
+    problemaTexto:"Texto aqui",
 
-    desafio1Titulo:"Produção",
-    desafio1Texto:"Texto aqui",
-    desafioCentro:"Equilíbrio",
-    desafio2Titulo:"Meio ambiente",
-    desafio2Texto:"Texto aqui",
+    solucao1Titulo:"Produção eficiente",
+    solucao1Texto:"Texto aqui",
+    centro:"Equilíbrio sustentável",
+    solucao2Titulo:"Preservação ambiental",
+    solucao2Texto:"Texto aqui",
 
-    card1Titulo:"Tecnologia no campo",
-    card1Texto:"Texto aqui",
-    card2Titulo:"Uso consciente da água",
-    card2Texto:"Texto aqui",
-    card3Titulo:"Conservação do solo",
-    card3Texto:"Texto aqui",
+    impactoTitulo:"Impactos positivos",
+    impacto1:"Tecnologia no campo",
+    impacto2:"Uso consciente da água",
+    impacto3:"Conservação do solo",
 
-    conclusaoTitulo:"Conclusão",
-    conclusaoTexto:"Texto aqui",
+    finalTitulo:"Conclusão",
+    finalTexto:"Texto aqui",
 
-    footerText:"Projeto Agrinho"
+    footerText:"Projeto Agrinho | Desenvolvido por aluno"
   },
 
   en:{
-    navSobre:"About",
-    navDesafio:"Challenge",
-    navSolucoes:"Solutions",
-    navConclusao:"Conclusion",
+    nav1:"Home",
+    nav2:"Problem",
+    nav3:"Solution",
+    nav4:"Impact",
+    nav5:"Conclusion",
 
     heroTitle:"Strong agriculture, sustainable future",
-    heroDesc:"Balance between production and environmental preservation.",
+    heroDesc:"Balance between agricultural production and environmental preservation through innovation.",
     btn:"Explore",
 
-    sobreTitulo:"About",
-    sobreTexto:"Text here",
+    problemaTitulo:"Modern agriculture challenge",
+    problemaTexto:"Text here",
 
-    desafio1Titulo:"Production",
-    desafio1Texto:"Text here",
-    desafioCentro:"Balance",
-    desafio2Titulo:"Environment",
-    desafio2Texto:"Text here",
+    solucao1Titulo:"Efficient production",
+    solucao1Texto:"Text here",
+    centro:"Sustainable balance",
+    solucao2Titulo:"Environmental preservation",
+    solucao2Texto:"Text here",
 
-    card1Titulo:"Farm technology",
-    card1Texto:"Text here",
-    card2Titulo:"Water efficiency",
-    card2Texto:"Text here",
-    card3Titulo:"Soil conservation",
-    card3Texto:"Text here",
+    impactoTitulo:"Positive impacts",
+    impacto1:"Farm technology",
+    impacto2:"Water efficiency",
+    impacto3:"Soil conservation",
 
-    conclusaoTitulo:"Conclusion",
-    conclusaoTexto:"Text here",
+    finalTitulo:"Conclusion",
+    finalTexto:"Text here",
 
-    footerText:"Agrinho Project"
+    footerText:"Agrinho Project | Student developed"
   },
 
   es:{
-    navSobre:"Sobre",
-    navDesafio:"Desafío",
-    navSolucoes:"Soluciones",
-    navConclusao:"Conclusión",
+    nav1:"Inicio",
+    nav2:"Problema",
+    nav3:"Solución",
+    nav4:"Impacto",
+    nav5:"Conclusión",
 
     heroTitle:"Agricultura fuerte, futuro sostenible",
-    heroDesc:"Equilibrio entre producción y medio ambiente.",
+    heroDesc:"Equilibrio entre producción agrícola y preservación ambiental mediante innovación.",
     btn:"Explorar",
 
-    sobreTitulo:"Sobre",
-    sobreTexto:"Texto aquí",
+    problemaTitulo:"Desafío agrícola moderno",
+    problemaTexto:"Texto aquí",
 
-    desafio1Titulo:"Producción",
-    desafio1Texto:"Texto aquí",
-    desafioCentro:"Equilibrio",
-    desafio2Titulo:"Medio ambiente",
-    desafio2Texto:"Texto aquí",
+    solucao1Titulo:"Producción eficiente",
+    solucao1Texto:"Texto aquí",
+    centro:"Equilibrio sostenible",
+    solucao2Titulo:"Preservación ambiental",
+    solucao2Texto:"Texto aquí",
 
-    card1Titulo:"Tecnología agrícola",
-    card1Texto:"Texto aquí",
-    card2Titulo:"Uso del agua",
-    card2Texto:"Texto aquí",
-    card3Titulo:"Conservación del suelo",
-    card3Texto:"Texto aquí",
+    impactoTitulo:"Impactos positivos",
+    impacto1:"Tecnología agrícola",
+    impacto2:"Uso del agua",
+    impacto3:"Conservación del suelo",
 
-    conclusaoTitulo:"Conclusión",
-    conclusaoTexto:"Texto aquí",
+    finalTitulo:"Conclusión",
+    finalTexto:"Texto aquí",
 
-    footerText:"Proyecto Agrinho"
+    footerText:"Proyecto Agrinho | Desarrollado por estudiante"
   }
 };
 
+/* ========================= */
+/* TROCA DE IDIOMA */
+/* ========================= */
+
 document.getElementById("languageSelect").addEventListener("change",(e)=>{
+
   const t = translations[e.target.value];
 
   for(const id in t){
     const el = document.getElementById(id);
-    if(el) el.textContent = t[id];
+    if(el){
+      el.textContent = t[id];
+    }
   }
 });
