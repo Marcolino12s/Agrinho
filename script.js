@@ -1,75 +1,14 @@
-/* Botão explorar: */
-
-const botao = document.getElementById("explorarBtn");
-
-if (botao) {
-  botao.addEventListener("click", () => {
-    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
-  });
-}
-
-/* Efeito nos cards tratado apenas pelo CSS */
-
-/* Tema claro/escuro com persistência: */
-
-const themeToggle = document.getElementById("themeToggle");
-
-if (themeToggle) {
-  const savedTheme = localStorage.getItem("agronova-theme");
-
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-theme");
-    themeToggle.textContent = "☀️";
-  }
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
-  });
-}
-
-/* Tamanho de fonte com persistência: */
-
-const fontSelect = document.getElementById("fontSizeSelect");
-
-if (fontSelect) {
-  const savedFont = localStorage.getItem("agronova-font") || "medium";
-  fontSelect.value = savedFont;
-  applyFontSize(savedFont);
-
-  fontSelect.addEventListener("change", () => {
-    applyFontSize(fontSelect.value);
-    localStorage.setItem("agronova-font", fontSelect.value);
-  });
-}
-
-function applyFontSize(size) {
-  const sizes = { small: "14px", medium: "16px", large: "19px" };
-  document.documentElement.style.fontSize = sizes[size] || "16px";
-}
-
-function applyFontLabels(lang) {
-  const labels = {
-    pt: ["Pequena", "Média", "Grande"],
-    en: ["Small", "Medium", "Large"],
-    es: ["Pequeña", "Mediana", "Grande"]
-  };
-
-  const options = document.querySelectorAll("#fontSizeSelect option");
-  const current = labels[lang] || labels["pt"];
-
-  options[0].textContent = current[0];
-  options[1].textContent = current[1];
-  options[2].textContent = current[2];
-}
-
-/* Traduções: */
+/* ============================================================
+   TRADUÇÕES — declaradas primeiro para ficarem disponíveis
+   para todas as funções abaixo
+   ============================================================ */
 
 const translations = {
 
   pt: {
+    fontSmall: "Pequena",
+    fontMedium: "Média",
+    fontLarge: "Grande",
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
@@ -104,6 +43,9 @@ const translations = {
   },
 
   en: {
+    fontSmall: "Small",
+    fontMedium: "Medium",
+    fontLarge: "Large",
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
@@ -138,6 +80,9 @@ const translations = {
   },
 
   es: {
+    fontSmall: "Pequeña",
+    fontMedium: "Mediana",
+    fontLarge: "Grande",
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
@@ -173,49 +118,8 @@ const translations = {
 
 };
 
-/* Escolher idioma com persistência: */
-
-function applyTranslation(lang) {
-  const t = translations[lang];
-  if (!t) return;
-
-  document.getElementById("navSobre").textContent = t.nav1;
-  document.getElementById("navProjetos").textContent = t.nav2;
-  document.getElementById("navResultados").textContent = t.nav3;
-  document.getElementById("heroTag").textContent = t.tag;
-  document.getElementById("heroTitle").innerHTML = t.heroTitle;
-  document.getElementById("heroDescription").textContent = t.heroDesc;
-  document.getElementById("explorarBtn").textContent = t.btn;
-  document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
-  document.getElementById("sobreTexto").textContent = t.sobreTexto;
-  document.getElementById("card1Titulo").textContent = t.card1Titulo;
-  document.getElementById("card1Texto").textContent = t.card1Texto;
-  document.getElementById("card2Titulo").textContent = t.card2Titulo;
-  document.getElementById("card2Texto").textContent = t.card2Texto;
-  document.getElementById("card3Titulo").textContent = t.card3Titulo;
-  document.getElementById("card3Texto").textContent = t.card3Texto;
-  document.getElementById("projetosTag").textContent = t.secao;
-  document.getElementById("projetosTitulo").textContent = t.exemplos;
-  document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
-  document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
-  document.getElementById("projeto1Info").textContent = t.projeto1Info;
-  document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
-  document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
-  document.getElementById("projeto2Info").textContent = t.projeto2Info;
-  document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
-  document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
-  document.getElementById("projeto3Info").textContent = t.projeto3Info;
-  document.getElementById("resultadoTitulo").textContent = t.resultados;
-  document.getElementById("resultado1").textContent = t.resultado1;
-  document.getElementById("resultado2").textContent = t.resultado2;
-  document.getElementById("resultado3").textContent = t.resultado3;
-  document.getElementById("footerText").textContent = t.footer;
-
-  applyFontLabels(lang);
-}
-
+/* Idioma: */
 const languageSelect = document.getElementById("languageSelect");
-
 if (languageSelect) {
   const savedLang = localStorage.getItem("agronova-lang") || "pt";
   languageSelect.value = savedLang;
@@ -224,5 +128,43 @@ if (languageSelect) {
   languageSelect.addEventListener("change", () => {
     applyTranslation(languageSelect.value);
     localStorage.setItem("agronova-lang", languageSelect.value);
+  });
+}
+
+/* Tamanho de fonte: */
+const fontSelect = document.getElementById("fontSizeSelect");
+if (fontSelect) {
+  const savedFont = localStorage.getItem("agronova-font") || "medium";
+  fontSelect.value = savedFont;
+  applyFontSize(savedFont);
+
+  fontSelect.addEventListener("change", () => {
+    applyFontSize(fontSelect.value);
+    localStorage.setItem("agronova-font", fontSelect.value);
+  });
+}
+
+/* Tema claro/escuro: */
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  const savedTheme = localStorage.getItem("agronova-theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    const isDark = document.body.classList.contains("dark-theme");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
+  });
+}
+
+/* Botão explorar: */
+const botao = document.getElementById("explorarBtn");
+if (botao) {
+  botao.addEventListener("click", () => {
+    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
   });
 }
