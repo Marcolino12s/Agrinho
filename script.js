@@ -1,6 +1,5 @@
 /* ============================================================
-   TRADUÇÕES — declaradas primeiro para ficarem disponíveis
-   para todas as funções abaixo
+   TRADUÇÕES
    ============================================================ */
 
 const translations = {
@@ -112,13 +111,99 @@ const translations = {
     resultados: "Impactos positivos",
     resultado1: "Eficiencia agrícola.",
     resultado2: "Desperdicio hídrico.",
-    resultado3: "Uso de energía limpia.",
+    resultado3: "Uso de energía limpa.",
     footer: "© 2026 AgroNova | Projeto Agrinho."
   }
 
 };
 
-/* Idioma: */
+/* ============================================================
+   FUNÇÃO: aplicar tradução
+   ============================================================ */
+
+function applyTranslation(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  // Opções do select de fonte
+  const optSmall  = document.getElementById("optSmall");
+  const optMedium = document.getElementById("optMedium");
+  const optLarge  = document.getElementById("optLarge");
+  if (optSmall)  optSmall.textContent  = t.fontSmall;
+  if (optMedium) optMedium.textContent = t.fontMedium;
+  if (optLarge)  optLarge.textContent  = t.fontLarge;
+
+  // Navegação
+  setText("navSobre",     t.nav1);
+  setText("navProjetos",  t.nav2);
+  setText("navResultados",t.nav3);
+
+  // Hero
+  setText("heroTag",         t.tag);
+  setHTML("heroTitle",       t.heroTitle);
+  setText("heroDescription", t.heroDesc);
+  setText("explorarBtn",     t.btn);
+
+  // Sobre
+  setText("sobreTitulo", t.sobreTitulo);
+  setText("sobreTexto",  t.sobreTexto);
+  setText("card1Titulo", t.card1Titulo);
+  setText("card1Texto",  t.card1Texto);
+  setText("card2Titulo", t.card2Titulo);
+  setText("card2Texto",  t.card2Texto);
+  setText("card3Titulo", t.card3Titulo);
+  setText("card3Texto",  t.card3Texto);
+
+  // Projetos
+  setText("secao",        t.secao);
+  setText("exemplos",     t.exemplos);
+  setText("projeto1Titulo", t.projeto1Titulo);
+  setText("projeto1Texto",  t.projeto1Texto);
+  setText("projeto1Info",   t.projeto1Info);
+  setText("projeto2Titulo", t.projeto2Titulo);
+  setText("projeto2Texto",  t.projeto2Texto);
+  setText("projeto2Info",   t.projeto2Info);
+  setText("projeto3Titulo", t.projeto3Titulo);
+  setText("projeto3Texto",  t.projeto3Texto);
+  setText("projeto3Info",   t.projeto3Info);
+
+  // Resultados
+  setText("resultadosTitulo", t.resultados);
+  setText("resultado1", t.resultado1);
+  setText("resultado2", t.resultado2);
+  setText("resultado3", t.resultado3);
+
+  // Footer
+  setText("footerText", t.footer);
+}
+
+/* ============================================================
+   FUNÇÃO: aplicar tamanho de fonte
+   ============================================================ */
+
+function applyFontSize(size) {
+  const sizes = { small: "14px", medium: "16px", large: "19px" };
+  document.documentElement.style.fontSize = sizes[size] || "16px";
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
+
+function setHTML(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = value;
+}
+
+/* ============================================================
+   IDIOMA
+   ============================================================ */
+
 const languageSelect = document.getElementById("languageSelect");
 if (languageSelect) {
   const savedLang = localStorage.getItem("agronova-lang") || "pt";
@@ -131,7 +216,10 @@ if (languageSelect) {
   });
 }
 
-/* Tamanho de fonte: */
+/* ============================================================
+   TAMANHO DE FONTE
+   ============================================================ */
+
 const fontSelect = document.getElementById("fontSizeSelect");
 if (fontSelect) {
   const savedFont = localStorage.getItem("agronova-font") || "medium";
@@ -144,7 +232,10 @@ if (fontSelect) {
   });
 }
 
-/* Tema claro/escuro: */
+/* ============================================================
+   TEMA CLARO / ESCURO
+   ============================================================ */
+
 const themeToggle = document.getElementById("themeToggle");
 if (themeToggle) {
   const savedTheme = localStorage.getItem("agronova-theme");
@@ -161,10 +252,14 @@ if (themeToggle) {
   });
 }
 
-/* Botão explorar: */
+/* ============================================================
+   BOTÃO "VER MAIS" — scroll até projetos
+   ============================================================ */
+
 const botao = document.getElementById("explorarBtn");
 if (botao) {
   botao.addEventListener("click", () => {
-    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
+    const secao = document.getElementById("projetos");
+    if (secao) secao.scrollIntoView({ behavior: "smooth" });
   });
 }
