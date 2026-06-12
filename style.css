@@ -14,7 +14,7 @@ body{
   font-family:'Outfit',sans-serif;
 }
 
-/* Hero: */
+/* HERO */
 
 .hero{
   min-height:100vh;
@@ -37,12 +37,6 @@ nav{
   align-items:center;
 }
 
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-
 nav h1{
   font-family:'Space Grotesk',sans-serif;
   font-size:2rem;
@@ -50,17 +44,6 @@ nav h1{
 
 nav span{
   color:#8cff9d;
-}
-
-.agrinho-logo{
-  height:60px;
-  width:auto;
-  object-fit:contain;
-  transition:0.3s;
-}
-
-.agrinho-logo:hover{
-  transform:scale(1.05);
 }
 
 nav ul{
@@ -79,7 +62,7 @@ nav a:hover{
   color:#8cff9d;
 }
 
-/* Controles: */
+/* CONTROLES */
 
 .controls{
   display:flex;
@@ -111,7 +94,7 @@ nav a:hover{
   font-size:1rem;
 }
 
-/* Hero content: */
+/* HERO CONTENT */
 
 .hero-content{
   margin-top:10rem;
@@ -152,7 +135,7 @@ nav a:hover{
   transform:translateY(-3px);
 }
 
-/* Sobre: */
+/* SOBRE */
 
 .sobre{
   padding:6rem 8%;
@@ -194,7 +177,7 @@ nav a:hover{
   line-height:1.6;
 }
 
-/* Projetos: */
+/* PROJETOS */
 
 .projetos{
   padding:6rem 8%;
@@ -256,7 +239,7 @@ nav a:hover{
   font-weight:600;
 }
 
-/* Resultados: */
+/* RESULTADOS */
 
 .resultados{
   padding:5rem 8%;
@@ -286,7 +269,7 @@ nav a:hover{
   color:#8cff9d;
 }
 
-/* Footer: */
+/* FOOTER */
 
 footer{
   padding:2rem;
@@ -294,7 +277,7 @@ footer{
   color:#607062;
 }
 
-/* Modo escuro: */
+/* DARK MODE */
 
 .dark-theme{
   background:#121212;
@@ -338,22 +321,13 @@ footer{
   color:#8cff9d;
 }
 
-/* Responsivo: */
+/* RESPONSIVO */
 
 @media(max-width:900px){
 
   nav{
     flex-wrap:wrap;
     gap:15px;
-  }
-
-  .logo-area{
-    width:100%;
-    justify-content:center;
-  }
-
-  .agrinho-logo{
-    height:50px;
   }
 
   nav ul{
@@ -391,18 +365,6 @@ footer{
   .projetos,
   .resultados{
     padding:4rem 6%;
-  }
-
-  .logo-area{
-    gap:10px;
-  }
-
-  .agrinho-logo{
-    height:42px;
-  }
-
-  nav h1{
-    font-size:1.7rem;
   }
 
   .hero-content h2{
