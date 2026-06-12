@@ -6,34 +6,46 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 16px; /* base para applyFontSize() */
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
-  background: radial-gradient(circle at top, #f5f8f2, #e7efe6);
+  background: #f5f8f2;
   color: #1d2b1f;
-  transition: 0.3s ease;
+  font-family: 'Outfit', sans-serif;
 }
 
-/* =========================
-   NAV
-========================= */
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  min-height: 100vh;
+  padding: 2rem 8%;
+  background:
+    linear-gradient(
+      rgba(10, 20, 10, 0.55),
+      rgba(10, 20, 10, 0.55)
+    ),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 8%;
-  position: relative;
 }
 
 nav h1 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 2rem;
 }
 
 nav span {
-  color: #4caf50;
+  color: #8cff9d;
 }
 
 nav ul {
@@ -43,192 +55,363 @@ nav ul {
 }
 
 nav a {
+  color: white;
   text-decoration: none;
-  color: #1d2b1f;
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #4caf50;
   transition: 0.3s;
 }
 
-nav a:hover::after {
-  width: 100%;
+nav a:hover {
+  color: #8cff9d;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ============================================================
+   CONTROLES
+   ============================================================ */
 
-.hero {
-  min-height: 100vh;
-  padding: 2rem 8%;
-  background:
-    linear-gradient(120deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600');
-  background-size: cover;
-  background-position: center;
-  color: white;
+.controls {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
+
+#languageSelect,
+#fontSizeSelect {
+  height: 40px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  background: white;
+  color: #1d2b1f;
+}
+
+#themeToggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ============================================================
+   HERO CONTENT
+   ============================================================ */
 
 .hero-content {
   margin-top: 10rem;
   max-width: 650px;
 }
 
-.hero-content h2 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 1.1;
-}
-
 .tag {
-  color: #8cff9d;
+  color: #9cffad;
   letter-spacing: 2px;
   margin-bottom: 1rem;
 }
 
+.hero-content h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+}
+
 .hero-content button {
   margin-top: 2rem;
-  padding: 1rem 2.2rem;
+  padding: 1rem 2rem;
   border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #8cff9d, #4caf50);
+  border-radius: 12px;
+  background: #8cff9d;
+  color: #102013;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .hero-content button:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
-/* =========================
-   CARDS (SOBRE + PROJETOS)
-========================= */
+/* ============================================================
+   SOBRE
+   ============================================================ */
 
-.sobre,
+.sobre {
+  padding: 6rem 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.texto h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto p {
+  line-height: 1.8;
+  color: #4d5c4f;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mini-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.mini-card h4 {
+  margin-bottom: 0.8rem;
+}
+
+.mini-card p {
+  color: #566558;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   PROJETOS
+   ============================================================ */
+
 .projetos {
   padding: 6rem 8%;
 }
 
-.cards,
-.grid {
+.section-title p {
+  color: #4a8d52;
+  letter-spacing: 2px;
+}
+
+.section-title h3 {
+  font-size: 2.7rem;
+  margin-top: 0.5rem;
+}
+
+.galeria {
+  margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
-.card {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+.projeto-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
   transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.card:hover {
-  transform: translateY(-8px);
+.projeto-card:hover {
+  transform: translateY(-10px);
 }
 
-/* =========================
+.projeto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.conteudo {
+  padding: 1.5rem;
+}
+
+.conteudo h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.conteudo p {
+  color: #566558;
+  line-height: 1.6;
+}
+
+.conteudo span {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2f8b46;
+  font-weight: 600;
+}
+
+/* ============================================================
    RESULTADOS
-========================= */
+   ============================================================ */
 
 .resultados {
   padding: 5rem 8%;
 }
 
-.box {
-  background: linear-gradient(135deg, #16331b, #0d1f12);
+.resultado-box {
+  background: #16331b;
   color: white;
+  border-radius: 28px;
   padding: 4rem;
-  border-radius: 30px;
-  text-align: center;
 }
 
-.stats {
-  margin-top: 2rem;
-  display: grid;
-  gap: 1rem;
+.resultado-box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-/* =========================
+.numeros {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.numeros h2 {
+  font-size: 3rem;
+  color: #8cff9d;
+}
+
+.numeros p {
+  color: #c5d9c7;
+  margin-top: 0.3rem;
+}
+
+/* ============================================================
    FOOTER
-========================= */
+   ============================================================ */
 
 footer {
-  text-align: center;
   padding: 2rem;
-  color: #555;
+  text-align: center;
+  color: #607062;
 }
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* ============================================================
+   DARK MODE
+   ============================================================ */
 
-.menu-mobile {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+.dark-theme {
+  background: #121212;
+  color: #f5f5f5;
 }
+
+.dark-theme .sobre,
+.dark-theme .projetos,
+.dark-theme .resultados {
+  background: #121212;
+}
+
+.dark-theme .mini-card,
+.dark-theme .projeto-card {
+  background: #1d1d1d;
+  color: #f5f5f5;
+}
+
+.dark-theme .texto p,
+.dark-theme .conteudo p,
+.dark-theme .mini-card p,
+.dark-theme footer {
+  color: #cfcfcf;
+}
+
+.dark-theme .resultado-box {
+  background: #0c1a0f;
+}
+
+.dark-theme #languageSelect,
+.dark-theme #fontSizeSelect,
+.dark-theme #themeToggle {
+  background: #242424;
+  color: white;
+}
+
+.dark-theme #languageSelect option,
+.dark-theme #fontSizeSelect option {
+  background: #242424;
+  color: white;
+}
+
+.dark-theme nav a {
+  color: white;
+}
+
+.dark-theme nav a:hover {
+  color: #8cff9d;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
 
 @media (max-width: 900px) {
-
-  .menu-mobile {
-    display: block;
+  nav {
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   nav ul {
     display: none;
-    position: absolute;
-    top: 70px;
-    right: 8%;
-    flex-direction: column;
-    background: rgba(0,0,0,0.9);
-    padding: 1rem;
-    border-radius: 12px;
-  }
-
-  nav ul.active {
-    display: flex;
   }
 
   .hero-content {
     margin-top: 6rem;
   }
+
+  .hero-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .sobre {
+    grid-template-columns: 1fr;
+  }
+
+  .numeros {
+    flex-direction: column;
+  }
+
+  .controls {
+    margin-left: auto;
+  }
 }
 
-/* =========================
-   DARK MODE
-========================= */
+@media (max-width: 600px) {
+  .hero {
+    padding: 2rem 6%;
+  }
 
-body.dark-theme {
-  background: radial-gradient(circle at top, #0f0f0f, #050505);
-  color: #f5f5f5;
-}
+  .sobre,
+  .projetos,
+  .resultados {
+    padding: 4rem 6%;
+  }
 
-body.dark-theme nav a {
-  color: white;
-}
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
 
-body.dark-theme .card {
-  background: rgba(30,30,30,0.8);
-  color: white;
-}
+  .texto h3,
+  .section-title h3,
+  .resultado-box h3 {
+    font-size: 2rem;
+  }
 
-body.dark-theme .box {
-  background: linear-gradient(135deg, #0d1f12, #000);
+  .resultado-box {
+    padding: 2rem;
+  }
+
+  .numeros h2 {
+    font-size: 2.3rem;
+  }
 }
