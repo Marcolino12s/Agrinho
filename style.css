@@ -1,3 +1,8 @@
+```css
+/* ==========================================================
+   RESET
+========================================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,41 +11,74 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px; /* base para applyFontSize() */
+  font-size: 16px;
 }
 
 body {
+  font-family: "Outfit", sans-serif;
   background: #f5f8f2;
   color: #1d2b1f;
-  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* ============================================================
+/* ==========================================================
+   ANIMAÇÕES
+========================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content,
+.sobre,
+.praticas,
+.projetos,
+.resultados {
+  animation: fadeUp 1s ease;
+}
+
+/* ==========================================================
    HERO
-   ============================================================ */
+========================================================== */
 
 .hero {
   min-height: 100vh;
   padding: 2rem 8%;
+
   background:
     linear-gradient(
-      rgba(10, 20, 10, 0.55),
-      rgba(10, 20, 10, 0.55)
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
     ),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop");
+
   background-size: cover;
   background-position: center;
   color: white;
 }
 
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 nav h1 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 2rem;
 }
 
@@ -50,63 +88,61 @@ nav span {
 
 nav ul {
   display: flex;
-  gap: 2rem;
   list-style: none;
+  gap: 2rem;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  transition: 0.3s;
+  transition: .3s;
+  font-weight: 500;
 }
 
 nav a:hover {
   color: #8cff9d;
 }
 
-/* ============================================================
+.menu-mobile {
+  display: none;
+}
+
+/* ==========================================================
    CONTROLES
-   ============================================================ */
+========================================================== */
 
 .controls {
   display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 12px;
 }
 
+#fontSizeSelect,
 #languageSelect,
-#fontSizeSelect {
-  height: 40px;
-  padding: 0 12px;
+#themeToggle {
+  height: 42px;
   border: none;
-  border-radius: 10px;
-  font-family: 'Outfit', sans-serif;
+  border-radius: 12px;
+  padding: 0 12px;
   cursor: pointer;
-  background: white;
+
+  backdrop-filter: blur(10px);
+
+  background: rgba(255,255,255,.85);
   color: #1d2b1f;
 }
 
 #themeToggle {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border: none;
-  border-radius: 10px;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
+  width: 42px;
 }
 
-/* ============================================================
+/* ==========================================================
    HERO CONTENT
-   ============================================================ */
+========================================================== */
 
 .hero-content {
-  margin-top: 10rem;
-  max-width: 650px;
+  margin-top: 9rem;
+  max-width: 700px;
 }
 
 .tag {
@@ -123,32 +159,61 @@ nav a:hover {
 
 .description {
   font-size: 1.1rem;
-  line-height: 1.7;
-  color: #e5e5e5;
+  line-height: 1.8;
+  color: #ececec;
 }
 
 .hero-content button {
   margin-top: 2rem;
   padding: 1rem 2rem;
+
   border: none;
   border-radius: 12px;
+
   background: #8cff9d;
   color: #102013;
+
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+
+  transition: .3s;
 }
 
 .hero-content button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0,0,0,.15);
 }
 
-/* ============================================================
+/* ==========================================================
+   SEÇÕES
+========================================================== */
+
+.sobre,
+.praticas,
+.projetos,
+.resultados {
+  padding: 6rem 8%;
+}
+
+.section-title {
+  margin-bottom: 3rem;
+}
+
+.section-title p {
+  color: #4a8d52;
+  letter-spacing: 2px;
+  margin-bottom: .5rem;
+}
+
+.section-title h3 {
+  font-size: 2.7rem;
+}
+
+/* ==========================================================
    SOBRE
-   ============================================================ */
+========================================================== */
 
 .sobre {
-  padding: 6rem 8%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -161,8 +226,8 @@ nav a:hover {
 }
 
 .texto p {
-  line-height: 1.8;
-  color: #4d5c4f;
+  line-height: 1.9;
+  color: #556557;
 }
 
 .card-info {
@@ -171,15 +236,33 @@ nav a:hover {
   gap: 1.5rem;
 }
 
-.mini-card {
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.mini-card,
+.projeto-card {
   background: white;
-  padding: 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+  transition: .35s ease;
+}
+
+.mini-card {
+  padding: 1.7rem;
+}
+
+.mini-card:hover,
+.projeto-card:hover {
+  transform: translateY(-8px);
 }
 
 .mini-card h4 {
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
 }
 
 .mini-card p {
@@ -187,41 +270,21 @@ nav a:hover {
   line-height: 1.6;
 }
 
-/* ============================================================
-   PROJETOS
-   ============================================================ */
-
-.projetos {
-  padding: 6rem 8%;
-}
-
-.section-title p {
-  color: #4a8d52;
-  letter-spacing: 2px;
-}
-
-.section-title h3 {
-  font-size: 2.7rem;
-  margin-top: 0.5rem;
-}
+/* ==========================================================
+   GALERIA
+========================================================== */
 
 .galeria {
-  margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
   gap: 2rem;
 }
 
 .projeto-card {
-  background: white;
-  border-radius: 22px;
   overflow: hidden;
-  transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.projeto-card:hover {
-  transform: translateY(-10px);
 }
 
 .projeto-card img {
@@ -235,35 +298,30 @@ nav a:hover {
 }
 
 .conteudo h4 {
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
   font-size: 1.3rem;
 }
 
 .conteudo p {
   color: #566558;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.conteudo span {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #2f8b46;
-  font-weight: 600;
-}
-
-/* ============================================================
+/* ==========================================================
    RESULTADOS
-   ============================================================ */
-
-.resultados {
-  padding: 5rem 8%;
-}
+========================================================== */
 
 .resultado-box {
-  background: #16331b;
+  background: linear-gradient(
+    135deg,
+    #16331b,
+    #214928
+  );
+
   color: white;
-  border-radius: 28px;
+
   padding: 4rem;
+  border-radius: 28px;
 }
 
 .resultado-box h3 {
@@ -274,8 +332,8 @@ nav a:hover {
 .numeros {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .numeros h2 {
@@ -284,23 +342,30 @@ nav a:hover {
 }
 
 .numeros p {
-  color: #c5d9c7;
-  margin-top: 0.3rem;
+  margin-top: .5rem;
+  color: #d4e8d7;
+  max-width: 260px;
 }
 
-/* ============================================================
+.resultado-box small {
+  display: block;
+  margin-top: 2rem;
+  color: #c8d9cb;
+}
+
+/* ==========================================================
    FOOTER
-   ============================================================ */
+========================================================== */
 
 footer {
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
   color: #607062;
 }
 
-/* ============================================================
+/* ==========================================================
    DARK MODE
-   ============================================================ */
+========================================================== */
 
 .dark-theme {
   background: #121212;
@@ -308,6 +373,7 @@ footer {
 }
 
 .dark-theme .sobre,
+.dark-theme .praticas,
 .dark-theme .projetos,
 .dark-theme .resultados {
   background: #121212;
@@ -316,93 +382,95 @@ footer {
 .dark-theme .mini-card,
 .dark-theme .projeto-card {
   background: #1d1d1d;
-  color: #f5f5f5;
 }
 
-.dark-theme .texto p,
-.dark-theme .conteudo p,
 .dark-theme .mini-card p,
+.dark-theme .conteudo p,
+.dark-theme .texto p {
+  color: #d0d0d0;
+}
+
 .dark-theme footer {
   color: #cfcfcf;
 }
 
-.dark-theme .resultado-box {
-  background: #0c1a0f;
-}
-
-.dark-theme #languageSelect,
 .dark-theme #fontSizeSelect,
+.dark-theme #languageSelect,
 .dark-theme #themeToggle {
-  background: #242424;
+  background: #2a2a2a;
   color: white;
 }
 
-.dark-theme #languageSelect option,
-.dark-theme #fontSizeSelect option {
-  background: #242424;
-  color: white;
-}
-
-.dark-theme nav a {
-  color: white;
-}
-
-.dark-theme nav a:hover {
-  color: #8cff9d;
-}
-
-/* ============================================================
+/* ==========================================================
    RESPONSIVO
-   ============================================================ */
+========================================================== */
 
 @media (max-width: 900px) {
-  nav {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  .hero-content {
-    margin-top: 6rem;
-  }
-
-  .hero-content h2 {
-    font-size: 2.8rem;
-  }
 
   .sobre {
     grid-template-columns: 1fr;
   }
 
-  .numeros {
-    flex-direction: column;
+  .hero-content h2 {
+    font-size: 3rem;
   }
 
-  .controls {
-    margin-left: auto;
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+
+    width: 220px;
+
+    background: rgba(0,0,0,.95);
+
+    flex-direction: column;
+    padding: 1.5rem;
+
+    border-radius: 15px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-mobile {
+    display: block;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+    font-size: 2rem;
+
+    cursor: pointer;
   }
 }
 
 @media (max-width: 600px) {
+
   .hero {
     padding: 2rem 6%;
   }
 
   .sobre,
+  .praticas,
   .projetos,
   .resultados {
     padding: 4rem 6%;
   }
 
-  .hero-content h2 {
-    font-size: 2.2rem;
+  .hero-content {
+    margin-top: 5rem;
   }
 
-  .texto h3,
+  .hero-content h2 {
+    font-size: 2.3rem;
+  }
+
   .section-title h3,
+  .texto h3,
   .resultado-box h3 {
     font-size: 2rem;
   }
@@ -411,7 +479,12 @@ footer {
     padding: 2rem;
   }
 
+  .numeros {
+    flex-direction: column;
+  }
+
   .numeros h2 {
     font-size: 2.3rem;
   }
 }
+```
