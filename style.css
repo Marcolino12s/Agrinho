@@ -37,6 +37,12 @@ nav{
   align-items:center;
 }
 
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
 nav h1{
   font-family:'Space Grotesk',sans-serif;
   font-size:2rem;
@@ -44,6 +50,17 @@ nav h1{
 
 nav span{
   color:#8cff9d;
+}
+
+.agrinho-logo{
+  height:60px;
+  width:auto;
+  object-fit:contain;
+  transition:0.3s;
+}
+
+.agrinho-logo:hover{
+  transform:scale(1.05);
 }
 
 nav ul{
@@ -135,7 +152,7 @@ nav a:hover{
   transform:translateY(-3px);
 }
 
-/* Botão sobre: */
+/* Sobre: */
 
 .sobre{
   padding:6rem 8%;
@@ -177,7 +194,7 @@ nav a:hover{
   line-height:1.6;
 }
 
-/* Botão projetos: */
+/* Projetos: */
 
 .projetos{
   padding:6rem 8%;
@@ -239,7 +256,7 @@ nav a:hover{
   font-weight:600;
 }
 
-/* Botão resultados: */
+/* Resultados: */
 
 .resultados{
   padding:5rem 8%;
@@ -330,6 +347,15 @@ footer{
     gap:15px;
   }
 
+  .logo-area{
+    width:100%;
+    justify-content:center;
+  }
+
+  .agrinho-logo{
+    height:50px;
+  }
+
   nav ul{
     display:none;
   }
@@ -365,6 +391,18 @@ footer{
   .projetos,
   .resultados{
     padding:4rem 6%;
+  }
+
+  .logo-area{
+    gap:10px;
+  }
+
+  .agrinho-logo{
+    height:42px;
+  }
+
+  nav h1{
+    font-size:1.7rem;
   }
 
   .hero-content h2{
