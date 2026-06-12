@@ -277,6 +277,124 @@ footer {
   color: #607062;
 }
 
+/* MODAL DE BOAS-VINDAS */
+
+#welcomeOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 10, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.4s;
+}
+
+#welcomeOverlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#welcomeModal {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#welcomeModal h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  color: #1d2b1f;
+}
+
+#welcomeModal p {
+  color: #566558;
+  font-size: 1rem;
+}
+
+#nameInput {
+  padding: 0.8rem 1rem;
+  border: 2px solid #d4e8d6;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  text-align: center;
+}
+
+#nameInput:focus {
+  border-color: #8cff9d;
+}
+
+#welcomeBtn {
+  padding: 0.9rem;
+  background: #8cff9d;
+  color: #102013;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#welcomeBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* SAUDAÇÃO NO HERO */
+
+#greetingBanner {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #8cff9d;
+  color: #102013;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.5s;
+  pointer-events: none;
+}
+
+#greetingBanner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DARK MODE */
+
+.dark-theme #welcomeModal {
+  background: #1d1d1d;
+  color: #f5f5f5;
+}
+
+.dark-theme #welcomeModal h2 {
+  color: #f5f5f5;
+}
+
+.dark-theme #welcomeModal p {
+  color: #cfcfcf;
+}
+
+.dark-theme #nameInput {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
 /* DARK MODE */
 
 .dark-theme {
