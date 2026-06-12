@@ -50,11 +50,29 @@ function applyFontSize(size) {
   document.documentElement.style.fontSize = sizes[size] || "16px";
 }
 
+function applyFontLabels(lang) {
+  const labels = {
+    pt: ["Pequena", "Média", "Grande"],
+    en: ["Small", "Medium", "Large"],
+    es: ["Pequeña", "Mediana", "Grande"]
+  };
+
+  const options = document.querySelectorAll("#fontSizeSelect option");
+  const current = labels[lang] || labels["pt"];
+
+  options[0].textContent = current[0];
+  options[1].textContent = current[1];
+  options[2].textContent = current[2];
+}
+
 /* Traduções: */
 
 const translations = {
 
   pt: {
+    fontSmall: "Pequena",
+    fontMedium: "Média",
+    fontLarge: "Grande",
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
@@ -89,6 +107,9 @@ const translations = {
   },
 
   en: {
+    fontSmall: "Small",
+    fontMedium: "Medium",
+    fontLarge: "Large",
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
@@ -123,6 +144,9 @@ const translations = {
   },
 
   es: {
+    fontSmall: "Pequeña",
+    fontMedium: "Mediana",
+    fontLarge: "Grande",
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
@@ -164,6 +188,13 @@ function applyTranslation(lang) {
   const t = translations[lang];
   if (!t) return;
 
+  const fontSizeSelect = document.getElementById("fontSizeSelect");
+  if (fontSizeSelect) {
+    fontSizeSelect.options[0].textContent = t.fontSmall;
+    fontSizeSelect.options[1].textContent = t.fontMedium;
+    fontSizeSelect.options[2].textContent = t.fontLarge;
+  }
+
   document.getElementById("navSobre").textContent = t.nav1;
   document.getElementById("navProjetos").textContent = t.nav2;
   document.getElementById("navResultados").textContent = t.nav3;
@@ -195,6 +226,8 @@ function applyTranslation(lang) {
   document.getElementById("resultado2").textContent = t.resultado2;
   document.getElementById("resultado3").textContent = t.resultado3;
   document.getElementById("footerText").textContent = t.footer;
+
+  applyFontLabels(lang);
 }
 
 const languageSelect = document.getElementById("languageSelect");
