@@ -8,9 +8,7 @@ if (botao) {
   });
 }
 
-/* Efeito nos cards tratado apenas pelo CSS */
-
-/* Tema claro/escuro com persistência: */
+/* Tema claro/escuro: */
 
 const themeToggle = document.getElementById("themeToggle");
 
@@ -30,7 +28,7 @@ if (themeToggle) {
   });
 }
 
-/* Tamanho de fonte com persistência: */
+/* Tamanho de font: */
 
 const fontSelect = document.getElementById("fontSizeSelect");
 
@@ -158,7 +156,7 @@ const translations = {
 
 };
 
-/* Escolher idioma com persistência: */
+/* Escolher idioma: */
 
 function applyTranslation(lang) {
   const t = translations[lang];
