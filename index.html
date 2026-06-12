@@ -1,144 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AgroNova | Agricultura Sustentável</title>
-
-  <meta name="description" content="Projeto sobre agricultura sustentável e inovação no campo.">
-
+  <title>AgroNova</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-
-    <nav>
-      <h1>Agro<span>Nova</span></h1>
-
-      <button class="menu-mobile" id="menuToggle">☰</button>
-
-      <ul id="menu">
-        <li><a href="#sobre" id="navSobre">Sobre</a></li>
-        <li><a href="#projetos" id="navProjetos">Projetos</a></li>
-        <li><a href="#resultados" id="navResultados">Resultados</a></li>
-      </ul>
-
-      <div class="controls">
-        <select id="languageSelect">
-          <option value="pt">PT</option>
-          <option value="en">EN</option>
-          <option value="es">ES</option>
-        </select>
-
-        <select id="fontSizeSelect">
-          <option value="small">A-</option>
-          <option value="medium" selected>A</option>
-          <option value="large">A+</option>
-        </select>
-
-        <button id="themeToggle">🌙</button>
-      </div>
-    </nav>
-
-    <div class="hero-content">
-
-      <p class="tag" id="heroTag">INOVAÇÃO • SUSTENTABILIDADE</p>
-
-      <h2 id="heroTitle">
-        Agricultura forte,<br> inteligente e sustentável.
-      </h2>
-
-      <p id="heroDescription">
-        Tecnologia e sustentabilidade trabalhando juntas no campo.
-      </p>
-
-      <button id="explorarBtn">Ver mais</button>
-
+<!-- HERO -->
+<header class="hero">
+  <nav>
+    <h1>Agro<span>Nova</span></h1>
+    <ul>
+      <li><a href="#sobre" id="navSobre">Sobre</a></li>
+      <li><a href="#projetos" id="navProjetos">Projetos</a></li>
+      <li><a href="#resultados" id="navResultados">Resultados</a></li>
+    </ul>
+    <div class="controls">
+      <select id="fontSizeSelect" aria-label="Tamanho da fonte">
+        <option value="small" id="optSmall">Pequena</option>
+        <option value="medium" id="optMedium" selected>Média</option>
+        <option value="large" id="optLarge">Grande</option>
+      </select>
+      <select id="languageSelect" aria-label="Selecionar idioma">
+        <option value="pt">PT</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
+      <button id="themeToggle">🌙</button>
     </div>
+  </nav>
+  <div class="hero-content">
+    <p class="tag" id="heroTag">INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO</p>
+    <h2 id="heroTitle">Um agro forte,<br>inteligente e sustentável.</h2>
+    <p class="description" id="heroDescription">
+      Incentivando práticas agrícolas modernas, sustentáveis,
+      econômicas e conscientes, para proteger não somente o meio ambiente,
+      mas também o futuro.
+    </p>
+    <button id="explorarBtn">Ver mais</button>
+  </div>
+</header>
 
-  </header>
-
-  <!-- SOBRE -->
-  <section class="sobre" id="sobre">
-    <div>
-      <h3 id="sobreTitulo">Produzir sem destruir</h3>
-      <p id="sobreTexto"></p>
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="texto">
+    <h3 id="sobreTitulo">Produzir sem destruir</h3>
+    <p id="sobreTexto">
+      O agro sustentável combina produtividade, inovação e preservação ambiental.
+      Com técnicas modernas, é possível reduzir desperdícios, economizar recursos
+      naturais e ainda melhorar a qualidade da produção.
+    </p>
+  </div>
+  <div class="card-info">
+    <div class="mini-card">
+      <h4 id="card1Titulo">Menos desperdício</h4>
+      <p id="card1Texto">Aproveitamento inteligente de recursos e produção mais consciente.</p>
     </div>
-
-    <div class="cards">
-      <div class="card">
-        <h4 id="card1Titulo"></h4>
-        <p id="card1Texto"></p>
-      </div>
-
-      <div class="card">
-        <h4 id="card2Titulo"></h4>
-        <p id="card2Texto"></p>
-      </div>
-
-      <div class="card">
-        <h4 id="card3Titulo"></h4>
-        <p id="card3Texto"></p>
-      </div>
+    <div class="mini-card">
+      <h4 id="card2Titulo">Mais eficiência</h4>
+      <p id="card2Texto">Tecnologia e inovação para produzir mais com menos.</p>
     </div>
-  </section>
-
-  <!-- PROJETOS -->
-  <section class="projetos" id="projetos">
-
-    <h3 id="exemplos">Exemplos</h3>
-
-    <div class="grid">
-
-      <div class="card">
-        <h4 id="projeto1Titulo"></h4>
-        <p id="projeto1Texto"></p>
-      </div>
-
-      <div class="card">
-        <h4 id="projeto2Titulo"></h4>
-        <p id="projeto2Texto"></p>
-      </div>
-
-      <div class="card">
-        <h4 id="projeto3Titulo"></h4>
-        <p id="projeto3Texto"></p>
-      </div>
-
+    <div class="mini-card">
+      <h4 id="card3Titulo">Futuro sustentável</h4>
+      <p id="card3Texto">Equilíbrio entre produtividade, natureza e desenvolvimento.</p>
     </div>
+  </div>
+</section>
 
-  </section>
-
-  <!-- RESULTADOS -->
-  <section class="resultados" id="resultados">
-
-    <div class="box">
-      <h3 id="resultadosTitulo"></h3>
-
-      <div class="stats">
-        <p id="resultado1"></p>
-        <p id="resultado2"></p>
-        <p id="resultado3"></p>
+<!-- PROJETOS -->
+<section class="projetos" id="projetos">
+  <div class="section-title">
+    <p id="secao">SUSTENTABILIDADE</p>
+    <h3 id="exemplos">Exemplos e resultados</h3>
+  </div>
+  <div class="galeria">
+    <div class="projeto-card">
+      <img
+        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop"
+        alt="Cultivo sustentável"
+      >
+      <div class="conteudo">
+        <h4 id="projeto1Titulo">Cultivo sustentável</h4>
+        <p id="projeto1Texto">Tecnologia e cuidado ambiental trabalhando juntos no campo.</p>
+        <span id="projeto1Info">✔ Preservação e produtividade</span>
       </div>
     </div>
+    <div class="projeto-card">
+      <img
+        src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop"
+        alt="Produção eficiente"
+      >
+      <div class="conteudo">
+        <h4 id="projeto2Titulo">Produção eficiente</h4>
+        <p id="projeto2Texto">Métodos modernos para reduzir desperdícios e aumentar resultados.</p>
+        <span id="projeto2Info">✔ Mais rendimento agrícola</span>
+      </div>
+    </div>
+    <div class="projeto-card">
+      <img
+        src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop"
+        alt="Solo preservado"
+      >
+      <div class="conteudo">
+        <h4 id="projeto3Titulo">Solo preservado</h4>
+        <p id="projeto3Texto">Técnicas naturais que fortalecem a terra e melhoram a colheita.</p>
+        <span id="projeto3Info">✔ Maior fertilidade natural</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </section>
+<!-- RESULTADOS -->
+<section class="resultados" id="resultados">
+  <div class="resultado-box">
+    <h3 id="resultadosTitulo">Impactos positivos</h3>
+    <div class="numeros">
+      <div>
+        <h2>+40%</h2>
+        <p id="resultado1">Eficiência agrícola.</p>
+      </div>
+      <div>
+        <h2>-30%</h2>
+        <p id="resultado2">Desperdício hídrico.</p>
+      </div>
+      <div>
+        <h2>+60%</h2>
+        <p id="resultado3">Uso de energia limpa.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p id="footerText"></p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p id="footerText">© 2026 AgroNova | Projeto Agrinho.</p>
+</footer>
 
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
