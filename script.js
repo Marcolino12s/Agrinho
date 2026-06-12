@@ -1,21 +1,60 @@
-/* ============================================================
-   TRADUÇÕES — declaradas primeiro para ficarem disponíveis
-   para todas as funções abaixo
-   ============================================================ */
+/* Botão explorar: */
+
+const botao = document.getElementById("explorarBtn");
+
+if (botao) {
+  botao.addEventListener("click", () => {
+    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+/* Efeito nos cards tratado apenas pelo CSS */
+
+/* Tema claro/escuro com persistência: */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+  const savedTheme = localStorage.getItem("agronova-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    const isDark = document.body.classList.contains("dark-theme");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
+  });
+}
+
+/* Tamanho de fonte com persistência: */
+
+const fontSelect = document.getElementById("fontSizeSelect");
+
+if (fontSelect) {
+  const savedFont = localStorage.getItem("agronova-font") || "medium";
+  fontSelect.value = savedFont;
+  applyFontSize(savedFont);
+
+  fontSelect.addEventListener("change", () => {
+    applyFontSize(fontSelect.value);
+    localStorage.setItem("agronova-font", fontSelect.value);
+  });
+}
+
+function applyFontSize(size) {
+  const sizes = { small: "14px", medium: "16px", large: "19px" };
+  document.documentElement.style.fontSize = sizes[size] || "16px";
+}
+
+/* Traduções: */
 
 const translations = {
 
   pt: {
-    fontSmall: "Pequena",
-    fontMedium: "Média",
-    fontLarge: "Grande",
-    welcomeTitle: "Bem-vindo à AgroNova!",
-    welcomeSubtitle: "Como podemos te chamar?",
-    welcomePlaceholder: "Seu nome...",
-    welcomeBtn: "Entrar",
-    greetingMorning: "Bom dia",
-    greetingAfternoon: "Boa tarde",
-    greetingEvening: "Boa noite",
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
@@ -50,16 +89,6 @@ const translations = {
   },
 
   en: {
-    fontSmall: "Small",
-    fontMedium: "Medium",
-    fontLarge: "Large",
-    welcomeTitle: "Welcome to AgroNova!",
-    welcomeSubtitle: "What can we call you?",
-    welcomePlaceholder: "Your name...",
-    welcomeBtn: "Enter",
-    greetingMorning: "Good morning",
-    greetingAfternoon: "Good afternoon",
-    greetingEvening: "Good evening",
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
@@ -94,16 +123,6 @@ const translations = {
   },
 
   es: {
-    fontSmall: "Pequeña",
-    fontMedium: "Mediana",
-    fontLarge: "Grande",
-    welcomeTitle: "¡Bienvenido a AgroNova!",
-    welcomeSubtitle: "¿Cómo podemos llamarte?",
-    welcomePlaceholder: "Tu nombre...",
-    welcomeBtn: "Entrar",
-    greetingMorning: "Buenos días",
-    greetingAfternoon: "Buenas tardes",
-    greetingEvening: "Buenas noches",
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
@@ -139,91 +158,47 @@ const translations = {
 
 };
 
-/* ============================================================
-   FUNÇÕES — declaradas após translations
-   ============================================================ */
-
-function applyFontSize(size) {
-  const sizes = { small: "14px", medium: "16px", large: "19px" };
-  document.documentElement.style.fontSize = sizes[size] || "16px";
-}
-
-function showGreeting(name) {
-  const greeting = document.getElementById("greetingBanner");
-  if (!greeting) return;
-
-  const lang = localStorage.getItem("agronova-lang") || "pt";
-  const t = translations[lang];
-  const hour = new Date().getHours();
-  let saudacao;
-  if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
-  else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
-  else                               saudacao = t.greetingEvening;
-
-  greeting.textContent = "🌿 " + saudacao + ", " + name + "!";
-  greeting.classList.add("visible");
-  setTimeout(() => greeting.classList.remove("visible"), 5000);
-}
+/* Escolher idioma com persistência: */
 
 function applyTranslation(lang) {
   const t = translations[lang];
   if (!t) return;
 
-  const fontSizeSelect = document.getElementById("fontSizeSelect");
-  if (fontSizeSelect) {
-    fontSizeSelect.options[0].textContent = t.fontSmall;
-    fontSizeSelect.options[1].textContent = t.fontMedium;
-    fontSizeSelect.options[2].textContent = t.fontLarge;
-  }
-
-  const wTitle    = document.getElementById("welcomeTitle");
-  const wSubtitle = document.getElementById("welcomeSubtitle");
-  const wBtn      = document.getElementById("welcomeBtn");
-  const nameInput = document.getElementById("nameInput");
-  if (wTitle)    wTitle.textContent       = t.welcomeTitle;
-  if (wSubtitle) wSubtitle.textContent    = t.welcomeSubtitle;
-  if (nameInput) nameInput.placeholder    = t.welcomePlaceholder;
-  if (wBtn)      wBtn.textContent         = t.welcomeBtn;
-
-  document.getElementById("navSobre").textContent       = t.nav1;
-  document.getElementById("navProjetos").textContent    = t.nav2;
-  document.getElementById("navResultados").textContent  = t.nav3;
-  document.getElementById("heroTag").textContent        = t.tag;
-  document.getElementById("heroTitle").innerHTML        = t.heroTitle;
+  document.getElementById("navSobre").textContent = t.nav1;
+  document.getElementById("navProjetos").textContent = t.nav2;
+  document.getElementById("navResultados").textContent = t.nav3;
+  document.getElementById("heroTag").textContent = t.tag;
+  document.getElementById("heroTitle").innerHTML = t.heroTitle;
   document.getElementById("heroDescription").textContent = t.heroDesc;
-  document.getElementById("explorarBtn").textContent    = t.btn;
-  document.getElementById("sobreTitulo").textContent    = t.sobreTitulo;
-  document.getElementById("sobreTexto").textContent     = t.sobreTexto;
-  document.getElementById("card1Titulo").textContent    = t.card1Titulo;
-  document.getElementById("card1Texto").textContent     = t.card1Texto;
-  document.getElementById("card2Titulo").textContent    = t.card2Titulo;
-  document.getElementById("card2Texto").textContent     = t.card2Texto;
-  document.getElementById("card3Titulo").textContent    = t.card3Titulo;
-  document.getElementById("card3Texto").textContent     = t.card3Texto;
-  document.getElementById("projetosTag").textContent    = t.secao;
+  document.getElementById("explorarBtn").textContent = t.btn;
+  document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
+  document.getElementById("sobreTexto").textContent = t.sobreTexto;
+  document.getElementById("card1Titulo").textContent = t.card1Titulo;
+  document.getElementById("card1Texto").textContent = t.card1Texto;
+  document.getElementById("card2Titulo").textContent = t.card2Titulo;
+  document.getElementById("card2Texto").textContent = t.card2Texto;
+  document.getElementById("card3Titulo").textContent = t.card3Titulo;
+  document.getElementById("card3Texto").textContent = t.card3Texto;
+  document.getElementById("projetosTag").textContent = t.secao;
   document.getElementById("projetosTitulo").textContent = t.exemplos;
   document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
-  document.getElementById("projeto1Texto").textContent  = t.projeto1Texto;
-  document.getElementById("projeto1Info").textContent   = t.projeto1Info;
+  document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
+  document.getElementById("projeto1Info").textContent = t.projeto1Info;
   document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
-  document.getElementById("projeto2Texto").textContent  = t.projeto2Texto;
-  document.getElementById("projeto2Info").textContent   = t.projeto2Info;
+  document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
+  document.getElementById("projeto2Info").textContent = t.projeto2Info;
   document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
-  document.getElementById("projeto3Texto").textContent  = t.projeto3Texto;
-  document.getElementById("projeto3Info").textContent   = t.projeto3Info;
+  document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
+  document.getElementById("projeto3Info").textContent = t.projeto3Info;
   document.getElementById("resultadoTitulo").textContent = t.resultados;
-  document.getElementById("resultado1").textContent     = t.resultado1;
-  document.getElementById("resultado2").textContent     = t.resultado2;
-  document.getElementById("resultado3").textContent     = t.resultado3;
-  document.getElementById("footerText").textContent     = t.footer;
+  document.getElementById("resultado1").textContent = t.resultado1;
+  document.getElementById("resultado2").textContent = t.resultado2;
+  document.getElementById("resultado3").textContent = t.resultado3;
+  document.getElementById("footerText").textContent = t.footer;
 }
 
-/* ============================================================
-   INICIALIZAÇÃO
-   ============================================================ */
-
-/* Idioma: */
 const languageSelect = document.getElementById("languageSelect");
+
 if (languageSelect) {
   const savedLang = localStorage.getItem("agronova-lang") || "pt";
   languageSelect.value = savedLang;
@@ -232,74 +207,5 @@ if (languageSelect) {
   languageSelect.addEventListener("change", () => {
     applyTranslation(languageSelect.value);
     localStorage.setItem("agronova-lang", languageSelect.value);
-  });
-}
-
-/* Tamanho de fonte: */
-const fontSelect = document.getElementById("fontSizeSelect");
-if (fontSelect) {
-  const savedFont = localStorage.getItem("agronova-font") || "medium";
-  fontSelect.value = savedFont;
-  applyFontSize(savedFont);
-
-  fontSelect.addEventListener("change", () => {
-    applyFontSize(fontSelect.value);
-    localStorage.setItem("agronova-font", fontSelect.value);
-  });
-}
-
-/* Tema claro/escuro: */
-const themeToggle = document.getElementById("themeToggle");
-if (themeToggle) {
-  const savedTheme = localStorage.getItem("agronova-theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-theme");
-    themeToggle.textContent = "☀️";
-  }
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
-  });
-}
-
-/* Modal de boas-vindas: */
-const overlay    = document.getElementById("welcomeOverlay");
-const nameInput  = document.getElementById("nameInput");
-const welcomeBtn = document.getElementById("welcomeBtn");
-
-function closeModal(name) {
-  overlay.classList.add("hidden");
-  setTimeout(() => overlay.style.display = "none", 400);
-  showGreeting(name);
-}
-
-const savedName = localStorage.getItem("agronova-name");
-if (savedName) {
-  overlay.style.display = "none";
-  setTimeout(() => showGreeting(savedName), 600);
-}
-
-if (welcomeBtn) {
-  welcomeBtn.addEventListener("click", () => {
-    const name = nameInput.value.trim() || "visitante";
-    localStorage.setItem("agronova-name", name);
-    closeModal(name);
-  });
-}
-
-if (nameInput) {
-  nameInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") welcomeBtn.click();
-  });
-}
-
-/* Botão explorar: */
-const botao = document.getElementById("explorarBtn");
-if (botao) {
-  botao.addEventListener("click", () => {
-    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
   });
 }
