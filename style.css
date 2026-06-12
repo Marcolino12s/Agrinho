@@ -135,7 +135,7 @@ nav a:hover{
   transform:translateY(-3px);
 }
 
-/* SOBRE */
+/* Botão sobre: */
 
 .sobre{
   padding:6rem 8%;
@@ -177,7 +177,7 @@ nav a:hover{
   line-height:1.6;
 }
 
-/* PROJETOS */
+/* Botão projetos: */
 
 .projetos{
   padding:6rem 8%;
@@ -239,7 +239,7 @@ nav a:hover{
   font-weight:600;
 }
 
-/* RESULTADOS */
+/* Botão resultados: */
 
 .resultados{
   padding:5rem 8%;
@@ -269,7 +269,7 @@ nav a:hover{
   color:#8cff9d;
 }
 
-/* FOOTER */
+/* Footer: */
 
 footer{
   padding:2rem;
@@ -277,7 +277,7 @@ footer{
   color:#607062;
 }
 
-/* DARK MODE */
+/* Modo escuro: */
 
 .dark-theme{
   background:#121212;
@@ -321,7 +321,7 @@ footer{
   color:#8cff9d;
 }
 
-/* RESPONSIVO */
+/* Responsivo: */
 
 @media(max-width:900px){
 
