@@ -1,120 +1,7 @@
-/* Modal de boas-vindas: */
-
-const overlay     = document.getElementById("welcomeOverlay");
-const nameInput   = document.getElementById("nameInput");
-const welcomeBtn  = document.getElementById("welcomeBtn");
-const greeting    = document.getElementById("greetingBanner");
-
-function showGreeting(name) {
-  const lang = localStorage.getItem("agronova-lang") || "pt";
-  const t = translations[lang];
-  const hour = new Date().getHours();
-  let saudacao;
-  if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
-  else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
-  else                               saudacao = t.greetingEvening;
-
-  greeting.textContent = `🌿 ${saudacao}, ${name}!`;
-  greeting.classList.add("visible");
-
-  setTimeout(() => greeting.classList.remove("visible"), 5000);
-}
-
-function closeModal(name) {
-  overlay.classList.add("hidden");
-  setTimeout(() => overlay.style.display = "none", 400);
-  showGreeting(name);
-}
-
-const savedName = localStorage.getItem("agronova-name");
-
-if (savedName) {
-  overlay.style.display = "none";
-  setTimeout(() => showGreeting(savedName), 600);
-}
-
-if (welcomeBtn) {
-  welcomeBtn.addEventListener("click", () => {
-    const name = nameInput.value.trim() || "visitante";
-    localStorage.setItem("agronova-name", name);
-    closeModal(name);
-  });
-}
-
-if (nameInput) {
-  nameInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") welcomeBtn.click();
-  });
-}
-
-/* Botão explorar: */
-
-const botao = document.getElementById("explorarBtn");
-
-if (botao) {
-  botao.addEventListener("click", () => {
-    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
-  });
-}
-
-/* Efeito nos cards tratado apenas pelo CSS */
-
-/* Tema claro/escuro com persistência: */
-
-const themeToggle = document.getElementById("themeToggle");
-
-if (themeToggle) {
-  const savedTheme = localStorage.getItem("agronova-theme");
-
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-theme");
-    themeToggle.textContent = "☀️";
-  }
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
-  });
-}
-
-/* Tamanho de fonte com persistência: */
-
-const fontSelect = document.getElementById("fontSizeSelect");
-
-if (fontSelect) {
-  const savedFont = localStorage.getItem("agronova-font") || "medium";
-  fontSelect.value = savedFont;
-  applyFontSize(savedFont);
-
-  fontSelect.addEventListener("change", () => {
-    applyFontSize(fontSelect.value);
-    localStorage.setItem("agronova-font", fontSelect.value);
-  });
-}
-
-function applyFontSize(size) {
-  const sizes = { small: "14px", medium: "16px", large: "19px" };
-  document.documentElement.style.fontSize = sizes[size] || "16px";
-}
-
-function applyFontLabels(lang) {
-  const labels = {
-    pt: ["Pequena", "Média", "Grande"],
-    en: ["Small", "Medium", "Large"],
-    es: ["Pequeña", "Mediana", "Grande"]
-  };
-
-  const options = document.querySelectorAll("#fontSizeSelect option");
-  const current = labels[lang] || labels["pt"];
-
-  options[0].textContent = current[0];
-  options[1].textContent = current[1];
-  options[2].textContent = current[2];
-}
-
-/* Traduções: */
+/* ============================================================
+   TRADUÇÕES — declaradas primeiro para ficarem disponíveis
+   para todas as funções abaixo
+   ============================================================ */
 
 const translations = {
 
@@ -252,7 +139,31 @@ const translations = {
 
 };
 
-/* Escolher idioma com persistência: */
+/* ============================================================
+   FUNÇÕES — declaradas após translations
+   ============================================================ */
+
+function applyFontSize(size) {
+  const sizes = { small: "14px", medium: "16px", large: "19px" };
+  document.documentElement.style.fontSize = sizes[size] || "16px";
+}
+
+function showGreeting(name) {
+  const greeting = document.getElementById("greetingBanner");
+  if (!greeting) return;
+
+  const lang = localStorage.getItem("agronova-lang") || "pt";
+  const t = translations[lang];
+  const hour = new Date().getHours();
+  let saudacao;
+  if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
+  else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
+  else                               saudacao = t.greetingEvening;
+
+  greeting.textContent = "🌿 " + saudacao + ", " + name + "!";
+  greeting.classList.add("visible");
+  setTimeout(() => greeting.classList.remove("visible"), 5000);
+}
 
 function applyTranslation(lang) {
   const t = translations[lang];
@@ -265,61 +176,54 @@ function applyTranslation(lang) {
     fontSizeSelect.options[2].textContent = t.fontLarge;
   }
 
-  const wTitle = document.getElementById("welcomeTitle");
+  const wTitle    = document.getElementById("welcomeTitle");
   const wSubtitle = document.getElementById("welcomeSubtitle");
-  const wBtn = document.getElementById("welcomeBtn");
-  if (wTitle) wTitle.textContent = t.welcomeTitle;
-  if (wSubtitle) wSubtitle.textContent = t.welcomeSubtitle;
-  if (nameInput) nameInput.placeholder = t.welcomePlaceholder;
-  if (wBtn) wBtn.textContent = t.welcomeBtn;
+  const wBtn      = document.getElementById("welcomeBtn");
+  const nameInput = document.getElementById("nameInput");
+  if (wTitle)    wTitle.textContent       = t.welcomeTitle;
+  if (wSubtitle) wSubtitle.textContent    = t.welcomeSubtitle;
+  if (nameInput) nameInput.placeholder    = t.welcomePlaceholder;
+  if (wBtn)      wBtn.textContent         = t.welcomeBtn;
 
-  const name = localStorage.getItem("agronova-name");
-  if (name && greeting) {
-    const hour = new Date().getHours();
-    let saudacao;
-    if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
-    else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
-    else                               saudacao = t.greetingEvening;
-    greeting.textContent = `🌿 ${saudacao}, ${name}!`;
-  }
-
-  document.getElementById("navSobre").textContent = t.nav1;
-  document.getElementById("navProjetos").textContent = t.nav2;
-  document.getElementById("navResultados").textContent = t.nav3;
-  document.getElementById("heroTag").textContent = t.tag;
-  document.getElementById("heroTitle").innerHTML = t.heroTitle;
+  document.getElementById("navSobre").textContent       = t.nav1;
+  document.getElementById("navProjetos").textContent    = t.nav2;
+  document.getElementById("navResultados").textContent  = t.nav3;
+  document.getElementById("heroTag").textContent        = t.tag;
+  document.getElementById("heroTitle").innerHTML        = t.heroTitle;
   document.getElementById("heroDescription").textContent = t.heroDesc;
-  document.getElementById("explorarBtn").textContent = t.btn;
-  document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
-  document.getElementById("sobreTexto").textContent = t.sobreTexto;
-  document.getElementById("card1Titulo").textContent = t.card1Titulo;
-  document.getElementById("card1Texto").textContent = t.card1Texto;
-  document.getElementById("card2Titulo").textContent = t.card2Titulo;
-  document.getElementById("card2Texto").textContent = t.card2Texto;
-  document.getElementById("card3Titulo").textContent = t.card3Titulo;
-  document.getElementById("card3Texto").textContent = t.card3Texto;
-  document.getElementById("projetosTag").textContent = t.secao;
+  document.getElementById("explorarBtn").textContent    = t.btn;
+  document.getElementById("sobreTitulo").textContent    = t.sobreTitulo;
+  document.getElementById("sobreTexto").textContent     = t.sobreTexto;
+  document.getElementById("card1Titulo").textContent    = t.card1Titulo;
+  document.getElementById("card1Texto").textContent     = t.card1Texto;
+  document.getElementById("card2Titulo").textContent    = t.card2Titulo;
+  document.getElementById("card2Texto").textContent     = t.card2Texto;
+  document.getElementById("card3Titulo").textContent    = t.card3Titulo;
+  document.getElementById("card3Texto").textContent     = t.card3Texto;
+  document.getElementById("projetosTag").textContent    = t.secao;
   document.getElementById("projetosTitulo").textContent = t.exemplos;
   document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
-  document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
-  document.getElementById("projeto1Info").textContent = t.projeto1Info;
+  document.getElementById("projeto1Texto").textContent  = t.projeto1Texto;
+  document.getElementById("projeto1Info").textContent   = t.projeto1Info;
   document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
-  document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
-  document.getElementById("projeto2Info").textContent = t.projeto2Info;
+  document.getElementById("projeto2Texto").textContent  = t.projeto2Texto;
+  document.getElementById("projeto2Info").textContent   = t.projeto2Info;
   document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
-  document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
-  document.getElementById("projeto3Info").textContent = t.projeto3Info;
+  document.getElementById("projeto3Texto").textContent  = t.projeto3Texto;
+  document.getElementById("projeto3Info").textContent   = t.projeto3Info;
   document.getElementById("resultadoTitulo").textContent = t.resultados;
-  document.getElementById("resultado1").textContent = t.resultado1;
-  document.getElementById("resultado2").textContent = t.resultado2;
-  document.getElementById("resultado3").textContent = t.resultado3;
-  document.getElementById("footerText").textContent = t.footer;
-
-  applyFontLabels(lang);
+  document.getElementById("resultado1").textContent     = t.resultado1;
+  document.getElementById("resultado2").textContent     = t.resultado2;
+  document.getElementById("resultado3").textContent     = t.resultado3;
+  document.getElementById("footerText").textContent     = t.footer;
 }
 
-const languageSelect = document.getElementById("languageSelect");
+/* ============================================================
+   INICIALIZAÇÃO
+   ============================================================ */
 
+/* Idioma: */
+const languageSelect = document.getElementById("languageSelect");
 if (languageSelect) {
   const savedLang = localStorage.getItem("agronova-lang") || "pt";
   languageSelect.value = savedLang;
@@ -328,5 +232,74 @@ if (languageSelect) {
   languageSelect.addEventListener("change", () => {
     applyTranslation(languageSelect.value);
     localStorage.setItem("agronova-lang", languageSelect.value);
+  });
+}
+
+/* Tamanho de fonte: */
+const fontSelect = document.getElementById("fontSizeSelect");
+if (fontSelect) {
+  const savedFont = localStorage.getItem("agronova-font") || "medium";
+  fontSelect.value = savedFont;
+  applyFontSize(savedFont);
+
+  fontSelect.addEventListener("change", () => {
+    applyFontSize(fontSelect.value);
+    localStorage.setItem("agronova-font", fontSelect.value);
+  });
+}
+
+/* Tema claro/escuro: */
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  const savedTheme = localStorage.getItem("agronova-theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    const isDark = document.body.classList.contains("dark-theme");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
+  });
+}
+
+/* Modal de boas-vindas: */
+const overlay    = document.getElementById("welcomeOverlay");
+const nameInput  = document.getElementById("nameInput");
+const welcomeBtn = document.getElementById("welcomeBtn");
+
+function closeModal(name) {
+  overlay.classList.add("hidden");
+  setTimeout(() => overlay.style.display = "none", 400);
+  showGreeting(name);
+}
+
+const savedName = localStorage.getItem("agronova-name");
+if (savedName) {
+  overlay.style.display = "none";
+  setTimeout(() => showGreeting(savedName), 600);
+}
+
+if (welcomeBtn) {
+  welcomeBtn.addEventListener("click", () => {
+    const name = nameInput.value.trim() || "visitante";
+    localStorage.setItem("agronova-name", name);
+    closeModal(name);
+  });
+}
+
+if (nameInput) {
+  nameInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") welcomeBtn.click();
+  });
+}
+
+/* Botão explorar: */
+const botao = document.getElementById("explorarBtn");
+if (botao) {
+  botao.addEventListener("click", () => {
+    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
   });
 }
