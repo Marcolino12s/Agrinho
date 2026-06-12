@@ -1,18 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroNova</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <header class="hero">
 
   <nav>
-
-    <div class="logo-area">
-
-      <h1>Agro<span>Nova</span></h1>
-
-      <img
-        src="images/agrinho-logo.png"
-        alt="Logo Agrinho"
-        class="agrinho-logo"
-      >
-
-    </div>
+    <h1>Agro<span>Nova</span></h1>
 
     <ul>
       <li><a href="#sobre" id="navSobre">Sobre</a></li>
@@ -29,5 +34,208 @@
 
       <button id="themeToggle">🌙</button>
     </div>
-
   </nav>
+
+  <div class="hero-content">
+
+    <p class="tag" id="heroTag">
+      INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO
+    </p>
+
+    <h2 id="heroTitle">
+      Um agro forte,<br>
+      inteligente e sustentável.
+    </h2>
+
+    <p class="description" id="heroDescription">
+      Incentivando práticas agrícolas modernas, sustentáveis,
+      econômicas e conscientes, para proteger não somente o meio ambiente,
+      mas também o futuro.
+    </p>
+
+    <button id="explorarBtn">Ver mais</button>
+
+  </div>
+
+</header>
+
+<section class="sobre" id="sobre">
+
+  <div class="texto">
+
+    <h3 id="sobreTitulo">
+      Produzir sem destruir
+    </h3>
+
+    <p id="sobreTexto">
+      O agro sustentável combina produtividade,
+      inovação e preservação ambiental.
+      Com técnicas modernas, é possível reduzir desperdícios,
+      economizar recursos naturais e ainda melhorar a
+      qualidade da produção.
+    </p>
+
+  </div>
+
+  <div class="card-info">
+
+    <div class="mini-card">
+      <h4 id="card1Titulo">Menos desperdício</h4>
+
+      <p id="card1Texto">
+        Aproveitamento inteligente de recursos e produção mais consciente.
+      </p>
+    </div>
+
+    <div class="mini-card">
+      <h4 id="card2Titulo">Mais eficiência</h4>
+
+      <p id="card2Texto">
+        Tecnologia e inovação para produzir mais com menos.
+      </p>
+    </div>
+
+    <div class="mini-card">
+      <h4 id="card3Titulo">Futuro sustentável</h4>
+
+      <p id="card3Texto">
+        Equilíbrio entre produtividade, natureza e desenvolvimento.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="projetos" id="projetos">
+
+  <div class="section-title">
+    <p id="projetosTag">SUSTENTABILIDADE</p>
+
+    <h3 id="projetosTitulo">
+      Exemplos e resultados
+    </h3>
+  </div>
+
+  <div class="galeria">
+
+    <div class="projeto-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+        alt="Plantação sustentável"
+      >
+
+      <div class="conteudo">
+
+        <h4 id="projeto1Titulo">
+          Cultivo sustentável
+        </h4>
+
+        <p id="projeto1Texto">
+          Tecnologia e cuidado ambiental trabalhando juntos no campo.
+        </p>
+
+        <span id="projeto1Info">
+          ✔ Preservação e produtividade
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="projeto-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
+        alt="Energia solar no campo"
+      >
+
+      <div class="conteudo">
+
+        <h4 id="projeto2Titulo">
+          Produção eficiente
+        </h4>
+
+        <p id="projeto2Texto">
+          Métodos modernos para reduzir desperdícios e aumentar resultados.
+        </p>
+
+        <span id="projeto2Info">
+          ✔ Mais rendimento agrícola
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="projeto-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
+        alt="Agricultura verde"
+      >
+
+      <div class="conteudo">
+
+        <h4 id="projeto3Titulo">
+          Solo preservado
+        </h4>
+
+        <p id="projeto3Texto">
+          Técnicas naturais que fortalecem a terra e melhoram a colheita.
+        </p>
+
+        <span id="projeto3Info">
+          ✔ Maior fertilidade natural
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="resultados" id="resultados">
+
+  <div class="resultado-box">
+
+    <h3 id="resultadoTitulo">
+      Impactos positivos
+    </h3>
+
+    <div class="numeros">
+
+      <div>
+        <h2>+47,3%</h2>
+        <p id="resultado1">Eficiência agrícola.</p>
+      </div>
+
+      <div>
+        <h2>-34,8%</h2>
+        <p id="resultado2">Desperdício hídrico.</p>
+      </div>
+
+      <div>
+        <h2>+63,5%</h2>
+        <p id="resultado3">Uso de energia limpa.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <p id="footerText">
+    © 2026 AgroNova | Projeto Agrinho.
+  </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
