@@ -1,10 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AgroNova</title>
+  <title>AgroNova | Agrinho 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +24,9 @@
       <h1>Agro<span>Nova</span></h1>
 
       <ul>
-        <li><a href="#desafio" id="navDesafio">Desafio</a></li>
-        <li><a href="#solucoes" id="navSolucoes">Soluções</a></li>
-        <li><a href="#beneficios" id="navBeneficios">Benefícios</a></li>
+        <li><a href="#equilibrio" id="navSobre">Equilíbrio</a></li>
+        <li><a href="#solucoes" id="navProjetos">Soluções</a></li>
+        <li><a href="#beneficios" id="navResultados">Benefícios</a></li>
       </ul>
 
       <div class="controls">
@@ -37,7 +37,9 @@
           <option value="es">ES</option>
         </select>
 
-        <button id="themeToggle">🌙</button>
+        <button id="themeToggle" aria-label="Alternar tema">
+          🌙
+        </button>
 
       </div>
 
@@ -46,7 +48,7 @@
     <div class="hero-content">
 
       <p class="tag" id="heroTag">
-        AGRICULTURA • TECNOLOGIA • FUTURO
+        PRODUÇÃO • EQUILÍBRIO • FUTURO
       </p>
 
       <h2 id="heroTitle">
@@ -55,81 +57,63 @@
       </h2>
 
       <p class="description" id="heroDescription">
-        [Escreva aqui uma breve apresentação do tema.]
+        Escreva aqui uma breve introdução sobre o tema do projeto.
       </p>
 
       <button id="explorarBtn">
-        Explorar
+        Saiba mais
       </button>
 
     </div>
 
   </header>
 
-  <!-- DESAFIO -->
-
-  <section class="desafio" id="desafio">
-
-    <div class="section-title">
-
-      <p id="desafioTag">
-        CONTEXTO
-      </p>
-
-      <h3 id="desafioTitulo">
-        O desafio
-      </h3>
-
-    </div>
-
-    <div class="texto-central">
-
-      <p id="desafioTexto">
-        [Explique aqui qual é o desafio de produzir alimentos e ao mesmo tempo preservar o meio ambiente.]
-      </p>
-
-    </div>
-
-  </section>
-
   <!-- EQUILÍBRIO -->
 
-  <section class="equilibrio">
+  <section class="equilibrio" id="equilibrio">
+
+    <div class="section-title">
+      <p id="equilibrioTag">O TEMA</p>
+
+      <h3 id="equilibrioTitulo">
+        Produção e preservação
+      </h3>
+    </div>
 
     <div class="equilibrio-grid">
 
-      <div class="equilibrio-card">
+      <div class="info-card">
 
-        <h3 id="producaoTitulo">
-          Produção
-        </h3>
+        <h4 id="producaoTitulo">
+          Produção agrícola
+        </h4>
 
         <p id="producaoTexto">
-          [Escreva aqui sobre a importância da produção agrícola.]
+          Escreva aqui sobre a importância da produção agrícola para a sociedade.
         </p>
 
       </div>
 
-      <div class="equilibrio-card destaque">
+      <div class="info-card destaque">
 
-        <h3 id="equilibrioTitulo">
+        <h4 id="equilibrioCardTitulo">
           Equilíbrio
-        </h3>
+        </h4>
 
-        <p id="equilibrioTexto">
-          [Explique aqui como unir desenvolvimento e preservação.]
+        <p id="equilibrioCardTexto">
+          Explique aqui como a produção e a preservação podem caminhar juntas.
         </p>
 
       </div>
 
-      <div class="equilibrio-card">
+      <div class="info-card">
 
-        <h3 id="ambienteTitulo">
+        <h4 id="ambienteTitulo">
           Meio ambiente
-        </h3>
+        </h4>
 
         <p id="ambienteTexto">
-          [Escreva aqui sobre conservação dos recursos naturais.]
+          Escreva aqui sobre a importância da conservação dos recursos naturais.
         </p>
 
       </div>
@@ -149,75 +133,87 @@
       </p>
 
       <h3 id="solucoesTitulo">
-        Caminhos para o futuro
+        Caminhos para um futuro sustentável
       </h3>
 
     </div>
 
     <div class="galeria">
 
-      <div class="projeto-card">
+      <article class="projeto-card">
 
         <img
-          src="./assets/agua.jpg"
-          alt="Uso inteligente da água"
+          src="./assets/agricultura-precisao.jpg"
+          alt="Agricultura de precisão"
         >
 
         <div class="conteudo">
 
-          <h4 id="card1Titulo">
-            Uso inteligente da água
+          <h4 id="projeto1Titulo">
+            Agricultura de precisão
           </h4>
 
-          <p id="card1Texto">
-            [Explique aqui.]
+          <p id="projeto1Texto">
+            Escreva aqui sobre o uso de tecnologias no campo.
           </p>
+
+          <span id="projeto1Info">
+            Tecnologia e eficiência
+          </span>
 
         </div>
 
-      </div>
+      </article>
 
-      <div class="projeto-card">
+      <article class="projeto-card">
 
         <img
-          src="./assets/tecnologia.jpg"
-          alt="Tecnologia no campo"
+          src="./assets/uso-agua.jpg"
+          alt="Uso consciente da água"
         >
 
         <div class="conteudo">
 
-          <h4 id="card2Titulo">
-            Tecnologia no campo
+          <h4 id="projeto2Titulo">
+            Uso consciente da água
           </h4>
 
-          <p id="card2Texto">
-            [Explique aqui.]
+          <p id="projeto2Texto">
+            Escreva aqui sobre o uso responsável dos recursos hídricos.
           </p>
+
+          <span id="projeto2Info">
+            Economia e preservação
+          </span>
 
         </div>
 
-      </div>
+      </article>
 
-      <div class="projeto-card">
+      <article class="projeto-card">
 
         <img
-          src="./assets/solo.jpg"
+          src="./assets/conservacao-solo.jpg"
           alt="Conservação do solo"
         >
 
         <div class="conteudo">
 
-          <h4 id="card3Titulo">
+          <h4 id="projeto3Titulo">
             Conservação do solo
           </h4>
 
-          <p id="card3Texto">
-            [Explique aqui.]
+          <p id="projeto3Texto">
+            Escreva aqui sobre práticas que ajudam a preservar o solo.
           </p>
+
+          <span id="projeto3Info">
+            Fertilidade e proteção
+          </span>
 
         </div>
 
-      </div>
+      </article>
 
     </div>
 
@@ -230,31 +226,45 @@
     <div class="section-title">
 
       <p id="beneficiosTag">
-        RESULTADOS
+        BENEFÍCIOS
       </p>
 
       <h3 id="beneficiosTitulo">
-        Benefícios
+        Resultados da sustentabilidade
       </h3>
 
     </div>
 
     <div class="beneficios-grid">
 
-      <div class="beneficio-item" id="beneficio1">
-        ✔ Benefício 1
+      <div class="beneficio-card">
+        <h4 id="beneficio1Titulo">
+          Maior produtividade
+        </h4>
+
+        <p id="beneficio1Texto">
+          Explique aqui um benefício relacionado à produção.
+        </p>
       </div>
 
-      <div class="beneficio-item" id="beneficio2">
-        ✔ Benefício 2
+      <div class="beneficio-card">
+        <h4 id="beneficio2Titulo">
+          Menor desperdício
+        </h4>
+
+        <p id="beneficio2Texto">
+          Explique aqui um benefício relacionado à eficiência.
+        </p>
       </div>
 
-      <div class="beneficio-item" id="beneficio3">
-        ✔ Benefício 3
-      </div>
+      <div class="beneficio-card">
+        <h4 id="beneficio3Titulo">
+          Preservação ambiental
+        </h4>
 
-      <div class="beneficio-item" id="beneficio4">
-        ✔ Benefício 4
+        <p id="beneficio3Texto">
+          Explique aqui um benefício relacionado ao meio ambiente.
+        </p>
       </div>
 
     </div>
@@ -272,16 +282,18 @@
       </h3>
 
       <p id="conclusaoTexto">
-        [Escreva aqui sua conclusão sobre a relação entre produção agrícola e preservação ambiental.]
+        Escreva aqui sua conclusão sobre o tema trabalhado.
       </p>
 
-      <button id="voltarTopo">
+      <button id="topBtn">
         Voltar ao topo
       </button>
 
     </div>
 
   </section>
+
+  <!-- RODAPÉ -->
 
   <footer>
 
