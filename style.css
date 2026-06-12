@@ -305,7 +305,7 @@ body.dark-theme .resultado-box {
 }
 
 body.dark-theme nav ul {
-  background: rgba(20, 20, 20, 0.95);
+  background: transparent;
 }
 
 body.dark-theme select,
