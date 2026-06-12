@@ -8,7 +8,9 @@ if (botao) {
   });
 }
 
-/* Tema claro/escuro: */
+/* Efeito nos cards tratado apenas pelo CSS */
+
+/* Tema claro/escuro com persistência: */
 
 const themeToggle = document.getElementById("themeToggle");
 
@@ -28,7 +30,7 @@ if (themeToggle) {
   });
 }
 
-/* Tamanho de font: */
+/* Tamanho de fonte com persistência: */
 
 const fontSelect = document.getElementById("fontSizeSelect");
 
@@ -46,6 +48,21 @@ if (fontSelect) {
 function applyFontSize(size) {
   const sizes = { small: "14px", medium: "16px", large: "19px" };
   document.documentElement.style.fontSize = sizes[size] || "16px";
+}
+
+function applyFontLabels(lang) {
+  const labels = {
+    pt: ["Pequena", "Média", "Grande"],
+    en: ["Small", "Medium", "Large"],
+    es: ["Pequeña", "Mediana", "Grande"]
+  };
+
+  const options = document.querySelectorAll("#fontSizeSelect option");
+  const current = labels[lang] || labels["pt"];
+
+  options[0].textContent = current[0];
+  options[1].textContent = current[1];
+  options[2].textContent = current[2];
 }
 
 /* Traduções: */
@@ -156,7 +173,7 @@ const translations = {
 
 };
 
-/* Escolher idioma: */
+/* Escolher idioma com persistência: */
 
 function applyTranslation(lang) {
   const t = translations[lang];
@@ -193,6 +210,8 @@ function applyTranslation(lang) {
   document.getElementById("resultado2").textContent = t.resultado2;
   document.getElementById("resultado3").textContent = t.resultado3;
   document.getElementById("footerText").textContent = t.footer;
+
+  applyFontLabels(lang);
 }
 
 const languageSelect = document.getElementById("languageSelect");
