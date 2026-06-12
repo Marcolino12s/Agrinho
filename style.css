@@ -14,7 +14,7 @@ body{
   font-family:'Outfit',sans-serif;
 }
 
-/* HERO */
+/* Hero: */
 
 .hero{
   min-height:100vh;
@@ -62,7 +62,7 @@ nav a:hover{
   color:#8cff9d;
 }
 
-/* CONTROLES */
+/* Controles: */
 
 .controls{
   display:flex;
@@ -94,7 +94,7 @@ nav a:hover{
   font-size:1rem;
 }
 
-/* HERO CONTENT */
+/* Hero content: */
 
 .hero-content{
   margin-top:10rem;
