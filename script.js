@@ -1,3 +1,52 @@
+/* Modal de boas-vindas: */
+
+const overlay     = document.getElementById("welcomeOverlay");
+const nameInput   = document.getElementById("nameInput");
+const welcomeBtn  = document.getElementById("welcomeBtn");
+const greeting    = document.getElementById("greetingBanner");
+
+function showGreeting(name) {
+  const lang = localStorage.getItem("agronova-lang") || "pt";
+  const t = translations[lang];
+  const hour = new Date().getHours();
+  let saudacao;
+  if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
+  else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
+  else                               saudacao = t.greetingEvening;
+
+  greeting.textContent = `🌿 ${saudacao}, ${name}!`;
+  greeting.classList.add("visible");
+
+  setTimeout(() => greeting.classList.remove("visible"), 5000);
+}
+
+function closeModal(name) {
+  overlay.classList.add("hidden");
+  setTimeout(() => overlay.style.display = "none", 400);
+  showGreeting(name);
+}
+
+const savedName = localStorage.getItem("agronova-name");
+
+if (savedName) {
+  overlay.style.display = "none";
+  setTimeout(() => showGreeting(savedName), 600);
+}
+
+if (welcomeBtn) {
+  welcomeBtn.addEventListener("click", () => {
+    const name = nameInput.value.trim() || "visitante";
+    localStorage.setItem("agronova-name", name);
+    closeModal(name);
+  });
+}
+
+if (nameInput) {
+  nameInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") welcomeBtn.click();
+  });
+}
+
 /* Botão explorar: */
 
 const botao = document.getElementById("explorarBtn");
@@ -73,6 +122,13 @@ const translations = {
     fontSmall: "Pequena",
     fontMedium: "Média",
     fontLarge: "Grande",
+    welcomeTitle: "Bem-vindo à AgroNova!",
+    welcomeSubtitle: "Como podemos te chamar?",
+    welcomePlaceholder: "Seu nome...",
+    welcomeBtn: "Entrar",
+    greetingMorning: "Bom dia",
+    greetingAfternoon: "Boa tarde",
+    greetingEvening: "Boa noite",
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
@@ -110,6 +166,13 @@ const translations = {
     fontSmall: "Small",
     fontMedium: "Medium",
     fontLarge: "Large",
+    welcomeTitle: "Welcome to AgroNova!",
+    welcomeSubtitle: "What can we call you?",
+    welcomePlaceholder: "Your name...",
+    welcomeBtn: "Enter",
+    greetingMorning: "Good morning",
+    greetingAfternoon: "Good afternoon",
+    greetingEvening: "Good evening",
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
@@ -147,6 +210,13 @@ const translations = {
     fontSmall: "Pequeña",
     fontMedium: "Mediana",
     fontLarge: "Grande",
+    welcomeTitle: "¡Bienvenido a AgroNova!",
+    welcomeSubtitle: "¿Cómo podemos llamarte?",
+    welcomePlaceholder: "Tu nombre...",
+    welcomeBtn: "Entrar",
+    greetingMorning: "Buenos días",
+    greetingAfternoon: "Buenas tardes",
+    greetingEvening: "Buenas noches",
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
@@ -193,6 +263,24 @@ function applyTranslation(lang) {
     fontSizeSelect.options[0].textContent = t.fontSmall;
     fontSizeSelect.options[1].textContent = t.fontMedium;
     fontSizeSelect.options[2].textContent = t.fontLarge;
+  }
+
+  const wTitle = document.getElementById("welcomeTitle");
+  const wSubtitle = document.getElementById("welcomeSubtitle");
+  const wBtn = document.getElementById("welcomeBtn");
+  if (wTitle) wTitle.textContent = t.welcomeTitle;
+  if (wSubtitle) wSubtitle.textContent = t.welcomeSubtitle;
+  if (nameInput) nameInput.placeholder = t.welcomePlaceholder;
+  if (wBtn) wBtn.textContent = t.welcomeBtn;
+
+  const name = localStorage.getItem("agronova-name");
+  if (name && greeting) {
+    const hour = new Date().getHours();
+    let saudacao;
+    if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
+    else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
+    else                               saudacao = t.greetingEvening;
+    greeting.textContent = `🌿 ${saudacao}, ${name}!`;
   }
 
   document.getElementById("navSobre").textContent = t.nav1;
