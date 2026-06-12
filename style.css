@@ -1,4 +1,3 @@
-```css
 /* ==========================================================
    RESET
 ========================================================== */
@@ -18,32 +17,8 @@ body {
   font-family: "Outfit", sans-serif;
   background: #f5f8f2;
   color: #1d2b1f;
+  transition: 0.3s ease;
   overflow-x: hidden;
-  transition: background 0.4s ease, color 0.4s ease;
-}
-
-/* ==========================================================
-   ANIMAÇÕES
-========================================================== */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content,
-.sobre,
-.praticas,
-.projetos,
-.resultados {
-  animation: fadeUp 1s ease;
 }
 
 /* ==========================================================
@@ -53,28 +28,23 @@ body {
 .hero {
   min-height: 100vh;
   padding: 2rem 8%;
-
   background:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.55)
-    ),
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop");
-
   background-size: cover;
   background-position: center;
   color: white;
 }
 
 /* ==========================================================
-   NAVBAR
+   NAV
 ========================================================== */
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  flex-wrap: wrap;
 }
 
 nav h1 {
@@ -88,23 +58,28 @@ nav span {
 
 nav ul {
   display: flex;
-  list-style: none;
   gap: 2rem;
+  list-style: none;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  transition: .3s;
-  font-weight: 500;
+  transition: 0.3s;
 }
 
 nav a:hover {
   color: #8cff9d;
 }
 
+/* MENU MOBILE */
 .menu-mobile {
   display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* ==========================================================
@@ -117,23 +92,13 @@ nav a:hover {
   align-items: center;
 }
 
-#fontSizeSelect,
-#languageSelect,
+select,
 #themeToggle {
-  height: 42px;
+  height: 40px;
+  border-radius: 10px;
   border: none;
-  border-radius: 12px;
-  padding: 0 12px;
+  padding: 0 10px;
   cursor: pointer;
-
-  backdrop-filter: blur(10px);
-
-  background: rgba(255,255,255,.85);
-  color: #1d2b1f;
-}
-
-#themeToggle {
-  width: 42px;
 }
 
 /* ==========================================================
@@ -141,47 +106,34 @@ nav a:hover {
 ========================================================== */
 
 .hero-content {
-  margin-top: 9rem;
-  max-width: 700px;
-}
-
-.tag {
-  color: #9cffad;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
+  margin-top: 8rem;
+  max-width: 650px;
 }
 
 .hero-content h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
 }
 
-.description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #ececec;
+.hero-content p {
+  margin-top: 1rem;
+  line-height: 1.7;
 }
 
 .hero-content button {
   margin-top: 2rem;
   padding: 1rem 2rem;
-
   border: none;
-  border-radius: 12px;
-
+  border-radius: 10px;
   background: #8cff9d;
   color: #102013;
-
   font-weight: bold;
   cursor: pointer;
-
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .hero-content button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 20px rgba(0,0,0,.15);
+  transform: translateY(-3px);
 }
 
 /* ==========================================================
@@ -192,21 +144,21 @@ nav a:hover {
 .praticas,
 .projetos,
 .resultados {
-  padding: 6rem 8%;
+  padding: 5rem 8%;
 }
 
+/* TITULOS */
 .section-title {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .section-title p {
   color: #4a8d52;
   letter-spacing: 2px;
-  margin-bottom: .5rem;
 }
 
 .section-title h3 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
 }
 
 /* ==========================================================
@@ -216,58 +168,37 @@ nav a:hover {
 .sobre {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.texto h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  gap: 3rem;
 }
 
 .texto p {
-  line-height: 1.9;
-  color: #556557;
-}
-
-.card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  margin-top: 1rem;
+  line-height: 1.8;
+  color: #4b5c4d;
 }
 
 /* ==========================================================
    CARDS
 ========================================================== */
 
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .mini-card,
 .projeto-card {
   background: white;
-
-  border-radius: 22px;
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.06);
-
-  transition: .35s ease;
-}
-
-.mini-card {
-  padding: 1.7rem;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
 .mini-card:hover,
 .projeto-card:hover {
-  transform: translateY(-8px);
-}
-
-.mini-card h4 {
-  margin-bottom: .8rem;
-}
-
-.mini-card p {
-  color: #566558;
-  line-height: 1.6;
+  transform: translateY(-6px);
 }
 
 /* ==========================================================
@@ -276,35 +207,15 @@ nav a:hover {
 
 .galeria {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(280px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-}
-
-.projeto-card {
-  overflow: hidden;
 }
 
 .projeto-card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-}
-
-.conteudo {
-  padding: 1.5rem;
-}
-
-.conteudo h4 {
-  margin-bottom: .8rem;
-  font-size: 1.3rem;
-}
-
-.conteudo p {
-  color: #566558;
-  line-height: 1.7;
+  border-radius: 12px;
 }
 
 /* ==========================================================
@@ -312,45 +223,22 @@ nav a:hover {
 ========================================================== */
 
 .resultado-box {
-  background: linear-gradient(
-    135deg,
-    #16331b,
-    #214928
-  );
-
+  background: #16331b;
   color: white;
-
-  padding: 4rem;
-  border-radius: 28px;
-}
-
-.resultado-box h3 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  padding: 3rem;
+  border-radius: 20px;
 }
 
 .numeros {
   display: flex;
-  justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .numeros h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #8cff9d;
-}
-
-.numeros p {
-  margin-top: .5rem;
-  color: #d4e8d7;
-  max-width: 260px;
-}
-
-.resultado-box small {
-  display: block;
-  margin-top: 2rem;
-  color: #c8d9cb;
 }
 
 /* ==========================================================
@@ -372,119 +260,38 @@ footer {
   color: #f5f5f5;
 }
 
-.dark-theme .sobre,
-.dark-theme .praticas,
-.dark-theme .projetos,
-.dark-theme .resultados {
-  background: #121212;
-}
-
 .dark-theme .mini-card,
 .dark-theme .projeto-card {
-  background: #1d1d1d;
-}
-
-.dark-theme .mini-card p,
-.dark-theme .conteudo p,
-.dark-theme .texto p {
-  color: #d0d0d0;
+  background: #1e1e1e;
 }
 
 .dark-theme footer {
-  color: #cfcfcf;
-}
-
-.dark-theme #fontSizeSelect,
-.dark-theme #languageSelect,
-.dark-theme #themeToggle {
-  background: #2a2a2a;
-  color: white;
+  color: #ccc;
 }
 
 /* ==========================================================
    RESPONSIVO
 ========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
 
   .sobre {
     grid-template-columns: 1fr;
   }
 
   .hero-content h2 {
-    font-size: 3rem;
-  }
-
-  nav ul {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 0;
-
-    width: 220px;
-
-    background: rgba(0,0,0,.95);
-
-    flex-direction: column;
-    padding: 1.5rem;
-
-    border-radius: 15px;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-mobile {
-    display: block;
-
-    background: transparent;
-    border: none;
-
-    color: white;
-    font-size: 2rem;
-
-    cursor: pointer;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .hero {
-    padding: 2rem 6%;
-  }
-
-  .sobre,
-  .praticas,
-  .projetos,
-  .resultados {
-    padding: 4rem 6%;
-  }
-
-  .hero-content {
-    margin-top: 5rem;
-  }
-
-  .hero-content h2 {
-    font-size: 2.3rem;
-  }
-
-  .section-title h3,
-  .texto h3,
-  .resultado-box h3 {
-    font-size: 2rem;
-  }
-
-  .resultado-box {
-    padding: 2rem;
+    font-size: 2.2rem;
   }
 
   .numeros {
     flex-direction: column;
   }
-
-  .numeros h2 {
-    font-size: 2.3rem;
-  }
 }
-```
