@@ -70,6 +70,9 @@ function applyFontLabels(lang) {
 const translations = {
 
   pt: {
+    fontSmall: "Pequena",
+    fontMedium: "Média",
+    fontLarge: "Grande",
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
@@ -104,6 +107,9 @@ const translations = {
   },
 
   en: {
+    fontSmall: "Small",
+    fontMedium: "Medium",
+    fontLarge: "Large",
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
@@ -138,6 +144,9 @@ const translations = {
   },
 
   es: {
+    fontSmall: "Pequeña",
+    fontMedium: "Mediana",
+    fontLarge: "Grande",
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
@@ -178,6 +187,13 @@ const translations = {
 function applyTranslation(lang) {
   const t = translations[lang];
   if (!t) return;
+
+  const fontSizeSelect = document.getElementById("fontSizeSelect");
+  if (fontSizeSelect) {
+    fontSizeSelect.options[0].textContent = t.fontSmall;
+    fontSizeSelect.options[1].textContent = t.fontMedium;
+    fontSizeSelect.options[2].textContent = t.fontLarge;
+  }
 
   document.getElementById("navSobre").textContent = t.nav1;
   document.getElementById("navProjetos").textContent = t.nav2;
