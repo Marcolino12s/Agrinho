@@ -1,52 +1,45 @@
-```javascript
-/* ========================= */
-/* BOTÃO EXPLORAR */
-/* ========================= */
+/* ========================================= */
+/* AGRONOVA - SCRIPT.JS */
+/* ========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+/* ========================================= */
+/* BOTÃO "SAIBA MAIS" */
+/* ========================================= */
 
-  const explorarBtn = document.getElementById("explorarBtn");
+const explorarBtn = document.getElementById("explorarBtn");
 
-  if (explorarBtn) {
-    explorarBtn.addEventListener("click", () => {
-
-      const secao = document.getElementById("solucoes");
-
-      if (secao) {
-        secao.scrollIntoView({
-          behavior: "smooth"
-        });
-      }
-
+if (explorarBtn) {
+  explorarBtn.addEventListener("click", () => {
+    document.getElementById("equilibrio").scrollIntoView({
+      behavior: "smooth"
     });
-  }
+  });
+}
 
-  /* ========================= */
-  /* VOLTAR AO TOPO */
-  /* ========================= */
+/* ========================================= */
+/* BOTÃO "VOLTAR AO TOPO" */
+/* ========================================= */
 
-  const voltarTopo = document.getElementById("voltarTopo");
+const topBtn = document.getElementById("topBtn");
 
-  if (voltarTopo) {
-    voltarTopo.addEventListener("click", () => {
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
+if (topBtn) {
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
-  }
+  });
+}
 
-  /* ========================= */
-  /* TEMA ESCURO */
-  /* ========================= */
+/* ========================================= */
+/* TEMA ESCURO */
+/* ========================================= */
 
-  const themeToggle = document.getElementById("themeToggle");
+const themeToggle = document.getElementById("themeToggle");
 
-  const savedTheme = localStorage.getItem("theme");
+function applyTheme(theme) {
 
-  if (savedTheme === "dark") {
+  if (theme === "dark") {
 
     document.body.classList.add("dark-theme");
 
@@ -54,280 +47,475 @@ document.addEventListener("DOMContentLoaded", () => {
       themeToggle.textContent = "☀️";
     }
 
-  }
+  } else {
 
-  if (themeToggle) {
+    document.body.classList.remove("dark-theme");
 
-    themeToggle.addEventListener("click", () => {
-
-      document.body.classList.toggle("dark-theme");
-
-      const darkMode =
-        document.body.classList.contains("dark-theme");
-
-      localStorage.setItem(
-        "theme",
-        darkMode ? "dark" : "light"
-      );
-
-      themeToggle.textContent =
-        darkMode ? "☀️" : "🌙";
-
-    });
-
-  }
-
-  /* ========================= */
-  /* TRADUÇÕES */
-  /* ========================= */
-
-  const translations = {
-
-    pt: {
-
-      navDesafio: "Desafio",
-      navSolucoes: "Soluções",
-      navBeneficios: "Benefícios",
-
-      heroTag: "AGRICULTURA • TECNOLOGIA • FUTURO",
-
-      heroTitle: "Agro forte,<br>futuro sustentável",
-
-      heroDescription:
-        "[Escreva aqui uma breve apresentação do tema.]",
-
-      explorarBtn: "Explorar",
-
-      desafioTag: "CONTEXTO",
-      desafioTitulo: "O desafio",
-
-      desafioTexto:
-        "[Explique aqui qual é o desafio de produzir alimentos e preservar o meio ambiente.]",
-
-      producaoTitulo: "Produção",
-      producaoTexto:
-        "[Escreva aqui sobre a importância da produção agrícola.]",
-
-      equilibrioTitulo: "Equilíbrio",
-      equilibrioTexto:
-        "[Explique aqui como unir desenvolvimento e preservação.]",
-
-      ambienteTitulo: "Meio ambiente",
-      ambienteTexto:
-        "[Escreva aqui sobre a conservação dos recursos naturais.]",
-
-      solucoesTag: "SOLUÇÕES",
-      solucoesTitulo: "Caminhos para o futuro",
-
-      card1Titulo: "Uso inteligente da água",
-      card1Texto: "[Explique aqui.]",
-
-      card2Titulo: "Tecnologia no campo",
-      card2Texto: "[Explique aqui.]",
-
-      card3Titulo: "Conservação do solo",
-      card3Texto: "[Explique aqui.]",
-
-      beneficiosTag: "RESULTADOS",
-      beneficiosTitulo: "Benefícios",
-
-      beneficio1: "✔ Benefício 1",
-      beneficio2: "✔ Benefício 2",
-      beneficio3: "✔ Benefício 3",
-      beneficio4: "✔ Benefício 4",
-
-      conclusaoTitulo: "Conclusão",
-      conclusaoTexto:
-        "[Escreva aqui sua conclusão.]",
-
-      voltarTopo: "Voltar ao topo",
-
-      footerText:
-        "© 2026 AgroNova | Projeto Agrinho"
-    },
-
-    en: {
-
-      navDesafio: "Challenge",
-      navSolucoes: "Solutions",
-      navBeneficios: "Benefits",
-
-      heroTag: "AGRICULTURE • TECHNOLOGY • FUTURE",
-
-      heroTitle:
-        "Strong agriculture,<br>sustainable future",
-
-      heroDescription:
-        "[Write a brief introduction here.]",
-
-      explorarBtn: "Explore",
-
-      desafioTag: "CONTEXT",
-      desafioTitulo: "The challenge",
-
-      desafioTexto:
-        "[Explain here the challenge of producing food while preserving nature.]",
-
-      producaoTitulo: "Production",
-      producaoTexto:
-        "[Write here about agricultural production.]",
-
-      equilibrioTitulo: "Balance",
-      equilibrioTexto:
-        "[Explain how development and preservation can work together.]",
-
-      ambienteTitulo: "Environment",
-      ambienteTexto:
-        "[Write about environmental preservation.]",
-
-      solucoesTag: "SOLUTIONS",
-      solucoesTitulo: "Paths to the future",
-
-      card1Titulo: "Smart water use",
-      card1Texto: "[Explain here.]",
-
-      card2Titulo: "Technology in agriculture",
-      card2Texto: "[Explain here.]",
-
-      card3Titulo: "Soil conservation",
-      card3Texto: "[Explain here.]",
-
-      beneficiosTag: "RESULTS",
-      beneficiosTitulo: "Benefits",
-
-      beneficio1: "✔ Benefit 1",
-      beneficio2: "✔ Benefit 2",
-      beneficio3: "✔ Benefit 3",
-      beneficio4: "✔ Benefit 4",
-
-      conclusaoTitulo: "Conclusion",
-      conclusaoTexto:
-        "[Write your conclusion here.]",
-
-      voltarTopo: "Back to top",
-
-      footerText:
-        "© 2026 AgroNova | Agrinho Project"
-    },
-
-    es: {
-
-      navDesafio: "Desafío",
-      navSolucoes: "Soluciones",
-      navBeneficios: "Beneficios",
-
-      heroTag: "AGRICULTURA • TECNOLOGÍA • FUTURO",
-
-      heroTitle:
-        "Agro fuerte,<br>futuro sostenible",
-
-      heroDescription:
-        "[Escriba aquí una breve introducción.]",
-
-      explorarBtn: "Explorar",
-
-      desafioTag: "CONTEXTO",
-      desafioTitulo: "El desafío",
-
-      desafioTexto:
-        "[Explique aquí el desafío de producir alimentos y preservar el medio ambiente.]",
-
-      producaoTitulo: "Producción",
-      producaoTexto:
-        "[Escriba aquí sobre la producción agrícola.]",
-
-      equilibrioTitulo: "Equilibrio",
-      equilibrioTexto:
-        "[Explique aquí cómo unir desarrollo y preservación.]",
-
-      ambienteTitulo: "Medio ambiente",
-      ambienteTexto:
-        "[Escriba aquí sobre la conservación de los recursos naturales.]",
-
-      solucoesTag: "SOLUCIONES",
-      solucoesTitulo: "Caminos hacia el futuro",
-
-      card1Titulo: "Uso inteligente del agua",
-      card1Texto: "[Explique aquí.]",
-
-      card2Titulo: "Tecnología en el campo",
-      card2Texto: "[Explique aquí.]",
-
-      card3Titulo: "Conservación del suelo",
-      card3Texto: "[Explique aquí.]",
-
-      beneficiosTag: "RESULTADOS",
-      beneficiosTitulo: "Beneficios",
-
-      beneficio1: "✔ Beneficio 1",
-      beneficio2: "✔ Beneficio 2",
-      beneficio3: "✔ Beneficio 3",
-      beneficio4: "✔ Beneficio 4",
-
-      conclusaoTitulo: "Conclusión",
-      conclusaoTexto:
-        "[Escriba aquí su conclusión.]",
-
-      voltarTopo: "Volver arriba",
-
-      footerText:
-        "© 2026 AgroNova | Proyecto Agrinho"
+    if (themeToggle) {
+      themeToggle.textContent = "🌙";
     }
 
-  };
+  }
 
-  function applyTranslation(lang) {
+}
 
-    const t = translations[lang];
+const savedTheme = localStorage.getItem("theme") || "light";
 
-    Object.keys(t).forEach(key => {
+applyTheme(savedTheme);
 
-      const element =
-        document.getElementById(key);
+if (themeToggle) {
 
-      if (!element) return;
+  themeToggle.addEventListener("click", () => {
 
-      if (key === "heroTitle") {
-        element.innerHTML = t[key];
-      } else {
-        element.textContent = t[key];
+    const isDark =
+      document.body.classList.contains("dark-theme");
+
+    const newTheme = isDark ? "light" : "dark";
+
+    applyTheme(newTheme);
+
+    localStorage.setItem("theme", newTheme);
+
+  });
+
+}
+
+/* ========================================= */
+/* TRADUÇÕES */
+/* ========================================= */
+
+const translations = {
+
+  pt: {
+
+    navSobre: "Equilíbrio",
+    navProjetos: "Soluções",
+    navResultados: "Benefícios",
+
+    heroTag: "PRODUÇÃO • EQUILÍBRIO • FUTURO",
+
+    heroTitle:
+      "Agro forte,<br>futuro sustentável",
+
+    heroDescription:
+      "Escreva aqui uma breve introdução sobre o tema do projeto.",
+
+    explorarBtn:
+      "Saiba mais",
+
+    equilibrioTag:
+      "O TEMA",
+
+    equilibrioTitulo:
+      "Produção e preservação",
+
+    producaoTitulo:
+      "Produção agrícola",
+
+    producaoTexto:
+      "Escreva aqui sobre a importância da produção agrícola para a sociedade.",
+
+    equilibrioCardTitulo:
+      "Equilíbrio",
+
+    equilibrioCardTexto:
+      "Explique aqui como a produção e a preservação podem caminhar juntas.",
+
+    ambienteTitulo:
+      "Meio ambiente",
+
+    ambienteTexto:
+      "Escreva aqui sobre a importância da conservação dos recursos naturais.",
+
+    solucoesTag:
+      "SOLUÇÕES",
+
+    solucoesTitulo:
+      "Caminhos para um futuro sustentável",
+
+    projeto1Titulo:
+      "Agricultura de precisão",
+
+    projeto1Texto:
+      "Escreva aqui sobre o uso de tecnologias no campo.",
+
+    projeto1Info:
+      "Tecnologia e eficiência",
+
+    projeto2Titulo:
+      "Uso consciente da água",
+
+    projeto2Texto:
+      "Escreva aqui sobre o uso responsável dos recursos hídricos.",
+
+    projeto2Info:
+      "Economia e preservação",
+
+    projeto3Titulo:
+      "Conservação do solo",
+
+    projeto3Texto:
+      "Escreva aqui sobre práticas que ajudam a preservar o solo.",
+
+    projeto3Info:
+      "Fertilidade e proteção",
+
+    beneficiosTag:
+      "BENEFÍCIOS",
+
+    beneficiosTitulo:
+      "Resultados da sustentabilidade",
+
+    beneficio1Titulo:
+      "Maior produtividade",
+
+    beneficio1Texto:
+      "Explique aqui um benefício relacionado à produção.",
+
+    beneficio2Titulo:
+      "Menor desperdício",
+
+    beneficio2Texto:
+      "Explique aqui um benefício relacionado à eficiência.",
+
+    beneficio3Titulo:
+      "Preservação ambiental",
+
+    beneficio3Texto:
+      "Explique aqui um benefício relacionado ao meio ambiente.",
+
+    conclusaoTitulo:
+      "Conclusão",
+
+    conclusaoTexto:
+      "Escreva aqui sua conclusão sobre o tema trabalhado.",
+
+    topBtn:
+      "Voltar ao topo",
+
+    footerText:
+      "© 2026 AgroNova | Projeto Agrinho"
+  },
+
+  en: {
+
+    navSobre: "Balance",
+    navProjetos: "Solutions",
+    navResultados: "Benefits",
+
+    heroTag:
+      "PRODUCTION • BALANCE • FUTURE",
+
+    heroTitle:
+      "Strong agriculture,<br>sustainable future",
+
+    heroDescription:
+      "Write a brief introduction about the project theme here.",
+
+    explorarBtn:
+      "Learn more",
+
+    equilibrioTag:
+      "THE THEME",
+
+    equilibrioTitulo:
+      "Production and preservation",
+
+    producaoTitulo:
+      "Agricultural production",
+
+    producaoTexto:
+      "Write here about the importance of agricultural production for society.",
+
+    equilibrioCardTitulo:
+      "Balance",
+
+    equilibrioCardTexto:
+      "Explain here how production and preservation can work together.",
+
+    ambienteTitulo:
+      "Environment",
+
+    ambienteTexto:
+      "Write here about the importance of conserving natural resources.",
+
+    solucoesTag:
+      "SOLUTIONS",
+
+    solucoesTitulo:
+      "Paths to a sustainable future",
+
+    projeto1Titulo:
+      "Precision agriculture",
+
+    projeto1Texto:
+      "Write here about the use of technology in the field.",
+
+    projeto1Info:
+      "Technology and efficiency",
+
+    projeto2Titulo:
+      "Responsible water use",
+
+    projeto2Texto:
+      "Write here about the responsible use of water resources.",
+
+    projeto2Info:
+      "Savings and preservation",
+
+    projeto3Titulo:
+      "Soil conservation",
+
+    projeto3Texto:
+      "Write here about practices that help preserve the soil.",
+
+    projeto3Info:
+      "Fertility and protection",
+
+    beneficiosTag:
+      "BENEFITS",
+
+    beneficiosTitulo:
+      "Results of sustainability",
+
+    beneficio1Titulo:
+      "Higher productivity",
+
+    beneficio1Texto:
+      "Explain here a production-related benefit.",
+
+    beneficio2Titulo:
+      "Less waste",
+
+    beneficio2Texto:
+      "Explain here an efficiency-related benefit.",
+
+    beneficio3Titulo:
+      "Environmental preservation",
+
+    beneficio3Texto:
+      "Explain here an environment-related benefit.",
+
+    conclusaoTitulo:
+      "Conclusion",
+
+    conclusaoTexto:
+      "Write your conclusion about the theme here.",
+
+    topBtn:
+      "Back to top",
+
+    footerText:
+      "© 2026 AgroNova | Agrinho Project"
+  },
+
+  es: {
+
+    navSobre: "Equilibrio",
+    navProjetos: "Soluciones",
+    navResultados: "Beneficios",
+
+    heroTag:
+      "PRODUCCIÓN • EQUILIBRIO • FUTURO",
+
+    heroTitle:
+      "Agricultura fuerte,<br>futuro sostenible",
+
+    heroDescription:
+      "Escriba aquí una breve introducción sobre el tema del proyecto.",
+
+    explorarBtn:
+      "Saber más",
+
+    equilibrioTag:
+      "EL TEMA",
+
+    equilibrioTitulo:
+      "Producción y preservación",
+
+    producaoTitulo:
+      "Producción agrícola",
+
+    producaoTexto:
+      "Escriba aquí sobre la importancia de la producción agrícola para la sociedad.",
+
+    equilibrioCardTitulo:
+      "Equilibrio",
+
+    equilibrioCardTexto:
+      "Explique aquí cómo la producción y la preservación pueden avanzar juntas.",
+
+    ambienteTitulo:
+      "Medio ambiente",
+
+    ambienteTexto:
+      "Escriba aquí sobre la importancia de conservar los recursos naturales.",
+
+    solucoesTag:
+      "SOLUCIONES",
+
+    solucoesTitulo:
+      "Caminos hacia un futuro sostenible",
+
+    projeto1Titulo:
+      "Agricultura de precisión",
+
+    projeto1Texto:
+      "Escriba aquí sobre el uso de tecnologías en el campo.",
+
+    projeto1Info:
+      "Tecnología y eficiencia",
+
+    projeto2Titulo:
+      "Uso responsable del agua",
+
+    projeto2Texto:
+      "Escriba aquí sobre el uso responsable de los recursos hídricos.",
+
+    projeto2Info:
+      "Ahorro y preservación",
+
+    projeto3Titulo:
+      "Conservación del suelo",
+
+    projeto3Texto:
+      "Escriba aquí sobre prácticas que ayudan a preservar el suelo.",
+
+    projeto3Info:
+      "Fertilidad y protección",
+
+    beneficiosTag:
+      "BENEFICIOS",
+
+    beneficiosTitulo:
+      "Resultados de la sostenibilidad",
+
+    beneficio1Titulo:
+      "Mayor productividad",
+
+    beneficio1Texto:
+      "Explique aquí un beneficio relacionado con la producción.",
+
+    beneficio2Titulo:
+      "Menor desperdicio",
+
+    beneficio2Texto:
+      "Explique aquí un beneficio relacionado con la eficiencia.",
+
+    beneficio3Titulo:
+      "Preservación ambiental",
+
+    beneficio3Texto:
+      "Explique aquí un beneficio relacionado con el medio ambiente.",
+
+    conclusaoTitulo:
+      "Conclusión",
+
+    conclusaoTexto:
+      "Escriba aquí su conclusión sobre el tema trabajado.",
+
+    topBtn:
+      "Volver arriba",
+
+    footerText:
+      "© 2026 AgroNova | Proyecto Agrinho"
+  }
+
+};
+
+/* ========================================= */
+/* APLICAR IDIOMA */
+/* ========================================= */
+
+function applyLanguage(lang) {
+
+  const t = translations[lang];
+
+  if (!t) return;
+
+  Object.keys(t).forEach(id => {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    if (
+      id === "heroTitle"
+    ) {
+      element.innerHTML = t[id];
+    } else {
+      element.textContent = t[id];
+    }
+
+  });
+
+}
+
+/* ========================================= */
+/* SELETOR DE IDIOMA */
+/* ========================================= */
+
+const languageSelect =
+  document.getElementById("languageSelect");
+
+const savedLanguage =
+  localStorage.getItem("language") || "pt";
+
+applyLanguage(savedLanguage);
+
+if (languageSelect) {
+
+  languageSelect.value = savedLanguage;
+
+  languageSelect.addEventListener("change", () => {
+
+    const lang = languageSelect.value;
+
+    applyLanguage(lang);
+
+    localStorage.setItem(
+      "language",
+      lang
+    );
+
+  });
+
+}
+
+/* ========================================= */
+/* ANIMAÇÃO AO ROLAR */
+/* ========================================= */
+
+const animatedElements = document.querySelectorAll(
+  ".info-card, .projeto-card, .beneficio-card, .section-title, .conclusao-box"
+);
+
+animatedElements.forEach(element => {
+  element.classList.add("fade-in");
+});
+
+const observer = new IntersectionObserver(
+
+  entries => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("show");
+
       }
 
     });
 
+  },
+
+  {
+    threshold: 0.15
   }
 
-  const languageSelect =
-    document.getElementById("languageSelect");
+);
 
-  const savedLanguage =
-    localStorage.getItem("language") || "pt";
-
-  applyTranslation(savedLanguage);
-
-  if (languageSelect) {
-
-    languageSelect.value =
-      savedLanguage;
-
-    languageSelect.addEventListener(
-      "change",
-      () => {
-
-        const lang =
-          languageSelect.value;
-
-        localStorage.setItem(
-          "language",
-          lang
-        );
-
-        applyTranslation(lang);
-
-      }
-    );
-
-  }
-
+animatedElements.forEach(element => {
+  observer.observe(element);
 });
-```
