@@ -1,241 +1,299 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>AgroNova</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
+  <!-- HERO -->
 
-  <nav>
-    <h1>Agro<span>Nova</span></h1>
+  <header class="hero" id="topo">
 
-    <ul>
-      <li><a href="#sobre" id="navSobre">Sobre</a></li>
-      <li><a href="#projetos" id="navProjetos">Projetos</a></li>
-      <li><a href="#resultados" id="navResultados">Resultados</a></li>
-    </ul>
+    <nav>
 
-    <div class="controls">
-      <select id="languageSelect">
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-      </select>
+      <h1>Agro<span>Nova</span></h1>
 
-      <button id="themeToggle">🌙</button>
-    </div>
-  </nav>
+      <ul>
+        <li><a href="#desafio" id="navDesafio">Desafio</a></li>
+        <li><a href="#solucoes" id="navSolucoes">Soluções</a></li>
+        <li><a href="#beneficios" id="navBeneficios">Benefícios</a></li>
+      </ul>
 
-  <div class="hero-content">
+      <div class="controls">
 
-    <p class="tag" id="heroTag">
-      INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO
-    </p>
+        <select id="languageSelect">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
 
-    <h2 id="heroTitle">
-      Um agro forte,<br>
-      inteligente e sustentável.
-    </h2>
+        <button id="themeToggle">🌙</button>
 
-    <p class="description" id="heroDescription">
-      Incentivando práticas agrícolas modernas, sustentáveis,
-      econômicas e conscientes, para proteger não somente o meio ambiente,
-      mas também o futuro.
-    </p>
+      </div>
 
-    <button id="explorarBtn">Ver mais</button>
+    </nav>
 
-  </div>
+    <div class="hero-content">
 
-</header>
-
-<section class="sobre" id="sobre">
-
-  <div class="texto">
-
-    <h3 id="sobreTitulo">
-      Produzir sem destruir
-    </h3>
-
-    <p id="sobreTexto">
-      O agro sustentável combina produtividade,
-      inovação e preservação ambiental.
-      Com técnicas modernas, é possível reduzir desperdícios,
-      economizar recursos naturais e ainda melhorar a
-      qualidade da produção.
-    </p>
-
-  </div>
-
-  <div class="card-info">
-
-    <div class="mini-card">
-      <h4 id="card1Titulo">Menos desperdício</h4>
-
-      <p id="card1Texto">
-        Aproveitamento inteligente de recursos e produção mais consciente.
+      <p class="tag" id="heroTag">
+        AGRICULTURA • TECNOLOGIA • FUTURO
       </p>
-    </div>
 
-    <div class="mini-card">
-      <h4 id="card2Titulo">Mais eficiência</h4>
+      <h2 id="heroTitle">
+        Agro forte,<br>
+        futuro sustentável
+      </h2>
 
-      <p id="card2Texto">
-        Tecnologia e inovação para produzir mais com menos.
+      <p class="description" id="heroDescription">
+        [Escreva aqui uma breve apresentação do tema.]
       </p>
+
+      <button id="explorarBtn">
+        Explorar
+      </button>
+
     </div>
 
-    <div class="mini-card">
-      <h4 id="card3Titulo">Futuro sustentável</h4>
+  </header>
 
-      <p id="card3Texto">
-        Equilíbrio entre produtividade, natureza e desenvolvimento.
+  <!-- DESAFIO -->
+
+  <section class="desafio" id="desafio">
+
+    <div class="section-title">
+
+      <p id="desafioTag">
+        CONTEXTO
       </p>
+
+      <h3 id="desafioTitulo">
+        O desafio
+      </h3>
+
     </div>
 
-  </div>
+    <div class="texto-central">
 
-</section>
+      <p id="desafioTexto">
+        [Explique aqui qual é o desafio de produzir alimentos e ao mesmo tempo preservar o meio ambiente.]
+      </p>
 
-<section class="projetos" id="projetos">
+    </div>
 
-  <div class="section-title">
-    <p id="projetosTag">SUSTENTABILIDADE</p>
+  </section>
 
-    <h3 id="projetosTitulo">
-      Exemplos e resultados
-    </h3>
-  </div>
+  <!-- EQUILÍBRIO -->
 
-  <div class="galeria">
+  <section class="equilibrio">
 
-    <div class="projeto-card">
+    <div class="equilibrio-grid">
 
-      <img
-        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-        alt="Plantação sustentável"
-      >
+      <div class="equilibrio-card">
 
-      <div class="conteudo">
+        <h3 id="producaoTitulo">
+          Produção
+        </h3>
 
-        <h4 id="projeto1Titulo">
-          Cultivo sustentável
-        </h4>
-
-        <p id="projeto1Texto">
-          Tecnologia e cuidado ambiental trabalhando juntos no campo.
+        <p id="producaoTexto">
+          [Escreva aqui sobre a importância da produção agrícola.]
         </p>
 
-        <span id="projeto1Info">
-          ✔ Preservação e produtividade
-        </span>
-
       </div>
 
-    </div>
+      <div class="equilibrio-card destaque">
 
-    <div class="projeto-card">
+        <h3 id="equilibrioTitulo">
+          Equilíbrio
+        </h3>
 
-      <img
-        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
-        alt="Energia solar no campo"
-      >
-
-      <div class="conteudo">
-
-        <h4 id="projeto2Titulo">
-          Produção eficiente
-        </h4>
-
-        <p id="projeto2Texto">
-          Métodos modernos para reduzir desperdícios e aumentar resultados.
+        <p id="equilibrioTexto">
+          [Explique aqui como unir desenvolvimento e preservação.]
         </p>
 
-        <span id="projeto2Info">
-          ✔ Mais rendimento agrícola
-        </span>
-
       </div>
 
-    </div>
+      <div class="equilibrio-card">
 
-    <div class="projeto-card">
+        <h3 id="ambienteTitulo">
+          Meio ambiente
+        </h3>
 
-      <img
-        src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
-        alt="Agricultura verde"
-      >
-
-      <div class="conteudo">
-
-        <h4 id="projeto3Titulo">
-          Solo preservado
-        </h4>
-
-        <p id="projeto3Texto">
-          Técnicas naturais que fortalecem a terra e melhoram a colheita.
+        <p id="ambienteTexto">
+          [Escreva aqui sobre conservação dos recursos naturais.]
         </p>
 
-        <span id="projeto3Info">
-          ✔ Maior fertilidade natural
-        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOLUÇÕES -->
+
+  <section class="solucoes" id="solucoes">
+
+    <div class="section-title">
+
+      <p id="solucoesTag">
+        SOLUÇÕES
+      </p>
+
+      <h3 id="solucoesTitulo">
+        Caminhos para o futuro
+      </h3>
+
+    </div>
+
+    <div class="galeria">
+
+      <div class="projeto-card">
+
+        <img
+          src="./assets/agua.jpg"
+          alt="Uso inteligente da água"
+        >
+
+        <div class="conteudo">
+
+          <h4 id="card1Titulo">
+            Uso inteligente da água
+          </h4>
+
+          <p id="card1Texto">
+            [Explique aqui.]
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="projeto-card">
+
+        <img
+          src="./assets/tecnologia.jpg"
+          alt="Tecnologia no campo"
+        >
+
+        <div class="conteudo">
+
+          <h4 id="card2Titulo">
+            Tecnologia no campo
+          </h4>
+
+          <p id="card2Texto">
+            [Explique aqui.]
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="projeto-card">
+
+        <img
+          src="./assets/solo.jpg"
+          alt="Conservação do solo"
+        >
+
+        <div class="conteudo">
+
+          <h4 id="card3Titulo">
+            Conservação do solo
+          </h4>
+
+          <p id="card3Texto">
+            [Explique aqui.]
+          </p>
+
+        </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- BENEFÍCIOS -->
 
-<section class="resultados" id="resultados">
+  <section class="beneficios" id="beneficios">
 
-  <div class="resultado-box">
+    <div class="section-title">
 
-    <h3 id="resultadoTitulo">
-      Impactos positivos
-    </h3>
+      <p id="beneficiosTag">
+        RESULTADOS
+      </p>
 
-    <div class="numeros">
+      <h3 id="beneficiosTitulo">
+        Benefícios
+      </h3>
 
-      <div>
-        <h2>+47,3%</h2>
-        <p id="resultado1">Eficiência agrícola.</p>
+    </div>
+
+    <div class="beneficios-grid">
+
+      <div class="beneficio-item" id="beneficio1">
+        ✔ Benefício 1
       </div>
 
-      <div>
-        <h2>-34,8%</h2>
-        <p id="resultado2">Desperdício hídrico.</p>
+      <div class="beneficio-item" id="beneficio2">
+        ✔ Benefício 2
       </div>
 
-      <div>
-        <h2>+63,5%</h2>
-        <p id="resultado3">Uso de energia limpa.</p>
+      <div class="beneficio-item" id="beneficio3">
+        ✔ Benefício 3
+      </div>
+
+      <div class="beneficio-item" id="beneficio4">
+        ✔ Benefício 4
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- CONCLUSÃO -->
 
-<footer>
-  <p id="footerText">
-    © 2026 AgroNova | Projeto Agrinho.
-  </p>
-</footer>
+  <section class="conclusao">
 
-<script src="script.js"></script>
+    <div class="conclusao-box">
+
+      <h3 id="conclusaoTitulo">
+        Conclusão
+      </h3>
+
+      <p id="conclusaoTexto">
+        [Escreva aqui sua conclusão sobre a relação entre produção agrícola e preservação ambiental.]
+      </p>
+
+      <button id="voltarTopo">
+        Voltar ao topo
+      </button>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <p id="footerText">
+      © 2026 AgroNova | Projeto Agrinho
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
+```
