@@ -1,521 +1,271 @@
-/* ========================================= */
-/* AGRONOVA - SCRIPT.JS */
-/* ========================================= */
+/* Botão explorar: */
 
-/* ========================================= */
-/* BOTÃO "SAIBA MAIS" */
-/* ========================================= */
+const botao = document.getElementById("explorarBtn");
 
-const explorarBtn = document.getElementById("explorarBtn");
-
-if (explorarBtn) {
-  explorarBtn.addEventListener("click", () => {
-    document.getElementById("equilibrio").scrollIntoView({
+if (botao) {
+  botao.addEventListener("click", () => {
+    document.getElementById("projetos").scrollIntoView({
       behavior: "smooth"
     });
   });
 }
 
-/* ========================================= */
-/* BOTÃO "VOLTAR AO TOPO" */
-/* ========================================= */
+/* Efeitos nos cards: */
 
-const topBtn = document.getElementById("topBtn");
+const cards = document.querySelectorAll(".projeto-card");
 
-if (topBtn) {
-  topBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+cards.forEach((card) => {
+
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-10px)";
   });
-}
 
-/* ========================================= */
-/* TEMA ESCURO */
-/* ========================================= */
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0)";
+  });
+
+});
+
+/* Tema claro/escuro: */
 
 const themeToggle = document.getElementById("themeToggle");
-
-function applyTheme(theme) {
-
-  if (theme === "dark") {
-
-    document.body.classList.add("dark-theme");
-
-    if (themeToggle) {
-      themeToggle.textContent = "☀️";
-    }
-
-  } else {
-
-    document.body.classList.remove("dark-theme");
-
-    if (themeToggle) {
-      themeToggle.textContent = "🌙";
-    }
-
-  }
-
-}
-
-const savedTheme = localStorage.getItem("theme") || "light";
-
-applyTheme(savedTheme);
 
 if (themeToggle) {
 
   themeToggle.addEventListener("click", () => {
 
-    const isDark =
-      document.body.classList.contains("dark-theme");
+    document.body.classList.toggle("dark-theme");
 
-    const newTheme = isDark ? "light" : "dark";
-
-    applyTheme(newTheme);
-
-    localStorage.setItem("theme", newTheme);
-
-  });
-
-}
-
-/* ========================================= */
-/* TRADUÇÕES */
-/* ========================================= */
-
-const translations = {
-
-  pt: {
-
-    navSobre: "Equilíbrio",
-    navProjetos: "Soluções",
-    navResultados: "Benefícios",
-
-    heroTag: "PRODUÇÃO • EQUILÍBRIO • FUTURO",
-
-    heroTitle:
-      "Agro forte,<br>futuro sustentável",
-
-    heroDescription:
-      "Escreva aqui uma breve introdução sobre o tema do projeto.",
-
-    explorarBtn:
-      "Saiba mais",
-
-    equilibrioTag:
-      "O TEMA",
-
-    equilibrioTitulo:
-      "Produção e preservação",
-
-    producaoTitulo:
-      "Produção agrícola",
-
-    producaoTexto:
-      "Escreva aqui sobre a importância da produção agrícola para a sociedade.",
-
-    equilibrioCardTitulo:
-      "Equilíbrio",
-
-    equilibrioCardTexto:
-      "Explique aqui como a produção e a preservação podem caminhar juntas.",
-
-    ambienteTitulo:
-      "Meio ambiente",
-
-    ambienteTexto:
-      "Escreva aqui sobre a importância da conservação dos recursos naturais.",
-
-    solucoesTag:
-      "SOLUÇÕES",
-
-    solucoesTitulo:
-      "Caminhos para um futuro sustentável",
-
-    projeto1Titulo:
-      "Agricultura de precisão",
-
-    projeto1Texto:
-      "Escreva aqui sobre o uso de tecnologias no campo.",
-
-    projeto1Info:
-      "Tecnologia e eficiência",
-
-    projeto2Titulo:
-      "Uso consciente da água",
-
-    projeto2Texto:
-      "Escreva aqui sobre o uso responsável dos recursos hídricos.",
-
-    projeto2Info:
-      "Economia e preservação",
-
-    projeto3Titulo:
-      "Conservação do solo",
-
-    projeto3Texto:
-      "Escreva aqui sobre práticas que ajudam a preservar o solo.",
-
-    projeto3Info:
-      "Fertilidade e proteção",
-
-    beneficiosTag:
-      "BENEFÍCIOS",
-
-    beneficiosTitulo:
-      "Resultados da sustentabilidade",
-
-    beneficio1Titulo:
-      "Maior produtividade",
-
-    beneficio1Texto:
-      "Explique aqui um benefício relacionado à produção.",
-
-    beneficio2Titulo:
-      "Menor desperdício",
-
-    beneficio2Texto:
-      "Explique aqui um benefício relacionado à eficiência.",
-
-    beneficio3Titulo:
-      "Preservação ambiental",
-
-    beneficio3Texto:
-      "Explique aqui um benefício relacionado ao meio ambiente.",
-
-    conclusaoTitulo:
-      "Conclusão",
-
-    conclusaoTexto:
-      "Escreva aqui sua conclusão sobre o tema trabalhado.",
-
-    topBtn:
-      "Voltar ao topo",
-
-    footerText:
-      "© 2026 AgroNova | Projeto Agrinho"
-  },
-
-  en: {
-
-    navSobre: "Balance",
-    navProjetos: "Solutions",
-    navResultados: "Benefits",
-
-    heroTag:
-      "PRODUCTION • BALANCE • FUTURE",
-
-    heroTitle:
-      "Strong agriculture,<br>sustainable future",
-
-    heroDescription:
-      "Write a brief introduction about the project theme here.",
-
-    explorarBtn:
-      "Learn more",
-
-    equilibrioTag:
-      "THE THEME",
-
-    equilibrioTitulo:
-      "Production and preservation",
-
-    producaoTitulo:
-      "Agricultural production",
-
-    producaoTexto:
-      "Write here about the importance of agricultural production for society.",
-
-    equilibrioCardTitulo:
-      "Balance",
-
-    equilibrioCardTexto:
-      "Explain here how production and preservation can work together.",
-
-    ambienteTitulo:
-      "Environment",
-
-    ambienteTexto:
-      "Write here about the importance of conserving natural resources.",
-
-    solucoesTag:
-      "SOLUTIONS",
-
-    solucoesTitulo:
-      "Paths to a sustainable future",
-
-    projeto1Titulo:
-      "Precision agriculture",
-
-    projeto1Texto:
-      "Write here about the use of technology in the field.",
-
-    projeto1Info:
-      "Technology and efficiency",
-
-    projeto2Titulo:
-      "Responsible water use",
-
-    projeto2Texto:
-      "Write here about the responsible use of water resources.",
-
-    projeto2Info:
-      "Savings and preservation",
-
-    projeto3Titulo:
-      "Soil conservation",
-
-    projeto3Texto:
-      "Write here about practices that help preserve the soil.",
-
-    projeto3Info:
-      "Fertility and protection",
-
-    beneficiosTag:
-      "BENEFITS",
-
-    beneficiosTitulo:
-      "Results of sustainability",
-
-    beneficio1Titulo:
-      "Higher productivity",
-
-    beneficio1Texto:
-      "Explain here a production-related benefit.",
-
-    beneficio2Titulo:
-      "Less waste",
-
-    beneficio2Texto:
-      "Explain here an efficiency-related benefit.",
-
-    beneficio3Titulo:
-      "Environmental preservation",
-
-    beneficio3Texto:
-      "Explain here an environment-related benefit.",
-
-    conclusaoTitulo:
-      "Conclusion",
-
-    conclusaoTexto:
-      "Write your conclusion about the theme here.",
-
-    topBtn:
-      "Back to top",
-
-    footerText:
-      "© 2026 AgroNova | Agrinho Project"
-  },
-
-  es: {
-
-    navSobre: "Equilibrio",
-    navProjetos: "Soluciones",
-    navResultados: "Beneficios",
-
-    heroTag:
-      "PRODUCCIÓN • EQUILIBRIO • FUTURO",
-
-    heroTitle:
-      "Agricultura fuerte,<br>futuro sostenible",
-
-    heroDescription:
-      "Escriba aquí una breve introducción sobre el tema del proyecto.",
-
-    explorarBtn:
-      "Saber más",
-
-    equilibrioTag:
-      "EL TEMA",
-
-    equilibrioTitulo:
-      "Producción y preservación",
-
-    producaoTitulo:
-      "Producción agrícola",
-
-    producaoTexto:
-      "Escriba aquí sobre la importancia de la producción agrícola para la sociedad.",
-
-    equilibrioCardTitulo:
-      "Equilibrio",
-
-    equilibrioCardTexto:
-      "Explique aquí cómo la producción y la preservación pueden avanzar juntas.",
-
-    ambienteTitulo:
-      "Medio ambiente",
-
-    ambienteTexto:
-      "Escriba aquí sobre la importancia de conservar los recursos naturales.",
-
-    solucoesTag:
-      "SOLUCIONES",
-
-    solucoesTitulo:
-      "Caminos hacia un futuro sostenible",
-
-    projeto1Titulo:
-      "Agricultura de precisión",
-
-    projeto1Texto:
-      "Escriba aquí sobre el uso de tecnologías en el campo.",
-
-    projeto1Info:
-      "Tecnología y eficiencia",
-
-    projeto2Titulo:
-      "Uso responsable del agua",
-
-    projeto2Texto:
-      "Escriba aquí sobre el uso responsable de los recursos hídricos.",
-
-    projeto2Info:
-      "Ahorro y preservación",
-
-    projeto3Titulo:
-      "Conservación del suelo",
-
-    projeto3Texto:
-      "Escriba aquí sobre prácticas que ayudan a preservar el suelo.",
-
-    projeto3Info:
-      "Fertilidad y protección",
-
-    beneficiosTag:
-      "BENEFICIOS",
-
-    beneficiosTitulo:
-      "Resultados de la sostenibilidad",
-
-    beneficio1Titulo:
-      "Mayor productividad",
-
-    beneficio1Texto:
-      "Explique aquí un beneficio relacionado con la producción.",
-
-    beneficio2Titulo:
-      "Menor desperdicio",
-
-    beneficio2Texto:
-      "Explique aquí un beneficio relacionado con la eficiencia.",
-
-    beneficio3Titulo:
-      "Preservación ambiental",
-
-    beneficio3Texto:
-      "Explique aquí un beneficio relacionado con el medio ambiente.",
-
-    conclusaoTitulo:
-      "Conclusión",
-
-    conclusaoTexto:
-      "Escriba aquí su conclusión sobre el tema trabajado.",
-
-    topBtn:
-      "Volver arriba",
-
-    footerText:
-      "© 2026 AgroNova | Proyecto Agrinho"
-  }
-
-};
-
-/* ========================================= */
-/* APLICAR IDIOMA */
-/* ========================================= */
-
-function applyLanguage(lang) {
-
-  const t = translations[lang];
-
-  if (!t) return;
-
-  Object.keys(t).forEach(id => {
-
-    const element = document.getElementById(id);
-
-    if (!element) return;
-
-    if (
-      id === "heroTitle"
-    ) {
-      element.innerHTML = t[id];
+    if (document.body.classList.contains("dark-theme")) {
+      themeToggle.textContent = "☀️";
     } else {
-      element.textContent = t[id];
+      themeToggle.textContent = "🌙";
     }
 
   });
 
 }
 
-/* ========================================= */
-/* SELETOR DE IDIOMA */
-/* ========================================= */
+/* Diferentes linguagens: */
 
-const languageSelect =
-  document.getElementById("languageSelect");
+const translations = {
 
-const savedLanguage =
-  localStorage.getItem("language") || "pt";
+  pt: {
 
-applyLanguage(savedLanguage);
+    nav1: "Sobre",
+    nav2: "Projetos",
+    nav3: "Resultados",
+
+    tag: "INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO",
+
+    heroTitle: "Um agro forte,<br>inteligente e sustentável.",
+
+    heroDesc:
+      "Incentivando práticas agrícolas modernas, sustentáveis, econômicas e conscientes, para proteger não somente o meio ambiente, mas também o futuro.",
+
+    btn: "Ver mais",
+
+    sobreTitulo: "Produzir sem destruir",
+
+    sobreTexto:
+      "O agro sustentável combina produtividade, inovação e preservação ambiental. Com técnicas modernas, é possível reduzir desperdícios, economizar recursos naturais e ainda melhorar a qualidade da produção.",
+
+    card1Titulo: "Menos desperdício",
+    card1Texto: "Aproveitamento inteligente de recursos e produção mais consciente.",
+
+    card2Titulo: "Mais eficiência",
+    card2Texto: "Tecnologia e inovação para produzir mais com menos.",
+
+    card3Titulo: "Futuro sustentável",
+    card3Texto: "Equilíbrio entre produtividade, natureza e desenvolvimento.",
+
+    secao: "SUSTENTABILIDADE",
+    exemplos: "Exemplos e resultados",
+
+    projeto1Titulo: "Cultivo sustentável",
+    projeto1Texto: "Tecnologia e cuidado ambiental trabalhando juntos no campo.",
+    projeto1Info: "✔ Preservação e produtividade",
+
+    projeto2Titulo: "Produção eficiente",
+    projeto2Texto: "Métodos modernos para reduzir desperdícios e aumentar resultados.",
+    projeto2Info: "✔ Mais rendimento agrícola",
+
+    projeto3Titulo: "Solo preservado",
+    projeto3Texto: "Técnicas naturais que fortalecem a terra e melhoram a colheita.",
+    projeto3Info: "✔ Maior fertilidade natural",
+
+    resultados: "Impactos positivos",
+
+    resultado1: "Eficiência agrícola.",
+    resultado2: "Desperdício hídrico.",
+    resultado3: "Uso de energia limpa.",
+
+    footer: "© 2026 AgroNova | Projeto Agrinho."
+  },
+
+  en: {
+
+    nav1: "About",
+    nav2: "Projects",
+    nav3: "Results",
+
+    tag: "INNOVATION • PRESERVATION • TRANSFORMATION",
+
+    heroTitle: "A strong,<br>smart and sustainable agriculture.",
+
+    heroDesc:
+      "Encouraging modern, sustainable, economical and conscious agricultural practices to protect not only the environment, but also the future.",
+
+    btn: "See more",
+
+    sobreTitulo: "Producing without destroying",
+
+    sobreTexto:
+      "Sustainable agriculture combines productivity, innovation and environmental preservation. With modern techniques it is possible to reduce waste, save natural resources and improve production quality.",
+
+    card1Titulo: "Less waste",
+    card1Texto: "Smart use of resources and more conscious production.",
+
+    card2Titulo: "More efficiency",
+    card2Texto: "Technology and innovation to produce more with less.",
+
+    card3Titulo: "Sustainable future",
+    card3Texto: "Balance between productivity, nature and development.",
+
+    secao: "SUSTAINABILITY",
+    exemplos: "Examples and results",
+
+    projeto1Titulo: "Sustainable cultivation",
+    projeto1Texto: "Technology and environmental care working together in the field.",
+    projeto1Info: "✔ Preservation and productivity",
+
+    projeto2Titulo: "Efficient production",
+    projeto2Texto: "Modern methods to reduce waste and increase results.",
+    projeto2Info: "✔ Higher agricultural yield",
+
+    projeto3Titulo: "Preserved soil",
+    projeto3Texto: "Natural techniques that strengthen the soil and improve harvests.",
+    projeto3Info: "✔ Greater natural fertility",
+
+    resultados: "Positive impacts",
+
+    resultado1: "Agricultural efficiency.",
+    resultado2: "Water waste.",
+    resultado3: "Clean energy usage.",
+
+    footer: "© 2026 AgroNova | Projeto Agrinho."
+  },
+
+  es: {
+
+    nav1: "Acerca",
+    nav2: "Proyectos",
+    nav3: "Resultados",
+
+    tag: "INNOVACIÓN • PRESERVACIÓN • TRANSFORMACIÓN",
+
+    heroTitle: "Una agricultura fuerte,<br>inteligente y sostenible.",
+
+    heroDesc:
+      "Promoviendo prácticas agrícolas modernas, sostenibles, económicas y responsables para proteger no solo el medio ambiente, sino también el futuro.",
+
+    btn: "Ver más",
+
+    sobreTitulo: "Producir sin destruir",
+
+    sobreTexto:
+      "La agricultura sostenible combina productividad, innovación y preservación ambiental. Con técnicas modernas es posible reducir desperdicios, ahorrar recursos naturales y mejorar la calidad de la producción.",
+
+    card1Titulo: "Menos desperdicio",
+    card1Texto: "Uso inteligente de recursos y producción más consciente.",
+
+    card2Titulo: "Más eficiencia",
+    card2Texto: "Tecnología e innovación para producir más con menos.",
+
+    card3Titulo: "Futuro sostenible",
+    card3Texto: "Equilibrio entre productividad, naturaleza y desarrollo.",
+
+    secao: "SOSTENIBILIDAD",
+    exemplos: "Ejemplos y resultados",
+
+    projeto1Titulo: "Cultivo sostenible",
+    projeto1Texto: "Tecnología y cuidado ambiental trabajando juntos en el campo.",
+    projeto1Info: "✔ Preservación y productividad",
+
+    projeto2Titulo: "Producción eficiente",
+    projeto2Texto: "Métodos modernos para reducir desperdicios y aumentar resultados.",
+    projeto2Info: "✔ Mayor rendimiento agrícola",
+
+    projeto3Titulo: "Suelo preservado",
+    projeto3Texto: "Técnicas naturales que fortalecen la tierra y mejoran la cosecha.",
+    projeto3Info: "✔ Mayor fertilidad natural",
+
+    resultados: "Impactos positivos",
+
+    resultado1: "Eficiencia agrícola.",
+    resultado2: "Desperdicio hídrico.",
+    resultado3: "Uso de energía limpia.",
+
+    footer: "© 2026 AgroNova | Projeto Agrinho."
+  }
+
+};
+
+/* Escolher linguagem: */
+
+const languageSelect = document.getElementById("languageSelect");
 
 if (languageSelect) {
 
-  languageSelect.value = savedLanguage;
-
   languageSelect.addEventListener("change", () => {
 
-    const lang = languageSelect.value;
+    const t = translations[languageSelect.value];
 
-    applyLanguage(lang);
+    document.getElementById("navSobre").textContent = t.nav1;
+    document.getElementById("navProjetos").textContent = t.nav2;
+    document.getElementById("navResultados").textContent = t.nav3;
 
-    localStorage.setItem(
-      "language",
-      lang
-    );
+    document.getElementById("heroTag").textContent = t.tag;
+    document.getElementById("heroTitle").innerHTML = t.heroTitle;
+    document.getElementById("heroDescription").textContent = t.heroDesc;
+
+    document.getElementById("explorarBtn").textContent = t.btn;
+
+    document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
+    document.getElementById("sobreTexto").textContent = t.sobreTexto;
+
+    document.getElementById("card1Titulo").textContent = t.card1Titulo;
+    document.getElementById("card1Texto").textContent = t.card1Texto;
+
+    document.getElementById("card2Titulo").textContent = t.card2Titulo;
+    document.getElementById("card2Texto").textContent = t.card2Texto;
+
+    document.getElementById("card3Titulo").textContent = t.card3Titulo;
+    document.getElementById("card3Texto").textContent = t.card3Texto;
+
+    document.getElementById("projetosTag").textContent = t.secao;
+    document.getElementById("projetosTitulo").textContent = t.exemplos;
+
+    document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
+    document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
+    document.getElementById("projeto1Info").textContent = t.projeto1Info;
+
+    document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
+    document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
+    document.getElementById("projeto2Info").textContent = t.projeto2Info;
+
+    document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
+    document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
+    document.getElementById("projeto3Info").textContent = t.projeto3Info;
+
+    document.getElementById("resultadoTitulo").textContent = t.resultados;
+
+    document.getElementById("resultado1").textContent = t.resultado1;
+    document.getElementById("resultado2").textContent = t.resultado2;
+    document.getElementById("resultado3").textContent = t.resultado3;
+
+    document.getElementById("footerText").textContent = t.footer;
 
   });
 
 }
-
-/* ========================================= */
-/* ANIMAÇÃO AO ROLAR */
-/* ========================================= */
-
-const animatedElements = document.querySelectorAll(
-  ".info-card, .projeto-card, .beneficio-card, .section-title, .conclusao-box"
-);
-
-animatedElements.forEach(element => {
-  element.classList.add("fade-in");
-});
-
-const observer = new IntersectionObserver(
-
-  entries => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("show");
-
-      }
-
-    });
-
-  },
-
-  {
-    threshold: 0.15
-  }
-
-);
-
-animatedElements.forEach(element => {
-  observer.observe(element);
-});
