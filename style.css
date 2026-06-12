@@ -6,27 +6,25 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px; /* base para applyFontSize() */
+  font-size: 16px;
 }
 
 body {
   background: #f5f8f2;
   color: #1d2b1f;
   font-family: 'Outfit', sans-serif;
+  transition: 0.3s ease;
 }
 
-/* ============================================================
+/* =========================
    HERO
-   ============================================================ */
+========================= */
 
 .hero {
   min-height: 100vh;
   padding: 2rem 8%;
   background:
-    linear-gradient(
-      rgba(10, 20, 10, 0.55),
-      rgba(10, 20, 10, 0.55)
-    ),
+    linear-gradient(rgba(10, 20, 10, 0.55), rgba(10, 20, 10, 0.55)),
     url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
@@ -37,6 +35,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 nav h1 {
@@ -64,49 +63,80 @@ nav a:hover {
   color: #8cff9d;
 }
 
-/* ============================================================
+/* =========================
+   MENU MOBILE
+========================= */
+
+.menu-mobile {
+  display: none;
+  background: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .menu-mobile {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+/* =========================
    CONTROLES
-   ============================================================ */
+========================= */
 
 .controls {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-#languageSelect,
-#fontSizeSelect {
+select,
+#themeToggle {
   height: 40px;
-  padding: 0 12px;
-  border: none;
   border-radius: 10px;
-  font-family: 'Outfit', sans-serif;
+  border: none;
+  padding: 0 10px;
   cursor: pointer;
-  background: white;
-  color: #1d2b1f;
 }
 
 #themeToggle {
   width: 40px;
-  height: 40px;
-  padding: 0;
-  border: none;
-  border-radius: 10px;
-  background: white;
   display: flex;
-  align-items: center;
   justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
+  align-items: center;
 }
 
-/* ============================================================
+/* =========================
    HERO CONTENT
-   ============================================================ */
+========================= */
 
 .hero-content {
   margin-top: 10rem;
   max-width: 650px;
+}
+
+.hero-content h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 .tag {
@@ -115,16 +145,10 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-.hero-content h2 {
-  font-size: 4rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
 .description {
   font-size: 1.1rem;
-  line-height: 1.7;
   color: #e5e5e5;
+  line-height: 1.7;
 }
 
 .hero-content button {
@@ -133,9 +157,8 @@ nav a:hover {
   border: none;
   border-radius: 12px;
   background: #8cff9d;
-  color: #102013;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
@@ -143,16 +166,15 @@ nav a:hover {
   transform: translateY(-3px);
 }
 
-/* ============================================================
+/* =========================
    SOBRE
-   ============================================================ */
+========================= */
 
 .sobre {
   padding: 6rem 8%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 3rem;
 }
 
 .texto h3 {
@@ -161,35 +183,26 @@ nav a:hover {
 }
 
 .texto p {
-  line-height: 1.8;
   color: #4d5c4f;
+  line-height: 1.8;
 }
 
 .card-info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .mini-card {
   background: white;
   padding: 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.mini-card h4 {
-  margin-bottom: 0.8rem;
-}
-
-.mini-card p {
-  color: #566558;
-  line-height: 1.6;
-}
-
-/* ============================================================
+/* =========================
    PROJETOS
-   ============================================================ */
+========================= */
 
 .projetos {
   padding: 6rem 8%;
@@ -201,32 +214,30 @@ nav a:hover {
 }
 
 .section-title h3 {
-  font-size: 2.7rem;
-  margin-top: 0.5rem;
+  font-size: 2.5rem;
 }
 
 .galeria {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
 .projeto-card {
   background: white;
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .projeto-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .projeto-card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -234,26 +245,9 @@ nav a:hover {
   padding: 1.5rem;
 }
 
-.conteudo h4 {
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
-}
-
-.conteudo p {
-  color: #566558;
-  line-height: 1.6;
-}
-
-.conteudo span {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #2f8b46;
-  font-weight: 600;
-}
-
-/* ============================================================
+/* =========================
    RESULTADOS
-   ============================================================ */
+========================= */
 
 .resultados {
   padding: 5rem 8%;
@@ -262,127 +256,75 @@ nav a:hover {
 .resultado-box {
   background: #16331b;
   color: white;
-  border-radius: 28px;
   padding: 4rem;
-}
-
-.resultado-box h3 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  border-radius: 25px;
 }
 
 .numeros {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .numeros h2 {
-  font-size: 3rem;
   color: #8cff9d;
+  font-size: 2.5rem;
 }
 
-.numeros p {
-  color: #c5d9c7;
-  margin-top: 0.3rem;
-}
-
-/* ============================================================
+/* =========================
    FOOTER
-   ============================================================ */
+========================= */
 
 footer {
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
   color: #607062;
 }
 
-/* ============================================================
-   DARK MODE
-   ============================================================ */
+/* =========================
+   DARK MODE (CORRIGIDO)
+========================= */
 
-.dark-theme {
+body.dark-theme {
   background: #121212;
   color: #f5f5f5;
 }
 
-.dark-theme .sobre,
-.dark-theme .projetos,
-.dark-theme .resultados {
-  background: #121212;
+body.dark-theme .mini-card,
+body.dark-theme .projeto-card {
+  background: #1e1e1e;
 }
 
-.dark-theme .mini-card,
-.dark-theme .projeto-card {
-  background: #1d1d1d;
-  color: #f5f5f5;
-}
-
-.dark-theme .texto p,
-.dark-theme .conteudo p,
-.dark-theme .mini-card p,
-.dark-theme footer {
+body.dark-theme .texto p {
   color: #cfcfcf;
 }
 
-.dark-theme .resultado-box {
-  background: #0c1a0f;
+body.dark-theme .resultado-box {
+  background: #0d1f12;
 }
 
-.dark-theme #languageSelect,
-.dark-theme #fontSizeSelect,
-.dark-theme #themeToggle {
-  background: #242424;
+body.dark-theme nav ul {
+  background: rgba(20, 20, 20, 0.95);
+}
+
+body.dark-theme select,
+body.dark-theme #themeToggle {
+  background: #2a2a2a;
   color: white;
 }
 
-.dark-theme #languageSelect option,
-.dark-theme #fontSizeSelect option {
-  background: #242424;
-  color: white;
-}
-
-.dark-theme nav a {
-  color: white;
-}
-
-.dark-theme nav a:hover {
-  color: #8cff9d;
-}
-
-/* ============================================================
+/* =========================
    RESPONSIVO
-   ============================================================ */
+========================= */
 
 @media (max-width: 900px) {
-  nav {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  .hero-content {
-    margin-top: 6rem;
-  }
-
-  .hero-content h2 {
-    font-size: 2.8rem;
-  }
-
   .sobre {
     grid-template-columns: 1fr;
   }
 
-  .numeros {
-    flex-direction: column;
-  }
-
-  .controls {
-    margin-left: auto;
+  .hero-content {
+    margin-top: 6rem;
   }
 }
 
@@ -395,23 +337,5 @@ footer {
   .projetos,
   .resultados {
     padding: 4rem 6%;
-  }
-
-  .hero-content h2 {
-    font-size: 2.2rem;
-  }
-
-  .texto h3,
-  .section-title h3,
-  .resultado-box h3 {
-    font-size: 2rem;
-  }
-
-  .resultado-box {
-    padding: 2rem;
-  }
-
-  .numeros h2 {
-    font-size: 2.3rem;
   }
 }
