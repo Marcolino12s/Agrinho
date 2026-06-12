@@ -10,10 +10,57 @@ html {
 }
 
 body {
-  background: #f5f8f2;
-  color: #1d2b1f;
   font-family: 'Outfit', sans-serif;
+  background: radial-gradient(circle at top, #f5f8f2, #e7efe6);
+  color: #1d2b1f;
   transition: 0.3s ease;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 8%;
+  position: relative;
+}
+
+nav h1 {
+  font-size: 2rem;
+}
+
+nav span {
+  color: #4caf50;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1d2b1f;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #4caf50;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* =========================
@@ -24,93 +71,14 @@ body {
   min-height: 100vh;
   padding: 2rem 8%;
   background:
-    linear-gradient(rgba(10, 20, 10, 0.55), rgba(10, 20, 10, 0.55)),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+    linear-gradient(120deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600');
   background-size: cover;
   background-position: center;
   color: white;
-}
-
-/* =========================
-   NAV (CORRIGIDO)
-========================= */
-
-nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  flex-direction: column;
 }
-
-nav h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
-}
-
-nav span {
-  color: #8cff9d;
-}
-
-nav ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-/* 🔥 CORREÇÃO PRINCIPAL */
-nav ul {
-  background: transparent; /* remove fundo das palavras */
-}
-
-/* LINKS LIMPOS */
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0;
-  background: transparent;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #8cff9d;
-}
-
-/* =========================
-   MENU MOBILE
-========================= */
-
-.menu-mobile {
-  display: none;
-  background: white;
-  border: none;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* =========================
-   CONTROLES
-========================= */
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-select,
-#themeToggle {
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
 
 .hero-content {
   margin-top: 10rem;
@@ -118,56 +86,58 @@ select,
 }
 
 .hero-content h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.1;
-  margin-bottom: 1rem;
 }
 
 .tag {
-  color: #9cffad;
+  color: #8cff9d;
   letter-spacing: 2px;
+  margin-bottom: 1rem;
 }
 
-.description {
-  font-size: 1.1rem;
-  color: #e5e5e5;
-  line-height: 1.7;
+.hero-content button {
+  margin-top: 2rem;
+  padding: 1rem 2.2rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8cff9d, #4caf50);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  transform: translateY(-5px);
 }
 
 /* =========================
-   SOBRE
+   CARDS (SOBRE + PROJETOS)
 ========================= */
 
-.sobre {
-  padding: 6rem 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-/* =========================
-   PROJETOS
-========================= */
-
+.sobre,
 .projetos {
   padding: 6rem 8%;
 }
 
-.galeria {
-  margin-top: 3rem;
+.cards,
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
-.projeto-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
+.card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
-.projeto-card:hover {
+.card:hover {
   transform: translateY(-8px);
 }
 
@@ -179,11 +149,18 @@ select,
   padding: 5rem 8%;
 }
 
-.resultado-box {
-  background: #16331b;
+.box {
+  background: linear-gradient(135deg, #16331b, #0d1f12);
   color: white;
   padding: 4rem;
-  border-radius: 25px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.stats {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
 }
 
 /* =========================
@@ -193,48 +170,20 @@ select,
 footer {
   text-align: center;
   padding: 2rem;
-  color: #607062;
+  color: #555;
 }
 
 /* =========================
-   DARK MODE (CORRIGIDO)
+   MOBILE MENU
 ========================= */
 
-body.dark-theme {
-  background: #121212;
-  color: #f5f5f5;
+.menu-mobile {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-
-/* 🔥 CORREÇÃO DO MENU NO DARK */
-body.dark-theme nav ul {
-  background: transparent; /* remove "caixa nas palavras" */
-}
-
-/* links continuam limpos */
-body.dark-theme nav a {
-  color: white;
-}
-
-/* cards no dark */
-body.dark-theme .projeto-card,
-body.dark-theme .mini-card {
-  background: #1e1e1e;
-}
-
-body.dark-theme .resultado-box {
-  background: #0d1f12;
-}
-
-/* controles */
-body.dark-theme select,
-body.dark-theme #themeToggle {
-  background: #2a2a2a;
-  color: white;
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
 
 @media (max-width: 900px) {
 
@@ -246,9 +195,9 @@ body.dark-theme #themeToggle {
     display: none;
     position: absolute;
     top: 70px;
-    right: 0;
+    right: 8%;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0,0,0,0.9);
     padding: 1rem;
     border-radius: 12px;
   }
@@ -257,7 +206,29 @@ body.dark-theme #themeToggle {
     display: flex;
   }
 
-  .sobre {
-    grid-template-columns: 1fr;
+  .hero-content {
+    margin-top: 6rem;
   }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-theme {
+  background: radial-gradient(circle at top, #0f0f0f, #050505);
+  color: #f5f5f5;
+}
+
+body.dark-theme nav a {
+  color: white;
+}
+
+body.dark-theme .card {
+  background: rgba(30,30,30,0.8);
+  color: white;
+}
+
+body.dark-theme .box {
+  background: linear-gradient(135deg, #0d1f12, #000);
 }
