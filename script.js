@@ -1,54 +1,49 @@
 const translations = {
   pt: {
-    fontSmall: "Pequena",
-    fontMedium: "Média",
-    fontLarge: "Grande",
     nav1: "Sobre",
     nav2: "Projetos",
     nav3: "Resultados",
-    tag: "INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO",
-    heroTitle: "Um agro forte,<br>inteligente e sustentável.",
-    heroDesc: "Incentivando práticas agrícolas modernas, sustentáveis e conscientes.",
+
+    tag: "INOVAÇÃO • SUSTENTABILIDADE",
+    heroTitle: "Agricultura forte,<br> inteligente e sustentável.",
+    heroDesc: "Tecnologia e sustentabilidade trabalhando juntas no campo.",
     btn: "Ver mais",
 
     sobreTitulo: "Produzir sem destruir",
-    sobreTexto: "O agro sustentável combina produtividade, inovação e preservação ambiental.",
+    sobreTexto: "O agro sustentável une produtividade, inovação e preservação ambiental.",
 
     card1Titulo: "Menos desperdício",
-    card1Texto: "Uso inteligente de recursos naturais.",
+    card1Texto: "Uso consciente de recursos naturais.",
     card2Titulo: "Mais eficiência",
-    card2Texto: "Tecnologia para produzir mais com menos.",
+    card2Texto: "Produção com tecnologia e precisão.",
     card3Titulo: "Futuro sustentável",
-    card3Texto: "Equilíbrio entre produção e natureza.",
+    card3Texto: "Equilíbrio entre natureza e produção.",
 
-    secao: "SUSTENTABILIDADE",
-    exemplos: "Exemplos e resultados",
+    exemplos: "Exemplos de práticas",
 
     projeto1Titulo: "Cultivo sustentável",
-    projeto1Texto: "Tecnologia e preservação trabalhando juntas.",
+    projeto1Texto: "Tecnologia aplicada ao campo.",
     projeto2Titulo: "Produção eficiente",
-    projeto2Texto: "Menos desperdício e mais produtividade.",
+    projeto2Texto: "Menos desperdício e mais resultado.",
     projeto3Titulo: "Solo preservado",
-    projeto3Texto: "Técnicas que fortalecem o solo.",
+    projeto3Texto: "Técnicas que mantêm a fertilidade.",
 
-    resultados: "Impactos positivos",
-    resultado1: "Eficiência agrícola aumentada.",
-    resultado2: "Redução do desperdício de água.",
-    resultado3: "Uso crescente de energia limpa.",
+    resultadosTitulo: "Impactos positivos",
+    resultado1: "Maior eficiência agrícola",
+    resultado2: "Redução do desperdício de água",
+    resultado3: "Uso de energia limpa",
 
-    footer: "© 2026 AgroNova | Projeto Agrinho"
+    footer: "© 2026 AgroNova"
   },
 
   en: {
-    fontSmall: "Small",
-    fontMedium: "Medium",
-    fontLarge: "Large",
     nav1: "About",
     nav2: "Projects",
     nav3: "Results",
-    tag: "INNOVATION • PRESERVATION • TRANSFORMATION",
-    heroTitle: "A strong,<br>smart and sustainable agriculture.",
-    heroDesc: "Promoting modern and sustainable farming practices.",
+
+    tag: "INNOVATION • SUSTAINABILITY",
+    heroTitle: "Strong, smart and sustainable agriculture.",
+    heroDesc: "Technology and sustainability working together in farming.",
     btn: "See more",
 
     sobreTitulo: "Producing without destroying",
@@ -57,38 +52,35 @@ const translations = {
     card1Titulo: "Less waste",
     card1Texto: "Smart use of natural resources.",
     card2Titulo: "More efficiency",
-    card2Texto: "Technology to produce more with less.",
+    card2Texto: "Technology-driven production.",
     card3Titulo: "Sustainable future",
     card3Texto: "Balance between nature and production.",
 
-    secao: "SUSTAINABILITY",
-    exemplos: "Examples and results",
+    exemplos: "Practices",
 
     projeto1Titulo: "Sustainable cultivation",
-    projeto1Texto: "Technology and nature working together.",
+    projeto1Texto: "Technology applied to farming.",
     projeto2Titulo: "Efficient production",
-    projeto2Texto: "Less waste and more yield.",
+    projeto2Texto: "Less waste, better results.",
     projeto3Titulo: "Preserved soil",
-    projeto3Texto: "Techniques that strengthen soil.",
+    projeto3Texto: "Techniques that maintain fertility.",
 
-    resultados: "Positive impacts",
-    resultado1: "Increased agricultural efficiency.",
-    resultado2: "Reduced water waste.",
-    resultado3: "Growing clean energy usage.",
+    resultadosTitulo: "Positive impacts",
+    resultado1: "Higher agricultural efficiency",
+    resultado2: "Reduced water waste",
+    resultado3: "Clean energy usage",
 
-    footer: "© 2026 AgroNova | Agrinho Project"
+    footer: "© 2026 AgroNova"
   },
 
   es: {
-    fontSmall: "Pequeña",
-    fontMedium: "Mediana",
-    fontLarge: "Grande",
     nav1: "Acerca",
     nav2: "Proyectos",
     nav3: "Resultados",
-    tag: "INNOVACIÓN • PRESERVACIÓN • TRANSFORMACIÓN",
-    heroTitle: "Una agricultura fuerte,<br>inteligente y sostenible.",
-    heroDesc: "Promoviendo prácticas agrícolas modernas y sostenibles.",
+
+    tag: "INNOVACIÓN • SOSTENIBILIDAD",
+    heroTitle: "Agricultura fuerte, inteligente y sostenible.",
+    heroDesc: "Tecnología y sostenibilidad trabajando juntas en el campo.",
     btn: "Ver más",
 
     sobreTitulo: "Producir sin destruir",
@@ -97,26 +89,25 @@ const translations = {
     card1Titulo: "Menos desperdicio",
     card1Texto: "Uso inteligente de recursos.",
     card2Titulo: "Más eficiencia",
-    card2Texto: "Tecnología para producir más con menos.",
+    card2Texto: "Producción optimizada con tecnología.",
     card3Titulo: "Futuro sostenible",
-    card3Texto: "Equilibrio entre producción y naturaleza.",
+    card3Texto: "Equilibrio entre naturaleza y producción.",
 
-    secao: "SOSTENIBILIDAD",
-    exemplos: "Ejemplos y resultados",
+    exemplos: "Prácticas",
 
     projeto1Titulo: "Cultivo sostenible",
-    projeto1Texto: "Tecnología y naturaleza trabajando juntos.",
+    projeto1Texto: "Tecnología aplicada al campo.",
     projeto2Titulo: "Producción eficiente",
-    projeto2Texto: "Menos desperdicio y más rendimiento.",
+    projeto2Texto: "Menos desperdicio, más rendimiento.",
     projeto3Titulo: "Suelo preservado",
-    projeto3Texto: "Técnicas que fortalecen el suelo.",
+    projeto3Texto: "Técnicas que mantienen fertilidad.",
 
-    resultados: "Impactos positivos",
-    resultado1: "Mayor eficiencia agrícola.",
-    resultado2: "Menor desperdicio de agua.",
-    resultado3: "Uso de energía limpia.",
+    resultadosTitulo: "Impactos positivos",
+    resultado1: "Mayor eficiencia agrícola",
+    resultado2: "Reducción del desperdicio de agua",
+    resultado3: "Uso de energía limpia",
 
-    footer: "© 2026 AgroNova | Proyecto Agrinho"
+    footer: "© 2026 AgroNova"
   }
 };
 
@@ -161,7 +152,6 @@ function applyTranslation(lang) {
   setText("card3Titulo", t.card3Titulo);
   setText("card3Texto", t.card3Texto);
 
-  setText("secao", t.secao);
   setText("exemplos", t.exemplos);
 
   setText("projeto1Titulo", t.projeto1Titulo);
@@ -173,7 +163,7 @@ function applyTranslation(lang) {
   setText("projeto3Titulo", t.projeto3Titulo);
   setText("projeto3Texto", t.projeto3Texto);
 
-  setText("resultadosTitulo", t.resultados);
+  setText("resultadosTitulo", t.resultadosTitulo);
   setText("resultado1", t.resultado1);
   setText("resultado2", t.resultado2);
   setText("resultado3", t.resultado3);
@@ -185,7 +175,7 @@ function applyTranslation(lang) {
    FONTE
 ========================= */
 
-function applyFontSize(size) {
+function applyFont(size) {
   const sizes = {
     small: "14px",
     medium: "16px",
@@ -199,10 +189,10 @@ function applyFontSize(size) {
    MENU MOBILE
 ========================= */
 
-const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
+const menuToggle = document.getElementById("menuToggle");
 
-if (menuToggle && menu) {
+if (menu && menuToggle) {
   menuToggle.addEventListener("click", () => {
     menu.classList.toggle("active");
   });
@@ -212,37 +202,35 @@ if (menuToggle && menu) {
    IDIOMA
 ========================= */
 
-const languageSelect = document.getElementById("languageSelect");
+const langSelect = document.getElementById("languageSelect");
 
-if (languageSelect) {
-  const savedLang = localStorage.getItem("agronova-lang") || "pt";
+if (langSelect) {
+  const savedLang = localStorage.getItem("lang") || "pt";
 
-  languageSelect.value = savedLang;
+  langSelect.value = savedLang;
   applyTranslation(savedLang);
 
-  languageSelect.addEventListener("change", () => {
-    const lang = languageSelect.value;
-    applyTranslation(lang);
-    localStorage.setItem("agronova-lang", lang);
+  langSelect.addEventListener("change", () => {
+    applyTranslation(langSelect.value);
+    localStorage.setItem("lang", langSelect.value);
   });
 }
 
 /* =========================
-   FONTE SELECT
+   FONTE
 ========================= */
 
 const fontSelect = document.getElementById("fontSizeSelect");
 
 if (fontSelect) {
-  const savedFont = localStorage.getItem("agronova-font") || "medium";
+  const savedFont = localStorage.getItem("font") || "medium";
 
   fontSelect.value = savedFont;
-  applyFontSize(savedFont);
+  applyFont(savedFont);
 
   fontSelect.addEventListener("change", () => {
-    const size = fontSelect.value;
-    applyFontSize(size);
-    localStorage.setItem("agronova-font", size);
+    applyFont(fontSelect.value);
+    localStorage.setItem("font", fontSelect.value);
   });
 }
 
@@ -250,37 +238,34 @@ if (fontSelect) {
    TEMA
 ========================= */
 
-const themeToggle = document.getElementById("themeToggle");
+const themeBtn = document.getElementById("themeToggle");
 
-if (themeToggle) {
-  const savedTheme = localStorage.getItem("agronova-theme") || "light";
+if (themeBtn) {
+  const savedTheme = localStorage.getItem("theme") || "light";
 
   if (savedTheme === "dark") {
     document.body.classList.add("dark-theme");
-    themeToggle.textContent = "☀️";
-  } else {
-    themeToggle.textContent = "🌙";
+    themeBtn.textContent = "☀️";
   }
 
-  themeToggle.addEventListener("click", () => {
+  themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
     const isDark = document.body.classList.contains("dark-theme");
 
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
+    themeBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 }
 
 /* =========================
-   SCROLL BOTÃO
+   BOTÃO HERO
 ========================= */
 
 const btn = document.getElementById("explorarBtn");
 
 if (btn) {
   btn.addEventListener("click", () => {
-    const secao = document.getElementById("projetos");
-    if (secao) secao.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("projetos")?.scrollIntoView({ behavior: "smooth" });
   });
 }
