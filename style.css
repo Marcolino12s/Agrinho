@@ -1,332 +1,512 @@
-/* Modal de boas-vindas: */
-
-const overlay     = document.getElementById("welcomeOverlay");
-const nameInput   = document.getElementById("nameInput");
-const welcomeBtn  = document.getElementById("welcomeBtn");
-const greeting    = document.getElementById("greetingBanner");
-
-function showGreeting(name) {
-  const lang = localStorage.getItem("agronova-lang") || "pt";
-  const t = translations[lang];
-  const hour = new Date().getHours();
-  let saudacao;
-  if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
-  else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
-  else                               saudacao = t.greetingEvening;
-
-  greeting.textContent = `🌿 ${saudacao}, ${name}!`;
-  greeting.classList.add("visible");
-
-  setTimeout(() => greeting.classList.remove("visible"), 5000);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-function closeModal(name) {
-  overlay.classList.add("hidden");
-  setTimeout(() => overlay.style.display = "none", 400);
-  showGreeting(name);
+html {
+  scroll-behavior: smooth;
 }
 
-const savedName = localStorage.getItem("agronova-name");
-
-if (savedName) {
-  overlay.style.display = "none";
-  setTimeout(() => showGreeting(savedName), 600);
+body {
+  background: #f5f8f2;
+  color: #1d2b1f;
+  font-family: 'Outfit', sans-serif;
 }
 
-if (welcomeBtn) {
-  welcomeBtn.addEventListener("click", () => {
-    const name = nameInput.value.trim() || "visitante";
-    localStorage.setItem("agronova-name", name);
-    closeModal(name);
-  });
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 2rem 8%;
+  background:
+    linear-gradient(
+      rgba(10, 20, 10, 0.55),
+      rgba(10, 20, 10, 0.55)
+    ),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
 
-if (nameInput) {
-  nameInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") welcomeBtn.click();
-  });
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Botão explorar: */
-
-const botao = document.getElementById("explorarBtn");
-
-if (botao) {
-  botao.addEventListener("click", () => {
-    document.getElementById("projetos").scrollIntoView({ behavior: "smooth" });
-  });
+nav h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
 }
 
-/* Efeito nos cards tratado apenas pelo CSS */
+nav span {
+  color: #8cff9d;
+}
 
-/* Tema claro/escuro com persistência: */
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
 
-const themeToggle = document.getElementById("themeToggle");
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-if (themeToggle) {
-  const savedTheme = localStorage.getItem("agronova-theme");
+nav a:hover {
+  color: #8cff9d;
+}
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-theme");
-    themeToggle.textContent = "☀️";
+/* CONTROLES */
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#languageSelect,
+#fontSizeSelect {
+  height: 40px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+}
+
+#themeToggle {
+  width: 40px;
+  height: 40px;
+  margin-top: 0;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  margin-top: 10rem;
+  max-width: 650px;
+}
+
+.tag {
+  color: #9cffad;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+}
+
+.hero-content button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: #8cff9d;
+  color: #102013;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  transform: translateY(-3px);
+}
+
+/* SOBRE */
+
+.sobre {
+  padding: 6rem 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.texto h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto p {
+  line-height: 1.8;
+  color: #4d5c4f;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mini-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.mini-card h4 {
+  margin-bottom: 0.8rem;
+}
+
+.mini-card p {
+  color: #566558;
+  line-height: 1.6;
+}
+
+/* PROJETOS */
+
+.projetos {
+  padding: 6rem 8%;
+}
+
+.section-title p {
+  color: #4a8d52;
+  letter-spacing: 2px;
+}
+
+.section-title h3 {
+  font-size: 2.7rem;
+  margin-top: 0.5rem;
+}
+
+.galeria {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.projeto-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.projeto-card:hover {
+  transform: translateY(-10px);
+}
+
+.projeto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.conteudo {
+  padding: 1.5rem;
+}
+
+.conteudo h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.conteudo p {
+  color: #566558;
+  line-height: 1.6;
+}
+
+.conteudo span {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2f8b46;
+  font-weight: 600;
+}
+
+/* RESULTADOS */
+
+.resultados {
+  padding: 5rem 8%;
+}
+
+.resultado-box {
+  background: #16331b;
+  color: white;
+  border-radius: 28px;
+  padding: 4rem;
+}
+
+.resultado-box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.numeros {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.numeros h2 {
+  font-size: 3rem;
+  color: #8cff9d;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: #607062;
+}
+
+/* MODAL DE BOAS-VINDAS */
+
+#welcomeOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 10, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.4s;
+}
+
+#welcomeOverlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#welcomeModal {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#welcomeModal h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  color: #1d2b1f;
+}
+
+#welcomeModal p {
+  color: #566558;
+  font-size: 1rem;
+}
+
+#nameInput {
+  padding: 0.8rem 1rem;
+  border: 2px solid #d4e8d6;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  text-align: center;
+}
+
+#nameInput:focus {
+  border-color: #8cff9d;
+}
+
+#welcomeBtn {
+  padding: 0.9rem;
+  background: #8cff9d;
+  color: #102013;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#welcomeBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* SAUDAÇÃO NO HERO */
+
+#greetingBanner {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #8cff9d;
+  color: #102013;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.5s;
+  pointer-events: none;
+}
+
+#greetingBanner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DARK MODE */
+
+.dark-theme #welcomeModal {
+  background: #1d1d1d;
+  color: #f5f5f5;
+}
+
+.dark-theme #welcomeModal h2 {
+  color: #f5f5f5;
+}
+
+.dark-theme #welcomeModal p {
+  color: #cfcfcf;
+}
+
+.dark-theme #nameInput {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+
+/* DARK MODE */
+
+.dark-theme {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.dark-theme .sobre,
+.dark-theme .projetos,
+.dark-theme .resultados {
+  background: #121212;
+}
+
+.dark-theme .mini-card,
+.dark-theme .projeto-card {
+  background: #1d1d1d;
+  color: #f5f5f5;
+}
+
+.dark-theme .texto p,
+.dark-theme .conteudo p,
+.dark-theme .mini-card p,
+.dark-theme footer {
+  color: #cfcfcf;
+}
+
+.dark-theme .resultado-box {
+  background: #0c1a0f;
+}
+
+.dark-theme #languageSelect,
+.dark-theme #fontSizeSelect,
+.dark-theme #themeToggle {
+  background: #242424;
+  color: white;
+}
+
+.dark-theme #languageSelect option,
+.dark-theme #fontSizeSelect option {
+  background: #242424;
+  color: white;
+}
+
+.dark-theme nav a {
+  color: white;
+}
+
+.dark-theme nav a:hover {
+  color: #8cff9d;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  nav {
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
-  });
-}
-
-/* Tamanho de fonte com persistência: */
-
-const fontSelect = document.getElementById("fontSizeSelect");
-
-if (fontSelect) {
-  const savedFont = localStorage.getItem("agronova-font") || "medium";
-  fontSelect.value = savedFont;
-  applyFontSize(savedFont);
-
-  fontSelect.addEventListener("change", () => {
-    applyFontSize(fontSelect.value);
-    localStorage.setItem("agronova-font", fontSelect.value);
-  });
-}
-
-function applyFontSize(size) {
-  const sizes = { small: "14px", medium: "16px", large: "19px" };
-  document.documentElement.style.fontSize = sizes[size] || "16px";
-}
-
-function applyFontLabels(lang) {
-  const labels = {
-    pt: ["Pequena", "Média", "Grande"],
-    en: ["Small", "Medium", "Large"],
-    es: ["Pequeña", "Mediana", "Grande"]
-  };
-
-  const options = document.querySelectorAll("#fontSizeSelect option");
-  const current = labels[lang] || labels["pt"];
-
-  options[0].textContent = current[0];
-  options[1].textContent = current[1];
-  options[2].textContent = current[2];
-}
-
-/* Traduções: */
-
-const translations = {
-
-  pt: {
-    fontSmall: "Pequena",
-    fontMedium: "Média",
-    fontLarge: "Grande",
-    welcomeTitle: "Bem-vindo à AgroNova!",
-    welcomeSubtitle: "Como podemos te chamar?",
-    welcomePlaceholder: "Seu nome...",
-    welcomeBtn: "Entrar",
-    greetingMorning: "Bom dia",
-    greetingAfternoon: "Boa tarde",
-    greetingEvening: "Boa noite",
-    nav1: "Sobre",
-    nav2: "Projetos",
-    nav3: "Resultados",
-    tag: "INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO",
-    heroTitle: "Um agro forte,<br>inteligente e sustentável.",
-    heroDesc: "Incentivando práticas agrícolas modernas, sustentáveis, econômicas e conscientes, para proteger não somente o meio ambiente, mas também o futuro.",
-    btn: "Ver mais",
-    sobreTitulo: "Produzir sem destruir",
-    sobreTexto: "O agro sustentável combina produtividade, inovação e preservação ambiental. Com técnicas modernas, é possível reduzir desperdícios, economizar recursos naturais e ainda melhorar a qualidade da produção.",
-    card1Titulo: "Menos desperdício",
-    card1Texto: "Aproveitamento inteligente de recursos e produção mais consciente.",
-    card2Titulo: "Mais eficiência",
-    card2Texto: "Tecnologia e inovação para produzir mais com menos.",
-    card3Titulo: "Futuro sustentável",
-    card3Texto: "Equilíbrio entre produtividade, natureza e desenvolvimento.",
-    secao: "SUSTENTABILIDADE",
-    exemplos: "Exemplos e resultados",
-    projeto1Titulo: "Cultivo sustentável",
-    projeto1Texto: "Tecnologia e cuidado ambiental trabalhando juntos no campo.",
-    projeto1Info: "✔ Preservação e produtividade",
-    projeto2Titulo: "Produção eficiente",
-    projeto2Texto: "Métodos modernos para reduzir desperdícios e aumentar resultados.",
-    projeto2Info: "✔ Mais rendimento agrícola",
-    projeto3Titulo: "Solo preservado",
-    projeto3Texto: "Técnicas naturais que fortalecem a terra e melhoram a colheita.",
-    projeto3Info: "✔ Maior fertilidade natural",
-    resultados: "Impactos positivos",
-    resultado1: "Eficiência agrícola.",
-    resultado2: "Desperdício hídrico.",
-    resultado3: "Uso de energia limpa.",
-    footer: "© 2026 AgroNova | Projeto Agrinho."
-  },
-
-  en: {
-    fontSmall: "Small",
-    fontMedium: "Medium",
-    fontLarge: "Large",
-    welcomeTitle: "Welcome to AgroNova!",
-    welcomeSubtitle: "What can we call you?",
-    welcomePlaceholder: "Your name...",
-    welcomeBtn: "Enter",
-    greetingMorning: "Good morning",
-    greetingAfternoon: "Good afternoon",
-    greetingEvening: "Good evening",
-    nav1: "About",
-    nav2: "Projects",
-    nav3: "Results",
-    tag: "INNOVATION • PRESERVATION • TRANSFORMATION",
-    heroTitle: "A strong,<br>smart and sustainable agriculture.",
-    heroDesc: "Encouraging modern, sustainable, economical and conscious agricultural practices to protect not only the environment, but also the future.",
-    btn: "See more",
-    sobreTitulo: "Producing without destroying",
-    sobreTexto: "Sustainable agriculture combines productivity, innovation and environmental preservation. With modern techniques it is possible to reduce waste, save natural resources and improve production quality.",
-    card1Titulo: "Less waste",
-    card1Texto: "Smart use of resources and more conscious production.",
-    card2Titulo: "More efficiency",
-    card2Texto: "Technology and innovation to produce more with less.",
-    card3Titulo: "Sustainable future",
-    card3Texto: "Balance between productivity, nature and development.",
-    secao: "SUSTAINABILITY",
-    exemplos: "Examples and results",
-    projeto1Titulo: "Sustainable cultivation",
-    projeto1Texto: "Technology and environmental care working together in the field.",
-    projeto1Info: "✔ Preservation and productivity",
-    projeto2Titulo: "Efficient production",
-    projeto2Texto: "Modern methods to reduce waste and increase results.",
-    projeto2Info: "✔ Higher agricultural yield",
-    projeto3Titulo: "Preserved soil",
-    projeto3Texto: "Natural techniques that strengthen the soil and improve harvests.",
-    projeto3Info: "✔ Greater natural fertility",
-    resultados: "Positive impacts",
-    resultado1: "Agricultural efficiency.",
-    resultado2: "Water waste.",
-    resultado3: "Clean energy usage.",
-    footer: "© 2026 AgroNova | Projeto Agrinho."
-  },
-
-  es: {
-    fontSmall: "Pequeña",
-    fontMedium: "Mediana",
-    fontLarge: "Grande",
-    welcomeTitle: "¡Bienvenido a AgroNova!",
-    welcomeSubtitle: "¿Cómo podemos llamarte?",
-    welcomePlaceholder: "Tu nombre...",
-    welcomeBtn: "Entrar",
-    greetingMorning: "Buenos días",
-    greetingAfternoon: "Buenas tardes",
-    greetingEvening: "Buenas noches",
-    nav1: "Acerca",
-    nav2: "Proyectos",
-    nav3: "Resultados",
-    tag: "INNOVACIÓN • PRESERVACIÓN • TRANSFORMACIÓN",
-    heroTitle: "Una agricultura fuerte,<br>inteligente y sostenible.",
-    heroDesc: "Promoviendo prácticas agrícolas modernas, sostenibles, económicas y responsables para proteger no solo el medio ambiente, sino también el futuro.",
-    btn: "Ver más",
-    sobreTitulo: "Producir sin destruir",
-    sobreTexto: "La agricultura sostenible combina productividad, innovación y preservación ambiental. Con técnicas modernas es posible reducir desperdicios, ahorrar recursos naturales y mejorar la calidad de la producción.",
-    card1Titulo: "Menos desperdicio",
-    card1Texto: "Uso inteligente de recursos y producción más consciente.",
-    card2Titulo: "Más eficiencia",
-    card2Texto: "Tecnología e innovación para producir más con menos.",
-    card3Titulo: "Futuro sostenible",
-    card3Texto: "Equilibrio entre productividad, naturaleza y desarrollo.",
-    secao: "SOSTENIBILIDAD",
-    exemplos: "Ejemplos y resultados",
-    projeto1Titulo: "Cultivo sostenible",
-    projeto1Texto: "Tecnología y cuidado ambiental trabajando juntos en el campo.",
-    projeto1Info: "✔ Preservación y productividad",
-    projeto2Titulo: "Producción eficiente",
-    projeto2Texto: "Métodos modernos para reducir desperdicios y aumentar resultados.",
-    projeto2Info: "✔ Mayor rendimiento agrícola",
-    projeto3Titulo: "Suelo preservado",
-    projeto3Texto: "Técnicas naturales que fortalecen la tierra y mejoran la cosecha.",
-    projeto3Info: "✔ Mayor fertilidad natural",
-    resultados: "Impactos positivos",
-    resultado1: "Eficiencia agrícola.",
-    resultado2: "Desperdicio hídrico.",
-    resultado3: "Uso de energía limpia.",
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+  nav ul {
+    display: none;
   }
 
-};
-
-/* Escolher idioma com persistência: */
-
-function applyTranslation(lang) {
-  const t = translations[lang];
-  if (!t) return;
-
-  const fontSizeSelect = document.getElementById("fontSizeSelect");
-  if (fontSizeSelect) {
-    fontSizeSelect.options[0].textContent = t.fontSmall;
-    fontSizeSelect.options[1].textContent = t.fontMedium;
-    fontSizeSelect.options[2].textContent = t.fontLarge;
+  .hero-content {
+    margin-top: 6rem;
   }
 
-  const wTitle = document.getElementById("welcomeTitle");
-  const wSubtitle = document.getElementById("welcomeSubtitle");
-  const wBtn = document.getElementById("welcomeBtn");
-  if (wTitle) wTitle.textContent = t.welcomeTitle;
-  if (wSubtitle) wSubtitle.textContent = t.welcomeSubtitle;
-  if (nameInput) nameInput.placeholder = t.welcomePlaceholder;
-  if (wBtn) wBtn.textContent = t.welcomeBtn;
-
-  const name = localStorage.getItem("agronova-name");
-  if (name && greeting) {
-    const hour = new Date().getHours();
-    let saudacao;
-    if (hour >= 5 && hour < 12)       saudacao = t.greetingMorning;
-    else if (hour >= 12 && hour < 18) saudacao = t.greetingAfternoon;
-    else                               saudacao = t.greetingEvening;
-    greeting.textContent = `🌿 ${saudacao}, ${name}!`;
+  .hero-content h2 {
+    font-size: 2.8rem;
   }
 
-  document.getElementById("navSobre").textContent = t.nav1;
-  document.getElementById("navProjetos").textContent = t.nav2;
-  document.getElementById("navResultados").textContent = t.nav3;
-  document.getElementById("heroTag").textContent = t.tag;
-  document.getElementById("heroTitle").innerHTML = t.heroTitle;
-  document.getElementById("heroDescription").textContent = t.heroDesc;
-  document.getElementById("explorarBtn").textContent = t.btn;
-  document.getElementById("sobreTitulo").textContent = t.sobreTitulo;
-  document.getElementById("sobreTexto").textContent = t.sobreTexto;
-  document.getElementById("card1Titulo").textContent = t.card1Titulo;
-  document.getElementById("card1Texto").textContent = t.card1Texto;
-  document.getElementById("card2Titulo").textContent = t.card2Titulo;
-  document.getElementById("card2Texto").textContent = t.card2Texto;
-  document.getElementById("card3Titulo").textContent = t.card3Titulo;
-  document.getElementById("card3Texto").textContent = t.card3Texto;
-  document.getElementById("projetosTag").textContent = t.secao;
-  document.getElementById("projetosTitulo").textContent = t.exemplos;
-  document.getElementById("projeto1Titulo").textContent = t.projeto1Titulo;
-  document.getElementById("projeto1Texto").textContent = t.projeto1Texto;
-  document.getElementById("projeto1Info").textContent = t.projeto1Info;
-  document.getElementById("projeto2Titulo").textContent = t.projeto2Titulo;
-  document.getElementById("projeto2Texto").textContent = t.projeto2Texto;
-  document.getElementById("projeto2Info").textContent = t.projeto2Info;
-  document.getElementById("projeto3Titulo").textContent = t.projeto3Titulo;
-  document.getElementById("projeto3Texto").textContent = t.projeto3Texto;
-  document.getElementById("projeto3Info").textContent = t.projeto3Info;
-  document.getElementById("resultadoTitulo").textContent = t.resultados;
-  document.getElementById("resultado1").textContent = t.resultado1;
-  document.getElementById("resultado2").textContent = t.resultado2;
-  document.getElementById("resultado3").textContent = t.resultado3;
-  document.getElementById("footerText").textContent = t.footer;
+  .sobre {
+    grid-template-columns: 1fr;
+  }
 
-  applyFontLabels(lang);
+  .numeros {
+    flex-direction: column;
+  }
+
+  .controls {
+    margin-left: auto;
+  }
 }
 
-const languageSelect = document.getElementById("languageSelect");
+@media (max-width: 600px) {
 
-if (languageSelect) {
-  const savedLang = localStorage.getItem("agronova-lang") || "pt";
-  languageSelect.value = savedLang;
-  applyTranslation(savedLang);
+  .hero {
+    padding: 2rem 6%;
+  }
 
-  languageSelect.addEventListener("change", () => {
-    applyTranslation(languageSelect.value);
-    localStorage.setItem("agronova-lang", languageSelect.value);
-  });
+  .sobre,
+  .projetos,
+  .resultados {
+    padding: 4rem 6%;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .texto h3,
+  .section-title h3,
+  .resultado-box h3 {
+    font-size: 2rem;
+  }
+
+  .resultado-box {
+    padding: 2rem;
+  }
+
+  .numeros h2 {
+    font-size: 2.3rem;
+  }
 }
