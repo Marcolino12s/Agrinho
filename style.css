@@ -34,7 +34,9 @@ nav {
   flex-wrap: wrap;
 }
 
-nav h1 span { color: #8cff9d; }
+nav h1 span {
+  color: #8cff9d;
+}
 
 nav ul {
   display: flex;
@@ -48,7 +50,9 @@ nav a {
 }
 
 /* SEÇÕES */
-.sobre, .projetos, .resultados {
+.sobre,
+.projetos,
+.resultados {
   padding: 5rem 8%;
 }
 
@@ -59,12 +63,13 @@ nav a {
   gap: 2rem;
 }
 
-/* RESULTADOS */
+/* RESULTADO BOX (CORRIGIDO VISUAL) */
 .resultado-box {
-  background: linear-gradient(135deg, #16331b, #0f2413);
+  background: linear-gradient(135deg, #1b3a20, #102516);
   color: white;
   padding: 3rem;
   border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 .numeros {
@@ -72,17 +77,19 @@ nav a {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2rem;
 }
 
-/* IMPACTO (BOM E ESTÁVEL) */
+/* IMPACTO (HARMONIZADO COM O SITE) */
 .impacto {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.08);
   border: 1px solid rgba(140,255,157,0.18);
   border-radius: 16px;
-  padding: 1.2rem;
+  padding: 1.5rem;
   min-width: 220px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
 .impacto:hover {
@@ -91,18 +98,31 @@ nav a {
 }
 
 .impacto h2 {
-  color: #bfffd0;
+  color: #c8ffd6;
+  font-size: 1.2rem;
 }
 
 .impacto p {
   font-size: 0.9rem;
-  opacity: 0.8;
+  opacity: 0.85;
+  margin-top: 8px;
 }
 
-/* SCROLL REVEAL */
+/* MINI CARDS */
+.mini-card,
+.projeto-card {
+  transition: 0.3s ease;
+}
+
+.mini-card:hover,
+.projeto-card:hover {
+  transform: translateY(-6px);
+}
+
+/* REVEAL SIMPLES E SEGURO */
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
+  transform: translateY(20px);
   transition: 0.6s ease;
 }
 
