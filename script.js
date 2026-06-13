@@ -1,84 +1,133 @@
+const body = document.body;
+
+/* TEXTO */
 function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value;
 }
 
-function setHTML(id, value) {
-  const el = document.getElementById(id);
-  if (el) el.innerHTML = value;
-}
-
 /* TRADUÇÕES */
 const translations = {
   pt: {
-    saudacao: {
-      morning: "🌅 Bom dia! Seja bem-vindo ao AgroNá.",
-      afternoon: "☀️ Boa tarde! Seja bem-vindo ao AgroNá.",
-      night: "🌙 Boa noite! Seja bem-vindo ao AgroNá."
-    }
+    navSobre: "O que é?",
+    navProjetos: "Exemplos",
+    navResultados: "Vantagens",
+    footer: "© 2026 AgroNá",
+
+    saudacao: ["🌅 Bom dia!", "☀️ Boa tarde!", "🌙 Boa noite!"]
   },
+
   en: {
-    saudacao: {
-      morning: "🌅 Good morning! Welcome.",
-      afternoon: "☀️ Good afternoon! Welcome.",
-      night: "🌙 Good evening! Welcome."
-    }
+    navSobre: "What is it?",
+    navProjetos: "Examples",
+    navResultados: "Advantages",
+    footer: "© 2026 AgroNá",
+
+    saudacao: ["🌅 Good morning!", "☀️ Good afternoon!", "🌙 Good evening!"]
   },
+
   es: {
-    saudacao: {
-      morning: "🌅 ¡Buenos días!",
-      afternoon: "☀️ ¡Buenas tardes!",
-      night: "🌙 ¡Buenas noches!"
-    }
+    navSobre: "¿Qué es?",
+    navProjetos: "Ejemplos",
+    navResultados: "Ventajas",
+    footer: "© 2026 AgroNá",
+
+    saudacao: ["🌅 ¡Buenos días!", "☀️ ¡Buenas tardes!", "🌙 ¡Buenas noches!"]
   }
 };
 
 /* SAUDAÇÃO */
-function obterSaudacao() {
+function atualizarSaudacao(lang) {
   const hora = new Date().getHours();
-  const lang = document.getElementById("languageSelect")?.value || "pt";
-  const t = translations[lang].saudacao;
+  const t = translations[lang];
 
-  if (hora < 12) return t.morning;
-  if (hora < 18) return t.afternoon;
-  return t.night;
+  let msg;
+  if (hora < 12) msg = t.saudacao[0];
+  else if (hora < 18) msg = t.saudacao[1];
+  else msg = t.saudacao[2];
+
+  setText("saudacao", msg);
 }
 
-function atualizarSaudacao() {
-  setText("saudacao", obterSaudacao());
+/* APLICAR IDIOMA */
+function aplicarIdioma(lang) {
+  const t = translations[lang];
+
+  setText("navSobre", t.navSobre);
+  setText("navProjetos", t.navProjetos);
+  setText("navResultados", t.navResultados);
+  setText("footerText", t.footer);
+
+  atualizarSaudacao(lang);
+  localStorage.setItem("lang", lang);
 }
 
-/* MENU MOBILE */
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+/* FONTE */
+function aplicarFonte(size) {
+  const map = {
+    small: "14px",
+    medium: "16px",
+    large: "19px"
+  };
 
-if (menuToggle && navMenu) {
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
+  document.documentElement.style.fontSize = map[size];
+  localStorage.setItem("font", size);
 }
 
-/* LANG */
-const languageSelect = document.getElementById("languageSelect");
+/* TEMA */
+function toggleTheme() {
+  body.classList.toggle("dark-theme");
 
-if (languageSelect) {
-  languageSelect.addEventListener("change", () => {
-    atualizarSaudacao();
-  });
+  const isDark = body.classList.contains("dark-theme");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  document.getElementById("themeToggle").textContent = isDark ? "☀️" : "🌙";
 }
+
+/* MENU */
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("navMenu").classList.toggle("active");
+});
+
+/* INIT */
+window.onload = () => {
+
+  const lang = localStorage.getItem("lang") || "pt";
+  const font = localStorage.getItem("font") || "medium";
+  const theme = localStorage.getItem("theme") || "light";
+
+  aplicarIdioma(lang);
+  aplicarFonte(font);
+
+  document.getElementById("languageSelect").value = lang;
+  document.getElementById("fontSizeSelect").value = font;
+
+  if (theme === "dark") {
+    body.classList.add("dark-theme");
+    document.getElementById("themeToggle").textContent = "☀️";
+  }
+
+  atualizarSaudacao(lang);
+};
+
+/* EVENTS */
+document.getElementById("languageSelect").addEventListener("change", (e) => {
+  aplicarIdioma(e.target.value);
+});
+
+document.getElementById("fontSizeSelect").addEventListener("change", (e) => {
+  aplicarFonte(e.target.value);
+});
+
+document.getElementById("themeToggle").addEventListener("click", toggleTheme);
 
 /* SCROLL */
 const scrollBtn = document.getElementById("scrollTopBtn");
 
-if (scrollBtn) {
-  window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 300 ? "flex" : "none";
-  });
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
 
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-/* INIT */
-atualizarSaudacao();
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
