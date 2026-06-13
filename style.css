@@ -6,12 +6,14 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   background: #f5f8f2;
   color: #1d2b1f;
   font-family: 'Outfit', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* HERO */
@@ -19,7 +21,7 @@ body {
   min-height: 100vh;
   padding: 2rem 8%;
   background:
-    linear-gradient(rgba(10,20,10,0.6), rgba(10,20,10,0.6)),
+    linear-gradient(rgba(10, 20, 10, 0.6), rgba(10, 20, 10, 0.6)),
     url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
@@ -34,7 +36,11 @@ nav {
   flex-wrap: wrap;
 }
 
-nav h1 span {
+nav h1 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+nav span {
   color: #8cff9d;
 }
 
@@ -44,89 +50,94 @@ nav ul {
   list-style: none;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+/* HERO CONTENT */
+.hero-content {
+  margin-top: 10rem;
 }
 
-/* SEÇÕES */
-.sobre,
-.projetos,
-.resultados {
+/* SOBRE */
+.sobre {
   padding: 5rem 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
 
-/* GALERIA */
+/* PROJETOS */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-/* RESULTADO BOX (CORRIGIDO VISUAL) */
+/* RESULTADOS */
 .resultado-box {
-  background: linear-gradient(135deg, #1b3a20, #102516);
+  background: #16331b;
   color: white;
   padding: 3rem;
   border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 .numeros {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin-top: 2rem;
 }
 
-/* IMPACTO (HARMONIZADO COM O SITE) */
+/* 🌿 IMPACTOS POSITIVOS HARMONIZADO */
 .impacto {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(140,255,157,0.18);
+  background: rgba(140,255,157,0.08);
+  border: 1px solid rgba(140,255,157,0.25);
   border-radius: 16px;
   padding: 1.5rem;
   min-width: 220px;
+  flex: 1;
   text-align: center;
-  transition: 0.3s ease;
-  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: impactoEntry 0.6s ease forwards;
+
+  transition: 0.3s;
 }
+
+.impacto:nth-child(1){animation-delay:0.1s;}
+.impacto:nth-child(2){animation-delay:0.2s;}
+.impacto:nth-child(3){animation-delay:0.3s;}
 
 .impacto:hover {
   transform: translateY(-6px);
   border-color: #8cff9d;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .impacto h2 {
-  color: #c8ffd6;
+  color: #8cff9d;
   font-size: 1.2rem;
 }
 
 .impacto p {
-  font-size: 0.9rem;
-  opacity: 0.85;
   margin-top: 8px;
+  font-size: 0.9rem;
+  color: #dfeee3;
 }
 
-/* MINI CARDS */
-.mini-card,
-.projeto-card {
-  transition: 0.3s ease;
+@keyframes impactoEntry {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.mini-card:hover,
-.projeto-card:hover {
-  transform: translateY(-6px);
-}
-
-/* REVEAL SIMPLES E SEGURO */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #607062;
 }
