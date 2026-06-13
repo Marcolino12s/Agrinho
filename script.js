@@ -123,14 +123,27 @@ if (menuToggle && navMenu) {
    SCROLL TOP
    ============================================================ */
 
-const scrollBtn = document.getElementById("scrollTopBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollTopBtn");
 
-if (scrollBtn) {
-  window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 500 ? "flex" : "none";
-  });
+  if (!scrollBtn) return;
+
+  function handleScroll() {
+    if (window.scrollY > 500) {
+      scrollBtn.style.display = "flex";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
 
   scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
-}
+
+  handleScroll(); // garante estado correto ao carregar
+});
