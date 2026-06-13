@@ -14,22 +14,22 @@
 
 <body>
 
-<header class="hero">
+<header class="hero" id="topo">
 
   <nav>
     <h1>Agro<span>Ná</span></h1>
 
     <ul>
-      <li><a href="#what" id="navWhat">O que é?</a></li>
-      <li><a href="#examples" id="navExamples">Exemplos</a></li>
-      <li><a href="#advantages" id="navAdvantages">Vantagens</a></li>
+      <li><a href="#sobre" id="navSobre">O que é?</a></li>
+      <li><a href="#exemplos" id="navExemplos">Exemplos</a></li>
+      <li><a href="#vantagens" id="navVantagens">Vantagens</a></li>
     </ul>
 
     <div class="controls">
       <select id="fontSizeSelect">
-        <option value="small">Fonte pequena</option>
-        <option value="medium" selected>Fonte média</option>
-        <option value="large">Fonte grande</option>
+        <option value="small" id="optSmall">Fonte pequena</option>
+        <option value="medium" id="optMedium">Fonte média</option>
+        <option value="large" id="optLarge">Fonte grande</option>
       </select>
 
       <select id="languageSelect">
@@ -52,76 +52,113 @@
     <p class="description" id="heroDescription">
       Traçando caminhos entre o futuro e o presente da agricultura!
     </p>
+
+    <button id="btnScroll">Explorar</button>
   </div>
+
 </header>
 
-<!-- O QUE É -->
-<section id="what">
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+
   <div class="texto">
-    <h3 id="whatTitle">O que é sustentabilidade?</h3>
-    <p id="whatText">
-      AgroNá promove práticas sustentáveis no campo, unindo produção e cuidado ambiental.
+    <h3 id="sobreTitulo">O que é?</h3>
+    <p id="sobreTexto">
+      AgroNá é um projeto criado para divulgar práticas sustentáveis no campo.
     </p>
   </div>
 
   <div class="card-info">
     <div class="mini-card">
-      <h4 id="card1Title">Maior produção</h4>
-      <p>Aproveitamento inteligente de recursos.</p>
+      <h4 id="card1Titulo">Maior produção</h4>
+      <p id="card1Texto">Aproveitamento inteligente de recursos.</p>
     </div>
 
     <div class="mini-card">
-      <h4 id="card2Title">Menor impacto</h4>
-      <p>Redução de danos ambientais.</p>
+      <h4 id="card2Titulo">Menor impacto</h4>
+      <p id="card2Texto">Redução de danos ambientais.</p>
     </div>
 
     <div class="mini-card">
-      <h4 id="card3Title">Equilíbrio</h4>
-      <p>Produção e natureza em harmonia.</p>
+      <h4 id="card3Titulo">Equilíbrio</h4>
+      <p id="card3Texto">Produção e natureza em harmonia.</p>
     </div>
   </div>
+
 </section>
 
 <!-- EXEMPLOS -->
-<section id="examples">
-  <h3 id="examplesTitle">Como funciona na prática?</h3>
+<section class="projetos" id="exemplos">
+
+  <div class="section-title">
+    <p id="secao">SUSTENTABILIDADE</p>
+    <h3 id="exemplosTitulo">Como funciona na prática?</h3>
+  </div>
 
   <div class="galeria">
 
     <div class="projeto-card">
-      <h4 id="ex1Title">Economiza água e energia</h4>
-      <p id="ex1Text">Uso consciente de recursos naturais.</p>
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800" />
+      <div class="conteudo">
+        <h4 id="projeto1Titulo">Economiza recursos</h4>
+        <p id="projeto1Texto">Redução do consumo de água e energia.</p>
+      </div>
     </div>
 
     <div class="projeto-card">
-      <h4 id="ex2Title">Protege fauna e flora</h4>
-      <p id="ex2Text">Preserva habitats naturais.</p>
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800" />
+      <div class="conteudo">
+        <h4 id="projeto2Titulo">Protege a natureza</h4>
+        <p id="projeto2Texto">Preserva fauna e flora nativa.</p>
+      </div>
     </div>
 
     <div class="projeto-card">
-      <h4 id="ex3Title">Apoia produtores locais</h4>
-      <p id="ex3Text">Fortalece a economia rural.</p>
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800" />
+      <div class="conteudo">
+        <h4 id="projeto3Titulo">Apoia produtores locais</h4>
+        <p id="projeto3Texto">Fortalece a economia regional.</p>
+      </div>
     </div>
 
   </div>
+
 </section>
 
 <!-- VANTAGENS -->
-<section id="advantages">
-  <h3 id="advantagesTitle">Impactos positivos</h3>
+<section class="resultados" id="vantagens">
 
-  <div class="numeros">
-    <p id="adv1">Aumenta a produção</p>
-    <p id="adv2">Preserva recursos naturais</p>
-    <p id="adv3">Reduz desperdícios</p>
+  <div class="resultado-box">
+
+    <h3 id="resultadosTitulo">Impactos positivos</h3>
+
+    <div class="numeros">
+      <div>
+        <h2>Aumenta</h2>
+        <p id="resultado1">produção</p>
+      </div>
+
+      <div>
+        <h2>Preserva</h2>
+        <p id="resultado2">recursos naturais</p>
+      </div>
+
+      <div>
+        <h2>Reduz</h2>
+        <p id="resultado3">custos e desperdícios</p>
+      </div>
+    </div>
+
   </div>
+
 </section>
 
-<footer>
-  <p id="footerText">© 2026 AgroNá</p>
-</footer>
+<!-- BOTÃO FLUTUANTE -->
+<button id="btnTopo" class="btn-topo">↑</button>
 
-<button id="scrollBtn">↓ Final</button>
+<footer>
+  <p id="footerText">© 2026 AgroNá | Projeto Agrinho</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
