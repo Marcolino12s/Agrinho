@@ -210,10 +210,11 @@ if (languageSelect) {
   languageSelect.value = savedLang;
   applyTranslation(savedLang);
 
-  languageSelect.addEventListener("change", () => {
-    applyTranslation(languageSelect.value);
-    localStorage.setItem("agronova-lang", languageSelect.value);
-  });
+ languageSelect.addEventListener("change", () => {
+  applyTranslation(languageSelect.value);
+  atualizarSaudacao();
+  localStorage.setItem("agronova-lang", languageSelect.value);
+});
 }
 
 /* ============================================================
@@ -269,21 +270,68 @@ if (botao) {
    ============================================================ */
 
 function obterSaudacao() {
-  const hora = new Date().getHours();
 
-  if (hora < 12) {
+  const hora = Number(
+    new Intl.DateTimeFormat("pt-BR", {
+      hour: "numeric",
+      hour12: false,
+      timeZone: "America/Sao_Paulo"
+    }).format(new Date())
+  );
+
+  const idioma = languageSelect ? languageSelect.value : "pt";
+
+  // Inglês
+  if (idioma === "en") {
+
+    if (hora >= 5 && hora < 12) {
+      return "🌅 Good morning! Welcome to AgroNova.";
+    }
+
+    if (hora >= 12 && hora < 18) {
+      return "☀️ Good afternoon! Welcome to AgroNova.";
+    }
+
+    return "🌙 Good evening! Welcome to AgroNova.";
+  }
+
+  // Espanhol
+  if (idioma === "es") {
+
+    if (hora >= 5 && hora < 12) {
+      return "🌅 ¡Buenos días! Bienvenido a AgroNova.";
+    }
+
+    if (hora >= 12 && hora < 18) {
+      return "☀️ ¡Buenas tardes! Bienvenido a AgroNova.";
+    }
+
+    return "🌙 ¡Buenas noches! Bienvenido a AgroNova.";
+  }
+
+  // Português
+  if (hora >= 5 && hora < 12) {
     return "🌅 Bom dia! Seja bem-vindo ao AgroNova.";
   }
 
-  if (hora < 18) {
+  if (hora >= 12 && hora < 18) {
     return "☀️ Boa tarde! Seja bem-vindo ao AgroNova.";
   }
 
   return "🌙 Boa noite! Seja bem-vindo ao AgroNova.";
 }
 
-const saudacao = document.getElementById("saudacao");
+function atualizarSaudacao() {
 
-if (saudacao) {
-  saudacao.textContent = obterSaudacao();
+  const saudacao = document.getElementById("saudacao");
+
+  if (saudacao) {
+    saudacao.textContent = obterSaudacao();
+  }
 }
+
+// Atualiza ao carregar
+atualizarSaudacao();
+
+// Atualiza automaticamente a cada minuto
+setInterval(atualizarSaudacao, 60000);
