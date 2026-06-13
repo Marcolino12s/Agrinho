@@ -13,7 +13,7 @@ body {
   background: #f5f8f2;
   color: #1d2b1f;
   font-family: 'Outfit', sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* =========================
@@ -24,21 +24,19 @@ body {
   min-height: 100vh;
   padding: 2rem 8%;
   background:
-    linear-gradient(rgba(10,20,10,0.6), rgba(10,20,10,0.6)),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600');
+    linear-gradient(rgba(10, 20, 10, 0.6), rgba(10, 20, 10, 0.6)),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   color: white;
 }
 
 /* NAV */
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
 }
 
 nav h1 {
@@ -52,7 +50,7 @@ nav span {
 
 nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
 }
 
@@ -67,7 +65,6 @@ nav a:hover {
 }
 
 /* CONTROLES */
-
 .controls {
   display: flex;
   gap: 10px;
@@ -76,9 +73,10 @@ nav a:hover {
 
 select, button {
   border: none;
+  padding: 0.5rem 0.8rem;
   border-radius: 10px;
-  padding: 8px 10px;
   cursor: pointer;
+  font-family: inherit;
 }
 
 #themeToggle {
@@ -86,11 +84,9 @@ select, button {
 }
 
 /* HERO CONTENT */
-
 .hero-content {
-  margin-top: 8rem;
+  margin-top: 10rem;
   max-width: 650px;
-  animation: fadeUp 1s ease;
 }
 
 .tag {
@@ -100,20 +96,18 @@ select, button {
 
 .hero-content h2 {
   font-size: 3.5rem;
-  line-height: 1.1;
+  margin: 1rem 0;
 }
 
-.hero-content button {
-  margin-top: 1.5rem;
-  padding: 1rem 2rem;
-  background: #8cff9d;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: 0.3s;
+.description {
+  color: #e5e5e5;
+  line-height: 1.6;
 }
 
-.hero-content button:hover {
-  transform: translateY(-3px);
+#saudacao {
+  margin-bottom: 1rem;
+  color: #8cff9d;
+  font-weight: 600;
 }
 
 /* =========================
@@ -121,20 +115,20 @@ select, button {
 ========================= */
 
 .sobre {
-  padding: 6rem 8%;
+  padding: 5rem 8%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
 
 .texto h3 {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
 .texto p {
-  line-height: 1.7;
   color: #4d5c4f;
+  line-height: 1.7;
 }
 
 .card-info {
@@ -147,12 +141,7 @@ select, button {
   background: white;
   padding: 1.2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-.mini-card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 /* =========================
@@ -160,34 +149,30 @@ select, button {
 ========================= */
 
 .projetos {
-  padding: 6rem 8%;
-}
-
-.section-title p {
-  color: #4a8d52;
+  padding: 5rem 8%;
 }
 
 .section-title h3 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
 }
 
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
   margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .projeto-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   transition: 0.3s;
 }
 
 .projeto-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .projeto-card img {
@@ -197,7 +182,7 @@ select, button {
 }
 
 .conteudo {
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 /* =========================
@@ -211,20 +196,26 @@ select, button {
 .resultado-box {
   background: #16331b;
   color: white;
-  border-radius: 25px;
   padding: 3rem;
+  border-radius: 25px;
 }
 
 .numeros {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.numeros h2 {
-  color: #8cff9d;
+.impacto {
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.impacto h2 {
   font-size: 2.5rem;
+  color: #8cff9d;
 }
 
 /* =========================
@@ -241,24 +232,24 @@ footer {
    BOTÃO FLUTUANTE
 ========================= */
 
-.btn-topo {
+#scrollTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   border: none;
   background: #8cff9d;
-  color: #0f1f12;
-  font-size: 1.2rem;
+  color: #102013;
+  font-size: 1.3rem;
   cursor: pointer;
   display: none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   transition: 0.3s;
 }
 
-.btn-topo:hover {
+#scrollTopBtn:hover {
   transform: scale(1.1);
 }
 
@@ -271,9 +262,14 @@ footer {
   color: #f5f5f5;
 }
 
+.dark-theme .sobre,
+.dark-theme .projetos {
+  background: #121212;
+}
+
 .dark-theme .mini-card,
 .dark-theme .projeto-card {
-  background: #1d1d1d;
+  background: #1e1e1e;
   color: white;
 }
 
@@ -281,27 +277,14 @@ footer {
   background: #0c1a0f;
 }
 
-.dark-theme footer {
-  color: #aaa;
+.dark-theme select,
+.dark-theme button {
+  background: #2a2a2a;
+  color: white;
 }
 
 /* =========================
-   ANIMAÇÃO
-========================= */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   MOBILE
+   RESPONSIVO
 ========================= */
 
 @media (max-width: 900px) {
@@ -314,10 +297,24 @@ footer {
   }
 
   .hero-content h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 
   .numeros {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    padding: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .resultado-box {
+    padding: 2rem;
   }
 }
