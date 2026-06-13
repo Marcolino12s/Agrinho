@@ -260,29 +260,21 @@ footer {
   position: fixed;
   bottom: 25px;
   right: 25px;
-
   width: 55px;
   height: 55px;
-
   border-radius: 50%;
   border: none;
-
   background: #8cff9d;
   color: #102013;
-
-  display: none;
-
+  font-size: 1.3rem;
   cursor: pointer;
-
+  display: none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.3s;
 }
 
-#scrollTopBtn svg {
-  display: block;
+#scrollTopBtn:hover {
+  transform: scale(1.1);
 }
 
 /* ============================================================
