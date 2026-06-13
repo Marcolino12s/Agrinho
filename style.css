@@ -260,34 +260,29 @@ footer {
   position: fixed;
   bottom: 25px;
   right: 25px;
+
   width: 55px;
   height: 55px;
 
   border-radius: 50%;
   border: none;
+
   background: #8cff9d;
   color: #102013;
 
-  cursor: pointer;
   display: none;
 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transition: 0.3s;
+  cursor: pointer;
 
-  /* 🔥 FIX REAL DA CENTRALIZAÇÃO */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 1.4rem;
-  line-height: 1;
-  padding: 0;
 }
 
-/* 🔥 EVITA “OFFSET” DO EMOJI EM ALGUNS BROWSERS */
-#scrollTopBtn span {
+#scrollTopBtn svg {
   display: block;
-  transform: translateY(-1px);
 }
 
 /* ============================================================
