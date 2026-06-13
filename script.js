@@ -1,3 +1,4 @@
+
 /* ============================================================
    HELPERS
    ============================================================ */
@@ -59,6 +60,82 @@ const translations = {
       afternoon: "☀️ Boa tarde!",
       night: "🌙 Boa noite!"
     }
+  },
+
+  en: {
+    nav1: "What is it?",
+    nav2: "Examples",
+    nav3: "Advantages",
+
+    tag: "PRODUCTION & PRESERVATION",
+    heroTitle: "A strong, smart and sustainable agriculture.",
+    heroDesc: "Building paths between the future and present of agriculture!",
+
+    whatTitle: "A sustainability project",
+    whatText:
+      "AgroNá promotes sustainable farming practices.",
+
+    card1Titulo: "Higher production",
+    card1Texto: "Smart use of resources.",
+    card2Titulo: "Lower impact",
+    card2Texto: "Reduced environmental damage.",
+    card3Titulo: "Balance",
+    card3Texto: "Nature and production in harmony.",
+
+    secao: "SUSTAINABILITY",
+    exemplos: "How it works in practice?",
+
+    projeto1Titulo: "Saves water and energy",
+    projeto1Texto: "Reduces consumption.",
+    projeto2Titulo: "Protects wildlife",
+    projeto2Texto: "Preserves ecosystems.",
+    projeto3Titulo: "Supports local farmers",
+    projeto3Texto: "Strengthens rural economy.",
+
+    resultadosTitulo: "Positive impacts:",
+    resultado1: "production",
+    resultado2: "natural resources",
+    resultado3: "costs and waste",
+
+    footer: "© 2026 AgroNá | Agrinho Project"
+  },
+
+  es: {
+    nav1: "¿Qué es?",
+    nav2: "Ejemplos",
+    nav3: "Ventajas",
+
+    tag: "PRODUCCIÓN & PRESERVACIÓN",
+    heroTitle: "Una agricultura fuerte, inteligente y sostenible.",
+    heroDesc: "Conectando el futuro y el presente de la agricultura!",
+
+    whatTitle: "Un proyecto de sostenibilidad",
+    whatText:
+      "AgroNá promueve prácticas agrícolas sostenibles.",
+
+    card1Titulo: "Mayor producción",
+    card1Texto: "Uso inteligente de recursos.",
+    card2Titulo: "Menor impacto",
+    card2Texto: "Menos daños ambientales.",
+    card3Titulo: "Equilibrio",
+    card3Texto: "Naturaleza y producción en armonía.",
+
+    secao: "SOSTENIBILIDAD",
+    exemplos: "Cómo funciona en la práctica?",
+
+    projeto1Titulo: "Ahorra agua y energía",
+    projeto1Texto: "Reduce consumo.",
+    projeto2Titulo: "Protege fauna y flora",
+    projeto2Texto: "Preserva el medio ambiente.",
+    projeto3Titulo: "Apoya productores locales",
+    projeto3Texto: "Fortalece la economía rural.",
+
+    resultadosTitulo: "Impactos positivos:",
+    resultado1: "la producción",
+    resultado2: "los recursos naturales",
+    resultado3: "los costos y desperdicios",
+
+    footer: "© 2026 AgroNá | Proyecto Agrinho"
   }
 };
 
@@ -104,6 +181,25 @@ function applyTranslation(lang) {
   setText("resultado3", t.resultado3);
 
   setText("footerText", t.footer);
+
+  atualizarSaudacao();
+}
+
+/* ============================================================
+   SAUDAÇÃO
+   ============================================================ */
+
+function atualizarSaudacao() {
+  const el = document.getElementById("saudacao");
+  if (!el) return;
+
+  const hora = new Date().getHours();
+  const lang = document.getElementById("languageSelect")?.value || "pt";
+  const t = translations[lang].saudacao;
+
+  if (hora < 12) el.textContent = t.morning;
+  else if (hora < 18) el.textContent = t.afternoon;
+  else el.textContent = t.night;
 }
 
 /* ============================================================
@@ -120,24 +216,67 @@ if (menuToggle && navMenu) {
 }
 
 /* ============================================================
-   SCROLL TOP
+   FONT SIZE
+   ============================================================ */
+
+const fontSelect = document.getElementById("fontSizeSelect");
+
+if (fontSelect) {
+  const sizes = {
+    small: "14px",
+    medium: "16px",
+    large: "19px"
+  };
+
+  fontSelect.addEventListener("change", () => {
+    document.documentElement.style.fontSize =
+      sizes[fontSelect.value] || "16px";
+  });
+}
+
+/* ============================================================
+   TEMA
+   ============================================================ */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    themeToggle.textContent = document.body.classList.contains("dark-theme")
+      ? "☀️"
+      : "🌙";
+  });
+}
+
+/* ============================================================
+   SCROLL TOP (CORRIGIDO)
    ============================================================ */
 
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 if (scrollBtn) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      scrollBtn.style.display = "flex";
-    } else {
-      scrollBtn.style.display = "none";
-    }
+    scrollBtn.style.display = window.scrollY > 500 ? "flex" : "none";
   });
 
   scrollBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+
+/* ============================================================
+   INICIALIZAÇÃO
+   ============================================================ */
+
+const langSelect = document.getElementById("languageSelect");
+
+if (langSelect) {
+  langSelect.addEventListener("change", () => {
+    applyTranslation(langSelect.value);
+    atualizarSaudacao();
+  });
+
+  applyTranslation(langSelect.value);
+  atualizarSaudacao();
 }
