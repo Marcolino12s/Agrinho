@@ -33,31 +33,31 @@ const translations = {
 
     whatTitle: "Um projeto sobre sustentabilidade",
     whatText:
-      "AgroNá promove práticas agrícolas sustentáveis que unem produtividade e preservação ambiental.",
+      "AgroNá é um projeto criado para divulgar e promover ações sustentáveis no setor agrícola, visando não somente a diminuição dos impactos ambientais, mas também o aumento da produção, através de práticas limpas e seguras.",
 
     card1Titulo: "Maior produção",
-    card1Texto: "Uso eficiente de recursos para aumentar resultados.",
+    card1Texto: "Aproveitamento inteligente de recursos para uma produção mais eficiente.",
     card2Titulo: "Menor impacto",
-    card2Texto: "Redução de danos ambientais com tecnologia.",
+    card2Texto: "Tecnologia e inovação para diminuir cada vez mais os danos.",
     card3Titulo: "Equilíbrio",
-    card3Texto: "Produção e natureza em harmonia.",
+    card3Texto: "Equilíbrio entre produtividade e sustentabilidade.",
 
     secao: "SUSTENTABILIDADE",
     exemplos: "Como ela funciona na prática?",
 
     projeto1Titulo: "Economiza água e energia",
-    projeto1Texto: "Reduz consumo com práticas inteligentes.",
+    projeto1Texto: "Incentiva a adoção de hábitos que reduzam o consumo de água e energia.",
 
-    projeto2Titulo: "Protege fauna e flora",
-    projeto2Texto: "Mantém habitats naturais preservados.",
+    projeto2Titulo: "Protege a fauna e flora nativa",
+    projeto2Texto: "Mantém e zela pelo habitat de animais como aves, mamíferos e insetos benéficos.",
 
     projeto3Titulo: "Apoia produtores locais",
-    projeto3Texto: "Fortalece a produção regional sustentável.",
+    projeto3Texto: "Valoriza formas de produção que reduzem a emissão de gases poluentes.",
 
-    resultadosTitulo: "Impactos positivos",
-    resultado1: "Aumenta a produção",
-    resultado2: "Preserva recursos naturais",
-    resultado3: "Reduz desperdícios e custos",
+    resultadosTitulo: "Impactos positivos:",
+    resultado1: "a produção",
+    resultado2: "os recursos naturais",
+    resultado3: "os desperdícios e custos",
 
     footer: "© 2026 AgroNá | Projeto Agrinho.",
 
@@ -79,36 +79,36 @@ const translations = {
 
     tag: "PRODUCTION & PRESERVATION",
     heroTitle: "A strong, smart and sustainable agriculture.",
-    heroDesc: "Building bridges between the future and present of farming!",
+    heroDesc: "Building paths between the future and present of agriculture!",
     btnTop: "Back to top",
 
     whatTitle: "A sustainability project",
     whatText:
-      "AgroNá promotes sustainable farming practices that combine productivity and environmental care.",
+      "AgroNá is a project created to promote sustainable actions in agriculture, aiming not only to reduce environmental impacts but also to increase production through clean and safe practices.",
 
     card1Titulo: "Higher production",
-    card1Texto: "Efficient resource use to increase results.",
+    card1Texto: "Smart use of resources for more efficient production.",
     card2Titulo: "Lower impact",
-    card2Texto: "Reducing environmental damage with technology.",
+    card2Texto: "Technology and innovation to reduce environmental damage.",
     card3Titulo: "Balance",
-    card3Texto: "Harmony between nature and production.",
+    card3Texto: "Balance between productivity and sustainability.",
 
     secao: "SUSTAINABILITY",
-    exemplos: "How it works in practice",
+    exemplos: "How does it work in practice?",
 
     projeto1Titulo: "Saves water and energy",
-    projeto1Texto: "Reduces consumption through smart practices.",
+    projeto1Texto: "Encourages habits that reduce water and energy consumption.",
 
-    projeto2Titulo: "Protects wildlife",
-    projeto2Texto: "Preserves natural habitats.",
+    projeto2Titulo: "Protects native wildlife",
+    projeto2Texto: "Preserves habitats of birds, mammals and beneficial insects.",
 
     projeto3Titulo: "Supports local farmers",
-    projeto3Texto: "Strengthens regional sustainable production.",
+    projeto3Texto: "Promotes production methods that reduce pollution emissions.",
 
-    resultadosTitulo: "Positive impacts",
-    resultado1: "Increases production",
-    resultado2: "Preserves natural resources",
-    resultado3: "Reduces waste and costs",
+    resultadosTitulo: "Positive impacts:",
+    resultado1: "production",
+    resultado2: "natural resources",
+    resultado3: "waste and costs",
 
     footer: "© 2026 AgroNá | Agrinho Project.",
 
@@ -130,49 +130,49 @@ const translations = {
 
     tag: "PRODUCCIÓN & PRESERVACIÓN",
     heroTitle: "Una agricultura fuerte, inteligente y sostenible.",
-    heroDesc: "Conectando el futuro y el presente de la agricultura!",
+    heroDesc: "Creando caminos entre el futuro y el presente de la agricultura!",
     btnTop: "Volver arriba",
 
     whatTitle: "Un proyecto de sostenibilidad",
     whatText:
-      "AgroNá promueve prácticas agrícolas sostenibles que combinan producción y cuidado ambiental.",
+      "AgroNá es un proyecto creado para promover acciones sostenibles en la agricultura, buscando no solo reducir los impactos ambientales, sino también aumentar la producción mediante prácticas limpias y seguras.",
 
     card1Titulo: "Mayor producción",
-    card1Texto: "Uso eficiente de recursos.",
+    card1Texto: "Uso inteligente de recursos para una producción más eficiente.",
     card2Titulo: "Menor impacto",
-    card2Texto: "Menos daños ambientales.",
+    card2Texto: "Tecnología e innovación para reducir los daños.",
     card3Titulo: "Equilibrio",
-    card3Texto: "Naturaleza y producción en armonía.",
+    card3Texto: "Equilibrio entre productividad y sostenibilidad.",
 
     secao: "SOSTENIBILIDAD",
-    exemplos: "Cómo funciona en la práctica",
+    exemplos: "¿Cómo funciona en la práctica?",
 
     projeto1Titulo: "Ahorra agua y energía",
-    projeto1Texto: "Reduce consumo con prácticas inteligentes.",
+    projeto1Texto: "Fomenta hábitos que reducen el consumo de agua y energía.",
 
-    projeto2Titulo: "Protege la fauna y flora",
-    projeto2Texto: "Conserva hábitats naturales.",
+    projeto2Titulo: "Protege la fauna y flora nativa",
+    projeto2Texto: "Mantiene hábitats de aves, mamíferos e insectos beneficiosos.",
 
-    projeto3Titulo: "Apoya productores locales",
-    projeto3Texto: "Fortalece la producción regional.",
+    projeto3Titulo: "Apoya a productores locales",
+    projeto3Texto: "Promueve prácticas que reducen emisiones contaminantes.",
 
-    resultadosTitulo: "Impactos positivos",
-    resultado1: "Aumenta la producción",
-    resultado2: "Preserva recursos naturales",
-    resultado3: "Reduce desperdicios y costos",
+    resultadosTitulo: "Impactos positivos:",
+    resultado1: "la producción",
+    resultado2: "los recursos naturales",
+    resultado3: "los desperdicios y costos",
 
     footer: "© 2026 AgroNá | Proyecto Agrinho.",
 
     saudacao: {
-      morning: "🌅 ¡Buenos días!",
-      afternoon: "☀️ ¡Buenas tardes!",
-      night: "🌙 ¡Buenas noches!"
+      morning: "🌅 ¡Buenos días! Bienvenido a AgroNá.",
+      afternoon: "☀️ ¡Buenas tardes! Bienvenido a AgroNá.",
+      night: "🌙 ¡Buenas noches! Bienvenido a AgroNá."
     }
   }
 };
 
 /* ============================================================
-   TRADUÇÃO
+   APLICAR TRADUÇÃO
    ============================================================ */
 
 function applyTranslation(lang) {
@@ -183,18 +183,16 @@ function applyTranslation(lang) {
   setText("optMedium", t.fontMedium);
   setText("optLarge", t.fontLarge);
 
-  setText("navOqueE", t.nav1);
-  setText("navExemplos", t.nav2);
-  setText("navVantagens", t.nav3);
+  setText("navSobre", t.nav1);
+  setText("navProjetos", t.nav2);
+  setText("navResultados", t.nav3);
 
   setText("heroTag", t.tag);
   setHTML("heroTitle", t.heroTitle);
   setText("heroDescription", t.heroDesc);
 
-  setText("voltarBtn", t.btnTop);
-
-  setText("oQueETitulo", t.whatTitle);
-  setText("oQueETexto", t.whatText);
+  setText("sobreTitulo", t.whatTitle);
+  setText("sobreTexto", t.whatText);
 
   setText("card1Titulo", t.card1Titulo);
   setText("card1Texto", t.card1Texto);
@@ -244,7 +242,7 @@ function atualizarSaudacao() {
 }
 
 /* ============================================================
-   FONT SIZE
+   FONTE
    ============================================================ */
 
 function applyFontSize(size) {
@@ -255,6 +253,19 @@ function applyFontSize(size) {
   };
 
   document.documentElement.style.fontSize = sizes[size] || "16px";
+}
+
+/* ============================================================
+   MENU MOBILE
+   ============================================================ */
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
 }
 
 /* ============================================================
@@ -269,8 +280,10 @@ if (languageSelect) {
   applyTranslation(savedLang);
 
   languageSelect.addEventListener("change", () => {
-    localStorage.setItem("lang", languageSelect.value);
-    applyTranslation(languageSelect.value);
+    const lang = languageSelect.value;
+    localStorage.setItem("lang", lang);
+    applyTranslation(lang);
+    atualizarSaudacao();
   });
 }
 
@@ -312,15 +325,14 @@ if (themeToggle) {
 }
 
 /* ============================================================
-   BOTÃO FLUTUANTE (FINAL → TOPO)
+   BOTÃO SCROLL TOP
    ============================================================ */
 
-const scrollBtn = document.getElementById("voltarBtn");
+const scrollBtn = document.getElementById("scrollTopBtn");
 
 if (scrollBtn) {
   window.addEventListener("scroll", () => {
-    const show = window.scrollY > 300;
-    scrollBtn.style.display = show ? "flex" : "none";
+    scrollBtn.style.display = window.scrollY > 300 ? "flex" : "none";
   });
 
   scrollBtn.addEventListener("click", () => {
