@@ -1,5 +1,3 @@
-/* (SEU CSS ORIGINAL INTEIRO MANTIDO) */
-
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +14,12 @@ body {
   color: #1d2b1f;
   font-family: 'Outfit', sans-serif;
   transition: background 0.3s, color 0.3s;
+  animation: pageFade 0.8s ease-in-out;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* HERO */
@@ -23,11 +27,12 @@ body {
   min-height: 100vh;
   padding: 2rem 8%;
   background:
-    linear-gradient(rgba(10, 20, 10, 0.6), rgba(10, 20, 10, 0.6)),
+    linear-gradient(rgba(10, 20, 10, 0.55), rgba(10, 20, 10, 0.55)),
     url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   color: white;
+  background-attachment: fixed; /* PARALLAX LEVE */
 }
 
 /* NAV */
@@ -56,20 +61,25 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
+  transition: 0.3s;
 }
 
-/* CONTROLES */
-.controls {
-  display: flex;
-  gap: 10px;
+nav a:hover {
+  color: #8cff9d;
 }
 
 /* HERO CONTENT */
 .hero-content {
   margin-top: 10rem;
+  animation: fadeUp 1s ease;
 }
 
-/* SOBRE */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SEÇÕES */
 .sobre {
   padding: 5rem 8%;
   display: grid;
@@ -77,55 +87,105 @@ nav a {
   gap: 3rem;
 }
 
-/* PROJETOS */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-/* RESULTADOS */
+/* CARDS GERAIS */
+.mini-card,
+.projeto-card,
+.impacto {
+  transition: all 0.35s ease;
+}
+
+/* HOVER GLOBAL */
+.mini-card:hover,
+.projeto-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ============================================================
+   CARD IMPACTOS (REFEITO - PALETA COERENTE)
+   ============================================================ */
+
 .resultado-box {
-  background: #16331b;
+  background: linear-gradient(135deg, #16331b, #0f2413);
   color: white;
   padding: 3rem;
   border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 .numeros {
   display: flex;
+  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 2rem;
 }
 
-/* 🔥 NOVO ESTILO DOS CARDS (IMPACTOS) */
+/* CARD PRINCIPAL */
 .impacto {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(140,255,157,0.25);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(140, 255, 157, 0.15);
   border-radius: 18px;
   padding: 1.5rem;
   flex: 1;
   min-width: 220px;
   text-align: center;
-  transition: 0.3s;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardIn 0.6s ease forwards;
 }
 
+/* delay escalonado */
+.impacto:nth-child(1) { animation-delay: 0.15s; }
+.impacto:nth-child(2) { animation-delay: 0.3s; }
+.impacto:nth-child(3) { animation-delay: 0.45s; }
+
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hover elegante */
 .impacto:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
   border-color: #8cff9d;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
 }
 
+/* texto */
 .impacto h2 {
-  color: #8cff9d;
-  font-size: 1.3rem;
+  color: #bfffd0;
+  font-size: 1.2rem;
 }
 
 .impacto p {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #e6e6e6;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   SCROLL REVEAL (JS vai ativar)
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* FOOTER */
@@ -135,94 +195,9 @@ footer {
   color: #607062;
 }
 
-/* ============================================================
-   ANIMAÇÕES GERAIS
-   ============================================================ */
-
-/* Suaviza entrada geral */
-body {
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================================
-   ANIMAÇÃO DOS CARDS (IMPACTOS)
-   ============================================================ */
-
-.impacto {
-  animation: floatIn 0.6s ease forwards;
-  opacity: 0;
-}
-
-/* atraso escalonado */
-.impacto:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.impacto:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.impacto:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================================
-   HOVER MAIS SUAVE
-   ============================================================ */
-
-.projeto-card,
-.mini-card,
-.impacto {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* efeito leve de “flutuar” */
-.projeto-card:hover,
-.mini-card:hover {
-  transform: translateY(-8px);
-}
-
-/* impacto com glow leve */
-.impacto:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-/* ============================================================
-   HERO SUAVE
-   ============================================================ */
-
-.hero-content {
-  animation: heroFade 1s ease-in-out;
-}
-
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .sobre {
+    grid-template-columns: 1fr;
   }
 }
