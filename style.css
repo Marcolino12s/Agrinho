@@ -134,3 +134,95 @@ footer {
   padding: 2rem;
   color: #607062;
 }
+
+/* ============================================================
+   ANIMAÇÕES GERAIS
+   ============================================================ */
+
+/* Suaviza entrada geral */
+body {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   ANIMAÇÃO DOS CARDS (IMPACTOS)
+   ============================================================ */
+
+.impacto {
+  animation: floatIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* atraso escalonado */
+.impacto:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.impacto:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.impacto:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   HOVER MAIS SUAVE
+   ============================================================ */
+
+.projeto-card,
+.mini-card,
+.impacto {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* efeito leve de “flutuar” */
+.projeto-card:hover,
+.mini-card:hover {
+  transform: translateY(-8px);
+}
+
+/* impacto com glow leve */
+.impacto:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* ============================================================
+   HERO SUAVE
+   ============================================================ */
+
+.hero-content {
+  animation: heroFade 1s ease-in-out;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
