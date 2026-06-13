@@ -3,188 +3,141 @@
    ============================================================ */
 
 const translations = {
-
   pt: {
-    fontSmall: "Pequena",
-    fontMedium: "Média",
-    fontLarge: "Grande",
-    nav1: "Sobre",
-    nav2: "Projetos",
-    nav3: "Resultados",
-    tag: "INOVAÇÃO • PRESERVAÇÃO • TRANSFORMAÇÃO",
+    fontSmall: "Fonte pequena",
+    fontMedium: "Fonte média",
+    fontLarge: "Fonte grande",
+
+    nav1: "O que é?",
+    nav2: "Exemplos",
+    nav3: "Vantagens",
+
+    tag: "PRODUÇÃO • PRESERVAÇÃO • FUTURO",
     heroTitle: "Um agro forte,<br>inteligente e sustentável.",
-    heroDesc: "Incentivando práticas agrícolas modernas, sustentáveis, econômicas e conscientes, para proteger não somente o meio ambiente, mas também o futuro.",
+    heroDesc: "Traçando caminhos entre o futuro e o presente da agricultura!",
     btn: "Ver mais",
-    sobreTitulo: "Produzir sem destruir",
-    sobreTexto: "O agro sustentável combina produtividade, inovação e preservação ambiental. Com técnicas modernas, é possível reduzir desperdícios, economizar recursos naturais e ainda melhorar a qualidade da produção.",
-    card1Titulo: "Menos desperdício",
-    card1Texto: "Aproveitamento inteligente de recursos e produção mais consciente.",
-    card2Titulo: "Mais eficiência",
-    card2Texto: "Tecnologia e inovação para produzir mais com menos.",
-    card3Titulo: "Futuro sustentável",
-    card3Texto: "Equilíbrio entre produtividade, natureza e desenvolvimento.",
+
+    oqueTitulo: "Um projeto sobre sustentabilidade?",
+    oqueTexto:
+      "AgroNá é um projeto criado para divulgar práticas sustentáveis no campo, equilibrando produção e preservação ambiental.",
+
+    card1Titulo: "Maior produção",
+    card1Texto: "Uso inteligente de recursos para melhorar a eficiência.",
+    card2Titulo: "Menor impacto",
+    card2Texto: "Redução de danos ao meio ambiente com tecnologia.",
+    card3Titulo: "Equilíbrio",
+    card3Texto: "Produzir respeitando a natureza.",
+
     secao: "SUSTENTABILIDADE",
-    exemplos: "Exemplos e resultados",
-    projeto1Titulo: "Cultivo sustentável",
-    projeto1Texto: "Tecnologia e cuidado ambiental trabalhando juntos no campo.",
-    projeto1Info: "✔ Preservação e produtividade",
-    projeto2Titulo: "Produção eficiente",
-    projeto2Texto: "Métodos modernos para reduzir desperdícios e aumentar resultados.",
-    projeto2Info: "✔ Mais rendimento agrícola",
-    projeto3Titulo: "Solo preservado",
-    projeto3Texto: "Técnicas naturais que fortalecem a terra e melhoram a colheita.",
-    projeto3Info: "✔ Maior fertilidade natural",
-    resultados: "Impactos positivos",
-    resultado1: "Eficiência agrícola.",
-    resultado2: "Desperdício hídrico.",
-    resultado3: "Uso de energia limpa.",
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+    projTitulo: "Como ela funciona na prática?",
+
+    proj1Titulo: "Economia de recursos",
+    proj1Texto: "Redução do uso de água e energia no campo.",
+
+    proj2Titulo: "Proteção da fauna",
+    proj2Texto: "Preservação de animais e habitats naturais.",
+
+    proj3Titulo: "Apoio local",
+    proj3Texto: "Valorização de produtores da região.",
+
+    resultadoTitulo: "Impactos positivos",
+    resultado1: "Mais produção com menos desperdício",
+    resultado2: "Preservação ambiental garantida",
+    resultado3: "Redução de custos agrícolas",
+
+    footer: "© 2026 AgroNá | Projeto Agrinho"
   },
 
   en: {
-    fontSmall: "Small",
-    fontMedium: "Medium",
-    fontLarge: "Large",
-    nav1: "About",
-    nav2: "Projects",
-    nav3: "Results",
-    tag: "INNOVATION • PRESERVATION • TRANSFORMATION",
+    fontSmall: "Small font",
+    fontMedium: "Medium font",
+    fontLarge: "Large font",
+
+    nav1: "What is it?",
+    nav2: "Examples",
+    nav3: "Benefits",
+
+    tag: "PRODUCTION • PRESERVATION • FUTURE",
     heroTitle: "A strong,<br>smart and sustainable agriculture.",
-    heroDesc: "Encouraging modern, sustainable, economical and conscious agricultural practices to protect not only the environment, but also the future.",
+    heroDesc: "Connecting the future and present of agriculture.",
     btn: "See more",
-    sobreTitulo: "Producing without destroying",
-    sobreTexto: "Sustainable agriculture combines productivity, innovation and environmental preservation. With modern techniques it is possible to reduce waste, save natural resources and improve production quality.",
-    card1Titulo: "Less waste",
-    card1Texto: "Smart use of resources and more conscious production.",
-    card2Titulo: "More efficiency",
-    card2Texto: "Technology and innovation to produce more with less.",
-    card3Titulo: "Sustainable future",
-    card3Texto: "Balance between productivity, nature and development.",
+
+    oqueTitulo: "A project about sustainability?",
+    oqueTexto:
+      "AgroNá promotes sustainable farming practices, balancing production and environmental care.",
+
+    card1Titulo: "Higher production",
+    card1Texto: "Smart use of resources for better efficiency.",
+    card2Titulo: "Lower impact",
+    card2Texto: "Technology reduces environmental damage.",
+    card3Titulo: "Balance",
+    card3Texto: "Producing while respecting nature.",
+
     secao: "SUSTAINABILITY",
-    exemplos: "Examples and results",
-    projeto1Titulo: "Sustainable cultivation",
-    projeto1Texto: "Technology and environmental care working together in the field.",
-    projeto1Info: "✔ Preservation and productivity",
-    projeto2Titulo: "Efficient production",
-    projeto2Texto: "Modern methods to reduce waste and increase results.",
-    projeto2Info: "✔ Higher agricultural yield",
-    projeto3Titulo: "Preserved soil",
-    projeto3Texto: "Natural techniques that strengthen the soil and improve harvests.",
-    projeto3Info: "✔ Greater natural fertility",
-    resultados: "Positive impacts",
-    resultado1: "Agricultural efficiency.",
-    resultado2: "Water waste.",
-    resultado3: "Clean energy usage.",
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+    projTitulo: "How it works in practice?",
+
+    proj1Titulo: "Resource saving",
+    proj1Texto: "Lower use of water and energy.",
+
+    proj2Titulo: "Wildlife protection",
+    proj2Texto: "Preserving animals and natural habitats.",
+
+    proj3Titulo: "Local support",
+    proj3Texto: "Valuing local farmers.",
+
+    resultadoTitulo: "Positive impacts",
+    resultado1: "More production with less waste",
+    resultado2: "Environmental preservation",
+    resultado3: "Lower farming costs",
+
+    footer: "© 2026 AgroNá | Agrinho Project"
   },
 
   es: {
-    fontSmall: "Pequeña",
-    fontMedium: "Mediana",
-    fontLarge: "Grande",
-    nav1: "Acerca",
-    nav2: "Proyectos",
-    nav3: "Resultados",
-    tag: "INNOVACIÓN • PRESERVACIÓN • TRANSFORMACIÓN",
+    fontSmall: "Fuente pequeña",
+    fontMedium: "Fuente media",
+    fontLarge: "Fuente grande",
+
+    nav1: "¿Qué es?",
+    nav2: "Ejemplos",
+    nav3: "Ventajas",
+
+    tag: "PRODUCCIÓN • PRESERVACIÓN • FUTURO",
     heroTitle: "Una agricultura fuerte,<br>inteligente y sostenible.",
-    heroDesc: "Promoviendo prácticas agrícolas modernas, sostenibles, económicas y responsables para proteger no solo el medio ambiente, sino también el futuro.",
+    heroDesc: "Conectando el presente y el futuro de la agricultura.",
     btn: "Ver más",
-    sobreTitulo: "Producir sin destruir",
-    sobreTexto: "La agricultura sostenible combina productividad, innovación y preservación ambiental. Con técnicas modernas es posible reducir desperdicios, ahorrar recursos naturales y mejorar la calidad de la producción.",
-    card1Titulo: "Menos desperdicio",
-    card1Texto: "Uso inteligente de recursos y producción más consciente.",
-    card2Titulo: "Más eficiencia",
-    card2Texto: "Tecnología e innovación para producir más con menos.",
-    card3Titulo: "Futuro sostenible",
-    card3Texto: "Equilibrio entre productividad, naturaleza y desarrollo.",
+
+    oqueTitulo: "¿Un proyecto sobre sostenibilidad?",
+    oqueTexto:
+      "AgroNá promueve prácticas agrícolas sostenibles equilibrando producción y naturaleza.",
+
+    card1Titulo: "Mayor producción",
+    card1Texto: "Uso inteligente de recursos.",
+    card2Titulo: "Menor impacto",
+    card2Texto: "Reducción de daños ambientales.",
+    card3Titulo: "Equilibrio",
+    card3Texto: "Producir respetando la naturaleza.",
+
     secao: "SOSTENIBILIDAD",
-    exemplos: "Ejemplos y resultados",
-    projeto1Titulo: "Cultivo sostenible",
-    projeto1Texto: "Tecnología y cuidado ambiental trabajando juntos en el campo.",
-    projeto1Info: "✔ Preservación y productividad",
-    projeto2Titulo: "Producción eficiente",
-    projeto2Texto: "Métodos modernos para reducir desperdicios y aumentar resultados.",
-    projeto2Info: "✔ Mayor rendimiento agrícola",
-    projeto3Titulo: "Suelo preservado",
-    projeto3Texto: "Técnicas naturales que fortalecen la tierra y mejoran la cosecha.",
-    projeto3Info: "✔ Mayor fertilidad natural",
-    resultados: "Impactos positivos",
-    resultado1: "Eficiencia agrícola.",
-    resultado2: "Desperdicio hídrico.",
-    resultado3: "Uso de energía limpa.",
-    footer: "© 2026 AgroNova | Projeto Agrinho."
+    projTitulo: "Cómo funciona en la práctica",
+
+    proj1Titulo: "Ahorro de recursos",
+    proj1Texto: "Menos uso de agua y energía.",
+
+    proj2Titulo: "Protección de fauna",
+    proj2Texto: "Preservación de animales.",
+
+    proj3Titulo: "Apoyo local",
+    proj3Texto: "Valoración de productores locales.",
+
+    resultadoTitulo: "Impactos positivos",
+    resultado1: "Mayor producción",
+    resultado2: "Menos impacto ambiental",
+    resultado3: "Menos costos",
+
+    footer: "© 2026 AgroNá | Proyecto Agrinho"
   }
-
 };
-
-/* ============================================================
-   FUNÇÃO: aplicar tradução
-   ============================================================ */
-
-function applyTranslation(lang) {
-  const t = translations[lang];
-  if (!t) return;
-
-  // Opções do select de fonte
-  const optSmall  = document.getElementById("optSmall");
-  const optMedium = document.getElementById("optMedium");
-  const optLarge  = document.getElementById("optLarge");
-  if (optSmall)  optSmall.textContent  = t.fontSmall;
-  if (optMedium) optMedium.textContent = t.fontMedium;
-  if (optLarge)  optLarge.textContent  = t.fontLarge;
-
-  // Navegação
-  setText("navSobre",     t.nav1);
-  setText("navProjetos",  t.nav2);
-  setText("navResultados",t.nav3);
-
-  // Hero
-  setText("heroTag",         t.tag);
-  setHTML("heroTitle",       t.heroTitle);
-  setText("heroDescription", t.heroDesc);
-  setText("explorarBtn",     t.btn);
-
-  // Sobre
-  setText("sobreTitulo", t.sobreTitulo);
-  setText("sobreTexto",  t.sobreTexto);
-  setText("card1Titulo", t.card1Titulo);
-  setText("card1Texto",  t.card1Texto);
-  setText("card2Titulo", t.card2Titulo);
-  setText("card2Texto",  t.card2Texto);
-  setText("card3Titulo", t.card3Titulo);
-  setText("card3Texto",  t.card3Texto);
-
-  // Projetos
-  setText("secao",        t.secao);
-  setText("exemplos",     t.exemplos);
-  setText("projeto1Titulo", t.projeto1Titulo);
-  setText("projeto1Texto",  t.projeto1Texto);
-  setText("projeto1Info",   t.projeto1Info);
-  setText("projeto2Titulo", t.projeto2Titulo);
-  setText("projeto2Texto",  t.projeto2Texto);
-  setText("projeto2Info",   t.projeto2Info);
-  setText("projeto3Titulo", t.projeto3Titulo);
-  setText("projeto3Texto",  t.projeto3Texto);
-  setText("projeto3Info",   t.projeto3Info);
-
-  // Resultados
-  setText("resultadosTitulo", t.resultados);
-  setText("resultado1", t.resultado1);
-  setText("resultado2", t.resultado2);
-  setText("resultado3", t.resultado3);
-
-  // Footer
-  setText("footerText", t.footer);
-}
-
-/* ============================================================
-   FUNÇÃO: aplicar tamanho de fonte
-   ============================================================ */
-
-function applyFontSize(size) {
-  const sizes = { small: "14px", medium: "16px", large: "19px" };
-  document.documentElement.style.fontSize = sizes[size] || "16px";
-}
 
 /* ============================================================
    HELPERS
@@ -201,45 +154,176 @@ function setHTML(id, value) {
 }
 
 /* ============================================================
-   IDIOMA
+   TRADUÇÃO
    ============================================================ */
 
-const languageSelect = document.getElementById("languageSelect");
-if (languageSelect) {
-  const savedLang = localStorage.getItem("agronova-lang") || "pt";
-  languageSelect.value = savedLang;
-  applyTranslation(savedLang);
+function applyTranslation(lang) {
+  const t = translations[lang];
+  if (!t) return;
 
- languageSelect.addEventListener("change", () => {
-  applyTranslation(languageSelect.value);
-  atualizarSaudacao();
-  localStorage.setItem("agronova-lang", languageSelect.value);
-});
+  setText("optSmall", t.fontSmall);
+  setText("optMedium", t.fontMedium);
+  setText("optLarge", t.fontLarge);
+
+  setText("navOque", t.nav1);
+  setText("navExemplos", t.nav2);
+  setText("navVantagens", t.nav3);
+
+  setText("heroTag", t.tag);
+  setHTML("heroTitle", t.heroTitle);
+  setText("heroDescription", t.heroDesc);
+
+  setText("oqueTitulo", t.oqueTitulo);
+  setText("oqueTexto", t.oqueTexto);
+
+  setText("card1Titulo", t.card1Titulo);
+  setText("card1Texto", t.card1Texto);
+  setText("card2Titulo", t.card2Titulo);
+  setText("card2Texto", t.card2Texto);
+  setText("card3Titulo", t.card3Titulo);
+  setText("card3Texto", t.card3Texto);
+
+  setText("secao", t.secao);
+  setText("projTitulo", t.projTitulo);
+
+  setText("projeto1Titulo", t.proj1Titulo);
+  setText("projeto1Texto", t.proj1Texto);
+  setText("projeto2Titulo", t.proj2Titulo);
+  setText("projeto2Texto", t.proj2Texto);
+  setText("projeto3Titulo", t.proj3Titulo);
+  setText("projeto3Texto", t.proj3Texto);
+
+  setText("resultadosTitulo", t.resultadoTitulo);
+  setText("resultado1", t.resultado1);
+  setText("resultado2", t.resultado2);
+  setText("resultado3", t.resultado3);
+
+  setText("footerText", t.footer);
 }
 
 /* ============================================================
-   TAMANHO DE FONTE
+   SAUDAÇÃO (CORRIGIDA)
    ============================================================ */
 
-const fontSelect = document.getElementById("fontSizeSelect");
-if (fontSelect) {
-  const savedFont = localStorage.getItem("agronova-font") || "medium";
-  fontSelect.value = savedFont;
-  applyFontSize(savedFont);
+function obterSaudacao(lang) {
+  const hora = new Date().getHours();
 
-  fontSelect.addEventListener("change", () => {
-    applyFontSize(fontSelect.value);
-    localStorage.setItem("agronova-font", fontSelect.value);
+  const textos = {
+    pt: {
+      manha: "🌅 Bom dia! Seja bem-vindo ao AgroNá.",
+      tarde: "☀️ Boa tarde! Seja bem-vindo ao AgroNá.",
+      noite: "🌙 Boa noite! Seja bem-vindo ao AgroNá."
+    },
+    en: {
+      manha: "🌅 Good morning! Welcome to AgroNá.",
+      tarde: "☀️ Good afternoon! Welcome to AgroNá.",
+      noite: "🌙 Good evening! Welcome to AgroNá."
+    },
+    es: {
+      manha: "🌅 ¡Buenos días! Bienvenido a AgroNá.",
+      tarde: "☀️ ¡Buenas tardes! Bienvenido a AgroNá.",
+      noite: "🌙 ¡Buenas noches! Bienvenido a AgroNá."
+    }
+  };
+
+  const t = textos[lang] || textos.pt;
+
+  if (hora >= 5 && hora < 12) return t.manha;
+  if (hora >= 12 && hora < 18) return t.tarde;
+  return t.noite;
+}
+
+function atualizarSaudacao() {
+  const el = document.getElementById("saudacao");
+  const lang = document.getElementById("languageSelect")?.value || "pt";
+  if (el) el.textContent = obterSaudacao(lang);
+}
+
+/* ============================================================
+   BOTÃO VOLTAR AO FINAL
+   ============================================================ */
+
+const btnTopo = document.getElementById("voltar-ao-topoBtn");
+
+if (btnTopo) {
+  btnTopo.addEventListener("click", () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
   });
 }
 
 /* ============================================================
-   TEMA CLARO / ESCURO
+   MOSTRAR BOTÃO NO FINAL DA PÁGINA
+   ============================================================ */
+
+window.addEventListener("scroll", () => {
+  if (!btnTopo) return;
+
+  const scrollY = window.scrollY;
+  const alturaPagina = document.body.scrollHeight - window.innerHeight;
+
+  if (scrollY >= alturaPagina - 50) {
+    btnTopo.style.display = "block";
+  } else {
+    btnTopo.style.display = "none";
+  }
+});
+
+/* ============================================================
+   IDIOMA
+   ============================================================ */
+
+const languageSelect = document.getElementById("languageSelect");
+
+if (languageSelect) {
+  const saved = localStorage.getItem("lang") || "pt";
+  languageSelect.value = saved;
+
+  applyTranslation(saved);
+  atualizarSaudacao();
+
+  languageSelect.addEventListener("change", () => {
+    localStorage.setItem("lang", languageSelect.value);
+    applyTranslation(languageSelect.value);
+    atualizarSaudacao();
+  });
+}
+
+/* ============================================================
+   FONTE
+   ============================================================ */
+
+const fontSizeSelect = document.getElementById("fontSizeSelect");
+
+if (fontSizeSelect) {
+  const saved = localStorage.getItem("font") || "medium";
+  fontSizeSelect.value = saved;
+
+  const sizes = {
+    small: "14px",
+    medium: "16px",
+    large: "19px"
+  };
+
+  document.documentElement.style.fontSize = sizes[saved];
+
+  fontSizeSelect.addEventListener("change", () => {
+    localStorage.setItem("font", fontSizeSelect.value);
+    document.documentElement.style.fontSize = sizes[fontSizeSelect.value];
+  });
+}
+
+/* ============================================================
+   TEMA
    ============================================================ */
 
 const themeToggle = document.getElementById("themeToggle");
+
 if (themeToggle) {
-  const savedTheme = localStorage.getItem("agronova-theme");
+  const savedTheme = localStorage.getItem("theme");
+
   if (savedTheme === "dark") {
     document.body.classList.add("dark-theme");
     themeToggle.textContent = "☀️";
@@ -247,91 +331,16 @@ if (themeToggle) {
 
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
-    const isDark = document.body.classList.contains("dark-theme");
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("agronova-theme", isDark ? "dark" : "light");
+
+    const dark = document.body.classList.contains("dark-theme");
+
+    themeToggle.textContent = dark ? "☀️" : "🌙";
+    localStorage.setItem("theme", dark ? "dark" : "light");
   });
 }
 
 /* ============================================================
-   BOTÃO "VER MAIS" — scroll até projetos
+   INIT
    ============================================================ */
 
-const botao = document.getElementById("explorarBtn");
-if (botao) {
-  botao.addEventListener("click", () => {
-    const secao = document.getElementById("projetos");
-    if (secao) secao.scrollIntoView({ behavior: "smooth" });
-  });
-}
-
-/* ============================================================
-   SAUDAÇÃO AO USUÁRIO
-   ============================================================ */
-
-function obterSaudacao() {
-
-  const hora = Number(
-    new Intl.DateTimeFormat("pt-BR", {
-      hour: "numeric",
-      hour12: false,
-      timeZone: "America/Sao_Paulo"
-    }).format(new Date())
-  );
-
-  const idioma = languageSelect ? languageSelect.value : "pt";
-
-  // Inglês
-  if (idioma === "en") {
-
-    if (hora >= 5 && hora < 12) {
-      return "🌅 Good morning! Welcome to AgroNova.";
-    }
-
-    if (hora >= 12 && hora < 18) {
-      return "☀️ Good afternoon! Welcome to AgroNova.";
-    }
-
-    return "🌙 Good evening! Welcome to AgroNova.";
-  }
-
-  // Espanhol
-  if (idioma === "es") {
-
-    if (hora >= 5 && hora < 12) {
-      return "🌅 ¡Buenos días! Bienvenido a AgroNova.";
-    }
-
-    if (hora >= 12 && hora < 18) {
-      return "☀️ ¡Buenas tardes! Bienvenido a AgroNova.";
-    }
-
-    return "🌙 ¡Buenas noches! Bienvenido a AgroNova.";
-  }
-
-  // Português
-  if (hora >= 5 && hora < 12) {
-    return "🌅 Bom dia! Seja bem-vindo ao AgroNova.";
-  }
-
-  if (hora >= 12 && hora < 18) {
-    return "☀️ Boa tarde! Seja bem-vindo ao AgroNova.";
-  }
-
-  return "🌙 Boa noite! Seja bem-vindo ao AgroNova.";
-}
-
-function atualizarSaudacao() {
-
-  const saudacao = document.getElementById("saudacao");
-
-  if (saudacao) {
-    saudacao.textContent = obterSaudacao();
-  }
-}
-
-// Atualiza ao carregar
 atualizarSaudacao();
-
-// Atualiza automaticamente a cada minuto
-setInterval(atualizarSaudacao, 60000);
