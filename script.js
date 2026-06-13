@@ -123,20 +123,16 @@ if (menuToggle && navMenu) {
    SCROLL TOP
    ============================================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollBtn = document.getElementById("scrollTopBtn");
+const scrollBtn = document.getElementById("scrollTopBtn");
 
-  if (!scrollBtn) return;
-
-  function handleScroll() {
+if (scrollBtn) {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 500) {
       scrollBtn.style.display = "flex";
     } else {
       scrollBtn.style.display = "none";
     }
-  }
-
-  window.addEventListener("scroll", handleScroll);
+  });
 
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({
@@ -144,6 +140,4 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth"
     });
   });
-
-  handleScroll(); // garante estado correto ao carregar
-});
+}
