@@ -263,3 +263,27 @@ if (botao) {
     if (secao) secao.scrollIntoView({ behavior: "smooth" });
   });
 }
+
+/* ============================================================
+   SAUDAÇÃO AO USUÁRIO
+   ============================================================ */
+
+function obterSaudacao() {
+  const hora = new Date().getHours();
+
+  if (hora < 12) {
+    return "🌅 Bom dia! Seja bem-vindo ao AgroNova.";
+  }
+
+  if (hora < 18) {
+    return "☀️ Boa tarde! Seja bem-vindo ao AgroNova.";
+  }
+
+  return "🌙 Boa noite! Seja bem-vindo ao AgroNova.";
+}
+
+const saudacao = document.getElementById("saudacao");
+
+if (saudacao) {
+  saudacao.textContent = obterSaudacao();
+}
