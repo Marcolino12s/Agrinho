@@ -3,25 +3,32 @@ function setText(id, value) {
   if (el) el.textContent = value;
 }
 
-/* TRADUÇÕES (mantidas simples e estáveis) */
+function setHTML(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = value;
+}
+
 const translations = {
   pt: {
     resultadosTitulo: "Impactos positivos",
+    resultado1: "Aumenta a produção",
+    resultado2: "Preserva os recursos naturais",
+    resultado3: "Reduz custos e desperdícios",
     impactoDesc1: "Mais eficiência no uso dos recursos agrícolas.",
     impactoDesc2: "Uso consciente que protege o meio ambiente.",
     impactoDesc3: "Produção mais inteligente e econômica."
   },
   en: {
     resultadosTitulo: "Positive impacts",
-    impactoDesc1: "More efficient resource use.",
-    impactoDesc2: "Responsible environmental use.",
-    impactoDesc3: "Smarter and cheaper production."
+    impactoDesc1: "More efficient use of resources.",
+    impactoDesc2: "Responsible environmental protection.",
+    impactoDesc3: "Smarter production."
   },
   es: {
     resultadosTitulo: "Impactos positivos",
     impactoDesc1: "Mayor eficiencia de recursos.",
-    impactoDesc2: "Uso ambiental responsable.",
-    impactoDesc3: "Producción más económica."
+    impactoDesc2: "Protección ambiental.",
+    impactoDesc3: "Producción más inteligente."
   }
 };
 
@@ -30,32 +37,12 @@ function applyTranslation(lang) {
   if (!t) return;
 
   setText("resultadosTitulo", t.resultadosTitulo);
+
+  setText("resultado1", t.resultado1);
+  setText("resultado2", t.resultado2);
+  setText("resultado3", t.resultado3);
+
   setText("impactoDesc1", t.impactoDesc1);
   setText("impactoDesc2", t.impactoDesc2);
   setText("impactoDesc3", t.impactoDesc3);
 }
-
-/* SCROLL REVEAL (estável) */
-function reveal() {
-  const elements = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add("active");
-    });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-}
-
-/* INIT */
-document.addEventListener("DOMContentLoaded", () => {
-  reveal();
-
-  const lang = document.getElementById("languageSelect")?.value || "pt";
-  applyTranslation(lang);
-
-  document.getElementById("languageSelect")?.addEventListener("change", (e) => {
-    applyTranslation(e.target.value);
-  });
-});
