@@ -332,10 +332,7 @@ const scrollBtn = document.getElementById("scrollTopBtn");
 
 if (scrollBtn) {
   window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 500 ? "flex" : "none";
-  });
-
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+    scrollBtn.style.display = window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.8;
+  scrollBtn.style.display = window.scrollY > trigger ? "flex" : "none";
+});
