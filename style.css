@@ -6,20 +6,12 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
   background: #f5f8f2;
   color: #1d2b1f;
   font-family: 'Outfit', sans-serif;
-  transition: background 0.3s, color 0.3s;
-  animation: pageFade 0.8s ease-in-out;
-}
-
-@keyframes pageFade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* HERO */
@@ -27,12 +19,11 @@ body {
   min-height: 100vh;
   padding: 2rem 8%;
   background:
-    linear-gradient(rgba(10, 20, 10, 0.55), rgba(10, 20, 10, 0.55)),
+    linear-gradient(rgba(10,20,10,0.6), rgba(10,20,10,0.6)),
     url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   color: white;
-  background-attachment: fixed; /* PARALLAX LEVE */
 }
 
 /* NAV */
@@ -43,14 +34,7 @@ nav {
   flex-wrap: wrap;
 }
 
-nav h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
-}
-
-nav span {
-  color: #8cff9d;
-}
+nav h1 span { color: #8cff9d; }
 
 nav ul {
   display: flex;
@@ -61,143 +45,68 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #8cff9d;
-}
-
-/* HERO CONTENT */
-.hero-content {
-  margin-top: 10rem;
-  animation: fadeUp 1s ease;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* SEÇÕES */
-.sobre {
+.sobre, .projetos, .resultados {
   padding: 5rem 8%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
 }
 
+/* GALERIA */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-/* CARDS GERAIS */
-.mini-card,
-.projeto-card,
-.impacto {
-  transition: all 0.35s ease;
-}
-
-/* HOVER GLOBAL */
-.mini-card:hover,
-.projeto-card:hover {
-  transform: translateY(-8px);
-}
-
-/* ============================================================
-   CARD IMPACTOS (REFEITO - PALETA COERENTE)
-   ============================================================ */
-
+/* RESULTADOS */
 .resultado-box {
   background: linear-gradient(135deg, #16331b, #0f2413);
   color: white;
   padding: 3rem;
   border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 .numeros {
   display: flex;
-  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: center;
 }
 
-/* CARD PRINCIPAL */
+/* IMPACTO (BOM E ESTÁVEL) */
 .impacto {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(140, 255, 157, 0.15);
-  border-radius: 18px;
-  padding: 1.5rem;
-  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(140,255,157,0.18);
+  border-radius: 16px;
+  padding: 1.2rem;
   min-width: 220px;
   text-align: center;
-  backdrop-filter: blur(12px);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: cardIn 0.6s ease forwards;
+  transition: 0.3s;
 }
 
-/* delay escalonado */
-.impacto:nth-child(1) { animation-delay: 0.15s; }
-.impacto:nth-child(2) { animation-delay: 0.3s; }
-.impacto:nth-child(3) { animation-delay: 0.45s; }
-
-@keyframes cardIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* hover elegante */
 .impacto:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-6px);
   border-color: #8cff9d;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
 }
 
-/* texto */
 .impacto h2 {
   color: #bfffd0;
-  font-size: 1.2rem;
 }
 
 .impacto p {
-  margin-top: 10px;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.4;
+  opacity: 0.8;
 }
 
-/* ============================================================
-   SCROLL REVEAL (JS vai ativar)
-   ============================================================ */
-
+/* SCROLL REVEAL */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: translateY(25px);
+  transition: 0.6s ease;
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: #607062;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .sobre {
-    grid-template-columns: 1fr;
-  }
 }
