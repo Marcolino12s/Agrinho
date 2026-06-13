@@ -18,6 +18,7 @@
 <header class="hero">
 
   <nav>
+
     <h1>Agro<span>Ná</span></h1>
 
     <button id="menuToggle" class="menu-toggle">☰</button>
@@ -30,9 +31,9 @@
 
     <div class="controls">
       <select id="fontSizeSelect">
-        <option value="small">Fonte pequena</option>
-        <option value="medium">Fonte média</option>
-        <option value="large">Fonte grande</option>
+        <option value="small" id="optSmall">Fonte pequena</option>
+        <option value="medium" id="optMedium">Fonte média</option>
+        <option value="large" id="optLarge">Fonte grande</option>
       </select>
 
       <select id="languageSelect">
@@ -45,21 +46,26 @@
     </div>
   </nav>
 
-  <div class="hero-content reveal">
+  <div class="hero-content">
     <p id="saudacao"></p>
+
     <p class="tag" id="heroTag">PRODUÇÃO & PRESERVAÇÃO</p>
+
     <h2 id="heroTitle">Um agro forte,<br>inteligente e sustentável.</h2>
+
     <p class="description" id="heroDescription">
       Traçando caminhos entre o futuro e o presente da agricultura.
     </p>
   </div>
 </header>
 
-<section class="sobre reveal" id="sobre">
+<section class="sobre" id="sobre">
 
   <div class="texto">
     <h3 id="sobreTitulo">O que é sustentabilidade?</h3>
-    <p id="sobreTexto">AgroNá é um projeto que incentiva práticas agrícolas sustentáveis.</p>
+    <p id="sobreTexto">
+      AgroNá é um projeto que incentiva práticas agrícolas sustentáveis.
+    </p>
   </div>
 
   <div class="card-info">
@@ -81,7 +87,7 @@
 
 </section>
 
-<section class="projetos reveal" id="projetos">
+<section class="projetos" id="projetos">
 
   <div class="section-title">
     <p id="secao">SUSTENTABILIDADE</p>
@@ -115,10 +121,9 @@
     </div>
 
   </div>
-
 </section>
 
-<section class="resultados reveal" id="resultados">
+<section class="resultados" id="resultados">
 
   <div class="resultado-box">
 
@@ -146,7 +151,7 @@
 
 </section>
 
-<footer class="reveal">
+<footer>
   <p id="footerText">© 2026 AgroNá | Projeto Agrinho</p>
 </footer>
 
