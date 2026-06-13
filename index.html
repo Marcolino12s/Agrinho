@@ -1,165 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroNá</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header class="hero">
-
-  <nav>
-
-    <h1>Agro<span>Ná</span></h1>
-
-    <!-- MENU MOBILE -->
-    <button id="menuToggle" class="menu-toggle">☰</button>
-
-    <ul id="navMenu">
-      <li><a href="#sobre" id="navSobre">O que é?</a></li>
-      <li><a href="#projetos" id="navProjetos">Exemplos</a></li>
-      <li><a href="#resultados" id="navResultados">Vantagens</a></li>
-    </ul>
-
-    <div class="controls">
-      <select id="fontSizeSelect">
-        <option value="small" id="optSmall">Fonte pequena</option>
-        <option value="medium" id="optMedium">Fonte média</option>
-        <option value="large" id="optLarge">Fonte grande</option>
-      </select>
-
-      <select id="languageSelect">
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
-        <option value="es">ES</option>
-      </select>
-
-      <button id="themeToggle">🌙</button>
-    </div>
-  </nav>
-
-  <div class="hero-content">
-    <p id="saudacao"></p>
-
-    <p class="tag" id="heroTag">PRODUÇÃO & PRESERVAÇÃO</p>
-
-    <h2 id="heroTitle">Um agro forte,<br>inteligente e sustentável.</h2>
-
-    <p class="description" id="heroDescription">
-      Traçando caminhos entre o futuro e o presente da agricultura.
-    </p>
-  </div>
-</header>
-
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-
-  <div class="texto">
-    <h3 id="sobreTitulo">O que é sustentabilidade?</h3>
-    <p id="sobreTexto">
-      AgroNá é um projeto que incentiva práticas agrícolas sustentáveis.
-    </p>
-  </div>
-
-  <div class="card-info">
-    <div class="mini-card">
-      <h4 id="card1Titulo">Maior produção</h4>
-      <p id="card1Texto">Uso inteligente de recursos.</p>
-    </div>
-
-    <div class="mini-card">
-      <h4 id="card2Titulo">Menor impacto</h4>
-      <p id="card2Texto">Redução de danos ambientais.</p>
-    </div>
-
-    <div class="mini-card">
-      <h4 id="card3Titulo">Equilíbrio</h4>
-      <p id="card3Texto">Produção e natureza em harmonia.</p>
-    </div>
-  </div>
-
-</section>
-
-<!-- PROJETOS -->
-<section class="projetos" id="projetos">
-
-  <div class="section-title">
-    <p id="secao">SUSTENTABILIDADE</p>
-    <h3 id="exemplos">Como funciona na prática?</h3>
-  </div>
-
-  <div class="galeria">
-
-    <div class="projeto-card">
-      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop">
-      <div class="conteudo">
-        <h4 id="projeto1Titulo">Economiza recursos</h4>
-        <p id="projeto1Texto">Uso consciente de água e energia.</p>
-      </div>
-    </div>
-
-    <div class="projeto-card">
-      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop">
-      <div class="conteudo">
-        <h4 id="projeto2Titulo">Protege a biodiversidade</h4>
-        <p id="projeto2Texto">Preserva fauna e flora nativa.</p>
-      </div>
-    </div>
-
-    <div class="projeto-card">
-      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop">
-      <div class="conteudo">
-        <h4 id="projeto3Titulo">Apoia produtores locais</h4>
-        <p id="projeto3Texto">Fortalece a economia rural.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- RESULTADOS -->
+<!-- Vantagens / Impactos -->
 <section class="resultados" id="resultados">
 
   <div class="resultado-box">
-
-    <h3 id="resultadosTitulo">Impactos positivos</h3>
+    <h3 id="resultadosTitulo">Impactos positivos:</h3>
 
     <div class="numeros">
 
-      <div class="impacto">
-        <h2 id="resultado1">Aumenta a produção</h2>
+      <div class="impacto-card">
+        <h2>Aumenta</h2>
+        <p id="resultado1">a produção</p>
       </div>
 
-      <div class="impacto">
-        <h2 id="resultado2">Preserva os recursos naturais</h2>
+      <div class="impacto-card">
+        <h2>Preserva</h2>
+        <p id="resultado2">os recursos naturais</p>
       </div>
 
-      <div class="impacto">
-        <h2 id="resultado3">Reduz custos e desperdícios</h2>
+      <div class="impacto-card">
+        <h2>Reduz</h2>
+        <p id="resultado3">os desperdícios e custos</p>
       </div>
 
     </div>
   </div>
 
 </section>
-
-<!-- FOOTER -->
-<footer>
-  <p id="footerText">© 2026 AgroNá | Projeto Agrinho</p>
-</footer>
-
-<!-- BOTÃO FLUTUANTE -->
-<button id="scrollTopBtn">↑</button>
-
-<script src="script.js"></script>
-</body>
-</html>
