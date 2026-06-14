@@ -318,6 +318,8 @@ if (scrollBtn) {
 /* CALCULADORA DE SUSTENTABILIDADE */
 const calcularBtn = document.getElementById("calcularBtn");
 
+const avisoCalc = document.getElementById("avisoCalc");
+
 if (calcularBtn) {
 
   calcularBtn.addEventListener("click", () => {
@@ -333,30 +335,37 @@ if (calcularBtn) {
       document.getElementById("areaPlantio").value === "" ||
       document.getElementById("areaMata").value === ""
     ) {
-      alert("Preencha todos os campos antes de calcular.");
+      avisoCalc.textContent =
+  "Preencha todos os campos antes de calcular.";
       return;
     }
 
     if (total <= 0) {
-      alert("A área total deve ser maior que zero.");
+      avisoCalc.textContent =
+  "A área total deve ser maior que zero.";
       return;
     }
 
     if (plantio > total) {
-      alert("A área de plantio não pode ser maior que a área total.");
+      avisoCalc.textContent =
+  "A área de plantio não pode ser maior que a área total.";
       return;
     }
 
     if (mata > total) {
-      alert("A área de mata não pode ser maior que a área total.");
+      avisoCalc.textContent =
+  "A área de mata não pode ser maior que a área total.";
       return;
     }
 
     if ((plantio + mata) > total) {
-      alert("A soma da área de plantio e da área de mata não pode ultrapassar a área total.");
+      avisoCalc.textContent =
+  "A soma das áreas não pode ultrapassar a área total.";
       return;
     }
 
+    avisoCalc.textContent = "";
+    
     /* CÁLCULO DA NOTA */
     let nota = 0;
 
