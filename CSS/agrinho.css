@@ -405,6 +405,10 @@ footer {
   color: white;
 }
 
+.dark-theme .texto p {
+  color: #ffffff;
+}
+
 /* =========================
    RESPONSIVO
 ========================= */
