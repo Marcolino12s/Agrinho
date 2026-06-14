@@ -31,16 +31,16 @@ const translations = {
     heroTitle: "Um agro forte,<br>inteligente e sustentável.",
     heroDesc: "Traçando caminhos entre o futuro e o presente da agricultura.",
 
-    sobreTitulo: "O que é sustentabilidade?",
+    sobreTitulo: "Um simples projeto sobre sustentabilidade?",
     sobreTexto: "AgroNá é um projeto criado para divulgar e promover ações sustentáveis no setor agrícola, visando não somente a diminuição dos impactos ambientais, mas também o aumento da produção, através de práticas limpas e seguras.",
 
     secao: "SUSTENTABILIDADE",
     exemplos: "Como funciona na prática?",
 
     card1Titulo: "Maior produção",
-    card1Texto: "Uso inteligente de recursos.",
+    card1Texto: "Aproveitamento inteligente de recursos para uma produção mais eficiente.",
     card2Titulo: "Menor impacto",
-    card2Texto: "Redução de danos ambientais.",
+    card2Texto: "Tecnologia e inovação para diminuir cada vez mais os danos ao ambiente.",
     card3Titulo: "Equilíbrio",
     card3Texto: "Produção e natureza em harmonia.",
 
@@ -105,16 +105,16 @@ const translations = {
     heroTitle: "Strong, smart and sustainable agriculture.",
     heroDesc: "Connecting the future and present of agriculture.",
 
-    sobreTitulo: "What is sustainability?",
+    sobreTitulo: "A simple project about sustainability?",
     sobreTexto: "AgroNá is a project created to promote sustainable actions in agriculture, aiming not only to reduce environmental impacts but also to increase production through clean and safe practices.",
 
     secao: "SUSTAINABILITY",
     exemplos: "How does it work in practice?",
 
     card1Titulo: "Higher production",
-    card1Texto: "Smart use of resources.",
+    card1Texto: "Smart use of resources for more efficient production.",
     card2Titulo: "Lower impact",
-    card2Texto: "Reducing environmental damage.",
+    card2Texto: "Technology and innovation to reduce damage more and more..",
     card3Titulo: "Balance",
     card3Texto: "Production and nature in harmony.",
 
@@ -183,12 +183,12 @@ const translations = {
     sobreTexto: "AgroNá es un proyecto creado para promover acciones sostenibles en la agricultura, buscando no solo reducir los impactos ambientales, sino también aumentar la producción mediante prácticas limpias y seguras.",
 
     secao: "SOSTENIBILIDAD",
-    exemplos: "¿Cómo funciona en la práctica?",
+    exemplos: "¿Un simple proyecto sobre sostenibilidad?",
 
     card1Titulo: "Mayor producción",
-    card1Texto: "Uso inteligente de recursos.",
+    card1Texto: "Aprovechamiento inteligente de recursos para una producción más eficiente.",
     card2Titulo: "Menor impacto",
-    card2Texto: "Reducción de daños ambientales.",
+    card2Texto: "Tecnología e innovación para reducir cada vez más los daños..",
     card3Titulo: "Equilibrio",
     card3Texto: "Producción y naturaleza en armonía.",
 
