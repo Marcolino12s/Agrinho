@@ -22,7 +22,7 @@ body {
   padding: 2rem 8%;
   background:
     linear-gradient(rgba(10, 20, 10, 0.6), rgba(10, 20, 10, 0.6)),
-    url('assets/images/hero.jpg');
+    url('../assets/images/hero.jpg');
   background-size: cover;
   background-position: center;
   color: white;
