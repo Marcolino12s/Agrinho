@@ -28,7 +28,7 @@ const translations = {
     heroDesc: "Traçando caminhos entre o futuro e o presente da agricultura.",
 
     sobreTitulo: "O que é sustentabilidade?",
-    sobreTexto: "AgroNá é um projeto criado para divulgar e promover ações sustentáveis no setor agrícola, visando não somente a diminuição dos impactos ambientais, mas também o aumento da produção, através de práticas limpas e seguras.",
+    sobreTexto: "AgroNá incentiva práticas agrícolas sustentáveis.",
 
     card1Titulo: "Maior produção",
     card1Texto: "Uso inteligente de recursos.",
@@ -44,11 +44,14 @@ const translations = {
 
     footer: "© 2026 AgroNá | Projeto Agrinho",
 
-    saudacao: {
-      morning: "🌅 Bom dia! Seja bem-vindo ao AgroNá.",
-      afternoon: "☀️ Boa tarde! Seja bem-vindo ao AgroNá.",
-      night: "🌙 Boa noite! Seja bem-vindo ao AgroNá."
-    },
+    // CALCULADORA
+    calcTitle: "Calculadora de Sustentabilidade",
+    calcSubtitle: "Descubra se sua propriedade é sustentável",
+    areaTotal: "Área total (ha)",
+    areaPlantio: "Área de plantio (ha)",
+    areaMata: "Área de mata nativa (ha)",
+    agrotoxico: "Utiliza agrotóxicos?",
+    button: "Calcular",
 
     calc: {
       fill: "Preencha todos os campos corretamente.",
@@ -56,6 +59,12 @@ const translations = {
       plantioError: "Área de plantio não pode ultrapassar o total.",
       mataError: "Área de mata não pode ultrapassar o total.",
       sumError: "A soma das áreas não pode ultrapassar o total."
+    },
+
+    saudacao: {
+      morning: "🌅 Bom dia! Seja bem-vindo ao AgroNá.",
+      afternoon: "☀️ Boa tarde! Seja bem-vindo ao AgroNá.",
+      night: "🌙 Boa noite! Seja bem-vindo ao AgroNá."
     }
   },
 
@@ -70,7 +79,7 @@ const translations = {
     heroDesc: "Connecting the future and present of agriculture.",
 
     sobreTitulo: "What is sustainability?",
-    sobreTexto: "AgroNá is a project created to promote sustainable actions in the agricultural sector, aiming not only to reduce environmental impacts but also to increase production through clean and safe practices.",
+    sobreTexto: "AgroNá promotes sustainable farming practices.",
 
     card1Titulo: "Higher production",
     card1Texto: "Smart use of resources.",
@@ -86,18 +95,26 @@ const translations = {
 
     footer: "© 2026 AgroNá | Agrinho Project",
 
-    saudacao: {
-      morning: "🌅 Good morning! Welcome to AgroNá.",
-      afternoon: "☀️ Good afternoon! Welcome to AgroNá.",
-      night: "🌙 Good evening! Welcome to AgroNá."
-    },
+    calcTitle: "Sustainability Calculator",
+    calcSubtitle: "Check if your farm is sustainable",
+    areaTotal: "Total area (ha)",
+    areaPlantio: "Crop area (ha)",
+    areaMata: "Forest area (ha)",
+    agrotoxico: "Uses pesticides?",
+    button: "Calculate",
 
     calc: {
       fill: "Fill in all fields correctly.",
       areaZero: "Total area must be greater than zero.",
       plantioError: "Crop area cannot exceed total.",
       mataError: "Forest area cannot exceed total.",
-      sumError: "Sum of areas cannot exceed total."
+      sumError: "Sum cannot exceed total."
+    },
+
+    saudacao: {
+      morning: "🌅 Good morning! Welcome to AgroNá.",
+      afternoon: "☀️ Good afternoon! Welcome to AgroNá.",
+      night: "🌙 Good evening! Welcome to AgroNá."
     }
   },
 
@@ -112,7 +129,7 @@ const translations = {
     heroDesc: "Conectando el presente y futuro de la agricultura.",
 
     sobreTitulo: "¿Qué es la sostenibilidad?",
-    sobreTexto: "AgroNá es un proyecto creado para divulgar y promover acciones sostenibles en el sector agrícola, buscando no solo la reducción de los impactos ambientales, sino también el aumento de la producción mediante prácticas limpias y seguras.",
+    sobreTexto: "AgroNá promueve prácticas agrícolas sostenibles.",
 
     card1Titulo: "Mayor producción",
     card1Texto: "Uso inteligente de recursos.",
@@ -128,11 +145,13 @@ const translations = {
 
     footer: "© 2026 AgroNá | Proyecto Agrinho",
 
-    saudacao: {
-      morning: "🌅 ¡Buenos días!",
-      afternoon: "☀️ ¡Buenas tardes!",
-      night: "🌙 ¡Buenas noches!"
-    },
+    calcTitle: "Calculadora de Sostenibilidad",
+    calcSubtitle: "Descubre si tu propiedad es sostenible",
+    areaTotal: "Área total (ha)",
+    areaPlantio: "Área de cultivo (ha)",
+    areaMata: "Área de bosque nativo (ha)",
+    agrotoxico: "¿Usa pesticidas?",
+    button: "Calcular",
 
     calc: {
       fill: "Complete todos los campos.",
@@ -140,6 +159,12 @@ const translations = {
       plantioError: "El cultivo no puede superar el total.",
       mataError: "El bosque no puede superar el total.",
       sumError: "La suma no puede superar el total."
+    },
+
+    saudacao: {
+      morning: "🌅 ¡Buenos días!",
+      afternoon: "☀️ ¡Buenas tardes!",
+      night: "🌙 ¡Buenas noches!"
     }
   }
 };
@@ -175,6 +200,15 @@ function applyLanguage(lang) {
   setText("resultado3", t.resultado3);
 
   setText("footerText", t.footer);
+
+  setText("calcTitle", t.calcTitle);
+  setText("calcSubtitle", t.calcSubtitle);
+
+  setText("labelAreaTotal", t.areaTotal);
+  setText("labelAreaPlantio", t.areaPlantio);
+  setText("labelAreaMata", t.areaMata);
+  setText("labelAgrotoxico", t.agrotoxico);
+  setText("calcularBtn", t.button);
 
   atualizarSaudacao();
 }
@@ -214,45 +248,40 @@ if (btn) {
 
     const aviso = document.getElementById("avisoCalc");
 
-// sempre limpa no início
-aviso.textContent = "";
-aviso.classList.add("hidden");
+    const notaEl = document.getElementById("notaFinal");
+    const barra = document.getElementById("barraProgresso");
+    const classEl = document.getElementById("classificacao");
 
-if (!total || !plantio || !mata) {
-  aviso.textContent = t.fill;
-  aviso.classList.remove("hidden");
-  return;
-}
-
-if (total <= 0) {
-  aviso.textContent = t.areaZero;
-  aviso.classList.remove("hidden");
-  return;
-}
-
-if (plantio > total) {
-  aviso.textContent = t.plantioError;
-  aviso.classList.remove("hidden");
-  return;
-}
-
-if (mata > total) {
-  aviso.textContent = t.mataError;
-  aviso.classList.remove("hidden");
-  return;
-}
-
-if (plantio + mata > total) {
-  aviso.textContent = t.sumError;
-  aviso.classList.remove("hidden");
-  return;
-}
-
-// sucesso → esconde aviso
-aviso.textContent = "";
-aviso.classList.add("hidden");
-
+    // RESET VISUAL SEMPRE
     aviso.textContent = "";
+    notaEl.textContent = "0/100";
+    barra.style.width = "0%";
+    classEl.textContent = "";
+
+    if (!total || !plantio || !mata) {
+      aviso.textContent = t.fill;
+      return;
+    }
+
+    if (total <= 0) {
+      aviso.textContent = t.areaZero;
+      return;
+    }
+
+    if (plantio > total) {
+      aviso.textContent = t.plantioError;
+      return;
+    }
+
+    if (mata > total) {
+      aviso.textContent = t.mataError;
+      return;
+    }
+
+    if (plantio + mata > total) {
+      aviso.textContent = t.sumError;
+      return;
+    }
 
     let nota = 0;
 
@@ -272,8 +301,20 @@ aviso.classList.add("hidden");
 
     if (nota > 100) nota = 100;
 
-    document.getElementById("notaFinal").textContent = `${nota}/100`;
-    document.getElementById("barraProgresso").style.width = `${nota}%`;
+    // CLASSIFICAÇÃO
+    let classificacao = "";
+
+    if (nota >= 95) classificacao = "🌳 Exemplar";
+    else if (nota >= 85) classificacao = "🌿 Excelente";
+    else if (nota >= 70) classificacao = "🌱 Muito boa";
+    else if (nota >= 55) classificacao = "🌾 Boa";
+    else if (nota >= 40) classificacao = "⚠️ Regular";
+    else if (nota >= 20) classificacao = "🚨 Baixa";
+    else classificacao = "❌ Crítica";
+
+    notaEl.textContent = `${nota}/100`;
+    barra.style.width = `${nota}%`;
+    classEl.textContent = classificacao;
   });
 }
 
@@ -304,8 +345,10 @@ if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
-    const isDark = document.body.classList.contains("dark-theme");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark-theme") ? "dark" : "light"
+    );
   });
 }
 
