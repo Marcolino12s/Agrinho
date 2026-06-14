@@ -18,6 +18,10 @@ function setHTML(id, value) {
 ========================= */
 const translations = {
   pt: {
+    fontSmall: "Fonte pequena",
+    fontMedium: "Fonte média",
+    fontLarge: "Fonte grande",
+
     nav1: "O que é?",
     nav2: "Exemplos",
     nav3: "Calcular",
@@ -30,12 +34,25 @@ const translations = {
     sobreTitulo: "O que é sustentabilidade?",
     sobreTexto: "AgroNá incentiva práticas agrícolas sustentáveis.",
 
+    secao: "SUSTENTABILIDADE",
+    exemplos: "Como funciona na prática?",
+
     card1Titulo: "Maior produção",
     card1Texto: "Uso inteligente de recursos.",
     card2Titulo: "Menor impacto",
     card2Texto: "Redução de danos ambientais.",
     card3Titulo: "Equilíbrio",
     card3Texto: "Produção e natureza em harmonia.",
+
+    //  CARDS COM IMAGENS (PROJETOS)
+    projeto1Titulo: "Economiza recursos",
+    projeto1Texto: "Uso consciente de água e energia.",
+
+    projeto2Titulo: "Protege a biodiversidade",
+    projeto2Texto: "Preserva fauna e flora nativa.",
+
+    projeto3Titulo: "Apoia produtores locais",
+    projeto3Texto: "Fortalece a economia rural.",
 
     resultadosTitulo: "Impactos positivos",
     resultado1: "Aumenta a produção agrícola",
@@ -44,7 +61,6 @@ const translations = {
 
     footer: "© 2026 AgroNá | Projeto Agrinho",
 
-    // CALCULADORA
     calcTitle: "Calculadora de Sustentabilidade",
     calcSubtitle: "Descubra se sua propriedade é sustentável",
     areaTotal: "Área total (ha)",
@@ -52,6 +68,8 @@ const translations = {
     areaMata: "Área de mata nativa (ha)",
     agrotoxico: "Utiliza agrotóxicos?",
     button: "Calcular",
+
+    calcPlaceholder: "Preencha os dados para calcular.",
 
     calc: {
       fill: "Preencha todos os campos corretamente.",
@@ -69,6 +87,10 @@ const translations = {
   },
 
   en: {
+    fontSmall: "Small font",
+    fontMedium: "Medium font",
+    fontLarge: "Large font",
+
     nav1: "What is it?",
     nav2: "Examples",
     nav3: "Calculate",
@@ -81,12 +103,24 @@ const translations = {
     sobreTitulo: "What is sustainability?",
     sobreTexto: "AgroNá promotes sustainable farming practices.",
 
+    secao: "SUSTAINABILITY",
+    exemplos: "How does it work in practice?",
+
     card1Titulo: "Higher production",
     card1Texto: "Smart use of resources.",
     card2Titulo: "Lower impact",
     card2Texto: "Reducing environmental damage.",
     card3Titulo: "Balance",
     card3Texto: "Production and nature in harmony.",
+
+    projeto1Titulo: "Saves resources",
+    projeto1Texto: "Efficient use of water and energy.",
+
+    projeto2Titulo: "Protects biodiversity",
+    projeto2Texto: "Preserves native flora and fauna.",
+
+    projeto3Titulo: "Supports local farmers",
+    projeto3Texto: "Strengthens rural economy.",
 
     resultadosTitulo: "Positive impacts",
     resultado1: "Increases agricultural production",
@@ -103,6 +137,8 @@ const translations = {
     agrotoxico: "Uses pesticides?",
     button: "Calculate",
 
+    calcPlaceholder: "Fill in the data to calculate.",
+
     calc: {
       fill: "Fill in all fields correctly.",
       areaZero: "Total area must be greater than zero.",
@@ -112,13 +148,17 @@ const translations = {
     },
 
     saudacao: {
-      morning: "🌅 Good morning! Welcome to AgroNá.",
-      afternoon: "☀️ Good afternoon! Welcome to AgroNá.",
-      night: "🌙 Good evening! Welcome to AgroNá."
+      morning: "🌅 Good morning!",
+      afternoon: "☀️ Good afternoon!",
+      night: "🌙 Good evening!"
     }
   },
 
   es: {
+    fontSmall: "Fuente pequeña",
+    fontMedium: "Fuente media",
+    fontLarge: "Fuente grande",
+
     nav1: "¿Qué es?",
     nav2: "Ejemplos",
     nav3: "Calcular",
@@ -131,12 +171,24 @@ const translations = {
     sobreTitulo: "¿Qué es la sostenibilidad?",
     sobreTexto: "AgroNá promueve prácticas agrícolas sostenibles.",
 
+    secao: "SOSTENIBILIDAD",
+    exemplos: "¿Cómo funciona en la práctica?",
+
     card1Titulo: "Mayor producción",
     card1Texto: "Uso inteligente de recursos.",
     card2Titulo: "Menor impacto",
     card2Texto: "Reducción de daños ambientales.",
     card3Titulo: "Equilibrio",
     card3Texto: "Producción y naturaleza en armonía.",
+
+    projeto1Titulo: "Ahorra recursos",
+    projeto1Texto: "Uso eficiente de agua y energía.",
+
+    projeto2Titulo: "Protege la biodiversidad",
+    projeto2Texto: "Preserva flora y fauna nativa.",
+
+    projeto3Titulo: "Apoya agricultores locales",
+    projeto3Texto: "Fortalece la economía rural.",
 
     resultadosTitulo: "Impactos positivos",
     resultado1: "Aumenta la producción agrícola",
@@ -153,9 +205,11 @@ const translations = {
     agrotoxico: "¿Usa pesticidas?",
     button: "Calcular",
 
+    calcPlaceholder: "Complete los datos para calcular.",
+
     calc: {
       fill: "Complete todos los campos.",
-      areaZero: "El área total debe ser mayor que cero.",
+      areaZero: "El área debe ser mayor que cero.",
       plantioError: "El cultivo no puede superar el total.",
       mataError: "El bosque no puede superar el total.",
       sumError: "La suma no puede superar el total."
@@ -170,7 +224,7 @@ const translations = {
 };
 
 /* =========================
-   IDIOMA
+   APPLY LANGUAGE
 ========================= */
 function applyLanguage(lang) {
   const t = translations[lang] || translations.pt;
@@ -180,6 +234,10 @@ function applyLanguage(lang) {
   setText("navCalculadora", t.nav3);
   setText("navResultados", t.nav4);
 
+  setText("optSmall", t.fontSmall);
+  setText("optMedium", t.fontMedium);
+  setText("optLarge", t.fontLarge);
+
   setText("heroTag", t.tag);
   setHTML("heroTitle", t.heroTitle);
   setText("heroDescription", t.heroDesc);
@@ -187,12 +245,23 @@ function applyLanguage(lang) {
   setText("sobreTitulo", t.sobreTitulo);
   setText("sobreTexto", t.sobreTexto);
 
+  setText("secao", t.secao);
+  setText("exemplos", t.exemplos);
+
   setText("card1Titulo", t.card1Titulo);
   setText("card1Texto", t.card1Texto);
   setText("card2Titulo", t.card2Titulo);
   setText("card2Texto", t.card2Texto);
   setText("card3Titulo", t.card3Titulo);
   setText("card3Texto", t.card3Texto);
+
+  // PROJETOS (CARDS COM IMAGEM)
+  setText("projeto1Titulo", t.projeto1Titulo);
+  setText("projeto1Texto", t.projeto1Texto);
+  setText("projeto2Titulo", t.projeto2Titulo);
+  setText("projeto2Texto", t.projeto2Texto);
+  setText("projeto3Titulo", t.projeto3Titulo);
+  setText("projeto3Texto", t.projeto3Texto);
 
   setText("resultadosTitulo", t.resultadosTitulo);
   setText("resultado1", t.resultado1);
@@ -209,6 +278,8 @@ function applyLanguage(lang) {
   setText("labelAreaMata", t.areaMata);
   setText("labelAgrotoxico", t.agrotoxico);
   setText("calcularBtn", t.button);
+
+  setText("classificacao", t.calcPlaceholder);
 
   atualizarSaudacao();
 }
