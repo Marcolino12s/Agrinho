@@ -22,7 +22,7 @@ body {
   padding: 2rem 8%;
   background:
     linear-gradient(rgba(10, 20, 10, 0.6), rgba(10, 20, 10, 0.6)),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+    url('assets/images/hero.jpg');
   background-size: cover;
   background-position: center;
   color: white;
