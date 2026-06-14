@@ -60,7 +60,7 @@
   </div>
 </header>
 
-<!-- SOBRE -->
+<!-- O QUE É? -->
 <section class="sobre" id="sobre">
 
   <div class="texto">
@@ -89,7 +89,7 @@
 
 </section>
 
-<!-- PROJETOS -->
+<!-- EXEMPLOS -->
 <section class="projetos" id="projetos">
 
   <div class="section-title">
@@ -125,8 +125,64 @@
 
   </div>
 </section>
+  
+  <!-- CALCULADORA -->
+<section class="calculadora" id="calculadora">
 
-<!-- RESULTADOS -->
+  <div class="section-title">
+    <p>Descubra se sua propriedade é sustentável!</p>
+    <h3>Calculadora de Sustentabilidade</h3>
+  </div>
+
+  <div class="calc-box">
+
+    <div class="campo">
+      <label>Área total da propriedade (ha)</label>
+      <input type="number" id="areaTotal" min="1">
+    </div>
+
+    <div class="campo">
+      <label>Área de plantio (ha)</label>
+      <input type="number" id="areaPlantio" min="0">
+    </div>
+
+    <div class="campo">
+      <label>Área de mata nativa (ha)</label>
+      <input type="number" id="areaMata" min="0">
+    </div>
+
+    <div class="campo">
+      <label>Utiliza agrotóxicos?</label>
+
+      <select id="agrotoxico">
+        <option value="nao">Não</option>
+        <option value="sim">Sim</option>
+      </select>
+    </div>
+
+    <button id="calcularBtn">
+      Calcular
+    </button>
+
+    <div id="resultadoCalc" class="resultado-calc">
+
+      <div class="barra">
+        <div id="barraProgresso"></div>
+      </div>
+
+      <h2 id="notaFinal">0/100</h2>
+
+      <p id="classificacao">
+        Preencha os dados para calcular.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+  
+<!-- VANTAGENS -->
 <section class="resultados" id="resultados">
 
   <div class="resultado-box">
