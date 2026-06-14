@@ -234,15 +234,13 @@ select, button {
 .impacto {
   background: rgba(255,255,255,0.08);
   padding: 1.5rem;
-  border-radius: 15px;
-  text-align: center;
-  flex: 1;
+  border-radius: 18px;
 }
 
 .impacto h2 {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-size: 1.5rem;
+  line-height: 1.4;
   color: #8cff9d;
-  line-height: 1.3;
 }
 
 /* ============================================================
