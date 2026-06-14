@@ -1,7 +1,3 @@
-/* ============================================================
-   RESET GERAL
-   ============================================================ */
-
 * {
   margin: 0;
   padding: 0;
@@ -20,9 +16,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
+/* HERO */
 
 .hero {
   min-height: 100vh;
@@ -35,9 +29,7 @@ body {
   color: white;
 }
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
+/* NAVBAR */
 
 nav {
   display: flex;
@@ -71,9 +63,7 @@ nav a:hover {
   color: #8cff9d;
 }
 
-/* ============================================================
-   MENU MOBILE
-   ============================================================ */
+/* MENU MOBILE */
 
 .menu-toggle {
   display: none;
@@ -84,9 +74,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* ============================================================
-   CONTROLES (FONTE / IDIOMA / TEMA)
-   ============================================================ */
+/* CONTROLES (FONTE / IDIOMA / TEMA) */
 
 .controls {
   display: flex;
@@ -102,9 +90,7 @@ select, button {
   font-family: inherit;
 }
 
-/* ============================================================
-   HERO CONTENT
-   ============================================================ */
+/* HERO CONTENT */
 
 .hero-content {
   margin-top: 10rem;
@@ -132,9 +118,7 @@ select, button {
   font-weight: 600;
 }
 
-/* ============================================================
-   SOBRE
-   ============================================================ */
+/* O QUE É? */
 
 .sobre {
   padding: 5rem 8%;
@@ -167,9 +151,7 @@ select, button {
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* ============================================================
-   PROJETOS
-   ============================================================ */
+/* EXEMPLOS */
 
 .projetos {
   padding: 5rem 8%;
@@ -209,9 +191,7 @@ select, button {
   padding: 1rem;
 }
 
-/* ============================================================
-   RESULTADOS
-   ============================================================ */
+/* VANTAGENS */
 
 .resultado-box {
   background: #16331b;
@@ -255,9 +235,7 @@ select, button {
   font-weight: 700;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* FOOTER */
 
 footer {
   text-align: center;
@@ -265,9 +243,7 @@ footer {
   color: #607062;
 }
 
-/* ============================================================
-   BOTÃO FLUTUANTE
-   ============================================================ */
+/* BOTÃO FLUTUANTE */
 
 #scrollTopBtn {
   position: fixed;
@@ -293,9 +269,7 @@ footer {
   justify-content: center;
 }
 
-/* ============================================================
-   DARK MODE
-   ============================================================ */
+/* MODO ESCURO */
 
 .dark-theme {
   background: #121212;
@@ -323,9 +297,7 @@ footer {
   color: white;
 }
 
-/* ============================================================
-   RESPONSIVO
-   ============================================================ */
+/* RESPONSIVO */
 
 @media (max-width: 900px) {
 
@@ -363,4 +335,93 @@ footer {
   .resultado-box {
     padding: 2rem;
   }
+}
+
+/* CALCULADORA */
+
+.calculadora {
+  padding: 5rem 8%;
+}
+
+.calc-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  max-width: 700px;
+  margin: auto;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input,
+.campo select {
+  padding: 0.9rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+}
+
+#calcularBtn {
+  background: #1c5a2a;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.resultado-calc {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.barra {
+  width: 100%;
+  height: 18px;
+  background: #e5e5e5;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#barraProgresso {
+  width: 0%;
+  height: 100%;
+  background: #5dc96d;
+  transition: 0.6s;
+}
+
+#notaFinal {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  color: #1c5a2a;
+}
+
+#classificacao {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* MODO ESCURO */
+
+.dark-theme .calc-box {
+  background: #1e1e1e;
+}
+
+.dark-theme .campo input,
+.dark-theme .campo select {
+  background: #2b2b2b;
+  color: white;
+  border-color: #444;
 }
