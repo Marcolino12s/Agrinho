@@ -140,7 +140,7 @@ select, button {
 }
 
 .texto p {
-  color: #000;
+  color: #000000;
   line-height: 1.7;
 }
 
@@ -201,11 +201,6 @@ select, button {
 /* =========================
    RESULTADOS
 ========================= */
-.resultados {
-  padding-top: 5rem;
-  margin-top: 2rem;
-}
-
 .resultado-box {
   background: #16331b;
   color: white;
@@ -271,6 +266,8 @@ footer {
   cursor: pointer;
 
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  align-items: center;
+  justify-content: center;
 }
 
 /* =========================
@@ -376,6 +373,14 @@ footer {
 }
 
 /* =========================
+   SEÇÕES (CORREÇÃO DO BUG DE "FUNDIR")
+========================= */
+.resultados {
+  padding-top: 5rem;
+  margin-top: 2rem;
+}
+
+/* =========================
    DARK MODE
 ========================= */
 .dark-theme {
@@ -416,7 +421,7 @@ footer {
 }
 
 .dark-theme .texto p {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* =========================
@@ -443,6 +448,10 @@ footer {
 
   .menu-toggle {
     display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
   }
 
   .numeros {
