@@ -31,7 +31,7 @@ const translations = {
     heroDesc: "Traçando caminhos entre o futuro e o presente da agricultura!",
     btnTop: "Voltar ao topo",
 
-    whatTitle: "Um projeto sobre sustentabilidade",
+    whatTitle: "Um projeto sobre sustentabilidade?",
     whatText:
       "AgroNá é um projeto criado para divulgar e promover ações sustentáveis no setor agrícola, visando não somente a diminuição dos impactos ambientais, mas também o aumento da produção, através de práticas limpas e seguras.",
 
@@ -55,7 +55,7 @@ const translations = {
     projeto3Texto: "Valoriza formas de produção que reduzem a emissão de gases poluentes.",
 
     resultadosTitulo: "Impactos positivos:",
-    resultado1: "Aumenta a produção",
+    resultado1: "Aumenta a produção agrícola",
     resultado2: "Preserva os recursos naturais",
     resultado3: "Reduz custos e desperdícios",
 
@@ -82,7 +82,7 @@ const translations = {
     heroDesc: "Building paths between the future and present of agriculture!",
     btnTop: "Back to top",
 
-    whatTitle: "A sustainability project",
+    whatTitle: "A sustainability project?",
     whatText:
       "AgroNá is a project created to promote sustainable actions in agriculture, aiming not only to reduce environmental impacts but also to increase production through clean and safe practices.",
 
@@ -106,7 +106,7 @@ const translations = {
     projeto3Texto: "Promotes production methods that reduce pollution emissions.",
 
     resultadosTitulo: "Positive impacts:",
-    resultado1: "Increases production",
+    resultado1: "Increases agricultural production",
     resultado2: "Preserves natural resources",
     resultado3: "Reduces costs and waste",
 
@@ -133,7 +133,7 @@ const translations = {
     heroDesc: "Creando caminos entre el futuro y el presente de la agricultura!",
     btnTop: "Volver arriba",
 
-    whatTitle: "Un proyecto de sostenibilidad",
+    whatTitle: "Un proyecto de sostenibilidad?",
     whatText:
       "AgroNá es un proyecto creado para promover acciones sostenibles en la agricultura, buscando no solo reducir los impactos ambientales, sino también aumentar la producción mediante prácticas limpias y seguras.",
 
@@ -157,7 +157,7 @@ const translations = {
     projeto3Texto: "Promueve prácticas que reducen emisiones contaminantes.",
 
     resultadosTitulo: "Impactos positivos:",
-    resultado1: "Aumenta la producción",
+    resultado1: "Aumenta la producción agrícola",
     resultado2: "Preserva los recursos naturales",
     resultado3: "Reduce costos y desperdicios",
 
