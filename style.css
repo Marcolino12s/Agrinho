@@ -216,8 +216,14 @@ select, button {
 .resultado-box {
   background: #16331b;
   color: white;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
   padding: 3rem;
   border-radius: 25px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .numeros {
