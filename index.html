@@ -18,9 +18,11 @@
 <header class="hero">
 
   <nav>
+
     <h1>Agro<span>Ná</span></h1>
 
-    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <!-- MENU MOBILE -->
+    <button id="menuToggle" class="menu-toggle">☰</button>
 
     <ul id="navMenu">
       <li><a href="#sobre" id="navSobre">O que é?</a></li>
@@ -41,7 +43,7 @@
         <option value="es">ES</option>
       </select>
 
-      <button id="themeToggle" aria-label="Alternar tema">🌙</button>
+      <button id="themeToggle">🌙</button>
     </div>
   </nav>
 
@@ -58,6 +60,7 @@
   </div>
 </header>
 
+<!-- SOBRE -->
 <section class="sobre" id="sobre">
 
   <div class="texto">
@@ -68,7 +71,6 @@
   </div>
 
   <div class="card-info">
-
     <div class="mini-card">
       <h4 id="card1Titulo">Maior produção</h4>
       <p id="card1Texto">Uso inteligente de recursos.</p>
@@ -83,10 +85,11 @@
       <h4 id="card3Titulo">Equilíbrio</h4>
       <p id="card3Texto">Produção e natureza em harmonia.</p>
     </div>
-
   </div>
+
 </section>
 
+<!-- PROJETOS -->
 <section class="projetos" id="projetos">
 
   <div class="section-title">
@@ -97,7 +100,7 @@
   <div class="galeria">
 
     <div class="projeto-card">
-      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop" alt="Agricultura sustentável">
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop">
       <div class="conteudo">
         <h4 id="projeto1Titulo">Economiza recursos</h4>
         <p id="projeto1Texto">Uso consciente de água e energia.</p>
@@ -105,7 +108,7 @@
     </div>
 
     <div class="projeto-card">
-      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop" alt="Biodiversidade agrícola">
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop">
       <div class="conteudo">
         <h4 id="projeto2Titulo">Protege a biodiversidade</h4>
         <p id="projeto2Texto">Preserva fauna e flora nativa.</p>
@@ -113,7 +116,7 @@
     </div>
 
     <div class="projeto-card">
-      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop" alt="Produção rural local">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop">
       <div class="conteudo">
         <h4 id="projeto3Titulo">Apoia produtores locais</h4>
         <p id="projeto3Texto">Fortalece a economia rural.</p>
@@ -123,52 +126,39 @@
   </div>
 </section>
 
+<!-- RESULTADOS -->
 <section class="resultados" id="resultados">
 
   <div class="resultado-box">
 
-    <div class="section-title resultado-title">
-      <p>SUSTENTABILIDADE</p>
-      <h3 id="resultadosTitulo">Impactos positivos</h3>
-    </div>
+    <h3 id="resultadosTitulo">Impactos positivos</h3>
 
-    <div class="impactos-grid">
+    <div class="numeros">
 
-      <div class="impacto-card">
-        <div class="impacto-icon"></div>
-        <h4 id="resultado1">Aumenta a produção</h4>
-        <p>
-          Técnicas sustentáveis melhoram a eficiência e o aproveitamento dos recursos disponíveis.
-        </p>
+      <div class="impacto">
+        <h2 id="resultado1">Aumenta a produção</h2>
       </div>
 
-      <div class="impacto-card">
-        <div class="impacto-icon"></div>
-        <h4 id="resultado2">Preserva os recursos naturais</h4>
-        <p>
-          O uso consciente da água, do solo e da biodiversidade garante equilíbrio ambiental.
-        </p>
+      <div class="impacto">
+        <h2 id="resultado2">Preserva os recursos naturais</h2>
       </div>
 
-      <div class="impacto-card">
-        <div class="impacto-icon"></div>
-        <h4 id="resultado3">Reduz custos e desperdícios</h4>
-        <p>
-          Menos desperdício significa maior produtividade e melhor retorno econômico.
-        </p>
+      <div class="impacto">
+        <h2 id="resultado3">Reduz custos e desperdícios</h2>
       </div>
 
     </div>
-
   </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p id="footerText">© 2026 AgroNá | Projeto Agrinho</p>
 </footer>
 
-<button id="scrollTopBtn" aria-label="Voltar ao topo">↑</button>
+<!-- BOTÃO FLUTUANTE -->
+<button id="scrollTopBtn">↑</button>
 
 <script src="script.js"></script>
 </body>
