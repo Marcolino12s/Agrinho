@@ -120,7 +120,7 @@ select, button {
 }
 
 /* =========================
-   SEÇÕES (CORREÇÃO IMPORTANTE)
+   SEÇÕES
 ========================= */
 section {
   padding: 5rem 8%;
@@ -185,7 +185,7 @@ section {
 }
 
 /* =========================
-   RESULTADOS (IMPORTANTE: NÃO COLA MAIS COM CALCULADORA)
+   RESULTADOS
 ========================= */
 .resultados {
   margin-top: 4rem;
@@ -239,7 +239,7 @@ section {
 }
 
 /* =========================
-   AVISO (CORRIGIDO)
+   AVISO 
 ========================= */
 .aviso-calc {
   color: #d32f2f;
@@ -284,15 +284,9 @@ footer {
    BOTÃO TOPO
 ========================= */
 #scrollTopBtn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #8cff9d;
-  border: none;
   display: none;
+  align-items: center;
+  justify-content: center;
 }
 
 /* =========================
