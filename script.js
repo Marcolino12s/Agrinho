@@ -17,7 +17,8 @@ const translations = {
 
     nav1: "O que é?",
     nav2: "Exemplos",
-    nav3: "Vantagens",
+    nav3: "Calcular",
+    nav4: "Vantagens",
 
     tag: "PRODUÇÃO & PRESERVAÇÃO",
     heroTitle: "Um agro forte,<br>inteligente e sustentável.",
@@ -68,7 +69,8 @@ const translations = {
 
     nav1: "What is it?",
     nav2: "Examples",
-    nav3: "Advantages",
+    nav3: "Calculate",
+    nav4: "Advantages",
 
     tag: "PRODUCTION & PRESERVATION",
     heroTitle: "A strong, smart and sustainable agriculture.",
@@ -119,7 +121,8 @@ const translations = {
 
     nav1: "¿Qué es?",
     nav2: "Ejemplos",
-    nav3: "Ventajas",
+    nav3: "Calcular",
+    nav4: "Ventajas",
 
     tag: "PRODUCCIÓN & PRESERVACIÓN",
     heroTitle: "Una agricultura fuerte, inteligente y sostenible.",
@@ -175,7 +178,8 @@ function applyTranslation(lang) {
 
   setText("navSobre", t.nav1);
   setText("navProjetos", t.nav2);
-  setText("navResultados", t.nav3);
+  setText("navCalculadora", t.nav3);
+  setText("navResultados", t.nav4);
 
   setText("heroTag", t.tag);
   setHTML("heroTitle", t.heroTitle);
