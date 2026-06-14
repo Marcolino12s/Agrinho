@@ -464,5 +464,27 @@ if (langSelect) {
     applyLanguage(langSelect.value);
   });
 }
+   
+   /* =========================
+   BOTÃO DE VOLTAR AO TOPO
+========================= */
+const scrollBtn = document.getElementById("scrollTopBtn");
 
+// mostrar/ocultar botão ao rolar
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "flex";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+// voltar ao topo
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+   
 });
