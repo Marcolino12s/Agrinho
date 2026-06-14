@@ -156,22 +156,24 @@ select, button {
   border-radius: 30px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .resultado-title {
   text-align: center;
   margin-bottom: 3rem;
-  color: white;
 }
 
 .resultado-title p {
   color: #8cff9d;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .resultado-title h3 {
-  font-size: 2.4rem;
+  color: white;
+  font-size: clamp(2rem, 4vw, 2.8rem);
   margin-top: 0.5rem;
 }
 
@@ -198,23 +200,27 @@ select, button {
 .impacto-card:hover {
   transform: translateY(-8px);
   background: rgba(255,255,255,0.12);
+  border-color: rgba(140,255,157,0.35);
 }
 
 .impacto-icon {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
 .impacto-card h4 {
   color: #8cff9d;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
 .impacto-card p {
   color: rgba(255,255,255,0.85);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
+
+/* DARK MODE */
 
 .dark-theme .resultado-box {
   background: linear-gradient(
@@ -222,6 +228,20 @@ select, button {
     #0d1f12,
     #16331b
   );
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .resultado-box {
+    padding: 2rem;
+  }
+
+  .impactos-grid {
+    grid-template-columns: 1fr;
+  }
+
 }
 /* FOOTER */
 footer {
