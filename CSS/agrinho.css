@@ -374,9 +374,17 @@ footer {
   transition: 0.3s;
 }
 
-/* escondido por padrão */
 .aviso-calc.hidden {
   display: none;
+}
+
+.calculadora {
+  padding-bottom: 5rem;
+}
+
+.resultados {
+  padding-top: 5rem;
+  margin-top: 2rem;
 }
 
 /* =========================
