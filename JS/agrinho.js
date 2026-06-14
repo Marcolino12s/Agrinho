@@ -28,7 +28,7 @@ const translations = {
     heroDesc: "Traçando caminhos entre o futuro e o presente da agricultura.",
 
     sobreTitulo: "O que é sustentabilidade?",
-    sobreTexto: "AgroNá incentiva práticas agrícolas sustentáveis.",
+    sobreTexto: "AgroNá é um projeto criado para divulgar e promover ações sustentáveis no setor agrícola, visando não somente a diminuição dos impactos ambientais, mas também o aumento da produção, através de práticas limpas e seguras.",
 
     card1Titulo: "Maior produção",
     card1Texto: "Uso inteligente de recursos.",
@@ -70,7 +70,7 @@ const translations = {
     heroDesc: "Connecting the future and present of agriculture.",
 
     sobreTitulo: "What is sustainability?",
-    sobreTexto: "AgroNá promotes sustainable farming practices.",
+    sobreTexto: "AgroNá is a project created to promote sustainable actions in the agricultural sector, aiming not only to reduce environmental impacts but also to increase production through clean and safe practices.",
 
     card1Titulo: "Higher production",
     card1Texto: "Smart use of resources.",
@@ -112,7 +112,7 @@ const translations = {
     heroDesc: "Conectando el presente y futuro de la agricultura.",
 
     sobreTitulo: "¿Qué es la sostenibilidad?",
-    sobreTexto: "AgroNá promueve prácticas agrícolas sostenibles.",
+    sobreTexto: "AgroNá es un proyecto creado para divulgar y promover acciones sostenibles en el sector agrícola, buscando no solo la reducción de los impactos ambientales, sino también el aumento de la producción mediante prácticas limpias y seguras.",
 
     card1Titulo: "Mayor producción",
     card1Texto: "Uso inteligente de recursos.",
