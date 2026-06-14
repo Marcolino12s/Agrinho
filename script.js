@@ -8,7 +8,9 @@ function setHTML(id, value) {
   if (el) el.innerHTML = value;
 }
 
-/* TRADUÇÕES */
+/* =========================
+   TRADUÇÕES
+========================= */
 const translations = {
   pt: {
     fontSmall: "Fonte pequena",
@@ -48,6 +50,32 @@ const translations = {
     projeto3Titulo: "Apoia produtores locais",
     projeto3Texto: "Valoriza formas de produção que reduzem a emissão de gases poluentes.",
 
+    calc: {
+      title: "Calculadora de Sustentabilidade",
+      subtitle: "Descubra se sua propriedade é sustentável",
+      areaTotal: "Área total (ha)",
+      areaPlantio: "Área de plantio (ha)",
+      areaMata: "Área de mata nativa (ha)",
+      agrotoxico: "Utiliza agrotóxicos?",
+      sim: "Sim",
+      nao: "Não",
+      button: "Calcular",
+      fillFields: "Preencha todos os campos antes de calcular.",
+      areaZero: "A área total deve ser maior que zero.",
+      plantioError: "A área de plantio não pode ser maior que a área total.",
+      mataError: "A área de mata não pode ser maior que a área total.",
+      sumError: "A soma das áreas não pode ultrapassar a área total.",
+      result: {
+        exemplar: "🌳 Sustentabilidade Exemplar",
+        excellent: "🌿 Excelente",
+        veryGood: "🌱 Muito Boa",
+        good: "🌾 Boa",
+        regular: "⚠️ Regular",
+        low: "🚨 Baixa",
+        critical: "❌ Crítica"
+      }
+    },
+
     resultadosTitulo: "Impactos positivos:",
     resultado1: "Aumenta a produção agrícola",
     resultado2: "Preserva os recursos naturais",
@@ -60,121 +88,15 @@ const translations = {
       afternoon: "☀️ Boa tarde! Seja bem-vindo ao AgroNá.",
       night: "🌙 Boa noite! Seja bem-vindo ao AgroNá."
     }
-  },
-
-  en: {
-    fontSmall: "Small font",
-    fontMedium: "Medium font",
-    fontLarge: "Large font",
-
-    nav1: "What is it?",
-    nav2: "Examples",
-    nav3: "Calculate",
-    nav4: "Advantages",
-
-    tag: "PRODUCTION & PRESERVATION",
-    heroTitle: "A strong, smart and sustainable agriculture.",
-    heroDesc: "Building paths between the future and present of agriculture!",
-    btnTop: "Back to top",
-
-    whatTitle: "A sustainability project?",
-    whatText:
-      "AgroNá is a project created to promote sustainable actions in agriculture, aiming not only to reduce environmental impacts but also to increase production through clean and safe practices.",
-
-    card1Titulo: "Higher production",
-    card1Texto: "Smart use of resources for more efficient production.",
-    card2Titulo: "Lower impact",
-    card2Texto: "Technology and innovation to reduce environmental damage.",
-    card3Titulo: "Balance",
-    card3Texto: "Balance between productivity and sustainability.",
-
-    secao: "SUSTAINABILITY",
-    exemplos: "How does it work in practice?",
-
-    projeto1Titulo: "Saves water and energy",
-    projeto1Texto: "Encourages habits that reduce water and energy consumption.",
-
-    projeto2Titulo: "Protects native wildlife",
-    projeto2Texto: "Preserves habitats of birds, mammals and beneficial insects.",
-
-    projeto3Titulo: "Supports local farmers",
-    projeto3Texto: "Promotes production methods that reduce pollution emissions.",
-
-    resultadosTitulo: "Positive impacts:",
-    resultado1: "Increases agricultural production",
-    resultado2: "Preserves natural resources",
-    resultado3: "Reduces costs and waste",
-
-    footer: "© 2026 AgroNá | Agrinho Project.",
-
-    saudacao: {
-      morning: "🌅 Good morning! Welcome to AgroNá.",
-      afternoon: "☀️ Good afternoon! Welcome to AgroNá.",
-      night: "🌙 Good evening! Welcome to AgroNá."
-    }
-  },
-
-  es: {
-    fontSmall: "Fuente pequeña",
-    fontMedium: "Fuente media",
-    fontLarge: "Fuente grande",
-
-    nav1: "¿Qué es?",
-    nav2: "Ejemplos",
-    nav3: "Calcular",
-    nav4: "Ventajas",
-
-    tag: "PRODUCCIÓN & PRESERVACIÓN",
-    heroTitle: "Una agricultura fuerte, inteligente y sostenible.",
-    heroDesc: "Creando caminos entre el futuro y el presente de la agricultura!",
-    btnTop: "Volver arriba",
-
-    whatTitle: "¿Un proyecto de sostenibilidad?",
-    whatText:
-      "AgroNá es un proyecto creado para promover acciones sostenibles en la agricultura, buscando no solo reducir los impactos ambientales, sino también aumentar la producción mediante prácticas limpias y seguras.",
-
-    card1Titulo: "Mayor producción",
-    card1Texto: "Uso inteligente de recursos para una producción más eficiente.",
-    card2Titulo: "Menor impacto",
-    card2Texto: "Tecnología e innovación para reducir los daños.",
-    card3Titulo: "Equilibrio",
-    card3Texto: "Equilibrio entre productividad y sostenibilidad.",
-
-    secao: "SOSTENIBILIDAD",
-    exemplos: "¿Cómo funciona en la práctica?",
-
-    projeto1Titulo: "Ahorra agua y energía",
-    projeto1Texto: "Fomenta hábitos que reducen el consumo de agua y energía.",
-
-    projeto2Titulo: "Protege la fauna y flora nativa",
-    projeto2Texto: "Mantiene hábitats de aves, mamíferos e insectos beneficiosos.",
-
-    projeto3Titulo: "Apoya a productores locales",
-    projeto3Texto: "Promueve prácticas que reducen emisiones contaminantes.",
-
-    resultadosTitulo: "Impactos positivos:",
-    resultado1: "Aumenta la producción agrícola",
-    resultado2: "Preserva los recursos naturales",
-    resultado3: "Reduce costos y desperdicios",
-
-    footer: "© 2026 AgroNá | Proyecto Agrinho.",
-
-    saudacao: {
-      morning: "🌅 ¡Buenos días! Bienvenido a AgroNá.",
-      afternoon: "☀️ ¡Buenas tardes! Bienvenido a AgroNá.",
-      night: "🌙 ¡Buenas noches! Bienvenido a AgroNá."
-    }
   }
 };
 
-/* APLICAR TRADUÇÃO */
+/* =========================
+   TRADUÇÃO
+========================= */
 function applyTranslation(lang) {
   const t = translations[lang];
   if (!t) return;
-
-  setText("optSmall", t.fontSmall);
-  setText("optMedium", t.fontMedium);
-  setText("optLarge", t.fontLarge);
 
   setText("navSobre", t.nav1);
   setText("navProjetos", t.nav2);
@@ -195,16 +117,6 @@ function applyTranslation(lang) {
   setText("card3Titulo", t.card3Titulo);
   setText("card3Texto", t.card3Texto);
 
-  setText("secao", t.secao);
-  setText("exemplos", t.exemplos);
-
-  setText("projeto1Titulo", t.projeto1Titulo);
-  setText("projeto1Texto", t.projeto1Texto);
-  setText("projeto2Titulo", t.projeto2Titulo);
-  setText("projeto2Texto", t.projeto2Texto);
-  setText("projeto3Titulo", t.projeto3Titulo);
-  setText("projeto3Texto", t.projeto3Texto);
-
   setText("resultadosTitulo", t.resultadosTitulo);
   setText("resultado1", t.resultado1);
   setText("resultado2", t.resultado2);
@@ -215,11 +127,101 @@ function applyTranslation(lang) {
   atualizarSaudacao();
 }
 
-/* SAUDAÇÃO */
+/* =========================
+   CALCULADORA
+========================= */
+const calcularBtn = document.getElementById("calcularBtn");
+const avisoCalc = document.getElementById("avisoCalc");
+
+if (calcularBtn) {
+  calcularBtn.addEventListener("click", () => {
+    const lang = document.getElementById("languageSelect").value;
+    const t = translations[lang].calc;
+    const r = t.result;
+
+    const total = Number(document.getElementById("areaTotal").value);
+    const plantio = Number(document.getElementById("areaPlantio").value);
+    const mata = Number(document.getElementById("areaMata").value);
+    const agrotoxico = document.getElementById("agrotoxico").value;
+
+    if (
+      !total ||
+      !plantio ||
+      !mata
+    ) {
+      avisoCalc.textContent = t.fillFields;
+      return;
+    }
+
+    if (total <= 0) {
+      avisoCalc.textContent = t.areaZero;
+      return;
+    }
+
+    if (plantio > total) {
+      avisoCalc.textContent = t.plantioError;
+      return;
+    }
+
+    if (mata > total) {
+      avisoCalc.textContent = t.mataError;
+      return;
+    }
+
+    if (plantio + mata > total) {
+      avisoCalc.textContent = t.sumError;
+      return;
+    }
+
+    avisoCalc.textContent = "";
+
+    let nota = 0;
+
+    const percMata = (mata / total) * 100;
+    if (percMata >= 40) nota += 40;
+    else if (percMata >= 30) nota += 35;
+    else if (percMata >= 20) nota += 25;
+    else if (percMata >= 10) nota += 15;
+    else nota += 5;
+
+    if (agrotoxico === "nao") nota += 20;
+    else nota += 5;
+
+    const usoSolo = (plantio / total) * 100;
+    if (usoSolo <= 60) nota += 40;
+    else if (usoSolo <= 75) nota += 35;
+    else if (usoSolo <= 85) nota += 25;
+    else if (usoSolo <= 95) nota += 15;
+    else nota += 5;
+
+    let classificacao = "";
+
+    if (nota >= 95) classificacao = r.exemplar;
+    else if (nota >= 85) classificacao = r.excellent;
+    else if (nota >= 70) classificacao = r.veryGood;
+    else if (nota >= 55) classificacao = r.good;
+    else if (nota >= 40) classificacao = r.regular;
+    else if (nota >= 20) classificacao = r.low;
+    else classificacao = r.critical;
+
+    document.getElementById("notaFinal").textContent = `${nota}/100`;
+    document.getElementById("classificacao").textContent = classificacao;
+
+    const barra = document.getElementById("barraProgresso");
+    barra.style.width = `${nota}%`;
+
+    if (nota >= 85) barra.style.background = "#43a047";
+    else if (nota >= 55) barra.style.background = "#fbc02d";
+    else barra.style.background = "#e53935";
+  });
+}
+
+/* =========================
+   SAUDAÇÃO
+========================= */
 function obterSaudacao() {
   const hora = new Date().getHours();
   const lang = document.getElementById("languageSelect")?.value || "pt";
-
   const t = translations[lang].saudacao;
 
   if (hora < 12) return t.morning;
@@ -232,18 +234,9 @@ function atualizarSaudacao() {
   if (el) el.textContent = obterSaudacao();
 }
 
-/* FONTE */
-function applyFontSize(size) {
-  const sizes = {
-    small: "14px",
-    medium: "16px",
-    large: "19px"
-  };
-
-  document.documentElement.style.fontSize = sizes[size] || "16px";
-}
-
-/* MENU MOBILE */
+/* =========================
+   MENU MOBILE
+========================= */
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -253,13 +246,17 @@ if (menuToggle && navMenu) {
   });
 }
 
-/* EVENTOS */
+/* =========================
+   EVENTOS INICIAIS
+========================= */
 const languageSelect = document.getElementById("languageSelect");
-if (languageSelect) {
-  const savedLang = localStorage.getItem("lang") || "pt";
-  languageSelect.value = savedLang;
 
-  applyTranslation(savedLang);
+if (languageSelect) {
+  const saved = localStorage.getItem("lang") || "pt";
+  languageSelect.value = saved;
+
+  applyTranslation(saved);
+  atualizarSaudacao();
 
   languageSelect.addEventListener("change", () => {
     const lang = languageSelect.value;
@@ -269,20 +266,32 @@ if (languageSelect) {
   });
 }
 
+/* =========================
+   FONTE
+========================= */
 const fontSelect = document.getElementById("fontSizeSelect");
-if (fontSelect) {
-  const savedFont = localStorage.getItem("font") || "medium";
-  fontSelect.value = savedFont;
 
-  applyFontSize(savedFont);
+if (fontSelect) {
+  const saved = localStorage.getItem("font") || "medium";
+  fontSelect.value = saved;
+
+  const sizes = {
+    small: "14px",
+    medium: "16px",
+    large: "19px"
+  };
+
+  document.documentElement.style.fontSize = sizes[saved];
 
   fontSelect.addEventListener("change", () => {
     localStorage.setItem("font", fontSelect.value);
-    applyFontSize(fontSelect.value);
+    document.documentElement.style.fontSize = sizes[fontSelect.value];
   });
 }
 
-/* TEMA */
+/* =========================
+   TEMA
+========================= */
 const themeToggle = document.getElementById("themeToggle");
 
 if (themeToggle) {
@@ -296,14 +305,16 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
-    const isDark = document.body.classList.contains("dark-theme");
+    const dark = document.body.classList.contains("dark-theme");
 
-    themeToggle.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    themeToggle.textContent = dark ? "☀️" : "🌙";
+    localStorage.setItem("theme", dark ? "dark" : "light");
   });
 }
 
-/* BOTÃO SCROLL TOP */
+/* =========================
+   SCROLL TOP
+========================= */
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 if (scrollBtn) {
@@ -314,169 +325,4 @@ if (scrollBtn) {
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
-/* CALCULADORA DE SUSTENTABILIDADE */
-const calcularBtn = document.getElementById("calcularBtn");
-
-const avisoCalc = document.getElementById("avisoCalc");
-
-if (calcularBtn) {
-
-  calcularBtn.addEventListener("click", () => {
-
-    const total = Number(document.getElementById("areaTotal").value);
-    const plantio = Number(document.getElementById("areaPlantio").value);
-    const mata = Number(document.getElementById("areaMata").value);
-    const agrotoxico = document.getElementById("agrotoxico").value;
-
-    /* VALIDAÇÕES */
-    if (
-      document.getElementById("areaTotal").value === "" ||
-      document.getElementById("areaPlantio").value === "" ||
-      document.getElementById("areaMata").value === ""
-    ) {
-      avisoCalc.textContent =
-  "Preencha todos os campos antes de calcular.";
-      return;
-    }
-
-    if (total <= 0) {
-      avisoCalc.textContent =
-  "A área total deve ser maior que zero.";
-      return;
-    }
-
-    if (plantio > total) {
-      avisoCalc.textContent =
-  "A área de plantio não pode ser maior que a área total.";
-      return;
-    }
-
-    if (mata > total) {
-      avisoCalc.textContent =
-  "A área de mata não pode ser maior que a área total.";
-      return;
-    }
-
-    if ((plantio + mata) > total) {
-      avisoCalc.textContent =
-  "A soma das áreas não pode ultrapassar a área total.";
-      return;
-    }
-
-    avisoCalc.textContent = "";
-    
-    /* CÁLCULO DA NOTA */
-    let nota = 0;
-
-    // Mata nativa (até 50 pontos)
-    const percentualMata = (mata / total) * 100;
-
-    if (percentualMata >= 40) {
-  nota += 40;
-}
-else if (percentualMata >= 30) {
-  nota += 35;
-}
-else if (percentualMata >= 20) {
-  nota += 25;
-}
-else if (percentualMata >= 10) {
-  nota += 15;
-}
-else {
-  nota += 5;
-}
-    // Agrotóxicos (até 20 pontos)
-  if (agrotoxico === "nao") {
-  nota += 20;
-}
-else {
-  nota += 5;
-}
-    // Uso equilibrado do solo (até 30 pontos)
-    const usoSolo = (plantio / total) * 100;
-
-    if (usoSolo <= 60) {
-  nota += 40;
-}
-else if (usoSolo <= 75) {
-  nota += 35;
-}
-else if (usoSolo <= 85) {
-  nota += 25;
-}
-else if (usoSolo <= 95) {
-  nota += 15;
-}
-else {
-  nota += 5;
-}
-
-    /* CLASSIFICAÇÃO */
-    let classificacao = "";
-let explicacao = "";
-
-if (nota >= 95) {
-  classificacao = "🌳 Sustentabilidade Exemplar";
-  explicacao =
-    "Esta propriedade apresenta excelente equilíbrio entre produção agrícola e preservação ambiental.";
-}
-else if (nota >= 85) {
-  classificacao = "🌿 Excelente";
-  explicacao =
-    "A propriedade demonstra boas práticas sustentáveis e possui baixo impacto ambiental.";
-}
-else if (nota >= 70) {
-  classificacao = "🌱 Muito Boa";
-  explicacao =
-    "Há um bom nível de sustentabilidade, mas ainda existem oportunidades de melhoria.";
-}
-else if (nota >= 55) {
-  classificacao = "🌾 Boa";
-  explicacao =
-    "A propriedade apresenta práticas positivas, porém pode ampliar a preservação ambiental.";
-}
-else if (nota >= 40) {
-  classificacao = "⚠️ Regular";
-  explicacao =
-    "Algumas ações sustentáveis já são adotadas, mas ainda há espaço para evolução.";
-}
-else if (nota >= 20) {
-  classificacao = "🚨 Baixa";
-  explicacao =
-    "O nível de sustentabilidade é reduzido e recomenda-se rever o uso do solo e dos recursos naturais.";
-}
-else {
-  classificacao = "❌ Crítica";
-  explicacao =
-    "A propriedade necessita de mudanças significativas para alcançar padrões sustentáveis.";
-}
-    
-    /* RESULTADO */
-    document.getElementById("notaFinal").textContent =
-      `${nota}/100`;
-
-    document.getElementById("classificacao").textContent =
-      classificacao;
-
-    document.getElementById("explicacaoResultado").textContent =
-  explicacao;
-
-    const barra = document.getElementById("barraProgresso");
-
-barra.style.width = `${nota}%`;
-
-if (nota >= 85) {
-  barra.style.background = "#43a047";
-}
-else if (nota >= 55) {
-  barra.style.background = "#fbc02d";
-}
-else {
-  barra.style.background = "#e53935";
-}
-
-  });
-
 }
