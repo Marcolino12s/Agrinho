@@ -220,18 +220,16 @@ if (calcularBtn) {
    SAUDAÇÃO
 ========================= */
 function obterSaudacao() {
+  const select = document.getElementById("languageSelect");
+  const lang = select ? select.value : "pt";
+
+  const t = translations[lang] || translations.pt;
+
   const hora = new Date().getHours();
-  const lang = document.getElementById("languageSelect")?.value || "pt";
-  const t = translations[lang].saudacao;
 
-  if (hora < 12) return t.morning;
-  if (hora < 18) return t.afternoon;
-  return t.night;
-}
-
-function atualizarSaudacao() {
-  const el = document.getElementById("saudacao");
-  if (el) el.textContent = obterSaudacao();
+  if (hora < 12) return t.saudacao.morning;
+  if (hora < 18) return t.saudacao.afternoon;
+  return t.saudacao.night;
 }
 
 /* =========================
