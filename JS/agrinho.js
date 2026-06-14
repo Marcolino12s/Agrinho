@@ -214,30 +214,43 @@ if (btn) {
 
     const aviso = document.getElementById("avisoCalc");
 
-    if (!total || !plantio || !mata) {
-      aviso.textContent = t.fill;
-      return;
-    }
+// sempre limpa no início
+aviso.textContent = "";
+aviso.classList.add("hidden");
 
-    if (total <= 0) {
-      aviso.textContent = t.areaZero;
-      return;
-    }
+if (!total || !plantio || !mata) {
+  aviso.textContent = t.fill;
+  aviso.classList.remove("hidden");
+  return;
+}
 
-    if (plantio > total) {
-      aviso.textContent = t.plantioError;
-      return;
-    }
+if (total <= 0) {
+  aviso.textContent = t.areaZero;
+  aviso.classList.remove("hidden");
+  return;
+}
 
-    if (mata > total) {
-      aviso.textContent = t.mataError;
-      return;
-    }
+if (plantio > total) {
+  aviso.textContent = t.plantioError;
+  aviso.classList.remove("hidden");
+  return;
+}
 
-    if (plantio + mata > total) {
-      aviso.textContent = t.sumError;
-      return;
-    }
+if (mata > total) {
+  aviso.textContent = t.mataError;
+  aviso.classList.remove("hidden");
+  return;
+}
+
+if (plantio + mata > total) {
+  aviso.textContent = t.sumError;
+  aviso.classList.remove("hidden");
+  return;
+}
+
+// sucesso → esconde aviso
+aviso.textContent = "";
+aviso.classList.add("hidden");
 
     aviso.textContent = "";
 
