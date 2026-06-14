@@ -1,1 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: #f5f8f2;
+  color: #1d2b1f;
+  font-family: 'Outfit', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 2rem 8%;
+  background:
+    linear-gradient(rgba(10, 20, 10, 0.6), rgba(10, 20, 10, 0.6)),
+    url('assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+}
+
+nav span {
+  color: #8cff9d;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #8cff9d;
+}
+
+/* MENU MOBILE */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* CONTROLES (FONTE / IDIOMA / TEMA) */
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+select, button {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  margin-top: 10rem;
+  max-width: 650px;
+}
+
+.tag {
+  color: #9cffad;
+  letter-spacing: 2px;
+}
+
+.hero-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 1rem 0;
+}
+
+.description {
+  color: #e5e5e5;
+  line-height: 1.6;
+}
+
+#saudacao {
+  margin-bottom: 1rem;
+  color: #8cff9d;
+  font-weight: 600;
+}
+
+/* O QUE É? */
+.sobre {
+  padding: 5rem 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: #f5f8f2;
+}
+
+.texto h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.texto p {
+  color: #4d5c4f;
+  line-height: 1.7;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mini-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* EXEMPLOS */
+.projetos {
+  padding: 5rem 8%;
+  background: #f5f8f2;
+}
+
+.section-title h3 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.galeria {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.projeto-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.projeto-card:hover {
+  transform: translateY(-10px);
+}
+
+.projeto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.conteudo {
+  padding: 1rem;
+}
+
+/* VANTAGENS */
+.resultado-box {
+  background: #16331b;
+  color: white;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 3rem;
+  border-radius: 25px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.numeros {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.impacto {
+  background: rgba(255,255,255,0.08);
+  padding: 1.5rem;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 140px;
+
+  text-align: center;
+}
+
+.impacto h2 {
+  color: #8cff9d;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #607062;
+}
+
+/* BOTÃO FLUTUANTE */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #8cff9d;
+  color: #102013;
+
+  display: none;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* MODO ESCURO */
+.dark-theme {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.dark-theme .sobre,
+.dark-theme .projetos {
+  background: #121212;
+}
+
+.dark-theme .mini-card,
+.dark-theme .projeto-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark-theme .resultado-box {
+  background: #0c1a0f;
+}
+
+.dark-theme select,
+.dark-theme button {
+  background: #2a2a2a;
+  color: white;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+
+  .sobre {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .numeros {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .hero {
+    padding: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .resultado-box {
+    padding: 2rem;
+  }
+}
+
+/* CALCULADORA */
+.calculadora {
+  padding: 5rem 8%;
+}
+
+.calculadora .section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.calculadora .section-title p {
+  color: #4CAF50;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.calculadora .section-title h3 {
+  font-size: 2.3rem;
+}
+
+
+.calc-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  max-width: 700px;
+  margin: auto;
+}
+
+.aviso-calc {
+  color: #d32f2f;
+  font-weight: 600;
+  text-align: center;
+  min-height: 24px;
+  margin-top: 0.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input,
+.campo select {
+  padding: 0.9rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+}
+
+#calcularBtn {
+  background: #1c5a2a;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.resultado-calc {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.barra {
+  width: 100%;
+  height: 18px;
+  background: #e5e5e5;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#barraProgresso {
+  width: 0%;
+  height: 100%;
+  background: #5dc96d;
+  transition: 0.6s;
+}
+
+#notaFinal {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  color: #1c5a2a;
+}
+
+#classificacao {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* MODO ESCURO */
+.dark-theme .calc-box {
+  background: #1e1e1e;
+}
+
+.dark-theme .campo input,
+.dark-theme .campo select {
+  background: #2b2b2b;
+  color: white;
+  border-color: #444;
+}
