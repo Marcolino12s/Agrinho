@@ -133,7 +133,7 @@ const translations = {
     heroDesc: "Creando caminos entre el futuro y el presente de la agricultura!",
     btnTop: "Volver arriba",
 
-    whatTitle: "Un proyecto de sostenibilidad?",
+    whatTitle: "¿Un proyecto de sostenibilidad?",
     whatText:
       "AgroNá es un proyecto creado para promover acciones sostenibles en la agricultura, buscando no solo reducir los impactos ambientales, sino también aumentar la producción mediante prácticas limpias y seguras.",
 
