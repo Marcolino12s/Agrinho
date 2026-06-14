@@ -141,17 +141,88 @@ select, button {
 }
 
 /* RESULTADOS */
+.resultados {
+  padding: 6rem 8%;
+  background: #f5f8f2;
+}
+
 .resultado-box {
-  background: #16331b;
+  background: linear-gradient(
+    135deg,
+    #16331b,
+    #214a29
+  );
+  padding: 4rem;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.resultado-title {
+  text-align: center;
+  margin-bottom: 3rem;
   color: white;
-  padding: 3rem;
-  border-radius: 25px;
 }
 
-.impacto h2 {
+.resultado-title p {
   color: #8cff9d;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
 }
 
+.resultado-title h3 {
+  font-size: 2.4rem;
+  margin-top: 0.5rem;
+}
+
+.impactos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.impacto-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(140,255,157,0.15);
+
+  border-radius: 20px;
+  padding: 2rem;
+
+  text-align: center;
+
+  transition: all 0.3s ease;
+}
+
+.impacto-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.12);
+}
+
+.impacto-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.impacto-card h4 {
+  color: #8cff9d;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.impacto-card p {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+.dark-theme .resultado-box {
+  background: linear-gradient(
+    135deg,
+    #0d1f12,
+    #16331b
+  );
+}
 /* FOOTER */
 footer {
   text-align: center;
