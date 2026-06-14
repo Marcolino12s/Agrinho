@@ -55,9 +55,9 @@ const translations = {
     projeto3Texto: "Valoriza formas de produção que reduzem a emissão de gases poluentes.",
 
     resultadosTitulo: "Impactos positivos:",
-    resultado1: "a produção",
-    resultado2: "os recursos naturais",
-    resultado3: "os desperdícios e custos",
+    resultado1: "Aumenta a produção",
+    resultado2: "Preserva os recursos naturais",
+    resultado3: "Reduz custos e desperdícios",
 
     footer: "© 2026 AgroNá | Projeto Agrinho.",
 
@@ -106,9 +106,9 @@ const translations = {
     projeto3Texto: "Promotes production methods that reduce pollution emissions.",
 
     resultadosTitulo: "Positive impacts:",
-    resultado1: "production",
-    resultado2: "natural resources",
-    resultado3: "waste and costs",
+    resultado1: "Increases production",
+    resultado2: "Preserves natural resources",
+    resultado3: "Reduces costs and waste",
 
     footer: "© 2026 AgroNá | Agrinho Project.",
 
@@ -157,9 +157,9 @@ const translations = {
     projeto3Texto: "Promueve prácticas que reducen emisiones contaminantes.",
 
     resultadosTitulo: "Impactos positivos:",
-    resultado1: "la producción",
-    resultado2: "los recursos naturales",
-    resultado3: "los desperdicios y costos",
+    resultado1: "Aumenta la producción",
+    resultado2: "Preserva los recursos naturales",
+    resultado3: "Reduce costos y desperdicios",
 
     footer: "© 2026 AgroNá | Proyecto Agrinho.",
 
