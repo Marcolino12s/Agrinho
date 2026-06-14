@@ -1,7 +1,3 @@
-/* ============================================================
-   HELPERS
-   ============================================================ */
-
 function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value;
@@ -12,10 +8,7 @@ function setHTML(id, value) {
   if (el) el.innerHTML = value;
 }
 
-/* ============================================================
-   TRADUÇÕES
-   ============================================================ */
-
+/* TRADUÇÕES */
 const translations = {
   pt: {
     fontSmall: "Fonte pequena",
@@ -171,10 +164,7 @@ const translations = {
   }
 };
 
-/* ============================================================
-   APLICAR TRADUÇÃO
-   ============================================================ */
-
+/* APLICAR TRADUÇÃO */
 function applyTranslation(lang) {
   const t = translations[lang];
   if (!t) return;
@@ -221,10 +211,7 @@ function applyTranslation(lang) {
   atualizarSaudacao();
 }
 
-/* ============================================================
-   SAUDAÇÃO
-   ============================================================ */
-
+/* SAUDAÇÃO */
 function obterSaudacao() {
   const hora = new Date().getHours();
   const lang = document.getElementById("languageSelect")?.value || "pt";
@@ -241,10 +228,7 @@ function atualizarSaudacao() {
   if (el) el.textContent = obterSaudacao();
 }
 
-/* ============================================================
-   FONTE
-   ============================================================ */
-
+/* FONTE */
 function applyFontSize(size) {
   const sizes = {
     small: "14px",
@@ -255,10 +239,7 @@ function applyFontSize(size) {
   document.documentElement.style.fontSize = sizes[size] || "16px";
 }
 
-/* ============================================================
-   MENU MOBILE
-   ============================================================ */
-
+/* MENU MOBILE */
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -268,10 +249,7 @@ if (menuToggle && navMenu) {
   });
 }
 
-/* ============================================================
-   EVENTOS
-   ============================================================ */
-
+/* EVENTOS */
 const languageSelect = document.getElementById("languageSelect");
 if (languageSelect) {
   const savedLang = localStorage.getItem("lang") || "pt";
@@ -300,10 +278,7 @@ if (fontSelect) {
   });
 }
 
-/* ============================================================
-   TEMA
-   ============================================================ */
-
+/* TEMA */
 const themeToggle = document.getElementById("themeToggle");
 
 if (themeToggle) {
@@ -324,10 +299,7 @@ if (themeToggle) {
   });
 }
 
-/* ============================================================
-   BOTÃO SCROLL TOP
-   ============================================================ */
-
+/* BOTÃO SCROLL TOP */
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 if (scrollBtn) {
@@ -338,4 +310,109 @@ if (scrollBtn) {
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+/* CALCULADORA DE SUSTENTABILIDADE */
+const calcularBtn = document.getElementById("calcularBtn");
+
+if (calcularBtn) {
+
+  calcularBtn.addEventListener("click", () => {
+
+    const total = Number(document.getElementById("areaTotal").value);
+    const plantio = Number(document.getElementById("areaPlantio").value);
+    const mata = Number(document.getElementById("areaMata").value);
+    const agrotoxico = document.getElementById("agrotoxico").value;
+
+    /* VALIDAÇÕES */
+    if (
+      document.getElementById("areaTotal").value === "" ||
+      document.getElementById("areaPlantio").value === "" ||
+      document.getElementById("areaMata").value === ""
+    ) {
+      alert("Preencha todos os campos antes de calcular.");
+      return;
+    }
+
+    if (total <= 0) {
+      alert("A área total deve ser maior que zero.");
+      return;
+    }
+
+    if (plantio > total) {
+      alert("A área de plantio não pode ser maior que a área total.");
+      return;
+    }
+
+    if (mata > total) {
+      alert("A área de mata não pode ser maior que a área total.");
+      return;
+    }
+
+    if ((plantio + mata) > total) {
+      alert("A soma da área de plantio e da área de mata não pode ultrapassar a área total.");
+      return;
+    }
+
+    /* CÁLCULO DA NOTA */
+    let nota = 0;
+
+    // Mata nativa (até 50 pontos)
+    const percentualMata = (mata / total) * 100;
+
+    if (percentualMata >= 30) {
+      nota += 50;
+    }
+    else if (percentualMata >= 20) {
+      nota += 35;
+    }
+    else if (percentualMata >= 10) {
+      nota += 20;
+    }
+
+    // Agrotóxicos (até 20 pontos)
+    if (agrotoxico === "nao") {
+      nota += 20;
+    }
+
+    // Uso equilibrado do solo (até 30 pontos)
+    const usoSolo = (plantio / total) * 100;
+
+    if (usoSolo <= 75) {
+      nota += 30;
+    }
+    else if (usoSolo <= 90) {
+      nota += 20;
+    }
+    else {
+      nota += 10;
+    }
+
+    /* CLASSIFICAÇÃO */
+    let classificacao = "";
+
+    if (nota >= 90) {
+      classificacao = "🌳 Excelente";
+    }
+    else if (nota >= 70) {
+      classificacao = "🌱 Boa";
+    }
+    else if (nota >= 50) {
+      classificacao = "⚠️ Regular";
+    }
+    else {
+      classificacao = "🚨 Necessita melhorias";
+    }
+
+    /* RESULTADO */
+    document.getElementById("notaFinal").textContent =
+      `${nota}/100`;
+
+    document.getElementById("classificacao").textContent =
+      classificacao;
+
+    document.getElementById("barraProgresso").style.width =
+      `${nota}%`;
+
+  });
+
 }
