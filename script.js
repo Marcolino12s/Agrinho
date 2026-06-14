@@ -359,50 +359,87 @@ if (calcularBtn) {
     // Mata nativa (até 50 pontos)
     const percentualMata = (mata / total) * 100;
 
-    if (percentualMata >= 30) {
-      nota += 50;
-    }
-    else if (percentualMata >= 20) {
-      nota += 35;
-    }
-    else if (percentualMata >= 10) {
-      nota += 20;
-    }
-
+    if (percentualMata >= 40) {
+  nota += 40;
+}
+else if (percentualMata >= 30) {
+  nota += 35;
+}
+else if (percentualMata >= 20) {
+  nota += 25;
+}
+else if (percentualMata >= 10) {
+  nota += 15;
+}
+else {
+  nota += 5;
+}
     // Agrotóxicos (até 20 pontos)
-    if (agrotoxico === "nao") {
-      nota += 20;
-    }
-
+  if (agrotoxico === "nao") {
+  nota += 20;
+}
+else {
+  nota += 5;
+}
     // Uso equilibrado do solo (até 30 pontos)
     const usoSolo = (plantio / total) * 100;
 
-    if (usoSolo <= 75) {
-      nota += 30;
-    }
-    else if (usoSolo <= 90) {
-      nota += 20;
-    }
-    else {
-      nota += 10;
-    }
+    if (usoSolo <= 60) {
+  nota += 40;
+}
+else if (usoSolo <= 75) {
+  nota += 35;
+}
+else if (usoSolo <= 85) {
+  nota += 25;
+}
+else if (usoSolo <= 95) {
+  nota += 15;
+}
+else {
+  nota += 5;
+}
 
     /* CLASSIFICAÇÃO */
     let classificacao = "";
+let explicacao = "";
 
-    if (nota >= 90) {
-      classificacao = "🌳 Excelente";
-    }
-    else if (nota >= 70) {
-      classificacao = "🌱 Boa";
-    }
-    else if (nota >= 50) {
-      classificacao = "⚠️ Regular";
-    }
-    else {
-      classificacao = "🚨 Necessita melhorias";
-    }
-
+if (nota >= 95) {
+  classificacao = "🌳 Sustentabilidade Exemplar";
+  explicacao =
+    "Esta propriedade apresenta excelente equilíbrio entre produção agrícola e preservação ambiental.";
+}
+else if (nota >= 85) {
+  classificacao = "🌿 Excelente";
+  explicacao =
+    "A propriedade demonstra boas práticas sustentáveis e possui baixo impacto ambiental.";
+}
+else if (nota >= 70) {
+  classificacao = "🌱 Muito Boa";
+  explicacao =
+    "Há um bom nível de sustentabilidade, mas ainda existem oportunidades de melhoria.";
+}
+else if (nota >= 55) {
+  classificacao = "🌾 Boa";
+  explicacao =
+    "A propriedade apresenta práticas positivas, porém pode ampliar a preservação ambiental.";
+}
+else if (nota >= 40) {
+  classificacao = "⚠️ Regular";
+  explicacao =
+    "Algumas ações sustentáveis já são adotadas, mas ainda há espaço para evolução.";
+}
+else if (nota >= 20) {
+  classificacao = "🚨 Baixa";
+  explicacao =
+    "O nível de sustentabilidade é reduzido e recomenda-se rever o uso do solo e dos recursos naturais.";
+}
+else {
+  classificacao = "❌ Crítica";
+  explicacao =
+    "A propriedade necessita de mudanças significativas para alcançar padrões sustentáveis.";
+}
+    
     /* RESULTADO */
     document.getElementById("notaFinal").textContent =
       `${nota}/100`;
@@ -410,8 +447,22 @@ if (calcularBtn) {
     document.getElementById("classificacao").textContent =
       classificacao;
 
-    document.getElementById("barraProgresso").style.width =
-      `${nota}%`;
+    document.getElementById("explicacaoResultado").textContent =
+  explicacao;
+
+    const barra = document.getElementById("barraProgresso");
+
+barra.style.width = `${nota}%`;
+
+if (nota >= 85) {
+  barra.style.background = "#43a047";
+}
+else if (nota >= 55) {
+  barra.style.background = "#fbc02d";
+}
+else {
+  barra.style.background = "#e53935";
+}
 
   });
 
