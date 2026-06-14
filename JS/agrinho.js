@@ -44,13 +44,10 @@ const translations = {
     card3Titulo: "Equilíbrio",
     card3Texto: "Produção e natureza em harmonia.",
 
-    //  CARDS COM IMAGENS (PROJETOS)
     projeto1Titulo: "Economiza recursos",
     projeto1Texto: "Uso consciente de água e energia.",
-
     projeto2Titulo: "Protege a biodiversidade",
     projeto2Texto: "Preserva fauna e flora nativa.",
-
     projeto3Titulo: "Apoia produtores locais",
     projeto3Texto: "Fortalece a economia rural.",
 
@@ -76,7 +73,15 @@ const translations = {
       areaZero: "A área total deve ser maior que zero.",
       plantioError: "Área de plantio não pode ultrapassar o total.",
       mataError: "Área de mata não pode ultrapassar o total.",
-      sumError: "A soma das áreas não pode ultrapassar o total."
+      sumError: "A soma das áreas não pode ultrapassar o total.",
+
+      exemplar: "Exemplar",
+      excelente: "Excelente",
+      muitoBoa: "Muito boa",
+      boa: "Boa",
+      regular: "Regular",
+      baixa: "Baixa",
+      critica: "Crítica"
     },
 
     saudacao: {
@@ -115,10 +120,8 @@ const translations = {
 
     projeto1Titulo: "Saves resources",
     projeto1Texto: "Efficient use of water and energy.",
-
     projeto2Titulo: "Protects biodiversity",
     projeto2Texto: "Preserves native flora and fauna.",
-
     projeto3Titulo: "Supports local farmers",
     projeto3Texto: "Strengthens rural economy.",
 
@@ -144,7 +147,15 @@ const translations = {
       areaZero: "Total area must be greater than zero.",
       plantioError: "Crop area cannot exceed total.",
       mataError: "Forest area cannot exceed total.",
-      sumError: "Sum cannot exceed total."
+      sumError: "Sum cannot exceed total.",
+
+      exemplar: "Exemplary",
+      excelente: "Excellent",
+      muitoBoa: "Very good",
+      boa: "Good",
+      regular: "Regular",
+      baixa: "Low",
+      critica: "Critical"
     },
 
     saudacao: {
@@ -183,10 +194,8 @@ const translations = {
 
     projeto1Titulo: "Ahorra recursos",
     projeto1Texto: "Uso eficiente de agua y energía.",
-
     projeto2Titulo: "Protege la biodiversidad",
     projeto2Texto: "Preserva flora y fauna nativa.",
-
     projeto3Titulo: "Apoya agricultores locales",
     projeto3Texto: "Fortalece la economía rural.",
 
@@ -208,11 +217,19 @@ const translations = {
     calcPlaceholder: "Complete los datos para calcular.",
 
     calc: {
-      fill: "Complete todos los campos.",
+      fill: "Complete todos los campos correctamente.",
       areaZero: "El área debe ser mayor que cero.",
       plantioError: "El cultivo no puede superar el total.",
       mataError: "El bosque no puede superar el total.",
-      sumError: "La suma no puede superar el total."
+      sumError: "La suma no puede superar el total.",
+
+      exemplar: "Ejemplar",
+      excelente: "Excelente",
+      muitoBoa: "Muy bueno",
+      boa: "Bueno",
+      regular: "Regular",
+      baixa: "Bajo",
+      critica: "Crítico"
     },
 
     saudacao: {
@@ -255,7 +272,6 @@ function applyLanguage(lang) {
   setText("card3Titulo", t.card3Titulo);
   setText("card3Texto", t.card3Texto);
 
-  // PROJETOS (CARDS COM IMAGEM)
   setText("projeto1Titulo", t.projeto1Titulo);
   setText("projeto1Texto", t.projeto1Texto);
   setText("projeto2Titulo", t.projeto2Titulo);
@@ -318,12 +334,10 @@ if (btn) {
     const agro = document.getElementById("agrotoxico").value;
 
     const aviso = document.getElementById("avisoCalc");
-
     const notaEl = document.getElementById("notaFinal");
     const barra = document.getElementById("barraProgresso");
     const classEl = document.getElementById("classificacao");
 
-    // RESET VISUAL SEMPRE
     aviso.textContent = "";
     notaEl.textContent = "0/100";
     barra.style.width = "0%";
@@ -334,25 +348,10 @@ if (btn) {
       return;
     }
 
-    if (total <= 0) {
-      aviso.textContent = t.areaZero;
-      return;
-    }
-
-    if (plantio > total) {
-      aviso.textContent = t.plantioError;
-      return;
-    }
-
-    if (mata > total) {
-      aviso.textContent = t.mataError;
-      return;
-    }
-
-    if (plantio + mata > total) {
-      aviso.textContent = t.sumError;
-      return;
-    }
+    if (total <= 0) return aviso.textContent = t.areaZero;
+    if (plantio > total) return aviso.textContent = t.plantioError;
+    if (mata > total) return aviso.textContent = t.mataError;
+    if (plantio + mata > total) return aviso.textContent = t.sumError;
 
     let nota = 0;
 
@@ -372,16 +371,15 @@ if (btn) {
 
     if (nota > 100) nota = 100;
 
-    // CLASSIFICAÇÃO
     let classificacao = "";
 
-    if (nota >= 95) classificacao = "🌳 Exemplar";
-    else if (nota >= 85) classificacao = "🌿 Excelente";
-    else if (nota >= 70) classificacao = "🌱 Muito boa";
-    else if (nota >= 55) classificacao = "🌾 Boa";
-    else if (nota >= 40) classificacao = "⚠️ Regular";
-    else if (nota >= 20) classificacao = "🚨 Baixa";
-    else classificacao = "❌ Crítica";
+    if (nota >= 95) classificacao = "🌳 " + t.exemplar;
+    else if (nota >= 85) classificacao = "🌿 " + t.excelente;
+    else if (nota >= 70) classificacao = "🌱 " + t.muitoBoa;
+    else if (nota >= 55) classificacao = "🌾 " + t.boa;
+    else if (nota >= 40) classificacao = "⚠️ " + t.regular;
+    else if (nota >= 20) classificacao = "🚨 " + t.baixa;
+    else classificacao = "❌ " + t.critica;
 
     notaEl.textContent = `${nota}/100`;
     barra.style.width = `${nota}%`;
@@ -464,27 +462,21 @@ if (langSelect) {
     applyLanguage(langSelect.value);
   });
 }
-   
-   /* =========================
-   BOTÃO DE VOLTAR AO TOPO
+
+/* =========================
+   BOTÃO TOPO
 ========================= */
 const scrollBtn = document.getElementById("scrollTopBtn");
 
-// mostrar/ocultar botão ao rolar
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollBtn.style.display = "flex";
-  } else {
-    scrollBtn.style.display = "none";
-  }
+  if (!scrollBtn) return;
+  scrollBtn.style.display = window.scrollY > 300 ? "flex" : "none";
 });
 
-// voltar ao topo
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+if (scrollBtn) {
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-});
-   
+}
+
 });
