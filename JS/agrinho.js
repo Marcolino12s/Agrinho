@@ -422,21 +422,29 @@ if (menuToggle) {
    DARK MODE
 ========================= */
 const themeBtn = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
 
 if (themeBtn) {
   const saved = localStorage.getItem("theme");
 
+  // aplica tema salvo
   if (saved === "dark") {
     document.body.classList.add("dark-theme");
+    if (themeIcon) themeIcon.textContent = "☀️";
+  } else {
+    if (themeIcon) themeIcon.textContent = "🌙";
   }
 
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark-theme") ? "dark" : "light"
-    );
+    const isDark = document.body.classList.contains("dark-theme");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    if (themeIcon) {
+      themeIcon.textContent = isDark ? "☀️" : "🌙";
+    }
   });
 }
 
