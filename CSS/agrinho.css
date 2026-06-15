@@ -13,15 +13,19 @@ html {
    VARIÁVEIS DE TEMA
 ========================= */
 :root {
-  --bg: #eef1ee;
+  /* FUNDO GERAL (MAIS CLARO) */
+  --bg: #f4f6f4;
+
+  /* TEXTO */
   --text: #1d2b1f;
   --text-secondary: #4d5c4f;
 
-  --card: #f5f6f5;
-  --card-soft: #e9ebe9;
+  /* CARDS (UM POUCO MAIS ESCUROS QUE O FUNDO) */
+  --card: #e3e7e3;
+  --card-soft: #e9ece9;
 
-  --primary: #7dff9a;
-  --primary-glow: rgba(125, 255, 154, 0.25);
+  /* DETALHES VERDES */
+  --primary: #8cff9d;
   --primary-dark: #1c5a2a;
 
   --shadow: rgba(0,0,0,0.08);
@@ -30,14 +34,14 @@ html {
 /* DARK MODE */
 .dark-theme {
   --bg: #121212;
+
   --text: #f5f5f5;
   --text-secondary: #cfcfcf;
 
   --card: #1e1e1e;
-  --card-soft: #121212;
+  --card-soft: #151515;
 
-  --primary: #7dff9a;
-  --primary-glow: rgba(125, 255, 154, 0.2);
+  --primary: #8cff9d;
   --primary-dark: #2a2a2a;
 
   --shadow: rgba(0,0,0,0.4);
@@ -47,8 +51,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Outfit', sans-serif;
-  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
 /* =========================
@@ -98,7 +102,6 @@ nav a {
 
 nav a:hover {
   color: var(--primary);
-  text-shadow: 0 0 10px var(--primary-glow);
 }
 
 /* =========================
@@ -114,7 +117,7 @@ nav a:hover {
 }
 
 /* =========================
-   BOTÕES E SELECTS
+   BOTÕES (FONTE, TEMA, IDIOMA)
 ========================= */
 select,
 button {
@@ -135,12 +138,11 @@ button:hover,
 select:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px var(--shadow);
-  border-color: var(--primary);
 }
 
 .dark-theme select,
 .dark-theme button {
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 /* =========================
@@ -153,7 +155,6 @@ select:hover {
 
 .tag {
   color: var(--primary);
-  letter-spacing: 1px;
 }
 
 .hero-content h2 {
@@ -179,12 +180,7 @@ select:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  background: var(--card-soft);
-}
-
-.texto {
-  max-width: 600px;
-  margin: 0 auto;
+  background: var(--bg); /* <- sem divisão */
 }
 
 .texto h3 {
@@ -194,7 +190,6 @@ select:hover {
 
 .texto p {
   color: var(--text);
-  line-height: 1.7;
 }
 
 .card-info {
@@ -215,7 +210,7 @@ select:hover {
 ========================= */
 .projetos {
   padding: 5rem 8%;
-  background: var(--card-soft);
+  background: var(--bg); /* <- sem divisão */
 }
 
 .galeria {
@@ -230,7 +225,6 @@ select:hover {
   border-radius: 18px;
   overflow: hidden;
   transition: 0.3s;
-  box-shadow: 0 10px 25px var(--shadow);
 }
 
 .projeto-card:hover {
@@ -248,7 +242,7 @@ select:hover {
 }
 
 /* =========================
-   IMPACTOS
+   RESULTADOS (SEM VERDE FORTE)
 ========================= */
 .resultado-box {
   background: var(--card);
@@ -281,16 +275,8 @@ select:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-height: 140px;
   text-align: center;
-
-  box-shadow: 0 8px 20px var(--shadow);
-  transition: 0.2s ease;
-}
-
-.impacto:hover {
-  transform: translateY(-4px);
 }
 
 /* =========================
@@ -298,6 +284,7 @@ select:hover {
 ========================= */
 .calculadora {
   padding: 5rem 8%;
+  background: var(--bg); /* <- sem divisão */
 }
 
 .calc-box {
@@ -314,15 +301,16 @@ select:hover {
   margin: auto;
 }
 
-.calculadora .section-title {
+/* CENTRALIZAÇÃO DO RESULTADO */
+.resultado-calc {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-.calculadora .section-title p,
-.calculadora .section-title h3 {
-  margin: 0.3rem 0;
-}
-
+/* inputs */
 .campo {
   display: flex;
   flex-direction: column;
@@ -340,38 +328,18 @@ select:hover {
   border: 1px solid rgba(0,0,0,0.15);
   background: var(--card);
   color: var(--text);
-  outline: none;
-  transition: 0.2s ease;
 }
 
 .campo input:focus,
 .campo select:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-glow);
+  box-shadow: 0 0 0 3px rgba(140,255,157,0.2);
 }
 
-/* RESULTADO DA CALCULADORA */
-.resultado-calc {
-  margin-top: 1rem;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-#notaFinal,
-#classificacao,
-.aviso-calc {
-  text-align: center;
-}
-
+/* barra */
 .barra {
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
 }
 
 /* =========================
@@ -381,4 +349,48 @@ footer {
   text-align: center;
   padding: 2rem;
   color: var(--text-secondary);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 900px) {
+  .sobre {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(0,0,0,0.8);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    padding: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .resultado-box {
+    padding: 2rem;
+  }
 }
