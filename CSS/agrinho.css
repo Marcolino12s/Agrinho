@@ -13,12 +13,12 @@ html {
    VARIÁVEIS DE TEMA
 ========================= */
 :root {
-  --bg: #f5f8f2;
+  --bg: #f0f2f0;
   --text: #1d2b1f;
   --text-secondary: #4d5c4f;
 
-  --card: #f2f4f2;
-  --card-soft: #f5f8f2;
+  --card: #e6e8e6;
+  --card-soft: #e9ebe9;
 
   --primary: #8cff9d;
   --primary-dark: #1c5a2a;
