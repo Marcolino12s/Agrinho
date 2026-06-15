@@ -110,6 +110,37 @@ nav a:hover {
 }
 
 /* =========================
+   BOTÕES
+========================= */
+select,
+button {
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--card);
+  color: var(--text);
+
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: 0.2s ease;
+}
+
+button:hover,
+select:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.dark-theme select,
+.dark-theme button {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =========================
    HERO CONTENT
 ========================= */
 .hero-content {
