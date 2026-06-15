@@ -297,6 +297,25 @@ function applyLanguage(lang) {
 
   setText("classificacao", t.calcPlaceholder);
 
+   const select = document.getElementById("agrotoxico");
+
+if (select) {
+  const valorAtual = select.value;
+
+  const textos = {
+    pt: { sim: "Sim", nao: "Não" },
+    en: { sim: "Yes", nao: "No" },
+    es: { sim: "Sí", nao: "No" }
+  };
+
+  select.innerHTML = `
+    <option value="nao">${textos[lang].nao}</option>
+    <option value="sim">${textos[lang].sim}</option>
+  `;
+
+  select.value = valorAtual;
+}
+
   atualizarSaudacao();
 }
 
