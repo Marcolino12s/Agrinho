@@ -17,7 +17,7 @@ html {
   --text: #1d2b1f;
   --text-secondary: #4d5c4f;
 
-  --card: #ffffff;
+  --card: #f2f4f2;
   --card-soft: #f5f8f2;
 
   --primary: #8cff9d;
@@ -240,8 +240,8 @@ select:hover {
    RESULTADO (CORRIGIDO)
 ========================= */
 .resultado-box {
-  background: var(--primary-dark);
-  color: white;
+  background: var(--card);
+  color: var(--text);
 
   max-width: 1000px;
   margin: 3rem auto;
@@ -255,7 +255,6 @@ select:hover {
   flex-direction: column;
   gap: 2rem;
 }
-
 .numeros {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -293,6 +292,42 @@ select:hover {
 
   max-width: 700px;
   margin: auto;
+}
+
+.calculadora .section-title {
+  text-align: center;
+}
+
+.calculadora .section-title p,
+.calculadora .section-title h3 {
+  margin: 0.3rem 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input,
+.campo select {
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(140, 255, 157, 0.2);
 }
 
 /* =========================
