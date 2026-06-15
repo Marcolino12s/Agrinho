@@ -260,16 +260,17 @@ select:hover {
 
 /* remove verde pesado visual */
 .impacto {
-  background: var(--card-soft);
+  background: rgba(255, 255, 255, 0.08);
   padding: 1.5rem;
   border-radius: 18px;
 
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
+  min-height: 140px;
+  text-align: center;
+}
 /* =========================
    CALCULADORA
 ========================= */
