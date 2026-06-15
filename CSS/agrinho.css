@@ -348,3 +348,25 @@ footer {
     display: block;
   }
 }
+
+@media (max-width: 500px) {
+
+  .hero,
+  .sobre,
+  .projetos,
+  .calculadora {
+    padding: 2rem 1.2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .numeros {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul.active {
+    width: 100%;
+  }
+}
