@@ -13,25 +13,27 @@ html {
    VARIÁVEIS DE TEMA
 ========================= */
 :root {
-  /* FUNDO GERAL (MAIS CLARO) */
-  --bg: #f4f6f4;
+  /* FUNDO (mais claro que os cards) */
+  --bg: #f3f5f3;
 
   /* TEXTO */
   --text: #1d2b1f;
   --text-secondary: #4d5c4f;
 
-  /* CARDS (UM POUCO MAIS ESCUROS QUE O FUNDO) */
-  --card: #e3e7e3;
-  --card-soft: #e9ece9;
+  /* CARDS (mais escuros que o fundo) */
+  --card: #e0e4e0;
+  --card-soft: #e6e9e6;
 
-  /* DETALHES VERDES */
+  /* DETALHE VERDE */
   --primary: #8cff9d;
   --primary-dark: #1c5a2a;
 
-  --shadow: rgba(0,0,0,0.08);
+  --border: rgba(0,0,0,0.12);
 }
 
-/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
 .dark-theme {
   --bg: #121212;
 
@@ -44,9 +46,12 @@ html {
   --primary: #8cff9d;
   --primary-dark: #2a2a2a;
 
-  --shadow: rgba(0,0,0,0.4);
+  --border: rgba(255,255,255,0.12);
 }
 
+/* =========================
+   BASE
+========================= */
 body {
   background: var(--bg);
   color: var(--text);
@@ -117,19 +122,20 @@ nav a:hover {
 }
 
 /* =========================
-   BOTÕES (FONTE, TEMA, IDIOMA)
+   BOTÕES / SELECTS / INPUTS
 ========================= */
+button,
 select,
-button {
-  border: 1px solid rgba(0,0,0,0.12);
+input {
+  border: 1px solid var(--border);
   background: var(--card);
   color: var(--text);
 
   padding: 0.6rem 1rem;
   border-radius: 10px;
 
-  cursor: pointer;
   font-family: inherit;
+  cursor: pointer;
 
   transition: 0.2s ease;
 }
@@ -137,12 +143,6 @@ button {
 button:hover,
 select:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--shadow);
-}
-
-.dark-theme select,
-.dark-theme button {
-  border: 1px solid rgba(255,255,255,0.12);
 }
 
 /* =========================
@@ -180,7 +180,7 @@ select:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  background: var(--bg); /* <- sem divisão */
+  background: var(--bg);
 }
 
 .texto h3 {
@@ -202,7 +202,6 @@ select:hover {
   background: var(--card);
   padding: 1.2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 25px var(--shadow);
 }
 
 /* =========================
@@ -210,7 +209,7 @@ select:hover {
 ========================= */
 .projetos {
   padding: 5rem 8%;
-  background: var(--bg); /* <- sem divisão */
+  background: var(--bg);
 }
 
 .galeria {
@@ -228,7 +227,7 @@ select:hover {
 }
 
 .projeto-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 .projeto-card img {
@@ -242,7 +241,7 @@ select:hover {
 }
 
 /* =========================
-   RESULTADOS (SEM VERDE FORTE)
+   RESULTADO (SEM VERDE FORTE)
 ========================= */
 .resultado-box {
   background: var(--card);
@@ -254,29 +253,21 @@ select:hover {
   padding: 3rem;
   border-radius: 25px;
 
-  box-shadow: 0 20px 40px var(--shadow);
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.numeros {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
+/* remove verde pesado visual */
 .impacto {
   background: var(--card-soft);
   padding: 1.5rem;
   border-radius: 18px;
 
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 140px;
-  text-align: center;
 }
 
 /* =========================
@@ -284,14 +275,22 @@ select:hover {
 ========================= */
 .calculadora {
   padding: 5rem 8%;
-  background: var(--bg); /* <- sem divisão */
+  background: var(--bg);
+}
+
+/* TÍTULO CENTRALIZADO (CORRIGIDO) */
+.calculadora .section-title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .calc-box {
   background: var(--card);
   padding: 2rem;
   border-radius: 25px;
-  box-shadow: 0 15px 35px var(--shadow);
 
   display: flex;
   flex-direction: column;
@@ -301,7 +300,14 @@ select:hover {
   margin: auto;
 }
 
-/* CENTRALIZAÇÃO DO RESULTADO */
+/* CAMPOS */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* RESULTADO CENTRALIZADO */
 .resultado-calc {
   text-align: center;
   display: flex;
@@ -310,33 +316,13 @@ select:hover {
   gap: 1rem;
 }
 
-/* inputs */
-.campo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+#notaFinal,
+#classificacao,
+.aviso-calc {
+  text-align: center;
 }
 
-.campo label {
-  font-weight: 600;
-}
-
-.campo input,
-.campo select {
-  padding: 0.9rem;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.15);
-  background: var(--card);
-  color: var(--text);
-}
-
-.campo input:focus,
-.campo select:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(140,255,157,0.2);
-}
-
-/* barra */
+/* BARRA */
 .barra {
   width: 100%;
   max-width: 500px;
@@ -374,10 +360,6 @@ footer {
 
   .menu-toggle {
     display: block;
-  }
-
-  .hero-content h2 {
-    font-size: 2.5rem;
   }
 }
 
