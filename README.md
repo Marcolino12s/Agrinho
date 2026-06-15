@@ -1,4 +1,4 @@
-# AgroNá — Projeto Agrinho 2026
+## AgroNá — Projeto Agrinho 2026
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
@@ -15,3 +15,5 @@ Em relação ao desenvolvimento, o projeto foi inteiramente criado por mim, send
 As imagens utilizadas no projeto foram obtidas da plataforma Unsplash e passaram por pequenas edições no Canva para melhor adequação ao design do site, enquanto as fontes tipográficas foram fornecidas pelo Google Fonts, contribuindo para uma identidade visual mais moderna, legível e coerente com a proposta do projeto.
 
 Os créditos gerais incluem essas fontes visuais, além do uso do ChatGPT como ferramenta de apoio no desenvolvimento, auxiliando na organização de ideias, estruturação do conteúdo e revisão de partes do código ao longo da construção do projeto.
+
+# Link do site: https://marcolino12s.github.io/Agrinho/
