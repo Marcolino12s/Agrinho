@@ -54,7 +54,7 @@ body {
 }
 
 /* =========================
-   HERO
+   HERO / HEADER
 ========================= */
 .hero {
   min-height: 100vh;
@@ -68,7 +68,7 @@ body {
 }
 
 /* =========================
-   NAVBAR
+   NAVIGATION
 ========================= */
 nav {
   display: flex;
@@ -103,7 +103,7 @@ nav a:hover {
 }
 
 /* =========================
-   MENU MOBILE
+   MOBILE MENU
 ========================= */
 .menu-toggle {
   display: none;
@@ -115,7 +115,7 @@ nav a:hover {
 }
 
 /* =========================
-   BOTÕES / INPUTS
+   FORMS (BUTTONS / INPUTS)
 ========================= */
 button,
 select,
@@ -176,11 +176,10 @@ select:hover {
   background: var(--bg);
 }
 
-/* ✔ CORREÇÃO AQUI (SÓ ISSO FOI ALTERADO) */
 .card-info {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem; /* antes estava sem espaçamento suficiente */
+  gap: 1.2rem;
 }
 
 .mini-card {
@@ -191,7 +190,7 @@ select:hover {
 }
 
 /* =========================
-   PROJETOS
+   PROJETOS / EXEMPLOS
 ========================= */
 .projetos {
   padding: 5rem 8%;
@@ -221,7 +220,7 @@ select:hover {
 }
 
 /* =========================
-   RESULTADOS
+   RESULTADOS / VANTAGENS
 ========================= */
 .resultado-box {
   background: var(--card);
@@ -289,14 +288,12 @@ select:hover {
   margin: 0.3rem 0;
 }
 
-/* CAMPOS */
 .campo {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* RESULTADO CENTRALIZADO */
 .resultado-calc {
   text-align: center;
   display: flex;
@@ -327,7 +324,7 @@ footer {
 }
 
 /* =========================
-   RESPONSIVO
+   RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
   .sobre {
